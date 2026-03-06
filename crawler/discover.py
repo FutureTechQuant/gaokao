@@ -1,200 +1,214 @@
 from __future__ import annotations
 
-import json
-import re
-from pathlib import Path
-from urllib.parse import urljoin, urlparse
 from collections import deque
+from pathlib import Path
 
-import requests
 from bs4 import BeautifulSoup
 
-ROOT = Path(__file__).resolve().parents[1]
-CONFIG_DIR = ROOT / "config"
-DATA_DIR = ROOT / "data"
-CONFIG_DIR.mkdir(exist_ok=True)
-DATA_DIR.mkdir(exist_ok=True)
+from crawler.scoring import is_officialish_host, score_candidate
+from crawler.utils import (
+    CONFIG_DIR,
+    DATA_DIR,
+    README_FILE,
+    clean_text,
+    get_host,
+    load_json,
+    normalize_url,
+    now_cn_iso,
+    request_html,
+    save_json,
+    shorten,
+    strip_url,
+)
 
 SEED_FILE = CONFIG_DIR / "seed_urls.json"
 APPROVED_FILE = CONFIG_DIR / "approved_sources.json"
-CANDIDATES_FILE = DATA_DIR / "discovered_candidates.json"
-
-HEADERS = {
-    "User-Agent": "Mozilla/5.0",
-    "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
-}
-
-POSITIVE = [
-    "高考", "普通高考", "招生", "本科招生", "考试院", "招办",
-    "志愿填报", "录取", "分数线", "查分", "阳光高考"
-]
-
-NEGATIVE = [
-    "考研", "研究生", "博士", "硕士", "成考", "自考",
-    "留学", "四六级", "就业", "培训"
-]
-
-PATH_HINTS = ["gaokao", "zsb", "zs", "bkzs", "admission", "recruit"]
-DOMAIN_HINTS = [".gov.cn", ".edu.cn", "chsi.com.cn"]
+DISCOVERED_FILE = DATA_DIR / "discovered_candidates.json"
+DISCOVER_META_FILE = DATA_DIR / "discover_meta.json"
 
 DEFAULT_SEEDS = [
     "https://gaokao.chsi.com.cn/"
 ]
 
-def load_json(path: Path, default):
-    if not path.exists():
-        path.write_text(json.dumps(default, ensure_ascii=False, indent=2), encoding="utf-8")
-        return default
-    return json.loads(path.read_text(encoding="utf-8"))
+AUTO_APPROVE_THRESHOLD = 14
+CANDIDATE_THRESHOLD = 6
+MAX_PAGES = 40
+MAX_DEPTH = 2
+MAX_FOLLOW_PER_PAGE = 15
 
-def save_json(path: Path, obj):
-    path.write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding="utf-8")
 
-def clean_text(text: str) -> str:
-    text = re.sub(r"\s+", " ", text or "")
-    return text.strip()
+def infer_source_name(title: str, host: str) -> str:
+    title = clean_text(title)
+    if title:
+        return title[:80]
+    return host
 
-def normalize_url(base: str, href: str) -> str:
-    if not href:
-        return ""
-    href = href.strip()
-    if href.startswith("#") or href.lower().startswith("javascript:"):
-        return ""
-    return urljoin(base, href)
 
-def get_host(url: str) -> str:
-    return urlparse(url).netloc.lower()
-
-def score_candidate(url: str, title: str, context: str) -> int:
+def candidate_allow_domains(url: str) -> list[str]:
     host = get_host(url)
-    text = f"{url} {title} {context}".lower()
+    parts = host.split(".")
+    if len(parts) >= 3 and parts[-2:] in (["gov", "cn"], ["edu", "cn"]):
+        return [".".join(parts[-3:]), host]
+    return [host] if host else []
 
-    score = 0
 
-    for d in DOMAIN_HINTS:
-        if host.endswith(d):
-            score += 3
-
-    for k in POSITIVE:
-        if k.lower() in text:
-            score += 2
-
-    for k in NEGATIVE:
-        if k.lower() in text:
-            score -= 3
-
-    for p in PATH_HINTS:
-        if p in text:
-            score += 2
-
-    if "招生网" in title or "考试院" in title:
-        score += 3
-
-    return score
-
-def fetch(url: str) -> str:
-    r = requests.get(url, headers=HEADERS, timeout=20)
-    r.raise_for_status()
-    if not r.encoding or r.encoding.lower() == "iso-8859-1":
-        r.encoding = r.apparent_encoding or "utf-8"
-    return r.text
-
-def extract_links(page_url: str, html: str):
+def extract_links(page_url: str, html: str) -> list[dict]:
     soup = BeautifulSoup(html, "lxml")
-    out = []
+    items = []
 
     for a in soup.select("a[href]"):
-        href = a.get("href", "")
-        full = normalize_url(page_url, href)
+        full = normalize_url(page_url, a.get("href", ""))
         if not full.startswith("http"):
             continue
 
         title = clean_text(a.get_text(" ", strip=True))
-        parent_text = clean_text(a.parent.get_text(" ", strip=True)) if a.parent else ""
-        context = f"{title} | {parent_text}"[:300]
-
         if len(title) < 2:
             continue
 
-        out.append({
-            "url": full,
+        parent_text = clean_text(a.parent.get_text(" ", strip=True)) if a.parent else ""
+        context = shorten(f"{title} | {parent_text}", 300)
+
+        score, reasons = score_candidate(full, title, context)
+        items.append({
+            "url": strip_url(full),
             "title": title,
             "context": context,
             "from": page_url,
+            "host": get_host(full),
+            "score": score,
+            "reasons": reasons,
         })
 
-    return out
-
-def discover(max_pages=30, max_depth=2):
-    seed_urls = load_json(SEED_FILE, DEFAULT_SEEDS)
-    approved = load_json(APPROVED_FILE, [])
-
-    approved_urls = {x["url"] for x in approved if "url" in x}
-    visited = set()
-    queue = deque([(u, 0) for u in seed_urls])
-
-    candidates = {}
-
-    while queue and len(visited) < max_pages:
-        url, depth = queue.popleft()
-        if url in visited or depth > max_depth:
-            continue
-        visited.add(url)
-
-        try:
-            html = fetch(url)
-        except Exception:
-            continue
-
-        for link in extract_links(url, html):
-            score = score_candidate(link["url"], link["title"], link["context"])
-            if score < 4:
-                continue
-
-            key = link["url"]
-            old = candidates.get(key)
-            item = {
-                "url": link["url"],
-                "title": link["title"],
-                "context": link["context"],
-                "from": link["from"],
-                "host": get_host(link["url"]),
-                "score": score,
-                "approved": key in approved_urls,
-            }
-
-            if (not old) or item["score"] > old["score"]:
-                candidates[key] = item
-
-            if depth + 1 <= max_depth and score >= 7:
-                queue.append((link["url"], depth + 1))
-
-    items = sorted(candidates.values(), key=lambda x: (x["approved"], x["score"]), reverse=True)
-    save_json(CANDIDATES_FILE, items)
     return items
 
-def auto_promote(threshold=10):
-    candidates = load_json(CANDIDATES_FILE, [])
-    approved = load_json(APPROVED_FILE, [])
 
+def select_follow_links(items: list[dict]) -> list[dict]:
+    items = [x for x in items if x["score"] >= 10]
+    items.sort(key=lambda x: x["score"], reverse=True)
+    return items[:MAX_FOLLOW_PER_PAGE]
+
+
+def auto_approve_candidates(candidates: list[dict], approved: list[dict]) -> list[dict]:
     known = {x["url"] for x in approved if "url" in x}
 
     for c in candidates:
         if c["url"] in known:
             continue
-        if c["score"] >= threshold:
-            approved.append({
-                "name": c["title"][:60],
-                "url": c["url"],
-                "must_include": ["高考", "招生", "录取", "志愿", "报名", "查分", "分数线"],
-                "exclude_keywords": ["考研", "研究生", "成考", "自考", "留学"],
-                "auto_discovered": True,
-                "score": c["score"],
-                "from": c["from"],
-            })
+        host = c["host"]
+        title = c["title"]
+        score = c["score"]
 
+        if score < AUTO_APPROVE_THRESHOLD:
+            continue
+        if not is_officialish_host(host):
+            continue
+
+        approved.append({
+            "name": infer_source_name(title, host),
+            "url": c["url"],
+            "allow_domains": candidate_allow_domains(c["url"]),
+            "must_include": ["高考", "招生", "录取", "志愿", "报名", "查分", "分数线"],
+            "exclude_keywords": ["考研", "研究生", "成考", "自考", "留学", "就业"],
+            "auto_discovered": True,
+            "score": score,
+            "from": c["from"],
+            "enabled": True,
+        })
+        known.add(c["url"])
+
+    approved.sort(key=lambda x: (int(x.get("score", 0)), x.get("name", "")), reverse=True)
+    return approved
+
+
+def render_discover_summary(candidates: list[dict], approved: list[dict], updated_at: str) -> str:
+    lines = []
+    lines.append("# 高考信息自动汇总\n")
+    lines.append(f"- 最近发现时间：{updated_at}")
+    lines.append(f"- 候选来源数：{len(candidates)}")
+    lines.append(f"- 已批准来源数：{len(approved)}")
+    lines.append("")
+    lines.append("## 自动发现的高分候选\n")
+
+    top = [x for x in candidates if x["score"] >= 10][:30]
+    if not top:
+        lines.append("- 暂无高分候选")
+    else:
+        for item in top:
+            lines.append(
+                f"- [{item['title']}]({item['url']}) | host={item['host']} | score={item['score']}"
+            )
+
+    lines.append("")
+    lines.append("## 说明\n")
+    lines.append("- `discover` 会从种子页面出发自动扩展候选站点。")
+    lines.append("- 只有高分且看起来像官方域名的候选才会自动入库。")
+    lines.append("- 正式抓取由 `collect` 工作流读取 `config/approved_sources.json` 执行。")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def main():
+    updated_at = now_cn_iso()
+    seed_urls = load_json(SEED_FILE, DEFAULT_SEEDS)
+    approved = load_json(APPROVED_FILE, [])
+
+    visited = set()
+    queue = deque((url, 0) for url in seed_urls)
+    candidates = {}
+
+    while queue and len(visited) < MAX_PAGES:
+        current_url, depth = queue.popleft()
+        if current_url in visited or depth > MAX_DEPTH:
+            continue
+        visited.add(current_url)
+
+        try:
+            html = request_html(current_url)
+        except Exception:
+            continue
+
+        links = extract_links(current_url, html)
+
+        for link in links:
+            if link["score"] < CANDIDATE_THRESHOLD:
+                continue
+
+            key = link["url"]
+            old = candidates.get(key)
+            if old is None or link["score"] > old["score"]:
+                candidates[key] = link
+
+        if depth < MAX_DEPTH:
+            for item in select_follow_links(links):
+                if item["url"] not in visited:
+                    queue.append((item["url"], depth + 1))
+
+    candidate_list = sorted(
+        candidates.values(),
+        key=lambda x: (x["score"], x["host"], x["title"]),
+        reverse=True
+    )
+
+    approved = auto_approve_candidates(candidate_list, approved)
+
+    save_json(DISCOVERED_FILE, {
+        "updated_at": updated_at,
+        "count": len(candidate_list),
+        "items": candidate_list,
+    })
     save_json(APPROVED_FILE, approved)
+    save_json(DISCOVER_META_FILE, {
+        "updated_at": updated_at,
+        "visited_pages": len(visited),
+        "approved_count": len(approved),
+        "candidate_count": len(candidate_list),
+    })
+
+    README_FILE.write_text(
+        render_discover_summary(candidate_list, approved, updated_at),
+        encoding="utf-8"
+    )
+
 
 if __name__ == "__main__":
-    discover()
-    auto_promote()
+    main()

@@ -11,8 +11,7 @@ import html as html_lib
 import requests
 from bs4 import BeautifulSoup
 
-from sources import SOURCES
-
+from .sources import SOURCES
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"

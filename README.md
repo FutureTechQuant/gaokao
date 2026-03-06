@@ -1,15 +1,23 @@
 # 高考信息自动汇总
 
-- 最近发现时间：2026-03-06T22:05:00+08:00
-- 候选来源数：0
-- 已批准来源数：0
+- 最近更新：2026-03-06T22:30:55+08:00
 
-## 自动发现的高分候选
+- 本次抓取条目：0
 
-- 暂无高分候选
+- 错误数：1
+
+
+## 最新信息
+
+暂无数据，请检查 `crawler/sources.py` 中的页面地址是否正确。
+
+
+## 抓取错误
+
+- 阳光高考 | https://gaokao.chsi.com.cn/ | 412 Client Error: Precondition Failed for url: https://gaokao.chsi.com.cn/
 
 ## 说明
 
-- `discover` 会从种子页面出发自动扩展候选站点。
-- 只有高分且看起来像官方域名的候选才会自动入库。
-- 正式抓取由 `collect` 工作流读取 `config/approved_sources.json` 执行。
+- 数据由 GitHub Actions 定时抓取生成。
+- 建议只添加官方来源页面。
+- 站点结构变化后，可能需要调整来源列表或过滤关键词。

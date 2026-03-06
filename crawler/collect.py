@@ -2,16 +2,17 @@ from __future__ import annotations
 
 import json
 import re
+import hashlib
+import html as html_lib
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
-import hashlib
-import html as html_lib
 
 import requests
 from bs4 import BeautifulSoup
 
 from .sources import SOURCES
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
@@ -27,8 +28,7 @@ README_MD = README_FILE
 SITE_HTML = SITE_DIR / "index.html"
 
 CN_TZ = timezone(timedelta(hours=8))
-NOW = datetime.now(CN_TZ)
-FETCHED_AT = NOW.isoformat(timespec="seconds")
+FETCHED_AT = datetime.now(CN_TZ).isoformat(timespec="seconds")
 
 HEADERS = {
     "User-Agent": (
@@ -77,6 +77,7 @@ def domain_allowed(url: str, allow_domains: list[str]) -> bool:
     if not allow_domains:
         return True
     host = get_domain(url)
+    allow_domains = [d.lower() for d in allow_domains]
     return any(host == d or host.endswith("." + d) for d in allow_domains)
 
 
@@ -191,7 +192,9 @@ def merge_history(items: list[dict]) -> dict:
     history = load_json(HISTORY_JSON, {"updated_at": "", "items": []})
     index = {}
     for old in history.get("items", []):
-        key = old.get("id") or sha1_text(old.get("source", "") + "|" + old.get("url", "") + "|" + old.get("title", ""))
+        key = old.get("id") or sha1_text(
+            old.get("source", "") + "|" + old.get("url", "") + "|" + old.get("title", "")
+        )
         index[key] = old
 
     for item in items:
@@ -215,7 +218,10 @@ def merge_history(items: list[dict]) -> dict:
             }
 
     merged = list(index.values())
-    merged.sort(key=lambda x: ((x.get("date") or ""), (x.get("last_seen_at") or "")), reverse=True)
+    merged.sort(
+        key=lambda x: ((x.get("date") or ""), (x.get("last_seen_at") or "")),
+        reverse=True
+    )
     return {
         "updated_at": FETCHED_AT,
         "items": merged
@@ -223,25 +229,36 @@ def merge_history(items: list[dict]) -> dict:
 
 
 def sort_items(items: list[dict]) -> list[dict]:
-    def sort_key(x: dict):
-        return (x.get("date") or "", x.get("title") or "")
-    return sorted(items, key=sort_key, reverse=True)
+    return sorted(
+        items,
+        key=lambda x: (x.get("date") or "", x.get("title") or ""),
+        reverse=True
+    )
 
 
-def render_readme(items: list[dict]) -> str:
+def render_readme(items: list[dict], errors: list[dict]) -> str:
     top = items[:80]
     lines = []
     lines.append("# 高考信息自动汇总\n")
     lines.append(f"- 最近更新：{FETCHED_AT}\n")
     lines.append(f"- 本次抓取条目：{len(items)}\n")
+    lines.append(f"- 错误数：{len(errors)}\n")
     lines.append("")
     lines.append("## 最新信息\n")
+
     if not top:
         lines.append("暂无数据，请检查 `crawler/sources.py` 中的页面地址是否正确。\n")
     else:
         for item in top:
             date_str = item["date"] or "未知日期"
             lines.append(f"- [{item['title']}]({item['url']}) | {item['source']} | {date_str}")
+
+    if errors:
+        lines.append("")
+        lines.append("## 抓取错误\n")
+        for e in errors[:20]:
+            lines.append(f"- {e['source']} | {e['url']} | {e['error']}")
+
     lines.append("")
     lines.append("## 说明\n")
     lines.append("- 数据由 GitHub Actions 定时抓取生成。")
@@ -251,7 +268,7 @@ def render_readme(items: list[dict]) -> str:
     return "\n".join(lines)
 
 
-def render_html(items: list[dict]) -> str:
+def render_html(items: list[dict], errors: list[dict]) -> str:
     rows = []
     for item in items[:200]:
         title = html_lib.escape(item["title"])
@@ -268,6 +285,17 @@ def render_html(items: list[dict]) -> str:
             </tr>
             """
         )
+
+    error_html = ""
+    if errors:
+        lis = []
+        for e in errors[:20]:
+            lis.append(
+                f"<li>{html_lib.escape(e['source'])} | "
+                f"{html_lib.escape(e['url'])} | "
+                f"{html_lib.escape(e['error'])}</li>"
+            )
+        error_html = "<h2>抓取错误</h2><ul>" + "".join(lis) + "</ul>"
 
     return f"""<!doctype html>
 <html lang="zh-CN">
@@ -307,7 +335,7 @@ def render_html(items: list[dict]) -> str:
 </head>
 <body>
   <h1>高考信息自动汇总</h1>
-  <div class="meta">最近更新：{html_lib.escape(FETCHED_AT)}；本次抓取：{len(items)} 条</div>
+  <div class="meta">最近更新：{html_lib.escape(FETCHED_AT)}；本次抓取：{len(items)} 条；错误数：{len(errors)}</div>
   <table>
     <thead>
       <tr>
@@ -320,6 +348,7 @@ def render_html(items: list[dict]) -> str:
       {''.join(rows) if rows else '<tr><td colspan="3">暂无数据，请检查来源配置。</td></tr>'}
     </tbody>
   </table>
+  {error_html}
 </body>
 </html>
 """
@@ -347,8 +376,9 @@ def main():
         if not old:
             dedup[key] = item
             continue
-        old_score = len(old.get("snippet", ""))
-        new_score = len(item.get("snippet", ""))
+
+        old_score = len(old.get("snippet", "")) + (5 if old.get("date") else 0)
+        new_score = len(item.get("snippet", "")) + (5 if item.get("date") else 0)
         if new_score > old_score:
             dedup[key] = item
 
@@ -370,8 +400,8 @@ def main():
         json.dumps(history, ensure_ascii=False, indent=2),
         encoding="utf-8"
     )
-    README_MD.write_text(render_readme(items), encoding="utf-8")
-    SITE_HTML.write_text(render_html(items), encoding="utf-8")
+    README_MD.write_text(render_readme(items, errors), encoding="utf-8")
+    SITE_HTML.write_text(render_html(items, errors), encoding="utf-8")
 
 
 if __name__ == "__main__":

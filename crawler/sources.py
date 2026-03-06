@@ -11,18 +11,5 @@ SOURCES = [
         "allow_domains": [
             "gaokao.chsi.com.cn", "www.chsi.com.cn", "chsi.com.cn"
         ]
-    },
-    {
-        "name": "示例-某省教育考试院",
-        "url": "https://example.gov.cn/gaokao/list.html",
-        "must_include": [
-            "高考", "普通高考", "志愿填报", "录取", "分数线", "报名", "查分"
-        ],
-        "exclude_keywords": [
-            "研究生", "自考", "成考", "教师资格"
-        ],
-        "allow_domains": [
-            "example.gov.cn"
-        ]
     }
 ]

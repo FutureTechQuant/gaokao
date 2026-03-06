@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import re
+import time
 import hashlib
 import html as html_lib
 from datetime import datetime, timezone, timedelta
@@ -33,15 +34,6 @@ SITE_HTML = SITE_DIR / "index.html"
 CN_TZ = timezone(timedelta(hours=8))
 FETCHED_AT = datetime.now(CN_TZ).isoformat(timespec="seconds")
 
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (X11; Linux x86_64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/122.0 Safari/537.36"
-    ),
-    "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
-}
-
 DEFAULT_MUST_INCLUDE = [
     "高考", "普通高考", "志愿", "录取", "招生", "报名", "查分", "分数线", "考试"
 ]
@@ -57,6 +49,7 @@ DATE_PATTERNS = [
 
 def clean_text(text: str) -> str:
     text = html_lib.unescape(text or "")
+    text = text.replace("\xa0", " ")
     text = re.sub(r"[\u200b\r\t]+", " ", text)
     text = re.sub(r"\s+", " ", text)
     return text.strip()
@@ -109,12 +102,43 @@ def sha1_text(text: str) -> str:
     return hashlib.sha1(text.encode("utf-8")).hexdigest()
 
 
+def build_session() -> requests.Session:
+    session = requests.Session()
+    session.headers.update({
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/122.0.0.0 Safari/537.36"
+        ),
+        "Accept": (
+            "text/html,application/xhtml+xml,application/xml;q=0.9,"
+            "image/avif,image/webp,image/apng,*/*;q=0.8"
+        ),
+        "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache",
+        "Upgrade-Insecure-Requests": "1",
+        "Referer": "https://www.chsi.com.cn/",
+    })
+    return session
+
+
 def request_page(url: str) -> str:
-    resp = requests.get(url, headers=HEADERS, timeout=25)
-    resp.raise_for_status()
-    if not resp.encoding or resp.encoding.lower() == "iso-8859-1":
-        resp.encoding = resp.apparent_encoding or "utf-8"
-    return resp.text
+    last_error = None
+
+    for _ in range(3):
+        try:
+            session = build_session()
+            resp = session.get(url, timeout=25, allow_redirects=True)
+            resp.raise_for_status()
+            if not resp.encoding or resp.encoding.lower() == "iso-8859-1":
+                resp.encoding = resp.apparent_encoding or "utf-8"
+            return resp.text
+        except Exception as e:
+            last_error = e
+            time.sleep(2)
+
+    raise last_error
 
 
 def anchor_context(anchor) -> str:

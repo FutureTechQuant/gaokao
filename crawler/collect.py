@@ -19,7 +19,7 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
-SITE_DIR = ROOT / "site"
+SITE_DIR = ROOT / "docs"
 README_FILE = ROOT / "README.md"
 
 DATA_DIR.mkdir(parents=True, exist_ok=True)

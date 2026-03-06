@@ -11,7 +11,10 @@ from urllib.parse import urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
 
-from .sources import SOURCES
+try:
+    from .sources import SOURCES
+except ImportError:
+    from sources import SOURCES
 
 
 ROOT = Path(__file__).resolve().parents[1]

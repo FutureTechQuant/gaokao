@@ -1,106 +1,86 @@
 SOURCES = [
-    # ================= 全国性政策 =================
     {
-        "name": "教育部-普通高校招生公告",
-        "url": "http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/",
+        "name": "陕西省教育考试院",
+        "url": "https://www.sneea.cn",
         "must_include": [
-            "招生", "高考", "录取", "强基计划", "普通高校"
+            "高考", "普通高考", "招生", "录取", "志愿", "志愿填报",
+            "报名", "查分", "成绩查询", "分数线", "考试提醒", "政策"
         ],
         "exclude_keywords": [
-            "考研", "研究生", "成人", "自考"
+            "考研", "研究生", "硕士", "博士", "自考", "成考",
+            "四六级", "教师资格", "专升本", "留学"
         ],
-        "allow_domains": ["moe.gov.cn"]
+        "allow_domains": [
+            "www.sneea.cn", "sneea.cn"
+        ]
     },
-
-    # ================= 陕西省官方招考平台 =================
     {
-        "name": "陕西省教育考试院-普通高考",
-        "url": "http://www.sneea.cn/xwzx/ptgk.htm",
+        "name": "陕西招生考试信息网",
+        "url": "https://www.sneac.com",
         "must_include": [
-            "高考", "招生", "录取", "志愿", "报名", "分数线", "查分", "统考", "成绩"
+            "高考", "普通高考", "招生", "录取", "志愿", "志愿填报",
+            "报名", "查分", "成绩查询", "分数线", "政策文件", "考试提醒", "历年数据"
         ],
         "exclude_keywords": [
-            "研究生", "硕士", "自考", "成考", "专升本", "教师资格"
+            "考研", "研究生", "硕士", "博士", "自考", "成考",
+            "四六级", "教师资格", "专升本", "留学"
         ],
-        "allow_domains": ["sneea.cn", "www.sneea.cn"]
+        "allow_domains": [
+            "www.sneac.com", "sneac.com"
+        ]
     },
     {
-        "name": "陕西招生考试信息网-高考资讯",
-        "url": "https://www.sneac.com/ptgk.htm",
+        "name": "陕西省教育厅-高考政策",
+        "url": "https://jyt.shaanxi.gov.cn/gk/zc/gfxwj_20255/gfxwj_20254/202501/t20250123_3440299.html",
         "must_include": [
-            "高考", "招生", "录取", "志愿", "报名", "分数线", "查分", "成绩"
+            "高考", "普通高校招生", "招生", "录取", "考试安排",
+            "志愿填报", "成绩复核", "政策"
         ],
         "exclude_keywords": [
-            "研究生", "自考", "成考", "专升本", "社会考试"
+            "考研", "研究生", "成考", "自考", "四六级", "教师资格"
         ],
-        "allow_domains": ["sneac.com", "www.sneac.com"]
+        "allow_domains": [
+            "jyt.shaanxi.gov.cn"
+        ]
     },
-
-    # ================= 陕西省重点高校本科招生网 =================
     {
-        "name": "西安交通大学-本科招生通知公告",
-        "url": "http://zs.xjtu.edu.cn/tzgg.htm",
+        "name": "陕西省人民政府-高考新闻",
+        "url": "https://www.shaanxi.gov.cn/xw/sxyw/202506/t20250625_3535769.html",
         "must_include": [
-            "招生", "高考", "强基计划", "少年班", "录取", "简章", "专项计划"
+            "高考", "成绩", "分数线", "志愿填报", "录取", "招生"
         ],
         "exclude_keywords": [
-            "研究生", "硕士", "博士", "招聘", "采购"
+            "考研", "研究生", "成考", "自考"
         ],
-        "allow_domains": ["zs.xjtu.edu.cn", "xjtu.edu.cn"]
+        "allow_domains": [
+            "www.shaanxi.gov.cn", "shaanxi.gov.cn"
+        ]
     },
     {
-        "name": "西北工业大学-本科招生公告",
-        "url": "https://zsb.nwpu.edu.cn/tzgg.htm",
+        "name": "陕西师范大学本科招生信息网",
+        "url": "https://zsb.snnu.edu.cn",
         "must_include": [
-            "招生", "高考", "强基计划", "录取", "分数线", "简章"
+            "本科招生", "招生章程", "招生简章", "历年分数",
+            "录取查询", "高校专项", "高考"
+        ],
+        "exclude_keywords": [
+            "研究生", "硕士", "博士", "成人教育"
+        ],
+        "allow_domains": [
+            "zsb.snnu.edu.cn", "snnu.edu.cn"
+        ]
+    },
+    {
+        "name": "西安邮电大学本科招生信息网",
+        "url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm",
+        "must_include": [
+            "陕西", "本科", "招生", "录取", "分数", "计划", "位次"
         ],
         "exclude_keywords": [
             "研究生", "硕士", "博士"
         ],
-        "allow_domains": ["zsb.nwpu.edu.cn", "nwpu.edu.cn"]
-    },
-    {
-        "name": "西安电子科技大学-本科招生公告",
-        "url": "https://zsb.xidian.edu.cn/tzgg.htm",
-        "must_include": [
-            "招生", "高考", "录取", "分数线", "政策", "简章"
-        ],
-        "exclude_keywords": [
-            "研究生", "硕士", "博士"
-        ],
-        "allow_domains": ["zsb.xidian.edu.cn", "xidian.edu.cn"]
-    },
-    {
-        "name": "西北农林科技大学-本科招生公告",
-        "url": "https://zhshw.nwafu.edu.cn/tzgg/index.htm",
-        "must_include": [
-            "招生", "高考", "录取", "分数线", "简章"
-        ],
-        "exclude_keywords": [
-            "研究生", "硕士", "博士"
-        ],
-        "allow_domains": ["zhshw.nwafu.edu.cn", "nwafu.edu.cn"]
-    },
-    {
-        "name": "陕西师范大学-本科招生公告",
-        "url": "http://zsb.snnu.edu.cn/tzgg.htm",
-        "must_include": [
-            "招生", "高考", "公费师范生", "优师计划", "录取", "简章"
-        ],
-        "exclude_keywords": [
-            "研究生", "硕士", "博士", "成考"
-        ],
-        "allow_domains": ["zsb.snnu.edu.cn", "snnu.edu.cn"]
-    },
-    {
-        "name": "西北大学-本科招生公告",
-        "url": "https://zsb.nwu.edu.cn/tzgg.htm",
-        "must_include": [
-            "招生", "高考", "录取", "分数线", "简章"
-        ],
-        "exclude_keywords": [
-            "研究生", "硕士", "博士"
-        ],
-        "allow_domains": ["zsb.nwu.edu.cn", "nwu.edu.cn"]
+        "allow_domains": [
+            "zhaosheng.xupt.edu.cn", "xupt.edu.cn"
+        ]
     }
 ]

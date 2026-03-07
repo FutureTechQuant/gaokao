@@ -252,4 +252,89 @@ def crawl_chsi_schools(max_pages: int = 180) -> list[dict]:
                 discovered[key] = card
 
         for nxt in next_pages:
-            if nxt not in
+            if nxt not in visited and nxt not in to_visit:
+                to_visit.append(nxt)
+
+    rows = []
+    for name, card in sorted(discovered.items(), key=lambda x: x[0]):
+        detail = parse_school_detail(card["detail_url"])
+        if not detail:
+            detail = {
+                "name": card["name"],
+                "region": card.get("region", ""),
+                "tags": [card["region"]] if card.get("region") else [],
+                "admissions_url": "",
+                "info_url": "",
+                "careers_url": "",
+                "recommendation_url": "",
+                "budgets_url": "",
+                "allow_domains": [],
+                "detail_url": card["detail_url"],
+                "official_url": "",
+            }
+        if not detail.get("name"):
+            detail["name"] = card["name"]
+        if not detail.get("region"):
+            detail["region"] = card.get("region", "")
+        if not detail.get("tags"):
+            detail["tags"] = [detail["region"]] if detail.get("region") else []
+        rows.append(detail)
+
+    return rows
+
+
+def load_manual_seed() -> dict[str, dict]:
+    if not MANUAL_SEED_FILE.exists():
+        return {}
+    payload = yaml.safe_load(MANUAL_SEED_FILE.read_text(encoding="utf-8")) or {}
+    schools = payload.get("schools", [])
+    result = {}
+    for row in schools:
+        if not isinstance(row, dict):
+            continue
+        name = normalize_text(row.get("name", ""))
+        if name:
+            result[name] = row
+    return result
+
+
+def merge_schools(auto_rows: list[dict], manual_rows: dict[str, dict]) -> list[dict]:
+    merged = []
+
+    for row in auto_rows:
+        name = row.get("name", "")
+        manual = manual_rows.get(name, {})
+        out = dict(row)
+        for key, value in manual.items():
+            if key == "name":
+                continue
+            if value not in (None, "", [], {}):
+                out[key] = value
+        merged.append(out)
+
+    existing_names = {row["name"] for row in merged if row.get("name")}
+    for name, row in manual_rows.items():
+        if name not in existing_names:
+            merged.append(row)
+
+    merged.sort(key=lambda x: x.get("name", ""))
+    return merged
+
+
+def main():
+    auto_rows = crawl_chsi_schools()
+    manual_rows = load_manual_seed()
+    merged = merge_schools(auto_rows, manual_rows)
+
+    payload = {"schools": merged}
+    AUTO_SEED_FILE.write_text(
+        yaml.safe_dump(payload, allow_unicode=True, sort_keys=False),
+        encoding="utf-8",
+    )
+
+    print(f"generated schools_seed: {AUTO_SEED_FILE}")
+    print(f"schools: {len(merged)}")
+
+
+if __name__ == "__main__":
+    main()

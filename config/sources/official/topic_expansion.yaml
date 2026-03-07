@@ -1,0 +1,65 @@
+sources:
+  - name: 阳光高考-院校库
+    enabled: true
+    source_type: official
+    platform: website
+    topic: recommendation
+    mode: crawl
+    trust_level: high
+    entry: https://gaokao.chsi.com.cn/
+    allow_domains:
+      - gaokao.chsi.com.cn
+      - chsi.com.cn
+    must_include:
+      - 院校查询
+      - 专业查询
+      - 专业解读
+      - 职业前景
+    exclude_keywords: []
+    tags:
+      - 国家级
+      - 院校库
+      - 专业库
+
+  - name: 阳光高考-录取结果入口
+    enabled: true
+    source_type: official
+    platform: website
+    topic: admissions
+    mode: crawl
+    trust_level: high
+    entry: https://gaokao.chsi.com.cn/
+    allow_domains:
+      - gaokao.chsi.com.cn
+      - chsi.com.cn
+    must_include:
+      - 录取结果
+      - 批次线
+      - 成绩查询
+    exclude_keywords: []
+    tags:
+      - 国家级
+      - 录取
+      - 批次线
+
+  - name: 教育部-阳光志愿介绍
+    enabled: true
+    source_type: official
+    platform: website
+    topic: recommendation
+    mode: crawl
+    trust_level: high
+    entry: http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202406/t20240617_1136235.html
+    allow_domains:
+      - moe.gov.cn
+    must_include:
+      - 阳光志愿
+      - 志愿推荐
+      - 就业去向
+      - 专业介绍
+      - 职业
+    exclude_keywords: []
+    tags:
+      - 国家级
+      - 教育部
+      - 志愿推荐

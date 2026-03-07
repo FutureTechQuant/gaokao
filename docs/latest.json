@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-07T19:26:59+08:00",
+  "updated_at": "2026-03-07T19:33:06+08:00",
   "count": 86,
   "errors": [],
   "items": [
@@ -14,10 +14,12 @@
       "snippet": "2025-07-19 我校2025年毛笔手写录取通知书暨“悦临书法经典”临摹打卡活动开笔",
       "page_url": "https://zsb.snnu.edu.cn",
       "is_pdf": false,
-      "score": 4,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 15,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "招生信息",
       "tags": [
+        "录取",
+        "招生信息",
         "陕西"
       ]
     },
@@ -32,10 +34,11 @@
       "snippet": "2025-03-12 《陕西日报》丨将青春誓言写在西部大地",
       "page_url": "https://zsb.snnu.edu.cn",
       "is_pdf": false,
-      "score": 4,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 15,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "招生信息",
       "tags": [
+        "招生信息",
         "陕西"
       ]
     },
@@ -50,11 +53,12 @@
       "snippet": "高校毕业生就业质量年度报告",
       "page_url": "https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 22,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 75,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
-        "PDF报告",
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
@@ -69,11 +73,12 @@
       "snippet": "陕西师范大学2021年毕业生就业质量年度报告",
       "page_url": "https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 22,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 75,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
-        "PDF报告",
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
@@ -88,11 +93,12 @@
       "snippet": "陕西师范大学2020年毕业生就业质量年度报告",
       "page_url": "https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 22,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 75,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
-        "PDF报告",
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
@@ -107,11 +113,12 @@
       "snippet": "陕西师范大学2019年毕业生就业质量年度报告发布说明",
       "page_url": "https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 22,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 75,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
-        "PDF报告",
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
@@ -126,11 +133,12 @@
       "snippet": "陕西师范大学2015年 毕业生就业质量年度报告",
       "page_url": "https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 22,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 75,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
-        "PDF报告",
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
@@ -145,11 +153,12 @@
       "snippet": "陕西师范大学2013年毕业生就业质量年度报告",
       "page_url": "https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 22,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 75,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
-        "PDF报告",
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
@@ -164,11 +173,12 @@
       "snippet": "高校毕业生就业质量年度报告",
       "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 22,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 75,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
-        "PDF报告",
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
@@ -183,11 +193,12 @@
       "snippet": "西安理工大学2023届毕业生就业质量年度报告",
       "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 22,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 75,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
-        "PDF报告",
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
@@ -202,11 +213,12 @@
       "snippet": "西安理工大学2022年毕业生就业质量年度报告",
       "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 22,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 75,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
-        "PDF报告",
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
@@ -221,11 +233,12 @@
       "snippet": "西安理工大学2021年毕业生就业质量年度报告",
       "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 22,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 75,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
-        "PDF报告",
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
@@ -240,11 +253,12 @@
       "snippet": "西安理工大学2020年毕业生就业质量年度报告",
       "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 22,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 75,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
-        "PDF报告",
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
@@ -259,11 +273,12 @@
       "snippet": "西安理工大学2019年毕业生就业质量年度报告",
       "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 22,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 75,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
-        "PDF报告",
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
@@ -278,11 +293,12 @@
       "snippet": "西安理工大学2018年毕业生就业质量年度报告",
       "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 22,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 75,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
-        "PDF报告",
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
@@ -297,11 +313,12 @@
       "snippet": "2017年西安理工大学毕业生就业质量年度报告",
       "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 22,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 75,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
-        "PDF报告",
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
@@ -316,29 +333,12 @@
       "snippet": "陕西师范大学就业质量年度报告",
       "page_url": "https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 15,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 47,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
-        "PDF报告",
-        "陕西"
-      ]
-    },
-    {
-      "id": "4f77d1c55515abe70c08114888e4b98861b07f94",
-      "title": "陕西师范大学2025年全日制普通本科招生章程",
-      "url": "https://zsb.snnu.edu.cn/info/1235/4692.htm",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "陕西师范大学2025年全日制普通本科招生章程",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 12,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
@@ -353,10 +353,12 @@
       "snippet": "陕西师范大学2018年毕业生就业质量报告",
       "page_url": "https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 12,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 43,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
@@ -371,10 +373,12 @@
       "snippet": "陕西师范大学2017年毕业生就业质量报告",
       "page_url": "https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 12,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 43,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
@@ -389,10 +393,12 @@
       "snippet": "陕西师范大学2016年毕业生就业质量报告",
       "page_url": "https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 12,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 43,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
@@ -407,10 +413,12 @@
       "snippet": "西北大学2025年本科招生计划",
       "page_url": "https://zsb.nwu.edu.cn",
       "is_pdf": false,
-      "score": 10,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 42,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "招生信息",
       "tags": [
+        "招生信息",
+        "招生计划",
         "陕西"
       ]
     },
@@ -425,10 +433,12 @@
       "snippet": "西北大学2024年本科招生计划",
       "page_url": "https://zsb.nwu.edu.cn",
       "is_pdf": false,
-      "score": 10,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 42,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "招生信息",
       "tags": [
+        "招生信息",
+        "招生计划",
         "陕西"
       ]
     },
@@ -443,10 +453,12 @@
       "snippet": "西北大学2023年本科招生计划",
       "page_url": "https://zsb.nwu.edu.cn",
       "is_pdf": false,
-      "score": 10,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 42,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "招生信息",
       "tags": [
+        "招生信息",
+        "招生计划",
         "陕西"
       ]
     },
@@ -461,10 +473,12 @@
       "snippet": "西北大学2022年本科招生计划",
       "page_url": "https://zsb.nwu.edu.cn",
       "is_pdf": false,
-      "score": 10,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 42,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "招生信息",
       "tags": [
+        "招生信息",
+        "招生计划",
         "陕西"
       ]
     },
@@ -479,10 +493,12 @@
       "snippet": "西北大学2021年本科招生计划",
       "page_url": "https://zsb.nwu.edu.cn",
       "is_pdf": false,
-      "score": 10,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 42,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "招生信息",
       "tags": [
+        "招生信息",
+        "招生计划",
         "陕西"
       ]
     },
@@ -497,356 +513,32 @@
       "snippet": "西北大学2020年本科招生计划",
       "page_url": "https://zsb.nwu.edu.cn",
       "is_pdf": false,
-      "score": 10,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 42,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "招生信息",
       "tags": [
+        "招生信息",
+        "招生计划",
         "陕西"
       ]
     },
     {
-      "id": "18940da9beaf3829f305f7c63ff275de4ecb082c",
-      "title": "西北大学2025年本科招生章程",
-      "url": "https://zsb.nwu.edu.cn/info/1050/2971.htm",
-      "source": "西北大学本科招生信息网",
-      "source_url": "https://zsb.nwu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "西北大学2025年本科招生章程",
-      "page_url": "https://zsb.nwu.edu.cn",
-      "is_pdf": false,
-      "score": 10,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "c5072a221659d3ce176db7ca7038361c80b06ceb",
-      "title": "西北大学2024年本科招生章程",
-      "url": "https://zsb.nwu.edu.cn/info/1050/2677.htm",
-      "source": "西北大学本科招生信息网",
-      "source_url": "https://zsb.nwu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "西北大学2024年本科招生章程",
-      "page_url": "https://zsb.nwu.edu.cn",
-      "is_pdf": false,
-      "score": 10,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "a6143aa7074b1da734aff0d0c66feb93f57981fc",
-      "title": "西北大学2023年全日制普通本科招生章程",
-      "url": "https://zsb.nwu.edu.cn/info/1050/2451.htm",
-      "source": "西北大学本科招生信息网",
-      "source_url": "https://zsb.nwu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "西北大学2023年全日制普通本科招生章程",
-      "page_url": "https://zsb.nwu.edu.cn",
-      "is_pdf": false,
-      "score": 10,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "5b11b3c871686f8a33f9e7b10a17312459ec279d",
-      "title": "西北大学2022年全日制普通本科招生章程",
-      "url": "https://zsb.nwu.edu.cn/info/1050/2191.htm",
-      "source": "西北大学本科招生信息网",
-      "source_url": "https://zsb.nwu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "西北大学2022年全日制普通本科招生章程",
-      "page_url": "https://zsb.nwu.edu.cn",
-      "is_pdf": false,
-      "score": 10,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "44266500b8b6618a1da875f9aafa5396c904579f",
-      "title": "西北大学2021年全日制普通本科招生章程",
-      "url": "https://zsb.nwu.edu.cn/info/1050/1880.htm",
-      "source": "西北大学本科招生信息网",
-      "source_url": "https://zsb.nwu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "西北大学2021年全日制普通本科招生章程",
-      "page_url": "https://zsb.nwu.edu.cn",
-      "is_pdf": false,
-      "score": 10,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "5b21dcae7b99b7d322fc9ee7cc7d1dcf457a54f6",
-      "title": "招生计划",
-      "url": "http://zsdata.snnu.edu.cn/zscx/lqxx/#/",
+      "id": "4f77d1c55515abe70c08114888e4b98861b07f94",
+      "title": "陕西师范大学2025年全日制普通本科招生章程",
+      "url": "https://zsb.snnu.edu.cn/info/1235/4692.htm",
       "source": "陕西师范大学本科招生信息网",
       "source_url": "https://zsb.snnu.edu.cn",
       "topic": "本科招生",
       "date": "",
-      "snippet": "招生计划",
+      "snippet": "陕西师范大学2025年全日制普通本科招生章程",
       "page_url": "https://zsb.snnu.edu.cn",
       "is_pdf": false,
-      "score": 7,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 39,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "招生信息",
       "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "73c0138fcb5ab4602824f1c1be696daf5a6188c7",
-      "title": "录取查询",
-      "url": "http://zsdata.snnu.edu.cn/zscx/lqxx/#/lqcx",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "录取查询",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 7,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "54da7717e94af3be824bb65483df2afb178667ef",
-      "title": "录取查询",
-      "url": "http://xdzsb.nwu.edu.cn/search_gklq.asp",
-      "source": "西北大学本科招生信息网",
-      "source_url": "https://zsb.nwu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "录取查询",
-      "page_url": "https://zsb.nwu.edu.cn",
-      "is_pdf": false,
-      "score": 7,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "eec5cb25427670f9a3725eb75b8c1451296dab06",
-      "title": "招生计划",
-      "url": "https://zsb.nwu.edu.cn/zszn/zsjh.htm",
-      "source": "西北大学本科招生信息网",
-      "source_url": "https://zsb.nwu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "招生计划",
-      "page_url": "https://zsb.nwu.edu.cn",
-      "is_pdf": false,
-      "score": 7,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "e08e2114e26369360f01217674b5bbda9f117766",
-      "title": "招生章程",
-      "url": "https://zsb.nwu.edu.cn/zszn/zszc1.htm",
-      "source": "西北大学本科招生信息网",
-      "source_url": "https://zsb.nwu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "招生章程",
-      "page_url": "https://zsb.nwu.edu.cn",
-      "is_pdf": false,
-      "score": 7,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "5dc2452a485acfa0e93994912d40b5ec4aad1a86",
-      "title": "录取查询 Admission Inquiry",
-      "url": "https://zhaosheng.xupt.edu.cn/info/1056/1084.htm",
-      "source": "西安邮电大学本科招生信息网",
-      "source_url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "录取查询 Admission Inquiry",
-      "page_url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm",
-      "is_pdf": false,
-      "score": 7,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "e57a1b5e9a419f89518d9e129643a76249bd850a",
-      "title": "财务预算信息",
-      "url": "https://xxgk.snnu.edu.cn/gksx/cw_zcjsfxx/cwysxx.htm",
-      "source": "陕西师范大学信息公开网",
-      "source_url": "https://xxgk.snnu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务预算信息",
-      "page_url": "https://xxgk.snnu.edu.cn/",
-      "is_pdf": false,
-      "score": 7,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "学校预算",
-      "tags": [
-        "陕西",
-        "预算"
-      ]
-    },
-    {
-      "id": "da009a575b3f242a42e2fcce043774ea4225e017",
-      "title": "财务决算信息",
-      "url": "https://xxgk.snnu.edu.cn/gksx/cw_zcjsfxx/cwjsxx.htm",
-      "source": "陕西师范大学信息公开网",
-      "source_url": "https://xxgk.snnu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务决算信息",
-      "page_url": "https://xxgk.snnu.edu.cn/",
-      "is_pdf": false,
-      "score": 7,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "学校预算",
-      "tags": [
-        "陕西",
-        "预算"
-      ]
-    },
-    {
-      "id": "b91da53580bef650638def4f06f7b0ceb890cc19",
-      "title": "财务收支决算",
-      "url": "https://xxgk.xaut.edu.cn/cwzcjsfxx/cwszjs.htm",
-      "source": "西安理工大学信息公开网",
-      "source_url": "https://xxgk.xaut.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务收支决算",
-      "page_url": "https://xxgk.xaut.edu.cn/",
-      "is_pdf": false,
-      "score": 7,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "学校预算",
-      "tags": [
-        "陕西",
-        "预算"
-      ]
-    },
-    {
-      "id": "4040ee223905b90c5f1b8cd38c408f3e92857625",
-      "title": "财务收支预算",
-      "url": "https://xxgk.xaut.edu.cn/cwzcjsfxx/cwszys.htm",
-      "source": "西安理工大学信息公开网",
-      "source_url": "https://xxgk.xaut.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务收支预算",
-      "page_url": "https://xxgk.xaut.edu.cn/",
-      "is_pdf": false,
-      "score": 7,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "学校预算",
-      "tags": [
-        "陕西",
-        "预算"
-      ]
-    },
-    {
-      "id": "1b7f7d772f03b7a4a0ae194855c5ecc364ce24b0",
-      "title": "2016年西安理工大学就业质量报告",
-      "url": "https://xxgk.xaut.edu.cn/info/1054/1283.htm",
-      "source": "西安理工大学就业质量报告",
-      "source_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "topic": "就业质量报告",
-      "date": "",
-      "snippet": "2016年西安理工大学就业质量报告",
-      "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "is_pdf": false,
-      "score": 5,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "就业质量",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "07cc17b798d67a381cd95e6955e9fca7ec3cd88d",
-      "title": "历年分数",
-      "url": "http://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "历年分数",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 4,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "ba87cc4331560476e55a4ba2de84625d74841523",
-      "title": "陕西师范大学2025年依据台湾地区大学入学考试学科能力测试成绩招收台湾高中毕业生拟录取名单公示",
-      "url": "https://zsb.snnu.edu.cn/info/1192/4632.htm",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "陕西师范大学2025年依据台湾地区大学入学考试学科能力测试成绩招收台湾高中毕业生拟录取名单公示",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 4,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "5c67dc8cb5eaeb87962568060b27f0208633811b",
-      "title": "陕西师范大学2026年保送录取优秀运动员招生简章",
-      "url": "https://zsb.snnu.edu.cn/info/1337/4982.htm",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "陕西师范大学2026年保送录取优秀运动员招生简章",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 4,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
+        "招生信息",
+        "招生章程",
         "陕西"
       ]
     },
@@ -861,10 +553,172 @@
       "snippet": "陕西师范大学信息公开实施办法",
       "page_url": "https://xxgk.snnu.edu.cn/",
       "is_pdf": false,
-      "score": 4,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 38,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "保研信息",
       "tags": [
+        "保研",
+        "保研信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "18940da9beaf3829f305f7c63ff275de4ecb082c",
+      "title": "西北大学2025年本科招生章程",
+      "url": "https://zsb.nwu.edu.cn/info/1050/2971.htm",
+      "source": "西北大学本科招生信息网",
+      "source_url": "https://zsb.nwu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "西北大学2025年本科招生章程",
+      "page_url": "https://zsb.nwu.edu.cn",
+      "is_pdf": false,
+      "score": 37,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "招生章程",
+        "陕西"
+      ]
+    },
+    {
+      "id": "c5072a221659d3ce176db7ca7038361c80b06ceb",
+      "title": "西北大学2024年本科招生章程",
+      "url": "https://zsb.nwu.edu.cn/info/1050/2677.htm",
+      "source": "西北大学本科招生信息网",
+      "source_url": "https://zsb.nwu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "西北大学2024年本科招生章程",
+      "page_url": "https://zsb.nwu.edu.cn",
+      "is_pdf": false,
+      "score": 37,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "招生章程",
+        "陕西"
+      ]
+    },
+    {
+      "id": "a6143aa7074b1da734aff0d0c66feb93f57981fc",
+      "title": "西北大学2023年全日制普通本科招生章程",
+      "url": "https://zsb.nwu.edu.cn/info/1050/2451.htm",
+      "source": "西北大学本科招生信息网",
+      "source_url": "https://zsb.nwu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "西北大学2023年全日制普通本科招生章程",
+      "page_url": "https://zsb.nwu.edu.cn",
+      "is_pdf": false,
+      "score": 37,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "招生章程",
+        "陕西"
+      ]
+    },
+    {
+      "id": "5b11b3c871686f8a33f9e7b10a17312459ec279d",
+      "title": "西北大学2022年全日制普通本科招生章程",
+      "url": "https://zsb.nwu.edu.cn/info/1050/2191.htm",
+      "source": "西北大学本科招生信息网",
+      "source_url": "https://zsb.nwu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "西北大学2022年全日制普通本科招生章程",
+      "page_url": "https://zsb.nwu.edu.cn",
+      "is_pdf": false,
+      "score": 37,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "招生章程",
+        "陕西"
+      ]
+    },
+    {
+      "id": "44266500b8b6618a1da875f9aafa5396c904579f",
+      "title": "西北大学2021年全日制普通本科招生章程",
+      "url": "https://zsb.nwu.edu.cn/info/1050/1880.htm",
+      "source": "西北大学本科招生信息网",
+      "source_url": "https://zsb.nwu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "西北大学2021年全日制普通本科招生章程",
+      "page_url": "https://zsb.nwu.edu.cn",
+      "is_pdf": false,
+      "score": 37,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "招生章程",
+        "陕西"
+      ]
+    },
+    {
+      "id": "07cc17b798d67a381cd95e6955e9fca7ec3cd88d",
+      "title": "历年分数",
+      "url": "http://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "历年分数",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 30,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "分数线",
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "5b21dcae7b99b7d322fc9ee7cc7d1dcf457a54f6",
+      "title": "招生计划",
+      "url": "http://zsdata.snnu.edu.cn/zscx/lqxx/#/",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "招生计划",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 29,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "招生计划",
+        "陕西"
+      ]
+    },
+    {
+      "id": "eec5cb25427670f9a3725eb75b8c1451296dab06",
+      "title": "招生计划",
+      "url": "https://zsb.nwu.edu.cn/zszn/zsjh.htm",
+      "source": "西北大学本科招生信息网",
+      "source_url": "https://zsb.nwu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "招生计划",
+      "page_url": "https://zsb.nwu.edu.cn",
+      "is_pdf": false,
+      "score": 29,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "招生计划",
         "陕西"
       ]
     },
@@ -879,479 +733,153 @@
       "snippet": "毕业生的规模、结构、就业率、就业流向",
       "page_url": "https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 3,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 29,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
+        "就业分析",
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
     {
-      "id": "913630956e92a81c79396b329f60dd1b761e9602",
-      "title": "2024年度普通高等学校本科专业备案和审批结果",
-      "url": "http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/W020250422312780758186.pdf",
-      "source": "教育部专业调整专题",
-      "source_url": "http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/t20250422_1188239.html",
-      "topic": "专业调整",
-      "date": "",
-      "snippet": "2024年度普通高等学校本科专业备案和审批结果",
-      "page_url": "http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/t20250422_1188239.html",
-      "is_pdf": true,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "专业趋势",
-      "tags": [
-        "PDF报告",
-        "专业调整"
-      ],
-      "score": 3
-    },
-    {
-      "id": "8bec03acfe3caa0e65e341d1f4d69525c464ba50",
-      "title": "普通高等学校本科专业目录（2025年）",
-      "url": "http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/W020250422312780837078.pdf",
-      "source": "教育部专业调整专题",
-      "source_url": "http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/t20250422_1188239.html",
-      "topic": "专业调整",
-      "date": "",
-      "snippet": "普通高等学校本科专业目录（2025年）",
-      "page_url": "http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/t20250422_1188239.html",
-      "is_pdf": true,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "未分类",
-      "tags": [
-        "PDF报告"
-      ],
-      "score": 3
-    },
-    {
-      "id": "10f988b5fa1001039cd153fb6e82eb32db7fcdb9",
-      "title": "陕西师范大学2026年高水平运动队招生报名资格审核通过名单",
-      "url": "https://zsb.snnu.edu.cn/info/1192/5042.htm",
+      "id": "73c0138fcb5ab4602824f1c1be696daf5a6188c7",
+      "title": "录取查询",
+      "url": "http://zsdata.snnu.edu.cn/zscx/lqxx/#/lqcx",
       "source": "陕西师范大学本科招生信息网",
       "source_url": "https://zsb.snnu.edu.cn",
       "topic": "本科招生",
       "date": "",
-      "snippet": "陕西师范大学2026年高水平运动队招生报名资格审核通过名单",
+      "snippet": "录取查询",
       "page_url": "https://zsb.snnu.edu.cn",
       "is_pdf": false,
-      "score": 2,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 27,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "招生信息",
       "tags": [
+        "录取",
+        "招生信息",
         "陕西"
       ]
     },
     {
-      "id": "308e5ece7b743a0cd3ec6fba0c206c78226f278b",
-      "title": "2025年普通类、体育类专业录取最低分",
-      "url": "https://zsb.snnu.edu.cn/info/1192/4912.htm",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "2025年普通类、体育类专业录取最低分",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 2,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "db819a4e9193a1f099fba1b04db585b22531f7ea",
-      "title": "2025年艺术类专业录取最低分（陆续更新中）",
-      "url": "https://zsb.snnu.edu.cn/info/1192/4862.htm",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "2025年艺术类专业录取最低分（陆续更新中）",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 2,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "495caeb11dffe322c70ecece430c8bd6ac30d302",
-      "title": "陕西师范大学2025年第二学士学位报名材料初审合格名单公示",
-      "url": "https://zsb.snnu.edu.cn/info/1192/4782.htm",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "陕西师范大学2025年第二学士学位报名材料初审合格名单公示",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 2,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "f46bd3929db43be5e737fc0654c0c24895b0c152",
-      "title": "陕西师范大学2026年运动训练专业招生简章",
-      "url": "https://zsb.snnu.edu.cn/info/1337/5022.htm",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "陕西师范大学2026年运动训练专业招生简章",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 2,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "cafd244833c26ad66f7e207a7f19379dfbb8c476",
-      "title": "陕西师范大学2026年高水平运动队招生简章",
-      "url": "https://zsb.snnu.edu.cn/info/1338/5012.htm",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "陕西师范大学2026年高水平运动队招生简章",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 2,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "200bcb92b52f44b20c24bf81d751e1543003a839",
-      "title": "陕西师范大学2026年依据台湾地区大学入学考试学科能力测试成绩招收台湾高中毕业生招生简章",
-      "url": "https://zsb.snnu.edu.cn/info/1339/4962.htm",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "陕西师范大学2026年依据台湾地区大学入学考试学科能力测试成绩招收台湾高中毕业生招生简章",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 2,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "5c1afa5f2cb0fcd5e1c945495ea5423a3ea09dc7",
-      "title": "陕西师范大学2025级本研衔接公费师范生履约任教范围",
-      "url": "https://zsb.snnu.edu.cn/info/1235/4822.htm",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "陕西师范大学2025级本研衔接公费师范生履约任教范围",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 2,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "9f9044a89894916a390d7a95e36efe57362a8b7a",
-      "title": "《光明日报》：“红烛苗圃”的故事——陕西师范大学助力... 15 2024-03",
-      "url": "https://zsb.snnu.edu.cn/info/1216/3681.htm",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "《光明日报》：“红烛苗圃”的故事——陕西师范大学助力... 15 2024-03",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 2,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "6df386b65fbe8a8a7b2f1fe107b7f810b7132fc1",
-      "title": "陕西师范大学招生宣传片 03 2023-04",
-      "url": "https://zsb.snnu.edu.cn/info/1216/3431.htm",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "陕西师范大学招生宣传片 03 2023-04",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 2,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "0777feb2c6eed0a02d4b85dee7d1fc162b1ac633",
-      "title": "陕西师范大学首页",
-      "url": "http://www.snnu.edu.cn/index.htm",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "陕西师范大学首页",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 2,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "e1e7b534bb17514779df4433cfe688ec6b978431",
-      "title": "西北大学2025年分省分批次录取进度表",
-      "url": "https://zsb.nwu.edu.cn/info/1043/3006.htm",
+      "id": "54da7717e94af3be824bb65483df2afb178667ef",
+      "title": "录取查询",
+      "url": "http://xdzsb.nwu.edu.cn/search_gklq.asp",
       "source": "西北大学本科招生信息网",
       "source_url": "https://zsb.nwu.edu.cn",
       "topic": "本科招生",
       "date": "",
-      "snippet": "西北大学2025年分省分批次录取进度表",
+      "snippet": "录取查询",
       "page_url": "https://zsb.nwu.edu.cn",
       "is_pdf": false,
-      "score": 2,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 27,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "招生信息",
       "tags": [
+        "录取",
+        "招生信息",
         "陕西"
       ]
     },
     {
-      "id": "c5553dc5bff094a3c6f7650c1fa606d390e1a28a",
-      "title": "[名单公示] 西北大学2025年第二学士学位录取名单",
-      "url": "https://zsb.nwu.edu.cn/info/1046/2991.htm",
-      "source": "西北大学本科招生信息网",
-      "source_url": "https://zsb.nwu.edu.cn",
+      "id": "5dc2452a485acfa0e93994912d40b5ec4aad1a86",
+      "title": "录取查询 Admission Inquiry",
+      "url": "https://zhaosheng.xupt.edu.cn/info/1056/1084.htm",
+      "source": "西安邮电大学本科招生信息网",
+      "source_url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm",
       "topic": "本科招生",
       "date": "",
-      "snippet": "[名单公示] 西北大学2025年第二学士学位录取名单",
-      "page_url": "https://zsb.nwu.edu.cn",
+      "snippet": "录取查询 Admission Inquiry",
+      "page_url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm",
       "is_pdf": false,
-      "score": 2,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 27,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "招生信息",
       "tags": [
+        "录取",
+        "招生信息",
         "陕西"
       ]
     },
     {
-      "id": "091217837b9927b6f02bc03a22487384dddc1a7f",
-      "title": "[名单公示] 西北大学2024年第二学士学位录取名单",
-      "url": "https://zsb.nwu.edu.cn/info/1046/2729.htm",
-      "source": "西北大学本科招生信息网",
-      "source_url": "https://zsb.nwu.edu.cn",
-      "topic": "本科招生",
+      "id": "1b7f7d772f03b7a4a0ae194855c5ecc364ce24b0",
+      "title": "2016年西安理工大学就业质量报告",
+      "url": "https://xxgk.xaut.edu.cn/info/1054/1283.htm",
+      "source": "西安理工大学就业质量报告",
+      "source_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
+      "topic": "就业质量报告",
       "date": "",
-      "snippet": "[名单公示] 西北大学2024年第二学士学位录取名单",
-      "page_url": "https://zsb.nwu.edu.cn",
+      "snippet": "2016年西安理工大学就业质量报告",
+      "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 2,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
+      "score": 27,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "就业质量",
       "tags": [
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
     },
     {
-      "id": "2dd3a02f8e2ba6a923fe89199574833e13ff9a75",
-      "title": "财务、资产及收费信息",
-      "url": "https://xxgk.snnu.edu.cn/gksx/cw_zcjsfxx.htm",
+      "id": "da009a575b3f242a42e2fcce043774ea4225e017",
+      "title": "财务决算信息",
+      "url": "https://xxgk.snnu.edu.cn/gksx/cw_zcjsfxx/cwjsxx.htm",
       "source": "陕西师范大学信息公开网",
       "source_url": "https://xxgk.snnu.edu.cn/",
       "topic": "高校预算",
       "date": "",
-      "snippet": "财务、资产及收费信息",
+      "snippet": "财务决算信息",
       "page_url": "https://xxgk.snnu.edu.cn/",
       "is_pdf": false,
-      "score": 2,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 27,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "学校预算",
       "tags": [
+        "学校决算",
+        "学校预算",
         "陕西"
       ]
     },
     {
-      "id": "b1488539b56a8c0e3ec824587dce60fcd9611d3c",
-      "title": "财务制度",
-      "url": "https://xxgk.snnu.edu.cn/gksx/cw_zcjsfxx/cwzd.htm",
-      "source": "陕西师范大学信息公开网",
-      "source_url": "https://xxgk.snnu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务制度",
-      "page_url": "https://xxgk.snnu.edu.cn/",
-      "is_pdf": false,
-      "score": 2,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "学校预算",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "cc1b73d1249230f5b7de471772cbdc4fcfe36e1c",
-      "title": "财务管理制度",
-      "url": "https://xxgk.xaut.edu.cn/cwzcjsfxx/cwglzd.htm",
+      "id": "b91da53580bef650638def4f06f7b0ceb890cc19",
+      "title": "财务收支决算",
+      "url": "https://xxgk.xaut.edu.cn/cwzcjsfxx/cwszjs.htm",
       "source": "西安理工大学信息公开网",
       "source_url": "https://xxgk.xaut.edu.cn/",
       "topic": "高校预算",
       "date": "",
-      "snippet": "财务管理制度",
+      "snippet": "财务收支决算",
       "page_url": "https://xxgk.xaut.edu.cn/",
       "is_pdf": false,
-      "score": 2,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 27,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "学校预算",
       "tags": [
+        "学校决算",
+        "学校预算",
         "陕西"
       ]
     },
     {
-      "id": "5b2e61d2f730900d598bf813da0d7591d91684bd",
-      "title": "学院专业",
-      "url": "https://zsb.snnu.edu.cn/sy/xyzhuan_ye.htm",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
+      "id": "e08e2114e26369360f01217674b5bbda9f117766",
+      "title": "招生章程",
+      "url": "https://zsb.nwu.edu.cn/zszn/zszc1.htm",
+      "source": "西北大学本科招生信息网",
+      "source_url": "https://zsb.nwu.edu.cn",
       "topic": "本科招生",
       "date": "",
-      "snippet": "学院专业",
-      "page_url": "https://zsb.snnu.edu.cn",
+      "snippet": "招生章程",
+      "page_url": "https://zsb.nwu.edu.cn",
       "is_pdf": false,
-      "score": 0,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 25,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "招生信息",
       "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "44a20e99266fb8675d42c49d5bb1fccb59a92cc6",
-      "title": "专业分流政策",
-      "url": "https://zsb.snnu.edu.cn/sy/zsxx/zyflzc1.htm",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "专业分流政策",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 0,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "f7066d0fee0e7ee6872917c3aa5e1f1e7ec4c63d",
-      "title": "2025级预科学生结业转本科专业及计划",
-      "url": "https://zsb.snnu.edu.cn/info/1340/5052.htm",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "2025级预科学生结业转本科专业及计划",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 0,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "d1582bfcae17e9370d213a735ef558d37f375eb9",
-      "title": "关于做好2023级本科生专业分流工作的通知",
-      "url": "https://www.snnu.edu.cn/info/1015/37152.htm",
-      "source": "陕西师范大学本科招生信息网",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "关于做好2023级本科生专业分流工作的通知",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 0,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "2fb33a61223044080376ef4c9cbcd520d5691dd8",
-      "title": "学院专业",
-      "url": "https://zhaosheng.xupt.edu.cn/xyzy.htm",
-      "source": "西安邮电大学本科招生信息网",
-      "source_url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "学院专业",
-      "page_url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm",
-      "is_pdf": false,
-      "score": 0,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "ffba6f4e20ec0c4f1066e5a392bd4b65db303cea",
-      "title": "计划分数",
-      "url": "https://zhaosheng.xupt.edu.cn/lqcx.htm",
-      "source": "西安邮电大学本科招生信息网",
-      "source_url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "计划分数",
-      "page_url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm",
-      "is_pdf": false,
-      "score": 0,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
-        "陕西"
-      ]
-    },
-    {
-      "id": "3509822d737f9ae658c0ef3faaae633590b6289e",
-      "title": "分省分专业查询",
-      "url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx.htm",
-      "source": "西安邮电大学本科招生信息网",
-      "source_url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "分省分专业查询",
-      "page_url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm",
-      "is_pdf": false,
-      "score": 0,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
-      "category": "招生信息",
-      "tags": [
+        "招生信息",
+        "招生章程",
         "陕西"
       ]
     },
@@ -1366,12 +894,589 @@
       "snippet": "促进毕业生就业的政策措施和指导服务",
       "page_url": "https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm",
       "is_pdf": false,
-      "score": 0,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "score": 22,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "就业质量",
       "tags": [
+        "就业质量",
+        "就业质量报告",
         "陕西"
       ]
+    },
+    {
+      "id": "e57a1b5e9a419f89518d9e129643a76249bd850a",
+      "title": "财务预算信息",
+      "url": "https://xxgk.snnu.edu.cn/gksx/cw_zcjsfxx/cwysxx.htm",
+      "source": "陕西师范大学信息公开网",
+      "source_url": "https://xxgk.snnu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务预算信息",
+      "page_url": "https://xxgk.snnu.edu.cn/",
+      "is_pdf": false,
+      "score": 20,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "学校预算",
+      "tags": [
+        "学校预算",
+        "陕西"
+      ]
+    },
+    {
+      "id": "4040ee223905b90c5f1b8cd38c408f3e92857625",
+      "title": "财务收支预算",
+      "url": "https://xxgk.xaut.edu.cn/cwzcjsfxx/cwszys.htm",
+      "source": "西安理工大学信息公开网",
+      "source_url": "https://xxgk.xaut.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务收支预算",
+      "page_url": "https://xxgk.xaut.edu.cn/",
+      "is_pdf": false,
+      "score": 20,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "学校预算",
+      "tags": [
+        "学校预算",
+        "陕西"
+      ]
+    },
+    {
+      "id": "ba87cc4331560476e55a4ba2de84625d74841523",
+      "title": "陕西师范大学2025年依据台湾地区大学入学考试学科能力测试成绩招收台湾高中毕业生拟录取名单公示",
+      "url": "https://zsb.snnu.edu.cn/info/1192/4632.htm",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "陕西师范大学2025年依据台湾地区大学入学考试学科能力测试成绩招收台湾高中毕业生拟录取名单公示",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 15,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "5c67dc8cb5eaeb87962568060b27f0208633811b",
+      "title": "陕西师范大学2026年保送录取优秀运动员招生简章",
+      "url": "https://zsb.snnu.edu.cn/info/1337/4982.htm",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "陕西师范大学2026年保送录取优秀运动员招生简章",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 15,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "2dd3a02f8e2ba6a923fe89199574833e13ff9a75",
+      "title": "财务、资产及收费信息",
+      "url": "https://xxgk.snnu.edu.cn/gksx/cw_zcjsfxx.htm",
+      "source": "陕西师范大学信息公开网",
+      "source_url": "https://xxgk.snnu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务、资产及收费信息",
+      "page_url": "https://xxgk.snnu.edu.cn/",
+      "is_pdf": false,
+      "score": 15,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "学校预算",
+      "tags": [
+        "学校预算",
+        "陕西"
+      ]
+    },
+    {
+      "id": "b1488539b56a8c0e3ec824587dce60fcd9611d3c",
+      "title": "财务制度",
+      "url": "https://xxgk.snnu.edu.cn/gksx/cw_zcjsfxx/cwzd.htm",
+      "source": "陕西师范大学信息公开网",
+      "source_url": "https://xxgk.snnu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务制度",
+      "page_url": "https://xxgk.snnu.edu.cn/",
+      "is_pdf": false,
+      "score": 15,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "学校预算",
+      "tags": [
+        "学校预算",
+        "陕西"
+      ]
+    },
+    {
+      "id": "cc1b73d1249230f5b7de471772cbdc4fcfe36e1c",
+      "title": "财务管理制度",
+      "url": "https://xxgk.xaut.edu.cn/cwzcjsfxx/cwglzd.htm",
+      "source": "西安理工大学信息公开网",
+      "source_url": "https://xxgk.xaut.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务管理制度",
+      "page_url": "https://xxgk.xaut.edu.cn/",
+      "is_pdf": false,
+      "score": 15,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "学校预算",
+      "tags": [
+        "学校预算",
+        "陕西"
+      ]
+    },
+    {
+      "id": "10f988b5fa1001039cd153fb6e82eb32db7fcdb9",
+      "title": "陕西师范大学2026年高水平运动队招生报名资格审核通过名单",
+      "url": "https://zsb.snnu.edu.cn/info/1192/5042.htm",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "陕西师范大学2026年高水平运动队招生报名资格审核通过名单",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 13,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "308e5ece7b743a0cd3ec6fba0c206c78226f278b",
+      "title": "2025年普通类、体育类专业录取最低分",
+      "url": "https://zsb.snnu.edu.cn/info/1192/4912.htm",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "2025年普通类、体育类专业录取最低分",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 13,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "db819a4e9193a1f099fba1b04db585b22531f7ea",
+      "title": "2025年艺术类专业录取最低分（陆续更新中）",
+      "url": "https://zsb.snnu.edu.cn/info/1192/4862.htm",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "2025年艺术类专业录取最低分（陆续更新中）",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 13,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "495caeb11dffe322c70ecece430c8bd6ac30d302",
+      "title": "陕西师范大学2025年第二学士学位报名材料初审合格名单公示",
+      "url": "https://zsb.snnu.edu.cn/info/1192/4782.htm",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "陕西师范大学2025年第二学士学位报名材料初审合格名单公示",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 13,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "f46bd3929db43be5e737fc0654c0c24895b0c152",
+      "title": "陕西师范大学2026年运动训练专业招生简章",
+      "url": "https://zsb.snnu.edu.cn/info/1337/5022.htm",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "陕西师范大学2026年运动训练专业招生简章",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 13,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "cafd244833c26ad66f7e207a7f19379dfbb8c476",
+      "title": "陕西师范大学2026年高水平运动队招生简章",
+      "url": "https://zsb.snnu.edu.cn/info/1338/5012.htm",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "陕西师范大学2026年高水平运动队招生简章",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 13,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "200bcb92b52f44b20c24bf81d751e1543003a839",
+      "title": "陕西师范大学2026年依据台湾地区大学入学考试学科能力测试成绩招收台湾高中毕业生招生简章",
+      "url": "https://zsb.snnu.edu.cn/info/1339/4962.htm",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "陕西师范大学2026年依据台湾地区大学入学考试学科能力测试成绩招收台湾高中毕业生招生简章",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 13,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "5c1afa5f2cb0fcd5e1c945495ea5423a3ea09dc7",
+      "title": "陕西师范大学2025级本研衔接公费师范生履约任教范围",
+      "url": "https://zsb.snnu.edu.cn/info/1235/4822.htm",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "陕西师范大学2025级本研衔接公费师范生履约任教范围",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 13,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "9f9044a89894916a390d7a95e36efe57362a8b7a",
+      "title": "《光明日报》：“红烛苗圃”的故事——陕西师范大学助力... 15 2024-03",
+      "url": "https://zsb.snnu.edu.cn/info/1216/3681.htm",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "《光明日报》：“红烛苗圃”的故事——陕西师范大学助力... 15 2024-03",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 13,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "6df386b65fbe8a8a7b2f1fe107b7f810b7132fc1",
+      "title": "陕西师范大学招生宣传片 03 2023-04",
+      "url": "https://zsb.snnu.edu.cn/info/1216/3431.htm",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "陕西师范大学招生宣传片 03 2023-04",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 13,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "0777feb2c6eed0a02d4b85dee7d1fc162b1ac633",
+      "title": "陕西师范大学首页",
+      "url": "http://www.snnu.edu.cn/index.htm",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "陕西师范大学首页",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 13,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "e1e7b534bb17514779df4433cfe688ec6b978431",
+      "title": "西北大学2025年分省分批次录取进度表",
+      "url": "https://zsb.nwu.edu.cn/info/1043/3006.htm",
+      "source": "西北大学本科招生信息网",
+      "source_url": "https://zsb.nwu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "西北大学2025年分省分批次录取进度表",
+      "page_url": "https://zsb.nwu.edu.cn",
+      "is_pdf": false,
+      "score": 13,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "c5553dc5bff094a3c6f7650c1fa606d390e1a28a",
+      "title": "[名单公示] 西北大学2025年第二学士学位录取名单",
+      "url": "https://zsb.nwu.edu.cn/info/1046/2991.htm",
+      "source": "西北大学本科招生信息网",
+      "source_url": "https://zsb.nwu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "[名单公示] 西北大学2025年第二学士学位录取名单",
+      "page_url": "https://zsb.nwu.edu.cn",
+      "is_pdf": false,
+      "score": 13,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "091217837b9927b6f02bc03a22487384dddc1a7f",
+      "title": "[名单公示] 西北大学2024年第二学士学位录取名单",
+      "url": "https://zsb.nwu.edu.cn/info/1046/2729.htm",
+      "source": "西北大学本科招生信息网",
+      "source_url": "https://zsb.nwu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "[名单公示] 西北大学2024年第二学士学位录取名单",
+      "page_url": "https://zsb.nwu.edu.cn",
+      "is_pdf": false,
+      "score": 13,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "5b2e61d2f730900d598bf813da0d7591d91684bd",
+      "title": "学院专业",
+      "url": "https://zsb.snnu.edu.cn/sy/xyzhuan_ye.htm",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "学院专业",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 11,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "44a20e99266fb8675d42c49d5bb1fccb59a92cc6",
+      "title": "专业分流政策",
+      "url": "https://zsb.snnu.edu.cn/sy/zsxx/zyflzc1.htm",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "专业分流政策",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 11,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "f7066d0fee0e7ee6872917c3aa5e1f1e7ec4c63d",
+      "title": "2025级预科学生结业转本科专业及计划",
+      "url": "https://zsb.snnu.edu.cn/info/1340/5052.htm",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "2025级预科学生结业转本科专业及计划",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 11,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "专业信息",
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "d1582bfcae17e9370d213a735ef558d37f375eb9",
+      "title": "关于做好2023级本科生专业分流工作的通知",
+      "url": "https://www.snnu.edu.cn/info/1015/37152.htm",
+      "source": "陕西师范大学本科招生信息网",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "关于做好2023级本科生专业分流工作的通知",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 11,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "2fb33a61223044080376ef4c9cbcd520d5691dd8",
+      "title": "学院专业",
+      "url": "https://zhaosheng.xupt.edu.cn/xyzy.htm",
+      "source": "西安邮电大学本科招生信息网",
+      "source_url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "学院专业",
+      "page_url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm",
+      "is_pdf": false,
+      "score": 11,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "ffba6f4e20ec0c4f1066e5a392bd4b65db303cea",
+      "title": "计划分数",
+      "url": "https://zhaosheng.xupt.edu.cn/lqcx.htm",
+      "source": "西安邮电大学本科招生信息网",
+      "source_url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "计划分数",
+      "page_url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm",
+      "is_pdf": false,
+      "score": 11,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "3509822d737f9ae658c0ef3faaae633590b6289e",
+      "title": "分省分专业查询",
+      "url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx.htm",
+      "source": "西安邮电大学本科招生信息网",
+      "source_url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "分省分专业查询",
+      "page_url": "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm",
+      "is_pdf": false,
+      "score": 11,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "招生信息",
+      "tags": [
+        "招生信息",
+        "陕西"
+      ]
+    },
+    {
+      "id": "913630956e92a81c79396b329f60dd1b761e9602",
+      "title": "2024年度普通高等学校本科专业备案和审批结果",
+      "url": "http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/W020250422312780758186.pdf",
+      "source": "教育部专业调整专题",
+      "source_url": "http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/t20250422_1188239.html",
+      "topic": "专业调整",
+      "date": "",
+      "snippet": "2024年度普通高等学校本科专业备案和审批结果",
+      "page_url": "http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/t20250422_1188239.html",
+      "is_pdf": true,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "专业趋势",
+      "tags": [
+        "PDF",
+        "专业信息",
+        "专业趋势",
+        "新增专业"
+      ],
+      "score": 6
+    },
+    {
+      "id": "8bec03acfe3caa0e65e341d1f4d69525c464ba50",
+      "title": "普通高等学校本科专业目录（2025年）",
+      "url": "http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/W020250422312780837078.pdf",
+      "source": "教育部专业调整专题",
+      "source_url": "http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/t20250422_1188239.html",
+      "topic": "专业调整",
+      "date": "",
+      "snippet": "普通高等学校本科专业目录（2025年）",
+      "page_url": "http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/t20250422_1188239.html",
+      "is_pdf": true,
+      "fetched_at": "2026-03-07T19:33:06+08:00",
+      "category": "未分类",
+      "tags": [
+        "PDF",
+        "专业信息",
+        "公务员",
+        "未分类"
+      ],
+      "score": 6
     },
     {
       "id": "bb3628dc98791f83cbf12bb734131e647cad90c4",
@@ -1384,10 +1489,11 @@
       "snippet": "• 零距离，新体验！2025“上海国企开放日”集中开放活动全景回顾来啦～",
       "page_url": "https://www.gzw.sh.gov.cn/",
       "is_pdf": false,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "未分类",
       "tags": [
-        "国企"
+        "国企",
+        "未分类"
       ],
       "score": 0
     },
@@ -1402,10 +1508,11 @@
       "snippet": "• gogogo，2025“上海国企开放日”出发喽～70+场活动承包您的整个夏天！",
       "page_url": "https://www.gzw.sh.gov.cn/",
       "is_pdf": false,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "未分类",
       "tags": [
-        "国企"
+        "国企",
+        "未分类"
       ],
       "score": 0
     },
@@ -1420,10 +1527,11 @@
       "snippet": "• 2026年上海市国资国企改革发展暨党建工作会议召开",
       "page_url": "https://www.gzw.sh.gov.cn/",
       "is_pdf": false,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "未分类",
       "tags": [
-        "国企"
+        "国企",
+        "未分类"
       ],
       "score": 0
     },
@@ -1438,10 +1546,11 @@
       "snippet": "• 深化校企合作，服务青年成长，市国资青联、华东理工大学育人发展联盟启动暨专场招聘会举行",
       "page_url": "https://www.gzw.sh.gov.cn/",
       "is_pdf": false,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "未分类",
       "tags": [
-        "国企"
+        "国企",
+        "未分类"
       ],
       "score": 0
     },
@@ -1456,10 +1565,11 @@
       "snippet": "• “青春挺膺勇担当 国企改革建新功”上海市国资委系统纪念五四运动106周年主题团日活动举行",
       "page_url": "https://www.gzw.sh.gov.cn/",
       "is_pdf": false,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "未分类",
       "tags": [
-        "国企"
+        "国企",
+        "未分类"
       ],
       "score": 0
     },
@@ -1474,10 +1584,11 @@
       "snippet": "• 马力全开！青浦区国资国企奋力冲刺首季“开门红”",
       "page_url": "https://www.gzw.sh.gov.cn/",
       "is_pdf": false,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "未分类",
       "tags": [
-        "国企"
+        "国企",
+        "未分类"
       ],
       "score": 0
     },
@@ -1492,10 +1603,11 @@
       "snippet": "• 实干启新篇，长宁区国资国企跑好开局“第一棒”",
       "page_url": "https://www.gzw.sh.gov.cn/",
       "is_pdf": false,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "未分类",
       "tags": [
-        "国企"
+        "国企",
+        "未分类"
       ],
       "score": 0
     },
@@ -1510,10 +1622,11 @@
       "snippet": "• 静安区国资国企改革发展暨党建工作会议召开",
       "page_url": "https://www.gzw.sh.gov.cn/",
       "is_pdf": false,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "未分类",
       "tags": [
-        "国企"
+        "国企",
+        "未分类"
       ],
       "score": 0
     },
@@ -1528,10 +1641,11 @@
       "snippet": "• 浦东国资国企马力全开跑好开局第一棒",
       "page_url": "https://www.gzw.sh.gov.cn/",
       "is_pdf": false,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "未分类",
       "tags": [
-        "国企"
+        "国企",
+        "未分类"
       ],
       "score": 0
     },
@@ -1546,10 +1660,13 @@
       "snippet": "教育部公布2024年度本科专业备案和审批结果并更新发布本科专业目录",
       "page_url": "http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/t20250422_1188239.html",
       "is_pdf": false,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "专业趋势",
       "tags": [
-        "专业调整"
+        "专业信息",
+        "专业趋势",
+        "公务员",
+        "新增专业"
       ],
       "score": 0
     },
@@ -1564,10 +1681,13 @@
       "snippet": "教育部高等教育司负责人就2024年度普通高等学校本科专业备案和审批结果及《普通高等学校本科专业目录（2025年）》答记者问",
       "page_url": "http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/t20250422_1188239.html",
       "is_pdf": false,
-      "fetched_at": "2026-03-07T19:26:59+08:00",
+      "fetched_at": "2026-03-07T19:33:06+08:00",
       "category": "专业趋势",
       "tags": [
-        "专业调整"
+        "专业信息",
+        "专业趋势",
+        "公务员",
+        "新增专业"
       ],
       "score": 0
     }

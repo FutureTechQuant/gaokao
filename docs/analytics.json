@@ -1,12 +1,7 @@
 {
   "budget_metrics": {
-    "count": 4,
-    "latest_titles": [
-      "财务预算信息",
-      "财务决算信息",
-      "财务收支决算",
-      "财务收支预算"
-    ]
+    "count": 0,
+    "latest_titles": []
   },
   "major_changes": {
     "added_count": 0,

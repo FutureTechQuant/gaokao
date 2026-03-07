@@ -1,44 +1,44 @@
 {
-  "total_sources": 52,
+  "total_sources": 54,
   "by_platform": {
-    "website": 45,
+    "website": 47,
     "xiaohongshu": 7
   },
   "by_topic": {
-    "admissions": 21,
+    "admissions": 23,
     "recommendation": 12,
     "careers": 11,
     "budgets": 8
   },
   "by_type": {
-    "official": 44,
+    "official": 46,
     "platform": 8
   },
   "by_trust_level": {
-    "high": 44,
-    "medium": 8
+    "high": 45,
+    "medium": 9
   },
-  "results_total": 111,
+  "results_total": 124,
   "results_by_platform": {
-    "website": 104,
+    "website": 117,
     "xiaohongshu": 7
   },
   "results_by_topic": {
-    "本科招生": 45,
+    "本科招生": 58,
     "高校预算": 40,
     "就业质量报告": 21,
     "保研推免": 5
   },
   "results_by_source_type": {
-    "official": 104,
+    "official": 117,
     "platform": 7
   },
   "results_by_trust_level": {
-    "high": 104,
+    "high": 117,
     "medium": 7
   },
   "results_by_category": {
-    "招生信息": 45,
+    "招生信息": 58,
     "学校预算": 40,
     "就业质量": 21,
     "保研信息": 5

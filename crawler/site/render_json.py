@@ -100,8 +100,14 @@ def _normalize_source_summary(source_summary: dict) -> dict:
         "by_platform": _normalize_count_map(source_summary.get("by_platform")),
         "by_topic": _normalize_count_map(source_summary.get("by_topic")),
         "by_type": _normalize_count_map(source_summary.get("by_type")),
+        "by_trust_level": _normalize_count_map(source_summary.get("by_trust_level")),
+        "results_total": _safe_int(source_summary.get("results_total"), 0),
+        "results_by_platform": _normalize_count_map(source_summary.get("results_by_platform")),
+        "results_by_topic": _normalize_count_map(source_summary.get("results_by_topic")),
+        "results_by_source_type": _normalize_count_map(source_summary.get("results_by_source_type")),
+        "results_by_trust_level": _normalize_count_map(source_summary.get("results_by_trust_level")),
+        "results_by_category": _normalize_count_map(source_summary.get("results_by_category")),
     }
-
 
 def _normalize_errors(errors) -> list[dict]:
     result = []
@@ -154,3 +160,4 @@ def write_public_json(latest_payload: dict, analytics: dict) -> None:
     _write_json(PUBLIC_DATA_DIR / "items.json", public_payload["items"])
     _write_json(PUBLIC_DATA_DIR / "analytics.json", public_payload["analytics"])
     _write_json(PUBLIC_DATA_DIR / "source_summary.json", public_payload["source_summary"])
+

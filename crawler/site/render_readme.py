@@ -29,6 +29,7 @@ def render_source_summary(lines: list[str], source_summary: dict):
         return
 
     lines.append(f"- 信源总数：{source_summary.get('total_sources', 0)}")
+    lines.append(f"- 结果总数：{source_summary.get('results_total', 0)}")
 
     by_type = source_summary.get("by_type", {})
     if by_type:
@@ -48,6 +49,35 @@ def render_source_summary(lines: list[str], source_summary: dict):
         for name, count in sorted(by_topic.items(), key=lambda x: (-x[1], x[0])):
             lines.append(f"  - {name}：{count}")
 
+    by_trust = source_summary.get("by_trust_level", {})
+    if by_trust:
+        lines.append("- 按信源可信度：")
+        for name, count in sorted(by_trust.items(), key=lambda x: (-x[1], x[0])):
+            lines.append(f"  - {name}：{count}")
+
+    result_platform = source_summary.get("results_by_platform", {})
+    if result_platform:
+        lines.append("- 按结果平台：")
+        for name, count in sorted(result_platform.items(), key=lambda x: (-x[1], x[0])):
+            lines.append(f"  - {name}：{count}")
+
+    result_type = source_summary.get("results_by_source_type", {})
+    if result_type:
+        lines.append("- 按结果信源类型：")
+        for name, count in sorted(result_type.items(), key=lambda x: (-x[1], x[0])):
+            lines.append(f"  - {name}：{count}")
+
+    result_trust = source_summary.get("results_by_trust_level", {})
+    if result_trust:
+        lines.append("- 按结果可信度：")
+        for name, count in sorted(result_trust.items(), key=lambda x: (-x[1], x[0])):
+            lines.append(f"  - {name}：{count}")
+
+    result_category = source_summary.get("results_by_category", {})
+    if result_category:
+        lines.append("- 按结果分类：")
+        for name, count in sorted(result_category.items(), key=lambda x: (-x[1], x[0])):
+            lines.append(f"  - {name}：{count}")
 
 def render_readme(latest_payload: dict) -> None:
     readme = Path(ROOT / "README.md")
@@ -197,3 +227,4 @@ def render_readme(latest_payload: dict) -> None:
     ])
 
     readme.write_text("\n".join(lines), encoding="utf-8")
+

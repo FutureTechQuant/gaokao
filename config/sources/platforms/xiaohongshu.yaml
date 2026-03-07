@@ -1,39 +1,115 @@
 sources:
-  - name: 小红书-保研经验
+  - name: 小红书-陕西师大保研经验
     enabled: true
     source_type: platform
     platform: xiaohongshu
     topic: recommendation
     mode: search
     trust_level: medium
-    entry: 保研 夏令营 推免 陕西师范大学
+    entry: 陕西师范大学 保研 推免 夏令营
     tags:
       - 小红书
       - 保研
       - 经验帖
+      - 陕西
 
-  - name: 小红书-就业去向
+  - name: 小红书-西北大学保研经验
+    enabled: true
+    source_type: platform
+    platform: xiaohongshu
+    topic: recommendation
+    mode: search
+    trust_level: medium
+    entry: 西北大学 保研 推免 夏令营
+    tags:
+      - 小红书
+      - 保研
+      - 经验帖
+      - 陕西
+
+  - name: 小红书-陕西高校就业去向
     enabled: true
     source_type: platform
     platform: xiaohongshu
     topic: careers
     mode: search
     trust_level: medium
-    entry: 就业 去向 陕西师范大学 西北大学
+    entry: 陕西 高校 就业 去向 体制内 国企
     tags:
       - 小红书
       - 就业
-      - 经验帖
+      - 去向
+      - 陕西
 
-  - name: 小红书-招生分数
+  - name: 小红书-师范类就业体验
+    enabled: true
+    source_type: platform
+    platform: xiaohongshu
+    topic: careers
+    mode: search
+    trust_level: medium
+    entry: 师范类 就业 编制 教师岗 选调生
+    tags:
+      - 小红书
+      - 就业
+      - 师范
+
+  - name: 小红书-陕西高校录取分数
     enabled: true
     source_type: platform
     platform: xiaohongshu
     topic: admissions
     mode: search
     trust_level: medium
-    entry: 陕西师范大学 录取分数 位次 招生计划
+    entry: 陕西 高校 录取分数 位次 招生计划
     tags:
       - 小红书
       - 招生
-      - 经验帖
+      - 分数线
+      - 陕西
+
+  - name: 小红书-专业选择经验
+    enabled: true
+    source_type: platform
+    platform: xiaohongshu
+    topic: recommendation
+    mode: search
+    trust_level: medium
+    entry: 专业选择 志愿填报 汉语言 计算机 师范
+    tags:
+      - 小红书
+      - 志愿
+      - 专业选择
+
+  - name: 小红书-考研保研冲突决策
+    enabled: true
+    source_type: platform
+    platform: xiaohongshu
+    topic: recommendation
+    mode: search
+    trust_level: medium
+    entry: 保研 考研 怎么选 夏令营 预推免
+    tags:
+      - 小红书
+      - 保研
+      - 考研
+
+  - name: 小红书-小红书校园招聘官方入口
+    enabled: true
+    source_type: platform
+    platform: website
+    topic: careers
+    mode: crawl
+    trust_level: medium
+    entry: https://campus.xiaohongshu.com
+    allow_domains:
+      - campus.xiaohongshu.com
+      - xiaohongshu.com
+    must_include:
+      - 校园招聘
+      - 职位
+    exclude_keywords: []
+    tags:
+      - 小红书
+      - 校招
+      - 平台官方

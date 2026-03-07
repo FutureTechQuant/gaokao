@@ -1,0 +1,5 @@
+app_name: gaokao
+default_timezone: Asia/Shanghai
+default_language: zh-CN
+site_title: 升学与专业决策信息聚合
+max_items_per_section: 50

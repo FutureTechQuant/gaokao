@@ -6,7 +6,7 @@ sources:
     topic: admissions
     mode: crawl
     trust_level: high
-    entry: https://zsb.snnu.edu.cn
+    entry: "https://zsb.snnu.edu.cn"
     allow_domains:
       - zsb.snnu.edu.cn
       - snnu.edu.cn
@@ -35,7 +35,7 @@ sources:
     topic: budgets
     mode: crawl
     trust_level: high
-    entry: https://xxgk.snnu.edu.cn/
+    entry: "https://xxgk.snnu.edu.cn/"
     allow_domains:
       - xxgk.snnu.edu.cn
       - snnu.edu.cn
@@ -57,7 +57,7 @@ sources:
     topic: careers
     mode: crawl
     trust_level: high
-    entry: https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm
+    entry: "https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm"
     allow_domains:
       - xxgk.snnu.edu.cn
       - snnu.edu.cn
@@ -82,7 +82,7 @@ sources:
     topic: admissions
     mode: crawl
     trust_level: high
-    entry: https://zsb.nwu.edu.cn
+    entry: "https://zsb.nwu.edu.cn"
     allow_domains:
       - zsb.nwu.edu.cn
       - nwu.edu.cn
@@ -107,7 +107,7 @@ sources:
     topic: budgets
     mode: crawl
     trust_level: high
-    entry: https://cw.nwu.edu.cn/
+    entry: "https://cw.nwu.edu.cn/"
     allow_domains:
       - cw.nwu.edu.cn
       - nwu.edu.cn
@@ -130,7 +130,7 @@ sources:
     topic: careers
     mode: crawl
     trust_level: high
-    entry: https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm
+    entry: "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm"
     allow_domains:
       - xxgk.xaut.edu.cn
       - xaut.edu.cn
@@ -154,7 +154,7 @@ sources:
     topic: admissions
     mode: crawl
     trust_level: high
-    entry: https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm
+    entry: "https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm"
     allow_domains:
       - zhaosheng.xupt.edu.cn
       - xupt.edu.cn
@@ -170,3 +170,169 @@ sources:
       - 陕西
       - 招生
       - 分数线
+
+  - name: 西安交通大学本科招生网
+    enabled: true
+    source_type: official
+    platform: website
+    topic: admissions
+    mode: crawl
+    trust_level: high
+    entry: "https://zswxxcx.xjtu.edu.cn/public/zsdata/wzgl/"
+    allow_domains:
+      - zswxxcx.xjtu.edu.cn
+      - xjtu.edu.cn
+    must_include:
+      - 本科招生
+      - 招生信息
+      - 招生计划
+      - 历年录取
+      - 录取
+    exclude_keywords:
+      - 研究生
+      - 博士
+      - 硕士
+      - 继续教育
+    tags:
+      - 陕西
+      - 招生
+      - 985
+      - 双一流
+
+  - name: 长安大学本科招生网
+    enabled: true
+    source_type: official
+    platform: website
+    topic: admissions
+    mode: crawl
+    trust_level: high
+    entry: "https://zsb.chd.edu.cn"
+    allow_domains:
+      - zsb.chd.edu.cn
+      - chd.edu.cn
+    must_include:
+      - 本科招生
+      - 招生章程
+      - 招生计划
+      - 录取
+      - 专业
+    exclude_keywords:
+      - 研究生
+      - 博士
+      - 硕士
+      - 继续教育
+    tags:
+      - 陕西
+      - 招生
+      - 211
+      - 双一流
+
+  - name: 西安电子科技大学本科招生信息网
+    enabled: true
+    source_type: official
+    platform: website
+    topic: admissions
+    mode: crawl
+    trust_level: high
+    entry: "http://zsb.xidian.edu.cn/"
+    allow_domains:
+      - zsb.xidian.edu.cn
+      - xidian.edu.cn
+    must_include:
+      - 本科招生
+      - 招生章程
+      - 招生计划
+      - 录取
+      - 分数线
+    exclude_keywords:
+      - 研究生
+      - 博士
+      - 硕士
+      - 继续教育
+    tags:
+      - 陕西
+      - 招生
+      - 211
+      - 双一流
+      - 电子信息
+
+  - name: 西北农林科技大学招生网
+    enabled: true
+    source_type: official
+    platform: website
+    topic: admissions
+    mode: crawl
+    trust_level: high
+    entry: "https://zhshw.nwafu.edu.cn/jbdsclm/zlcd/index.htm"
+    allow_domains:
+      - zhshw.nwafu.edu.cn
+      - nwafu.edu.cn
+    must_include:
+      - 招生网
+      - 招生计划
+      - 历年录取
+      - 录取查询
+      - 本科
+    exclude_keywords:
+      - 研究生
+      - 博士
+      - 硕士
+      - 继续教育
+    tags:
+      - 陕西
+      - 招生
+      - 985
+      - 双一流
+      - 农林
+
+  - name: 西安建筑科技大学本科招生
+    enabled: true
+    source_type: official
+    platform: website
+    topic: admissions
+    mode: crawl
+    trust_level: high
+    entry: "https://www.xauat.edu.cn/zh-cn/html/06zhshjy/index.html"
+    allow_domains:
+      - xauat.edu.cn
+      - www.xauat.edu.cn
+    must_include:
+      - 本科生招生
+      - 招生咨询
+      - 招生
+      - 专业
+    exclude_keywords:
+      - 研究生
+      - 博士
+      - 硕士
+      - 继续教育
+    tags:
+      - 陕西
+      - 招生
+      - 建筑
+
+  - name: 西安理工大学本科招生信息公开
+    enabled: true
+    source_type: official
+    platform: website
+    topic: admissions
+    mode: crawl
+    trust_level: high
+    entry: "https://xxgk.xaut.edu.cn/zsksxx/bkszs.htm"
+    allow_domains:
+      - xxgk.xaut.edu.cn
+      - xaut.edu.cn
+    must_include:
+      - 本科招生
+      - 招生章程
+      - 招生计划
+      - 招生录取结果
+      - 各省分数线
+    exclude_keywords:
+      - 研究生
+      - 博士
+      - 硕士
+    tags:
+      - 陕西
+      - 招生
+      - 信息公开

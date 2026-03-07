@@ -21,7 +21,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: true
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -72,9 +75,29 @@ jobs:
           if-no-files-found: warn
 
       - name: Commit generated files
+        env:
+          REPO_URL: https://github.com/${{ github.repository }}.git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          echo "=== git status before add ==="
+          git status --short || true
+
+          echo "=== git remote before ==="
+          git remote -v || true
+
+          git remote set-url origin "${REPO_URL}"
+
+          echo "=== git remote after ==="
+          git remote -v
+
           git add config/schools_seed.generated.yaml config/sources/generated/ data/ docs/ README.md
-          git diff --cached --quiet || git commit -m "chore: update collected data"
-          git push
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "chore: update collected data"
+          git push origin HEAD:${GITHUB_REF_NAME}

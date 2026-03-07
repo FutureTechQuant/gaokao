@@ -1,0 +1,172 @@
+sources:
+  - name: 陕西师范大学本科招生信息网
+    enabled: true
+    source_type: official
+    platform: website
+    topic: admissions
+    mode: crawl
+    trust_level: high
+    entry: https://zsb.snnu.edu.cn
+    allow_domains:
+      - zsb.snnu.edu.cn
+      - snnu.edu.cn
+    must_include:
+      - 本科招生
+      - 招生章程
+      - 招生计划
+      - 录取
+      - 历年分数
+      - 分数线
+      - 位次
+    exclude_keywords:
+      - 研究生
+      - 博士
+      - 硕士
+      - 继续教育
+    tags:
+      - 陕西
+      - 招生
+      - 师范
+
+  - name: 陕西师范大学信息公开网
+    enabled: true
+    source_type: official
+    platform: website
+    topic: budgets
+    mode: crawl
+    trust_level: high
+    entry: https://xxgk.snnu.edu.cn/
+    allow_domains:
+      - xxgk.snnu.edu.cn
+      - snnu.edu.cn
+    must_include:
+      - 信息公开
+      - 预算
+      - 决算
+      - 推免
+      - 就业质量
+    exclude_keywords: []
+    tags:
+      - 陕西
+      - 信息公开
+
+  - name: 陕西师范大学就业质量报告
+    enabled: true
+    source_type: official
+    platform: website
+    topic: careers
+    mode: crawl
+    trust_level: high
+    entry: https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm
+    allow_domains:
+      - xxgk.snnu.edu.cn
+      - snnu.edu.cn
+    must_include:
+      - 就业质量年度报告
+      - 毕业生就业质量
+      - 就业去向
+      - 行业分布
+      - 升学
+    exclude_keywords:
+      - 采购
+      - 研究生招生
+    tags:
+      - 陕西
+      - 就业
+      - 就业质量报告
+
+  - name: 西北大学本科招生信息网
+    enabled: true
+    source_type: official
+    platform: website
+    topic: admissions
+    mode: crawl
+    trust_level: high
+    entry: https://zsb.nwu.edu.cn
+    allow_domains:
+      - zsb.nwu.edu.cn
+      - nwu.edu.cn
+    must_include:
+      - 本科招生
+      - 招生章程
+      - 招生计划
+      - 录取
+      - 分数线
+    exclude_keywords:
+      - 研究生
+      - 博士
+      - 硕士
+    tags:
+      - 陕西
+      - 招生
+
+  - name: 西北大学财务处
+    enabled: true
+    source_type: official
+    platform: website
+    topic: budgets
+    mode: crawl
+    trust_level: high
+    entry: https://cw.nwu.edu.cn/
+    allow_domains:
+      - cw.nwu.edu.cn
+      - nwu.edu.cn
+    must_include:
+      - 预算
+      - 决算
+      - 财务
+      - 单位预算
+    exclude_keywords:
+      - 招标
+      - 采购
+    tags:
+      - 陕西
+      - 预算
+
+  - name: 西安理工大学就业质量报告
+    enabled: true
+    source_type: official
+    platform: website
+    topic: careers
+    mode: crawl
+    trust_level: high
+    entry: https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm
+    allow_domains:
+      - xxgk.xaut.edu.cn
+      - xaut.edu.cn
+    must_include:
+      - 就业质量年度报告
+      - 毕业生就业质量
+      - 就业率
+      - 行业分布
+      - 地区流向
+    exclude_keywords:
+      - 采购
+      - 研究生
+    tags:
+      - 陕西
+      - 就业
+
+  - name: 西安邮电大学招生分数查询
+    enabled: true
+    source_type: official
+    platform: website
+    topic: admissions
+    mode: crawl
+    trust_level: high
+    entry: https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/sx1.htm
+    allow_domains:
+      - zhaosheng.xupt.edu.cn
+      - xupt.edu.cn
+    must_include:
+      - 录取
+      - 分数
+      - 位次
+      - 专业
+      - 陕西
+    exclude_keywords:
+      - 研究生
+    tags:
+      - 陕西
+      - 招生
+      - 分数线

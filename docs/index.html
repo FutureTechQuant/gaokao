@@ -12,15 +12,15 @@
       --sub: #59636e;
       --line: #e5e7eb;
       --brand: #2563eb;
-      --brand-soft: #dbeafe;
       --tag: #eef2ff;
       --chip: #f8fafc;
       --shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+      --ok: #16a34a;
+      --warn: #ca8a04;
+      --low: #6b7280;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -173,14 +173,24 @@
       margin-bottom: 12px;
     }
 
-    .section-head h2 {
+    .section-head h2, .sub-head h3 {
       margin: 0;
-      font-size: 22px;
+    }
+
+    .sub-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 12px 0 10px;
     }
 
     .section-count {
       color: var(--sub);
       font-size: 14px;
+    }
+
+    .source-type-block {
+      margin-bottom: 16px;
     }
 
     .item-grid {
@@ -197,15 +207,58 @@
       box-shadow: var(--shadow);
     }
 
+    .item-header {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
     .item-title {
       color: var(--brand);
       text-decoration: none;
       font-size: 18px;
       font-weight: 600;
+      flex: 1;
     }
 
     .item-title:hover {
       text-decoration: underline;
+    }
+
+    .item-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: flex-end;
+    }
+
+    .meta-badge, .trust-badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .meta-badge {
+      background: #eef2ff;
+      color: #3730a3;
+    }
+
+    .trust-high {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .trust-medium {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .trust-low, .trust-unknown {
+      background: #f3f4f6;
+      color: #4b5563;
     }
 
     .item-meta {
@@ -294,6 +347,14 @@
       .hero h1 {
         font-size: 24px;
       }
+
+      .item-header {
+        flex-direction: column;
+      }
+
+      .item-badges {
+        justify-content: flex-start;
+      }
     }
   </style>
 </head>
@@ -301,10 +362,10 @@
   <div class="container">
     <header class="hero">
       <h1>升学与专业决策信息聚合</h1>
-      <p>按分类、标签和评分浏览招生、就业、保研与预算相关信息。</p>
+      <p>按分类、标签、信源类型与可信度浏览招生、就业、保研与预算相关信息。</p>
       <div class="meta">
-        最近更新：2026-03-07T20:00:29+08:00；
-        条目数：60；
+        最近更新：2026-03-07T20:16:35+08:00；
+        结果数：60；
         错误数：
       </div>
     </header>
@@ -312,23 +373,33 @@
     <section class="stats">
       
             <div class="stat-card">
-              <div class="stat-name">总条目</div>
+              <div class="stat-name">结果总数</div>
               <div class="stat-value">60</div>
             </div>
             
             <div class="stat-card">
-              <div class="stat-name">PDF条目</div>
+              <div class="stat-name">PDF</div>
               <div class="stat-value"></div>
             </div>
             
             <div class="stat-card">
-              <div class="stat-name">低优先级新闻</div>
-              <div class="stat-value">1</div>
+              <div class="stat-name">官方结果</div>
+              <div class="stat-value">57</div>
             </div>
             
             <div class="stat-card">
-              <div class="stat-name">错误数</div>
+              <div class="stat-name">平台结果</div>
+              <div class="stat-value">3</div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-name">抓取错误</div>
               <div class="stat-value"></div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-name">信源总数</div>
+              <div class="stat-value">10</div>
             </div>
             
             <div class="stat-card">
@@ -362,21 +433,50 @@
           <button type="button" class="toolbar-btn" data-category-filter="招生信息">招生信息</button><button type="button" class="toolbar-btn" data-category-filter="就业质量">就业质量</button><button type="button" class="toolbar-btn" data-category-filter="保研信息">保研信息</button><button type="button" class="toolbar-btn" data-category-filter="学校预算">学校预算</button><button type="button" class="toolbar-btn" data-category-filter="专业趋势">专业趋势</button><button type="button" class="toolbar-btn" data-category-filter="报考政策">报考政策</button><button type="button" class="toolbar-btn" data-category-filter="未分类">未分类</button>
         </div>
         <div class="toolbar-row">
+          <span class="toolbar-label">来源</span>
+          <button type="button" class="toolbar-btn active" data-source-type-filter="全部">全部</button>
+          <button type="button" class="toolbar-btn" data-source-type-filter="official">官方</button>
+          <button type="button" class="toolbar-btn" data-source-type-filter="platform">平台</button>
+          <button type="button" class="toolbar-btn" data-source-type-filter="community">社区</button>
+        </div>
+        <div class="toolbar-row">
           <span class="toolbar-label">排序</span>
           <button type="button" class="toolbar-btn active" data-sort-mode="score">按评分</button>
           <button type="button" class="toolbar-btn" data-sort-mode="date">按日期</button>
-          <button type="button" class="toolbar-btn" id="toggleLowPriority">隐藏低优先级新闻</button>
+          <button type="button" class="toolbar-btn" id="toggleLowPriority">隐藏低优先级</button>
         </div>
         <div class="toolbar-row toolbar-tags">
           <span class="toolbar-label">标签</span>
           <button type="button" class="toolbar-btn active" data-tag-filter="全部">全部</button>
-          <button type="button" class="toolbar-btn tag-btn" data-tag-filter="保研">保研</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="保研信息">保研信息</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="分数线">分数线</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="学校决算">学校决算</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="学校预算">学校预算</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="小红书">小红书</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="就业">就业</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="就业分析">就业分析</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="就业质量">就业质量</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="就业质量报告">就业质量报告</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="平台内容">平台内容</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="录取">录取</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="招生">招生</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="招生信息">招生信息</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="招生章程">招生章程</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="招生计划">招生计划</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="经验帖">经验帖</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="陕西">陕西</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="预算">预算</button>
+          <button type="button" class="toolbar-btn" data-tag-filter="保研">保研</button><button type="button" class="toolbar-btn" data-tag-filter="保研信息">保研信息</button><button type="button" class="toolbar-btn" data-tag-filter="分数线">分数线</button><button type="button" class="toolbar-btn" data-tag-filter="学校决算">学校决算</button><button type="button" class="toolbar-btn" data-tag-filter="学校预算">学校预算</button><button type="button" class="toolbar-btn" data-tag-filter="小红书">小红书</button><button type="button" class="toolbar-btn" data-tag-filter="就业">就业</button><button type="button" class="toolbar-btn" data-tag-filter="就业分析">就业分析</button><button type="button" class="toolbar-btn" data-tag-filter="就业质量">就业质量</button><button type="button" class="toolbar-btn" data-tag-filter="就业质量报告">就业质量报告</button><button type="button" class="toolbar-btn" data-tag-filter="平台内容">平台内容</button><button type="button" class="toolbar-btn" data-tag-filter="录取">录取</button><button type="button" class="toolbar-btn" data-tag-filter="招生">招生</button><button type="button" class="toolbar-btn" data-tag-filter="招生信息">招生信息</button><button type="button" class="toolbar-btn" data-tag-filter="招生章程">招生章程</button><button type="button" class="toolbar-btn" data-tag-filter="招生计划">招生计划</button><button type="button" class="toolbar-btn" data-tag-filter="经验帖">经验帖</button><button type="button" class="toolbar-btn" data-tag-filter="陕西">陕西</button><button type="button" class="toolbar-btn" data-tag-filter="预算">预算</button>
         </div>
       </div>
     </section>
     
 
     
+    <details class="analytics-box">
+      <summary>信源摘要</summary>
+      <pre>{
+  &quot;total_sources&quot;: 10,
+  &quot;by_platform&quot;: {
+    &quot;website&quot;: 7,
+    &quot;xiaohongshu&quot;: 3
+  },
+  &quot;by_topic&quot;: {
+    &quot;admissions&quot;: 3,
+    &quot;budgets&quot;: 2,
+    &quot;careers&quot;: 3,
+    &quot;recommendation&quot;: 2
+  },
+  &quot;by_type&quot;: {
+    &quot;official&quot;: 7,
+    &quot;platform&quot;: 3
+  }
+}</pre>
+    </details>
+    
+
     <details class="analytics-box">
       <summary>分析摘要</summary>
       <pre>{
@@ -409,39 +509,22 @@
   }
 }</pre>
     </details>
-    
 
     <main id="contentRoot">
       
     <section class="category-section" data-category-section="招生信息">
       <div class="section-head">
         <h2>招生信息</h2>
-        <span class="section-count">27 条</span>
+        <span class="section-count total-category-count">27 条</span>
       </div>
-      <div class="item-grid">
-        
-    <article
-      class="item-card"
-      data-category="招生信息"
-      data-topic="本科招生"
-      data-tags="分数线|小红书|平台内容|招生|招生信息|招生计划|经验帖|陕西"
-      data-score="53"
-      data-low-priority="false"
-    >
-      <div class="item-header">
-        <a class="item-title" href="https://www.xiaohongshu.com/search_result?keyword=陕西师范大学 录取分数 位次 招生计划" target="_blank" rel="noopener noreferrer">小红书搜索：陕西师范大学 录取分数 位次 招生计划</a>
-      </div>
-      <div class="item-meta">
-        <span>日期：2026-03-07</span>
-        <span>来源：小红书-招生分数</span>
-        <span>专题：本科招生</span>
-        <span>类型：网页</span>
-        <span>评分：53</span>
-      </div>
-      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="分数线">分数线</button><button class="tag filter-tag" type="button" data-tag="小红书">小红书</button><button class="tag filter-tag" type="button" data-tag="平台内容">平台内容</button><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="经验帖">经验帖</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
-      <div class="item-snippet">平台搜索入口：陕西师范大学 录取分数 位次 招生计划</div>
-    </article>
-    
+      
+            <div class="source-type-block" data-source-type-block="official">
+              <div class="sub-head">
+                <h3>官方</h3>
+                <span class="section-count">26 条</span>
+              </div>
+              <div class="item-grid">
+                
     <article
       class="item-card"
       data-category="招生信息"
@@ -449,9 +532,18 @@
       data-tags="招生|招生信息|招生计划|陕西"
       data-score="48"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1049/2984.htm" target="_blank" rel="noopener noreferrer">西北大学2025年本科招生计划</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -471,9 +563,18 @@
       data-tags="招生|招生信息|招生计划|陕西"
       data-score="48"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1049/2688.htm" target="_blank" rel="noopener noreferrer">西北大学2024年本科招生计划</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -493,9 +594,18 @@
       data-tags="招生|招生信息|招生计划|陕西"
       data-score="48"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1049/2471.htm" target="_blank" rel="noopener noreferrer">西北大学2023年本科招生计划</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -515,9 +625,18 @@
       data-tags="招生|招生信息|招生计划|陕西"
       data-score="48"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1049/2203.htm" target="_blank" rel="noopener noreferrer">西北大学2022年本科招生计划</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -537,9 +656,18 @@
       data-tags="招生|招生信息|招生计划|陕西"
       data-score="48"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1049/1882.htm" target="_blank" rel="noopener noreferrer">西北大学2021年本科招生计划</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -559,9 +687,18 @@
       data-tags="招生|招生信息|招生计划|陕西"
       data-score="48"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1049/1677.htm" target="_blank" rel="noopener noreferrer">西北大学2020年本科招生计划</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -581,9 +718,18 @@
       data-tags="招生|招生信息|招生章程|陕西"
       data-score="45"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1235/4692.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2025年全日制普通本科招生章程</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -603,9 +749,18 @@
       data-tags="招生|招生信息|招生章程|陕西"
       data-score="43"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1050/2971.htm" target="_blank" rel="noopener noreferrer">西北大学2025年本科招生章程</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -625,9 +780,18 @@
       data-tags="招生|招生信息|招生章程|陕西"
       data-score="43"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1050/2677.htm" target="_blank" rel="noopener noreferrer">西北大学2024年本科招生章程</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -647,9 +811,18 @@
       data-tags="招生|招生信息|招生章程|陕西"
       data-score="43"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1050/2451.htm" target="_blank" rel="noopener noreferrer">西北大学2023年全日制普通本科招生章程</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -669,9 +842,18 @@
       data-tags="招生|招生信息|招生章程|陕西"
       data-score="43"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1050/2191.htm" target="_blank" rel="noopener noreferrer">西北大学2022年全日制普通本科招生章程</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -691,9 +873,18 @@
       data-tags="招生|招生信息|招生章程|陕西"
       data-score="43"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1050/1880.htm" target="_blank" rel="noopener noreferrer">西北大学2021年全日制普通本科招生章程</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -713,9 +904,18 @@
       data-tags="分数线|招生|招生信息|陕西"
       data-score="36"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="http://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs" target="_blank" rel="noopener noreferrer">历年分数</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -735,9 +935,18 @@
       data-tags="招生|招生信息|招生计划|陕西"
       data-score="35"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="http://zsdata.snnu.edu.cn/zscx/lqxx/#/" target="_blank" rel="noopener noreferrer">招生计划</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -757,9 +966,18 @@
       data-tags="招生|招生信息|招生计划|陕西"
       data-score="35"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/zszn/zsjh.htm" target="_blank" rel="noopener noreferrer">招生计划</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -779,9 +997,18 @@
       data-tags="录取|招生|招生信息|陕西"
       data-score="33"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="http://zsdata.snnu.edu.cn/zscx/lqxx/#/lqcx" target="_blank" rel="noopener noreferrer">录取查询</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -801,9 +1028,18 @@
       data-tags="录取|招生|招生信息|陕西"
       data-score="33"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="http://xdzsb.nwu.edu.cn/search_gklq.asp" target="_blank" rel="noopener noreferrer">录取查询</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -823,9 +1059,18 @@
       data-tags="招生|招生信息|招生章程|陕西"
       data-score="31"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/zszn/zszc1.htm" target="_blank" rel="noopener noreferrer">招生章程</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -845,9 +1090,18 @@
       data-tags="招生|招生信息|陕西"
       data-score="21"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1337/4982.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2026年保送录取优秀运动员招生简章</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -867,9 +1121,18 @@
       data-tags="招生|招生信息|陕西"
       data-score="21"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1192/4632.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2025年依据台湾地区大学入学考试学科能力测试成绩招收台湾高中毕业生拟录取名单公示</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -889,9 +1152,18 @@
       data-tags="招生|招生信息|陕西"
       data-score="19"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1043/3006.htm" target="_blank" rel="noopener noreferrer">西北大学2025年分省分批次录取进度表</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -911,9 +1183,18 @@
       data-tags="招生|招生信息|陕西"
       data-score="19"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1046/2991.htm" target="_blank" rel="noopener noreferrer">[名单公示] 西北大学2025年第二学士学位录取名单</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -933,9 +1214,18 @@
       data-tags="招生|招生信息|陕西"
       data-score="19"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1046/2729.htm" target="_blank" rel="noopener noreferrer">[名单公示] 西北大学2024年第二学士学位录取名单</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -955,9 +1245,18 @@
       data-tags="招生|招生信息|陕西"
       data-score="19"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1192/4862.htm" target="_blank" rel="noopener noreferrer">2025年艺术类专业录取最低分（陆续更新中）</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -977,9 +1276,18 @@
       data-tags="招生|招生信息|陕西"
       data-score="19"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1192/4912.htm" target="_blank" rel="noopener noreferrer">2025年普通类、体育类专业录取最低分</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -992,12 +1300,12 @@
       <div class="item-snippet">2025年普通类、体育类专业录取最低分</div>
     </article>
     
-      </div>
-      
-        <details class="low-priority-box">
-          <summary>展开低优先级新闻（1 条）</summary>
-          <div class="item-grid low-priority-grid">
-            
+              </div>
+              
+            <details class="low-priority-box">
+              <summary>展开低优先级内容（1 条）</summary>
+              <div class="item-grid low-priority-grid">
+                
     <article
       class="item-card"
       data-category="招生信息"
@@ -1005,9 +1313,18 @@
       data-tags="录取|招生|招生信息|陕西"
       data-score="21"
       data-low-priority="true"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="2025-07-19"
     >
       <div class="item-header">
         <a class="item-title" href="http://www.snnu.edu.cn/info/1272/72994.htm" target="_blank" rel="noopener noreferrer">2025-07-19 我校2025年毛笔手写录取通知书暨“悦临书法经典”临摹打卡活动开笔</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：2025-07-19</span>
@@ -1020,18 +1337,68 @@
       <div class="item-snippet">2025-07-19 我校2025年毛笔手写录取通知书暨“悦临书法经典”临摹打卡活动开笔</div>
     </article>
     
-          </div>
-        </details>
-        
+              </div>
+            </details>
+            
+            </div>
+            
+            <div class="source-type-block" data-source-type-block="platform">
+              <div class="sub-head">
+                <h3>平台</h3>
+                <span class="section-count">1 条</span>
+              </div>
+              <div class="item-grid">
+                
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="分数线|小红书|平台内容|招生|招生信息|招生计划|经验帖|陕西"
+      data-score="53"
+      data-low-priority="false"
+      data-source-type="platform"
+      data-platform="xiaohongshu"
+      data-trust-level="medium"
+      data-date="2026-03-07"
+    >
+      <div class="item-header">
+        <a class="item-title" href="https://www.xiaohongshu.com/search_result?keyword=陕西师范大学 录取分数 位次 招生计划" target="_blank" rel="noopener noreferrer">小红书搜索：陕西师范大学 录取分数 位次 招生计划</a>
+        <div class="item-badges">
+          <span class="meta-badge">平台</span>
+          <span class="meta-badge">xiaohongshu</span>
+          <span class="trust-badge trust-medium">中可信</span>
+        </div>
+      </div>
+      <div class="item-meta">
+        <span>日期：2026-03-07</span>
+        <span>来源：小红书-招生分数</span>
+        <span>专题：本科招生</span>
+        <span>类型：网页</span>
+        <span>评分：53</span>
+      </div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="分数线">分数线</button><button class="tag filter-tag" type="button" data-tag="小红书">小红书</button><button class="tag filter-tag" type="button" data-tag="平台内容">平台内容</button><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="经验帖">经验帖</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
+      <div class="item-snippet">平台搜索入口：陕西师范大学 录取分数 位次 招生计划</div>
+    </article>
+    
+              </div>
+              
+            </div>
+            
     </section>
     
     <section class="category-section" data-category-section="就业质量">
       <div class="section-head">
         <h2>就业质量</h2>
-        <span class="section-count">20 条</span>
+        <span class="section-count total-category-count">20 条</span>
       </div>
-      <div class="item-grid">
-        
+      
+            <div class="source-type-block" data-source-type-block="official">
+              <div class="sub-head">
+                <h3>官方</h3>
+                <span class="section-count">19 条</span>
+              </div>
+              <div class="item-grid">
+                
     <article
       class="item-card"
       data-category="就业质量"
@@ -1039,9 +1406,18 @@
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="81"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm" target="_blank" rel="noopener noreferrer">高校毕业生就业质量年度报告</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1061,9 +1437,18 @@
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="81"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm" target="_blank" rel="noopener noreferrer">高校毕业生就业质量年度报告</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1083,9 +1468,18 @@
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="81"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/1751/2541.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2021年毕业生就业质量年度报告</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1105,9 +1499,18 @@
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="81"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/1751/2531.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2020年毕业生就业质量年度报告</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1127,9 +1530,18 @@
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="81"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/1751/2521.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2019年毕业生就业质量年度报告发布说明</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1149,9 +1561,18 @@
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="81"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/1751/2481.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2015年 毕业生就业质量年度报告</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1171,9 +1592,18 @@
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="81"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/1751/2461.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2013年毕业生就业质量年度报告</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1193,9 +1623,18 @@
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="81"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/info/1054/1473.htm" target="_blank" rel="noopener noreferrer">西安理工大学2023届毕业生就业质量年度报告</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1215,9 +1654,18 @@
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="81"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/info/1054/1495.htm" target="_blank" rel="noopener noreferrer">西安理工大学2022年毕业生就业质量年度报告</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1237,9 +1685,18 @@
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="81"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/info/1054/1494.htm" target="_blank" rel="noopener noreferrer">西安理工大学2021年毕业生就业质量年度报告</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1259,9 +1716,18 @@
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="81"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/info/1054/1493.htm" target="_blank" rel="noopener noreferrer">西安理工大学2020年毕业生就业质量年度报告</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1281,9 +1747,18 @@
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="81"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/info/1054/1284.htm" target="_blank" rel="noopener noreferrer">西安理工大学2019年毕业生就业质量年度报告</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1303,9 +1778,18 @@
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="81"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/info/1054/1285.htm" target="_blank" rel="noopener noreferrer">西安理工大学2018年毕业生就业质量年度报告</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1325,9 +1809,18 @@
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="81"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/info/1054/1287.htm" target="_blank" rel="noopener noreferrer">2017年西安理工大学毕业生就业质量年度报告</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1347,9 +1840,18 @@
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="53"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/1751/2471.htm" target="_blank" rel="noopener noreferrer">陕西师范大学就业质量年度报告</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1369,9 +1871,18 @@
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="49"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/1751/2511.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2018年毕业生就业质量报告</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1391,9 +1902,18 @@
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="49"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/1751/2501.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2017年毕业生就业质量报告</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1413,9 +1933,18 @@
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="49"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/1751/2491.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2016年毕业生就业质量报告</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1432,34 +1961,21 @@
       class="item-card"
       data-category="就业质量"
       data-topic="就业质量报告"
-      data-tags="小红书|就业|就业分析|就业质量|就业质量报告|平台内容|经验帖|陕西"
-      data-score="35"
-      data-low-priority="false"
-    >
-      <div class="item-header">
-        <a class="item-title" href="https://www.xiaohongshu.com/search_result?keyword=就业 去向 陕西师范大学 西北大学" target="_blank" rel="noopener noreferrer">小红书搜索：就业 去向 陕西师范大学 西北大学</a>
-      </div>
-      <div class="item-meta">
-        <span>日期：2026-03-07</span>
-        <span>来源：小红书-就业去向</span>
-        <span>专题：就业质量报告</span>
-        <span>类型：网页</span>
-        <span>评分：35</span>
-      </div>
-      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="小红书">小红书</button><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业分析">就业分析</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="平台内容">平台内容</button><button class="tag filter-tag" type="button" data-tag="经验帖">经验帖</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
-      <div class="item-snippet">平台搜索入口：就业 去向 陕西师范大学 西北大学</div>
-    </article>
-    
-    <article
-      class="item-card"
-      data-category="就业质量"
-      data-topic="就业质量报告"
       data-tags="就业|就业质量|就业质量报告|陕西"
       data-score="33"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/info/1054/1283.htm" target="_blank" rel="noopener noreferrer">2016年西安理工大学就业质量报告</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1472,17 +1988,67 @@
       <div class="item-snippet">2016年西安理工大学就业质量报告</div>
     </article>
     
+              </div>
+              
+            </div>
+            
+            <div class="source-type-block" data-source-type-block="platform">
+              <div class="sub-head">
+                <h3>平台</h3>
+                <span class="section-count">1 条</span>
+              </div>
+              <div class="item-grid">
+                
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="小红书|就业|就业分析|就业质量|就业质量报告|平台内容|经验帖|陕西"
+      data-score="35"
+      data-low-priority="false"
+      data-source-type="platform"
+      data-platform="xiaohongshu"
+      data-trust-level="medium"
+      data-date="2026-03-07"
+    >
+      <div class="item-header">
+        <a class="item-title" href="https://www.xiaohongshu.com/search_result?keyword=就业 去向 陕西师范大学 西北大学" target="_blank" rel="noopener noreferrer">小红书搜索：就业 去向 陕西师范大学 西北大学</a>
+        <div class="item-badges">
+          <span class="meta-badge">平台</span>
+          <span class="meta-badge">xiaohongshu</span>
+          <span class="trust-badge trust-medium">中可信</span>
+        </div>
       </div>
-      
+      <div class="item-meta">
+        <span>日期：2026-03-07</span>
+        <span>来源：小红书-就业去向</span>
+        <span>专题：就业质量报告</span>
+        <span>类型：网页</span>
+        <span>评分：35</span>
+      </div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="小红书">小红书</button><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业分析">就业分析</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="平台内容">平台内容</button><button class="tag filter-tag" type="button" data-tag="经验帖">经验帖</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
+      <div class="item-snippet">平台搜索入口：就业 去向 陕西师范大学 西北大学</div>
+    </article>
+    
+              </div>
+              
+            </div>
+            
     </section>
     
     <section class="category-section" data-category-section="保研信息">
       <div class="section-head">
         <h2>保研信息</h2>
-        <span class="section-count">1 条</span>
+        <span class="section-count total-category-count">1 条</span>
       </div>
-      <div class="item-grid">
-        
+      
+            <div class="source-type-block" data-source-type-block="platform">
+              <div class="sub-head">
+                <h3>平台</h3>
+                <span class="section-count">1 条</span>
+              </div>
+              <div class="item-grid">
+                
     <article
       class="item-card"
       data-category="保研信息"
@@ -1490,9 +2056,18 @@
       data-tags="保研|保研信息|小红书|平台内容|经验帖|陕西"
       data-score="43"
       data-low-priority="false"
+      data-source-type="platform"
+      data-platform="xiaohongshu"
+      data-trust-level="medium"
+      data-date="2026-03-07"
     >
       <div class="item-header">
         <a class="item-title" href="https://www.xiaohongshu.com/search_result?keyword=保研 夏令营 推免 陕西师范大学" target="_blank" rel="noopener noreferrer">小红书搜索：保研 夏令营 推免 陕西师范大学</a>
+        <div class="item-badges">
+          <span class="meta-badge">平台</span>
+          <span class="meta-badge">xiaohongshu</span>
+          <span class="trust-badge trust-medium">中可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：2026-03-07</span>
@@ -1505,17 +2080,25 @@
       <div class="item-snippet">平台搜索入口：保研 夏令营 推免 陕西师范大学</div>
     </article>
     
-      </div>
-      
+              </div>
+              
+            </div>
+            
     </section>
     
     <section class="category-section" data-category-section="学校预算">
       <div class="section-head">
         <h2>学校预算</h2>
-        <span class="section-count">12 条</span>
+        <span class="section-count total-category-count">12 条</span>
       </div>
-      <div class="item-grid">
-        
+      
+            <div class="source-type-block" data-source-type-block="official">
+              <div class="sub-head">
+                <h3>官方</h3>
+                <span class="section-count">12 条</span>
+              </div>
+              <div class="item-grid">
+                
     <article
       class="item-card"
       data-category="学校预算"
@@ -1523,9 +2106,18 @@
       data-tags="学校决算|学校预算|陕西|预算"
       data-score="43"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://cw.nwu.edu.cn/xxgk/ysjsgk.htm" target="_blank" rel="noopener noreferrer">预算决算公开</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1545,9 +2137,18 @@
       data-tags="学校决算|学校预算|陕西|预算"
       data-score="42"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/gksx/cw_zcjsfxx/cwjsxx.htm" target="_blank" rel="noopener noreferrer">财务决算信息</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1567,9 +2168,18 @@
       data-tags="学校决算|学校预算|陕西|预算"
       data-score="38"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://cw.nwu.edu.cn/info/1024/2712.htm" target="_blank" rel="noopener noreferrer">西北大学（本级）及西部中心2023年决算公开</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1589,9 +2199,18 @@
       data-tags="学校决算|学校预算|陕西|预算"
       data-score="38"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://cw.nwu.edu.cn/info/1024/2881.htm" target="_blank" rel="noopener noreferrer">西北大学2024年度部门决算</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1611,9 +2230,18 @@
       data-tags="学校预算|陕西|预算"
       data-score="35"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/gksx/cw_zcjsfxx/cwysxx.htm" target="_blank" rel="noopener noreferrer">财务预算信息</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1633,9 +2261,18 @@
       data-tags="学校预算|陕西|预算"
       data-score="31"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://cw.nwu.edu.cn/bmjj/gzzz/ysglbgs.htm" target="_blank" rel="noopener noreferrer">预算管理办公室</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1655,9 +2292,18 @@
       data-tags="学校预算|陕西|预算"
       data-score="31"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://cw.nwu.edu.cn/fwzn/ysgl.htm" target="_blank" rel="noopener noreferrer">预算管理</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1677,9 +2323,18 @@
       data-tags="学校预算|陕西|预算"
       data-score="31"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://cw.nwu.edu.cn/gzzd/xnzd/ysgl.htm" target="_blank" rel="noopener noreferrer">预算管理</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1699,9 +2354,18 @@
       data-tags="学校预算|陕西|预算"
       data-score="31"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://cw.nwu.edu.cn/info/1024/2783.htm" target="_blank" rel="noopener noreferrer">西北大学2025年预算公开说明</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1721,9 +2385,18 @@
       data-tags="学校预算|陕西|预算"
       data-score="31"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://cw.nwu.edu.cn/info/1036/2913.htm" target="_blank" rel="noopener noreferrer">学校召开2026年预算工作布置会</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1743,9 +2416,18 @@
       data-tags="学校预算|陕西|预算"
       data-score="30"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/gksx/cw_zcjsfxx/cwzd.htm" target="_blank" rel="noopener noreferrer">财务制度</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1765,9 +2447,18 @@
       data-tags="学校预算|陕西|预算"
       data-score="30"
       data-low-priority="false"
+      data-source-type="official"
+      data-platform="website"
+      data-trust-level="high"
+      data-date="未知日期"
     >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/gksx/cw_zcjsfxx.htm" target="_blank" rel="noopener noreferrer">财务、资产及收费信息</a>
+        <div class="item-badges">
+          <span class="meta-badge">官方</span>
+          <span class="meta-badge">website</span>
+          <span class="trust-badge trust-high">高可信</span>
+        </div>
       </div>
       <div class="item-meta">
         <span>日期：未知日期</span>
@@ -1780,8 +2471,10 @@
       <div class="item-snippet">财务、资产及收费信息</div>
     </article>
     
-      </div>
-      
+              </div>
+              
+            </div>
+            
     </section>
     
     </main>
@@ -1798,6 +2491,7 @@
       const state = {
         category: "全部",
         tag: "全部",
+        sourceType: "全部",
         sortMode: "score",
         hideLowPriority: false,
       };
@@ -1806,60 +2500,67 @@
 
       function parseDate(value) {
         if (!value) return 0;
-        const t = Date.parse(value.replace(/年|月/g, "-").replace(/日/g, ""));
+        const t = Date.parse(value);
         return isNaN(t) ? 0 : t;
-      }
-
-      function applySort(section) {
-        const grid = section.querySelector(".item-grid");
-        if (!grid) return;
-
-        const cards = Array.from(grid.querySelectorAll(".item-card"));
-        cards.sort((a, b) => {
-          if (state.sortMode === "date") {
-            const ad = parseDate(a.querySelector(".item-meta span")?.textContent || "");
-            const bd = parseDate(b.querySelector(".item-meta span")?.textContent || "");
-            return bd - ad;
-          }
-          const as = Number(a.dataset.score || 0);
-          const bs = Number(b.dataset.score || 0);
-          if (bs !== as) return bs - as;
-          const at = a.querySelector(".item-title")?.textContent || "";
-          const bt = b.querySelector(".item-title")?.textContent || "";
-          return bt.localeCompare(at, "zh-CN");
-        });
-        cards.forEach(card => grid.appendChild(card));
       }
 
       function itemVisible(card) {
         const categoryOk = state.category === "全部" || card.dataset.category === state.category;
+        const sourceTypeOk = state.sourceType === "全部" || card.dataset.sourceType === state.sourceType;
         const tags = (card.dataset.tags || "").split("|").filter(Boolean);
         const tagOk = state.tag === "全部" || tags.includes(state.tag);
         const lowPriorityOk = !state.hideLowPriority || card.dataset.lowPriority !== "true";
-        return categoryOk && tagOk && lowPriorityOk;
+        return categoryOk && sourceTypeOk && tagOk && lowPriorityOk;
+      }
+
+      function sortCards(cards) {
+        return cards.sort((a, b) => {
+          if (state.sortMode === "date") {
+            return parseDate(b.dataset.date) - parseDate(a.dataset.date);
+          }
+          const bs = Number(b.dataset.score || 0);
+          const as = Number(a.dataset.score || 0);
+          if (bs !== as) return bs - as;
+          return (b.dataset.date || "").localeCompare(a.dataset.date || "", "zh-CN");
+        });
       }
 
       function refresh() {
         const sections = Array.from(root.querySelectorAll("[data-category-section]"));
 
         sections.forEach(section => {
-          const cards = Array.from(section.querySelectorAll(".item-card"));
-          let visibleCount = 0;
+          let categoryVisibleCount = 0;
 
-          cards.forEach(card => {
-            const visible = itemVisible(card);
-            card.classList.toggle("hidden", !visible);
-            if (visible) visibleCount += 1;
+          const sourceTypeBlocks = Array.from(section.querySelectorAll("[data-source-type-block]"));
+          sourceTypeBlocks.forEach(block => {
+            const cards = Array.from(block.querySelectorAll(".item-card"));
+            const sorted = sortCards(cards);
+
+            sorted.forEach(card => {
+              const visible = itemVisible(card);
+              card.classList.toggle("hidden", !visible);
+              if (visible) categoryVisibleCount += 1;
+              const parentGrid = card.parentElement;
+              if (parentGrid) {
+                parentGrid.appendChild(card);
+              }
+            });
+
+            const visibleCards = cards.filter(card => !card.classList.contains("hidden")).length;
+            block.classList.toggle("hidden", visibleCards === 0);
+
+            const countNode = block.querySelector(".section-count");
+            if (countNode) {
+              countNode.textContent = visibleCards + " 条";
+            }
           });
 
-          applySort(section);
-
-          const countNode = section.querySelector(".section-count");
-          if (countNode) {
-            countNode.textContent = visibleCount + " 条";
+          const totalNode = section.querySelector(".total-category-count");
+          if (totalNode) {
+            totalNode.textContent = categoryVisibleCount + " 条";
           }
 
-          section.classList.toggle("hidden", visibleCount === 0);
+          section.classList.toggle("hidden", categoryVisibleCount === 0);
         });
 
         document.querySelectorAll("[data-category-filter]").forEach(btn => {
@@ -1868,6 +2569,10 @@
 
         document.querySelectorAll("[data-tag-filter]").forEach(btn => {
           btn.classList.toggle("active", btn.dataset.tagFilter === state.tag);
+        });
+
+        document.querySelectorAll("[data-source-type-filter]").forEach(btn => {
+          btn.classList.toggle("active", btn.dataset.sourceTypeFilter === state.sourceType);
         });
 
         document.querySelectorAll("[data-sort-mode]").forEach(btn => {
@@ -1890,6 +2595,13 @@
       document.querySelectorAll("[data-tag-filter]").forEach(btn => {
         btn.addEventListener("click", () => {
           state.tag = btn.dataset.tagFilter;
+          refresh();
+        });
+      });
+
+      document.querySelectorAll("[data-source-type-filter]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          state.sourceType = btn.dataset.sourceTypeFilter;
           refresh();
         });
       });

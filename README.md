@@ -1,44 +1,89 @@
 # 高考信息自动汇总
 
-- 最近更新：2026-03-07T11:15:05+08:00
+- 最近更新：2026-03-07T11:19:01+08:00
 
-- 本次抓取条目：20
+- 本次抓取条目：70
 
-- 错误数：7
+- 错误数：2
 
 
 ## 最新信息
 
-- [教育部关于做好2026年普通高校招生工作的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/202601/t20260121_1427110.html) | 教育部-普通高校招生公告 | 2026-01-22
-- [教育部关于做好2025年普通高校招生工作的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/202502/t20250219_1179639.html) | 教育部-普通高校招生公告 | 2025-02-19
-- [教育部关于做好2024年普通高校招生工作的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/202403/t20240320_1121360.html) | 教育部-普通高校招生公告 | 2024-03-20
-- [教育部关于做好2023年普通高校招生工作的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/202301/t20230119_1039750.html) | 教育部-普通高校招生公告 | 2023-01-19
-- [教育部关于做好2022年普通高校招生工作的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/202201/t20220129_596858.html) | 教育部-普通高校招生公告 | 2022-01-29
-- [教育部办公厅关于做好2022年普通高等学校部分特殊类型招生工作的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/202110/t20211029_576198.html) | 教育部-普通高校招生公告 | 2021-10-29
-- [教育部关于做好2021年普通高校招生工作的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/202102/t20210208_513027.html) | 教育部-普通高校招生公告 | 2021-02-19
-- [教育部办公厅关于做好2021年普通高校部分特殊类型招生工作的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/202010/t20201016_495083.html) | 教育部-普通高校招生公告 | 2020-10-16
-- [教育部办公厅关于做好2020年普通高等学校录取新生入学资格复查和学籍电子注册工作的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/202009/t20200915_488093.html) | 教育部-普通高校招生公告 | 2020-09-04
-- [教育部办公厅 国家邮政局办公室关于进一步做好2020年高校录取通知书寄递工作的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/202008/t20200803_476429.html) | 教育部-普通高校招生公告 | 2020-08-03
-- [教育部办公厅关于做好有关高校保送录取世界技能大赛获奖选手工作的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/202004/t20200417_444281.html) | 教育部-普通高校招生公告 | 2020-04-20
-- [教育部关于应对新冠肺炎疫情 稳妥做好2020年全国普通高校招生工作的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/202003/t20200331_436834.html) | 教育部-普通高校招生公告 | 2020-03-31
-- [教育部关于在部分高校开展基础学科招生改革试点工作的意见](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/202001/t20200115_415589.html) | 教育部-普通高校招生公告 | 2020-01-15
-- [教育部关于做好2020年普通高校招生工作的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/202001/t20200109_414808.html) | 教育部-普通高校招生公告 | 2020-01-09
-- [教育部办公厅关于做好2019年高职扩招专项考试招生工作的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/201905/t20190517_382364.html) | 教育部-普通高校招生公告 | 2019-05-17
-- [教育部关于做好2019年普通高校招生工作的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/201904/t20190415_378127.html) | 教育部-普通高校招生公告 | 2019-04-15
-- [教育部办公厅关于做好2019年重点高校招收农村和贫困地区学生工作的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/201904/t20190408_377031.html) | 教育部-普通高校招生公告 | 2019-04-09
-- [教育部办公厅关于做好2019年普通高等学校部分特殊类型招生工作的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/201812/t20181229_365476.html) | 教育部-普通高校招生公告 | 2018-12-29
-- [教育部办公厅关于2018年普通高等学校招生全国统一考试全国统考科目时间安排的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/201804/t20180428_334592.html) | 教育部-普通高校招生公告 | 2018-04-28
-- [教育部关于做好2018年重点高校招收农村和贫困地区学生工作的通知](http://www.moe.gov.cn/srcsite/A15/moe_776/s3258/201803/t20180320_330724.html) | 教育部-普通高校招生公告 | 2018-03-23
+- [高考热点](https://www.sneac.com/kszx/ptgk/gkrd.htm) | 陕西招生考试信息网 | 未知日期
+- [高水平运动队](https://zsb.snnu.edu.cn/sy/zsxx/zsjz/gspydd.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [马克思主义学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/mkszyxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [食品工程与营养科学学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/spgcyyykxxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [音乐舞蹈类](https://zsb.snnu.edu.cn/sy/zsxx/zsjz/yl_wdlzy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [音乐学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/ylxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [陕西师范大学2026年高水平运动队招生简章](https://zsb.snnu.edu.cn/info/1338/5012.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [陕西师范大学2026年运动训练专业招生简章](https://zsb.snnu.edu.cn/info/1337/5022.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [陕西师范大学2026年保送录取优秀运动员招生简章](https://zsb.snnu.edu.cn/info/1337/4982.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [陕西师范大学2026年依据台湾地区大学入学考试学科能力测试成绩招收台湾高中毕业生招生简章](https://zsb.snnu.edu.cn/info/1339/4962.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [陕西师范大学2025级本研衔接公费师范生履约任教范围](https://zsb.snnu.edu.cn/info/1235/4822.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [陕西师范大学2025年全日制普通本科招生章程](https://zsb.snnu.edu.cn/info/1235/4692.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [通知公告](https://zsb.snnu.edu.cn/sy/zsxx/zsgg.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [运动训练](https://zsb.snnu.edu.cn/sy/zsxx/zsjz/ydxlzy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [计划分数 Enrollment Plan](https://zhaosheng.xupt.edu.cn/lqcx.htm) | 西安邮电大学本科招生信息网 | 未知日期
+- [联系我们](https://zsb.snnu.edu.cn/sy/lxwm/lxzb.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [联系我们](https://zhaosheng.xupt.edu.cn/lnfs.htm) | 西安邮电大学本科招生信息网 | 未知日期
+- [考试提醒](https://www.sneac.com/kszx/ptgk/kstx.htm) | 陕西招生考试信息网 | 未知日期
+- [考试提醒](https://www.sneac.com/kszx/crgk/kstx.htm) | 陕西招生考试信息网 | 未知日期
+- [美术学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/msxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [生命科学学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/smkxxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [物理学与信息技术学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/wlxyxxjsxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [港澳台招生](https://zsb.snnu.edu.cn/sy/zsxx/zsjz/gatzs.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [民族教育学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/mzjyxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [校园风景](http://www.snnu.edu.cn/xxgk/xyfj/zaxq.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [材料科学与工程学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/clkxygcxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [新闻与传播学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/xwycbxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [数学与统计学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/sxytjxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [教育学部](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/jyxb.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [政策解读](https://www.sneac.com/kszx/ptgk/zcjd.htm) | 陕西招生考试信息网 | 未知日期
+- [政策文件](https://www.sneac.com/kszx/ptgk/zcwj.htm) | 陕西招生考试信息网 | 未知日期
+- [政策文件](https://www.sneac.com/kszx/crgk/zcwj.htm) | 陕西招生考试信息网 | 未知日期
+- [播音编导类](https://zsb.snnu.edu.cn/sy/zsxx/zsjz/by_bdlzy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [招生简章](https://zsb.snnu.edu.cn/sy/zsxx/zsjz/gxzx1.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [招生政策](https://zsb.snnu.edu.cn/sy/zsxx/zszheng_ce.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [招生指南](https://zhaosheng.xupt.edu.cn/zszn.htm) | 西安邮电大学本科招生信息网 | 未知日期
+- [招生信息](http://zsdata.snnu.edu.cn/zscx/lqxx/#/) | 陕西师范大学本科招生信息网 | 未知日期
+- [招生信息](https://zhaosheng.xupt.edu.cn/zsxx.htm) | 西安邮电大学本科招生信息网 | 未知日期
+- [心理学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/xlxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [录取查询 Admission Inquiry](https://zhaosheng.xupt.edu.cn/info/1056/1084.htm) | 西安邮电大学本科招生信息网 | 未知日期
+- [录取查询](http://zsdata.snnu.edu.cn/zscx/lqxx/#/lqcx) | 陕西师范大学本科招生信息网 | 未知日期
+- [师大全景](http://www.snnu.edu.cn/xxgk/xxdt.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [就业创业](http://job.snnu.edu.cn/) | 陕西师范大学本科招生信息网 | 未知日期
+- [少数民族预科](https://zsb.snnu.edu.cn/sy/zsxx/zsjz/ssmzyk.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [学院专业](https://zsb.snnu.edu.cn/sy/xyzhuan_ye.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [学院专业](https://zhaosheng.xupt.edu.cn/xyzy.htm) | 西安邮电大学本科招生信息网 | 未知日期
+- [学科建设](http://xkfgc.snnu.edu.cn/) | 陕西师范大学本科招生信息网 | 未知日期
+- [学校概况](https://zsb.snnu.edu.cn/sy/xxgk/xxjj.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [学校概况](https://zhaosheng.xupt.edu.cn/xxgk.htm) | 西安邮电大学本科招生信息网 | 未知日期
+- [奖助学金](http://zzzx.snnu.edu.cn) | 陕西师范大学本科招生信息网 | 未知日期
+- [外国语学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/wgyxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [地理科学与旅游学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/dlkxylyxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [国际商学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/gjsxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [国际交流](http://ipo.snnu.edu.cn) | 陕西师范大学本科招生信息网 | 未知日期
+- [国家安全学院（政法与公共管理学院）](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/gjaqxy_zfyggglxy_.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [哲学学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/zxxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [咨询方式 Consulting](https://zhaosheng.xupt.edu.cn/info/1053/2855.htm) | 西安邮电大学本科招生信息网 | 未知日期
+- [历年计划 The Fraction](https://zhaosheng.xupt.edu.cn/lnzsjh.htm) | 西安邮电大学本科招生信息网 | 未知日期
+- [历年数据](https://www.sneac.com/kszx/ptgk/lnsj.htm) | 陕西招生考试信息网 | 未知日期
+- [历年分数](http://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs) | 陕西师范大学本科招生信息网 | 未知日期
+- [历史文化学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/lswhxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [化学化工学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/hxhgxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [关于做好2023级本科生专业分流工作的通知](https://www.snnu.edu.cn/info/1015/37152.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [入学须知](https://zsb.snnu.edu.cn/sy/zsxx/rxxz1.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [体育学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/tyxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [人工智能与计算机学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/rgznyjsjxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [专业分流政策](https://zsb.snnu.edu.cn/sy/zsxx/zyflzc1.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [下载专区](https://zsb.snnu.edu.cn/sy/zsxx/xzzq.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [2025级预科学生结业转本科专业及计划](https://zsb.snnu.edu.cn/info/1340/5052.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [2025年体育类特殊类型招生专题（转发）](https://zsb.snnu.edu.cn/info/1235/4492.htm) | 陕西师范大学本科招生信息网 | 未知日期
 
 ## 抓取错误
 
-- 陕西省教育考试院-普通高考 | http://www.sneea.cn/xwzx/ptgk.htm | 404 Client Error: Not Found for url: https://www.sneea.cn:443/xwzx/ptgk.htm
-- 陕西招生考试信息网-高考资讯 | https://www.sneac.com/ptgk.htm | 404 Client Error: Not Found for url: https://www.sneac.com/ptgk.htm
-- 西北工业大学-本科招生公告 | https://zsb.nwpu.edu.cn/tzgg.htm | 412 Client Error: Precondition Failed for url: https://zsb.nwpu.edu.cn/tzgg.htm
-- 西安电子科技大学-本科招生公告 | https://zsb.xidian.edu.cn/tzgg.htm | 404 Client Error: Not Found for url: https://zsb.xidian.edu.cn/tzgg.htm
-- 西北农林科技大学-本科招生公告 | https://zhshw.nwafu.edu.cn/tzgg/index.htm | 404 Client Error: Not Found for url: https://zhshw.nwafu.edu.cn/tzgg/index.htm
-- 陕西师范大学-本科招生公告 | http://zsb.snnu.edu.cn/tzgg.htm | 404 Client Error: Not Found for url: http://zsb.snnu.edu.cn/tzgg.htm
-- 西北大学-本科招生公告 | https://zsb.nwu.edu.cn/tzgg.htm | 404 Client Error: Not Found for url: https://zsb.nwu.edu.cn/tzgg.htm
+- 陕西省教育厅-高考政策 | https://jyt.shaanxi.gov.cn/gk/zc/gfxwj_20255/gfxwj_20254/202501/t20250123_3440299.html | HTTPSConnectionPool(host='jyt.shaanxi.gov.cn', port=443): Max retries exceeded with url: /gk/zc/gfxwj_20255/gfxwj_20254/202501/t20250123_3440299.html (Caused by NewConnectionError("HTTPSConnection(host='jyt.shaanxi.gov.cn', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))
+- 陕西省人民政府-高考新闻 | https://www.shaanxi.gov.cn/xw/sxyw/202506/t20250625_3535769.html | HTTPSConnectionPool(host='www.shaanxi.gov.cn', port=443): Max retries exceeded with url: /xw/sxyw/202506/t20250625_3535769.html (Caused by NewConnectionError("HTTPSConnection(host='www.shaanxi.gov.cn', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))
 
 ## 说明
 

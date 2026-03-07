@@ -1,4 +1,3 @@
-import json
 from datetime import datetime, timezone, timedelta
 
 from crawler.analytics.summaries import build_analytics
@@ -9,6 +8,10 @@ from crawler.classify.score import assign_score
 from crawler.config import LATEST_JSON, HISTORY_JSON
 from crawler.http.client import request_page
 from crawler.registry import build_source_registry
+from crawler.extractors.admissions import extract_items as extract_admission_items
+from crawler.extractors.careers import extract_items as extract_career_items
+from crawler.extractors.recommendation import extract_items as extract_recommendation_items
+from crawler.extractors.budgets import extract_items as extract_budget_items
 from crawler.extractors.generic import extract_generic_items
 from crawler.pipeline.dedup import dedup_items
 from crawler.pipeline.history import merge_history
@@ -19,6 +22,18 @@ from crawler.site.render_json import write_public_json
 from crawler.storage.writer import write_json
 
 
+EXTRACTOR_MAP = {
+    "admissions": extract_admission_items,
+    "careers": extract_career_items,
+    "recommendation": extract_recommendation_items,
+    "budgets": extract_budget_items,
+}
+
+
+def choose_extractor(topic: str):
+    return EXTRACTOR_MAP.get(topic, extract_generic_items)
+
+
 def main():
     fetched_at = datetime.now(timezone(timedelta(hours=8))).isoformat(timespec="seconds")
     all_items = []
@@ -27,15 +42,18 @@ def main():
     for source in build_source_registry():
         try:
             html = request_page(source["url"])
-            items = extract_generic_items(source, html)
+            extractor = choose_extractor(source.get("topic", ""))
+            items = extractor(source, html)
+
             for item in items:
                 item["fetched_at"] = fetched_at
                 item["category"] = assign_category(item)
                 item["topic"] = assign_topic(item)
                 item["tags"] = assign_tags(item)
-                item["score"] = assign_score(item)
+                item["score"] = item.get("score", 0) + assign_score(item)
                 if validate_item(item):
                     all_items.append(item)
+
         except Exception as exc:
             errors.append({
                 "source": source["name"],

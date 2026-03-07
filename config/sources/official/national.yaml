@@ -1,0 +1,111 @@
+sources:
+  - name: 阳光高考-首页
+    enabled: true
+    source_type: official
+    platform: website
+    topic: admissions
+    mode: crawl
+    trust_level: high
+    entry: https://gaokao.chsi.com.cn/
+    allow_domains:
+      - gaokao.chsi.com.cn
+      - chsi.com.cn
+    must_include:
+      - 招生章程
+      - 院校查询
+      - 专业查询
+      - 录取结果
+      - 志愿
+      - 高考资讯
+    exclude_keywords: []
+    tags:
+      - 国家级
+      - 招生
+      - 阳光高考
+
+  - name: 阳光高考-教育部招生政策
+    enabled: true
+    source_type: official
+    platform: website
+    topic: admissions
+    mode: crawl
+    trust_level: high
+    entry: https://gaokao.chsi.com.cn/gkxx/zc/moe
+    allow_domains:
+      - gaokao.chsi.com.cn
+      - chsi.com.cn
+    must_include:
+      - 教育部
+      - 招生政策
+      - 高考
+    exclude_keywords: []
+    tags:
+      - 国家级
+      - 政策
+      - 教育部
+
+  - name: 阳光高考-阳光志愿
+    enabled: true
+    source_type: official
+    platform: website
+    topic: recommendation
+    mode: crawl
+    trust_level: high
+    entry: https://gaokao.chsi.com.cn/zyck/
+    allow_domains:
+      - gaokao.chsi.com.cn
+      - chsi.com.cn
+    must_include:
+      - 志愿参考
+      - 职业前景
+      - 专业解读
+      - 院校库
+      - 专业库
+    exclude_keywords: []
+    tags:
+      - 国家级
+      - 志愿
+      - 专业
+      - 职业前景
+
+  - name: 阳光高考-名单公示
+    enabled: true
+    source_type: official
+    platform: website
+    topic: admissions
+    mode: crawl
+    trust_level: high
+    entry: https://gaokao.chsi.com.cn/zsgs/mdgs.jsp
+    allow_domains:
+      - gaokao.chsi.com.cn
+      - chsi.com.cn
+    must_include:
+      - 名单公示
+      - 保送生
+      - 高水平运动队
+      - 高校专项计划
+    exclude_keywords: []
+    tags:
+      - 国家级
+      - 特殊招生
+      - 名单公示
+
+  - name: 阳光高考-高校专项计划报名系统
+    enabled: true
+    source_type: official
+    platform: website
+    topic: admissions
+    mode: crawl
+    trust_level: high
+    entry: https://gaokao.chsi.com.cn/gxzxbm/
+    allow_domains:
+      - gaokao.chsi.com.cn
+      - chsi.com.cn
+    must_include:
+      - 高校专项计划
+      - 报名
+    exclude_keywords: []
+    tags:
+      - 国家级
+      - 特殊招生
+      - 高校专项

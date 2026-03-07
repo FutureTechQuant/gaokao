@@ -3,7 +3,8 @@ import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SEED_FILE = ROOT / "config" / "schools_seed.yaml"
+AUTO_SEED_FILE = ROOT / "config" / "schools_seed.generated.yaml"
+MANUAL_SEED_FILE = ROOT / "config" / "schools_seed.yaml"
 OUTPUT_DIR = ROOT / "config" / "sources" / "generated"
 
 

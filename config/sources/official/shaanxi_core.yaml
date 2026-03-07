@@ -186,8 +186,8 @@ sources:
       - 本科招生
       - 招生信息
       - 招生计划
-      - 历年录取
       - 录取
+      - 招生章程
     exclude_keywords:
       - 研究生
       - 博士
@@ -227,35 +227,6 @@ sources:
       - 211
       - 双一流
 
-  - name: 西安电子科技大学本科招生信息网
-    enabled: true
-    source_type: official
-    platform: website
-    topic: admissions
-    mode: crawl
-    trust_level: high
-    entry: "http://zsb.xidian.edu.cn/"
-    allow_domains:
-      - zsb.xidian.edu.cn
-      - xidian.edu.cn
-    must_include:
-      - 本科招生
-      - 招生章程
-      - 招生计划
-      - 录取
-      - 分数线
-    exclude_keywords:
-      - 研究生
-      - 博士
-      - 硕士
-      - 继续教育
-    tags:
-      - 陕西
-      - 招生
-      - 211
-      - 双一流
-      - 电子信息
-
   - name: 西北农林科技大学招生网
     enabled: true
     source_type: official
@@ -269,10 +240,10 @@ sources:
       - nwafu.edu.cn
     must_include:
       - 招生网
+      - 本科
       - 招生计划
       - 历年录取
       - 录取查询
-      - 本科
     exclude_keywords:
       - 研究生
       - 博士
@@ -285,6 +256,61 @@ sources:
       - 双一流
       - 农林
 
+  - name: 西安科技大学本科招生信息网
+    enabled: true
+    source_type: official
+    platform: website
+    topic: admissions
+    mode: crawl
+    trust_level: high
+    entry: "https://zs.xust.edu.cn"
+    allow_domains:
+      - zs.xust.edu.cn
+      - xust.edu.cn
+    must_include:
+      - 本科招生
+      - 招生信息
+      - 招生章程
+      - 招生计划
+      - 录取分数
+      - 位次
+    exclude_keywords:
+      - 研究生
+      - 博士
+      - 硕士
+      - 继续教育
+    tags:
+      - 陕西
+      - 招生
+      - 理工
+
+  - name: 西安石油大学招生办
+    enabled: true
+    source_type: official
+    platform: website
+    topic: admissions
+    mode: crawl
+    trust_level: high
+    entry: "https://zb.xsyu.edu.cn"
+    allow_domains:
+      - zb.xsyu.edu.cn
+      - xsyu.edu.cn
+    must_include:
+      - 本科招生
+      - 招生政策
+      - 招生计划
+      - 历年分数
+      - 录取查询
+    exclude_keywords:
+      - 研究生
+      - 博士
+      - 硕士
+      - 留学生
+    tags:
+      - 陕西
+      - 招生
+      - 石油
+
   - name: 西安建筑科技大学本科招生
     enabled: true
     source_type: official
@@ -294,12 +320,12 @@ sources:
     trust_level: high
     entry: "https://www.xauat.edu.cn/zh-cn/html/06zhshjy/index.html"
     allow_domains:
-      - xauat.edu.cn
       - www.xauat.edu.cn
+      - xauat.edu.cn
     must_include:
       - 本科生招生
-      - 招生咨询
       - 招生
+      - 招生咨询
       - 专业
     exclude_keywords:
       - 研究生
@@ -336,3 +362,29 @@ sources:
       - 陕西
       - 招生
       - 信息公开
+
+  - name: 西安财经大学官网本科招生入口
+    enabled: true
+    source_type: official
+    platform: website
+    topic: admissions
+    mode: crawl
+    trust_level: medium
+    entry: "https://www.xaufe.edu.cn"
+    allow_domains:
+      - xaufe.edu.cn
+      - www.xaufe.edu.cn
+    must_include:
+      - 本科招生
+      - 招生
+      - 信息公开
+      - 教务
+    exclude_keywords:
+      - 研究生
+      - 博士
+      - 硕士
+      - 继续教育
+    tags:
+      - 陕西
+      - 招生
+      - 财经

@@ -1,0 +1,30 @@
+sources:
+  - name: 自定义-某学校招生页
+    enabled: false
+    source_type: official
+    platform: website
+    topic: admissions
+    mode: crawl
+    trust_level: high
+    entry: https://example.edu.cn/zs/
+    allow_domains:
+      - example.edu.cn
+    must_include:
+      - 招生
+      - 录取
+    exclude_keywords:
+      - 研究生
+    tags:
+      - 自定义
+
+  - name: 自定义-小红书搜索词
+    enabled: false
+    source_type: platform
+    platform: xiaohongshu
+    topic: recommendation
+    mode: search
+    trust_level: medium
+    entry: 某大学 保研 夏令营
+    tags:
+      - 自定义
+      - 小红书

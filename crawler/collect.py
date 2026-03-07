@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import re
 import time
+import socket
 import hashlib
 import html as html_lib
 from datetime import datetime, timezone, timedelta
@@ -10,12 +11,20 @@ from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
 import requests
+import requests.packages.urllib3.util.connection as urllib3_cn
 from bs4 import BeautifulSoup
 
 try:
     from .sources import SOURCES
 except ImportError:
     from sources import SOURCES
+
+
+def allowed_gai_family():
+    return socket.AF_INET
+
+
+urllib3_cn.allowed_gai_family = allowed_gai_family
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -35,10 +44,10 @@ CN_TZ = timezone(timedelta(hours=8))
 FETCHED_AT = datetime.now(CN_TZ).isoformat(timespec="seconds")
 
 DEFAULT_MUST_INCLUDE = [
-    "高考", "普通高考", "志愿", "录取", "招生", "报名", "查分", "分数线", "考试"
+    "高考", "普通高考", "志愿", "录取", "招生", "报名", "查分", "成绩查询", "分数线", "考试"
 ]
 DEFAULT_EXCLUDE = [
-    "考研", "研究生", "博士", "硕士", "自考", "成考", "四六级", "留学"
+    "考研", "研究生", "博士", "硕士", "自考", "成考", "四六级", "留学", "教师资格"
 ]
 
 DATE_PATTERNS = [
@@ -102,41 +111,55 @@ def sha1_text(text: str) -> str:
     return hashlib.sha1(text.encode("utf-8")).hexdigest()
 
 
-def build_session() -> requests.Session:
-    session = requests.Session()
-    session.headers.update({
-        "User-Agent": (
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/122.0.0.0 Safari/537.36"
-        ),
-        "Accept": (
-            "text/html,application/xhtml+xml,application/xml;q=0.9,"
-            "image/avif,image/webp,image/apng,*/*;q=0.8"
-        ),
-        "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
-        "Cache-Control": "no-cache",
-        "Pragma": "no-cache",
-        "Upgrade-Insecure-Requests": "1",
-        "Referer": "https://www.chsi.com.cn/",
-    })
-    return session
+def build_header_sets() -> list[dict]:
+    return [
+        {
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/122.0.0.0 Safari/537.36"
+            ),
+            "Accept": (
+                "text/html,application/xhtml+xml,application/xml;q=0.9,"
+                "image/avif,image/webp,image/apng,*/*;q=0.8"
+            ),
+            "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache",
+            "Upgrade-Insecure-Requests": "1",
+            "Referer": "https://www.baidu.com/",
+        },
+        {
+            "User-Agent": (
+                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                "AppleWebKit/605.1.15 (KHTML, like Gecko) "
+                "Version/17.0 Safari/605.1.15"
+            ),
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "zh-CN,zh;q=0.9",
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache",
+            "Referer": "https://www.baidu.com/",
+        },
+    ]
 
 
 def request_page(url: str) -> str:
     last_error = None
 
-    for _ in range(3):
-        try:
-            session = build_session()
-            resp = session.get(url, timeout=25, allow_redirects=True)
-            resp.raise_for_status()
-            if not resp.encoding or resp.encoding.lower() == "iso-8859-1":
-                resp.encoding = resp.apparent_encoding or "utf-8"
-            return resp.text
-        except Exception as e:
-            last_error = e
-            time.sleep(2)
+    for headers in build_header_sets():
+        for _ in range(3):
+            try:
+                session = requests.Session()
+                session.headers.update(headers)
+                resp = session.get(url, timeout=25, allow_redirects=True)
+                resp.raise_for_status()
+                if not resp.encoding or resp.encoding.lower() == "iso-8859-1":
+                    resp.encoding = resp.apparent_encoding or "utf-8"
+                return resp.text
+            except Exception as e:
+                last_error = e
+                time.sleep(2)
 
     raise last_error
 
@@ -218,6 +241,7 @@ def load_json(path: Path, default):
 def merge_history(items: list[dict]) -> dict:
     history = load_json(HISTORY_JSON, {"updated_at": "", "items": []})
     index = {}
+
     for old in history.get("items", []):
         key = old.get("id") or sha1_text(
             old.get("source", "") + "|" + old.get("url", "") + "|" + old.get("title", "")
@@ -264,7 +288,7 @@ def sort_items(items: list[dict]) -> list[dict]:
 
 
 def render_readme(items: list[dict], errors: list[dict]) -> str:
-    top = items[:80]
+    top = items[:100]
     lines = []
     lines.append("# 高考信息自动汇总\n")
     lines.append(f"- 最近更新：{FETCHED_AT}\n")
@@ -274,7 +298,7 @@ def render_readme(items: list[dict], errors: list[dict]) -> str:
     lines.append("## 最新信息\n")
 
     if not top:
-        lines.append("暂无数据，请检查 `crawler/sources.py` 中的页面地址是否正确。\n")
+        lines.append("暂无数据，请检查 `crawler/sources.py` 中的页面地址、网络可达性或关键词配置。\n")
     else:
         for item in top:
             date_str = item["date"] or "未知日期"
@@ -289,15 +313,15 @@ def render_readme(items: list[dict], errors: list[dict]) -> str:
     lines.append("")
     lines.append("## 说明\n")
     lines.append("- 数据由 GitHub Actions 定时抓取生成。")
-    lines.append("- 建议只添加官方来源页面。")
-    lines.append("- 站点结构变化后，可能需要调整来源列表或过滤关键词。")
+    lines.append("- 页面文件输出到 `docs/index.html`，可直接用于 GitHub Pages。")
+    lines.append("- 结果文件为 `data/latest.json` 和 `data/history.json`。")
     lines.append("")
     return "\n".join(lines)
 
 
 def render_html(items: list[dict], errors: list[dict]) -> str:
     rows = []
-    for item in items[:200]:
+    for item in items[:300]:
         title = html_lib.escape(item["title"])
         url = html_lib.escape(item["url"])
         source = html_lib.escape(item["source"])
@@ -307,7 +331,10 @@ def render_html(items: list[dict], errors: list[dict]) -> str:
             f"""
             <tr>
               <td>{date_str}</td>
-              <td><a href="{url}" target="_blank" rel="noopener noreferrer">{title}</a><div class="snippet">{snippet}</div></td>
+              <td>
+                <a href="{url}" target="_blank" rel="noopener noreferrer">{title}</a>
+                <div class="snippet">{snippet}</div>
+              </td>
               <td>{source}</td>
             </tr>
             """
@@ -316,7 +343,7 @@ def render_html(items: list[dict], errors: list[dict]) -> str:
     error_html = ""
     if errors:
         lis = []
-        for e in errors[:20]:
+        for e in errors[:30]:
             lis.append(
                 f"<li>{html_lib.escape(e['source'])} | "
                 f"{html_lib.escape(e['url'])} | "
@@ -372,7 +399,7 @@ def render_html(items: list[dict], errors: list[dict]) -> str:
       </tr>
     </thead>
     <tbody>
-      {''.join(rows) if rows else '<tr><td colspan="3">暂无数据，请检查来源配置。</td></tr>'}
+      {''.join(rows) if rows else '<tr><td colspan="3">暂无数据，请检查来源配置或网络可达性。</td></tr>'}
     </tbody>
   </table>
   {error_html}

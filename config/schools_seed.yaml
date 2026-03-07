@@ -1,0 +1,61 @@
+schools:
+  - name: 陕西师范大学
+    region: 陕西
+    tags:
+      - 陕西
+      - 师范
+    admissions_url: https://zsb.snnu.edu.cn
+    info_url: https://xxgk.snnu.edu.cn/
+    careers_url: https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm
+    recommendation_url: https://xxgk.snnu.edu.cn/
+    budgets_url: https://xxgk.snnu.edu.cn/
+    allow_domains:
+      - zsb.snnu.edu.cn
+      - xxgk.snnu.edu.cn
+      - snnu.edu.cn
+
+  - name: 西北大学
+    region: 陕西
+    tags:
+      - 陕西
+    admissions_url: https://zsb.nwu.edu.cn
+    info_url: https://xxgk.nwu.edu.cn/
+    careers_url: https://job.nwu.edu.cn/
+    recommendation_url: https://xxgk.nwu.edu.cn/
+    budgets_url: https://cw.nwu.edu.cn/
+    allow_domains:
+      - zsb.nwu.edu.cn
+      - xxgk.nwu.edu.cn
+      - cw.nwu.edu.cn
+      - job.nwu.edu.cn
+      - nwu.edu.cn
+
+  - name: 西安理工大学
+    region: 陕西
+    tags:
+      - 陕西
+    admissions_url: https://zhaosheng.xaut.edu.cn/
+    info_url: https://xxgk.xaut.edu.cn/
+    careers_url: https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm
+    recommendation_url: https://xxgk.xaut.edu.cn/
+    budgets_url: https://xxgk.xaut.edu.cn/
+    allow_domains:
+      - zhaosheng.xaut.edu.cn
+      - xxgk.xaut.edu.cn
+      - xaut.edu.cn
+
+  - name: 西安邮电大学
+    region: 陕西
+    tags:
+      - 陕西
+    admissions_url: https://zhaosheng.xupt.edu.cn/
+    info_url: https://xxgk.xupt.edu.cn/
+    careers_url: https://job.xupt.edu.cn/
+    recommendation_url: https://jwc.xupt.edu.cn/
+    budgets_url: https://xxgk.xupt.edu.cn/
+    allow_domains:
+      - zhaosheng.xupt.edu.cn
+      - xxgk.xupt.edu.cn
+      - job.xupt.edu.cn
+      - jwc.xupt.edu.cn
+      - xupt.edu.cn

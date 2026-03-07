@@ -1,0 +1,26 @@
+sources:
+  - name: 微博-陕西高校招生讨论
+    enabled: false
+    source_type: platform
+    platform: weibo
+    topic: admissions
+    mode: search
+    trust_level: low
+    entry: 陕西 高校 招生 录取 分数线 微博
+    tags:
+      - 微博
+      - 招生
+      - 讨论
+
+  - name: 微博-保研夏令营消息
+    enabled: false
+    source_type: platform
+    platform: weibo
+    topic: recommendation
+    mode: search
+    trust_level: low
+    entry: 保研 夏令营 推免 微博
+    tags:
+      - 微博
+      - 保研
+      - 消息

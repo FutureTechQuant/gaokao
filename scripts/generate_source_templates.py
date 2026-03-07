@@ -38,7 +38,8 @@ BUDGETS_EXCLUDE = [
 
 
 def load_seed() -> list[dict]:
-    payload = yaml.safe_load(SEED_FILE.read_text(encoding="utf-8")) or {}
+    seed_file = AUTO_SEED_FILE if AUTO_SEED_FILE.exists() else MANUAL_SEED_FILE
+    payload = yaml.safe_load(seed_file.read_text(encoding="utf-8")) or {}
     schools = payload.get("schools", [])
     return [row for row in schools if isinstance(row, dict)]
 

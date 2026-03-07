@@ -4,15 +4,25 @@ SOURCES = [
         "url": "https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm",
         "topic": "careers",
         "allow_domains": ["xxgk.snnu.edu.cn", "snnu.edu.cn"],
-        "must_include": ["就业质量", "毕业生就业", "就业去向", "行业分布", "升学"],
-        "exclude_keywords": ["研究生招生", "博士招生"],
+        "must_include": [
+            "就业质量年度报告", "就业质量", "毕业生就业", "就业去向",
+            "行业分布", "升学", "深造", "就业率", "地区流向"
+        ],
+        "exclude_keywords": [
+            "研究生招生", "博士招生", "采购"
+        ],
     },
     {
         "name": "西安理工大学就业质量报告",
         "url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
         "topic": "careers",
         "allow_domains": ["xxgk.xaut.edu.cn", "xaut.edu.cn"],
-        "must_include": ["就业质量", "毕业生就业", "就业率", "地区流向"],
-        "exclude_keywords": ["研究生", "博士", "硕士"],
+        "must_include": [
+            "就业质量年度报告", "毕业生就业质量", "就业率",
+            "就业去向", "行业", "地区流向", "升学"
+        ],
+        "exclude_keywords": [
+            "研究生", "博士", "硕士", "采购"
+        ],
     },
 ]

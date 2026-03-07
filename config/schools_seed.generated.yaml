@@ -1,85 +1,58 @@
 schools:
-  - name: 西安交通大学
-    region: 陕西
-    tags:
-      - 陕西
-    admissions_url: "https://zswxxcx.xjtu.edu.cn/public/zsdata/wzgl/"
-    info_url: ""
-    careers_url: ""
-    recommendation_url: ""
-    budgets_url: ""
-    allow_domains:
-      - zswxxcx.xjtu.edu.cn
-      - xjtu.edu.cn
-    detail_url: ""
-    official_url: "http://www.xjtu.edu.cn"
-    source_origin: "zhangshanggaokao"
-    verification_status: "pending"
-
-  - name: 长安大学
-    region: 陕西
-    tags:
-      - 陕西
-    admissions_url: "https://zsb.chd.edu.cn"
-    info_url: ""
-    careers_url: ""
-    recommendation_url: ""
-    budgets_url: ""
-    allow_domains:
-      - zsb.chd.edu.cn
-      - chd.edu.cn
-    detail_url: ""
-    official_url: "https://www.chd.edu.cn"
-    source_origin: "zhangshanggaokao"
-    verification_status: "pending"
-
-  - name: 西北农林科技大学
-    region: 陕西
-    tags:
-      - 陕西
-    admissions_url: "https://zhshw.nwafu.edu.cn/jbdsclm/zlcd/index.htm"
-    info_url: ""
-    careers_url: ""
-    recommendation_url: ""
-    budgets_url: ""
-    allow_domains:
-      - zhshw.nwafu.edu.cn
-      - nwafu.edu.cn
-    detail_url: ""
-    official_url: ""
-    source_origin: "zhangshanggaokao"
-    verification_status: "pending"
-
-  - name: 西安科技大学
-    region: 陕西
-    tags:
-      - 陕西
-    admissions_url: "https://zs.xust.edu.cn"
-    info_url: ""
-    careers_url: ""
-    recommendation_url: ""
-    budgets_url: ""
-    allow_domains:
-      - zs.xust.edu.cn
-      - xust.edu.cn
-    detail_url: ""
-    official_url: ""
-    source_origin: "zhangshanggaokao"
-    verification_status: "pending"
-
-  - name: 西安石油大学
-    region: 陕西
-    tags:
-      - 陕西
-    admissions_url: "https://zb.xsyu.edu.cn"
-    info_url: ""
-    careers_url: ""
-    recommendation_url: ""
-    budgets_url: ""
-    allow_domains:
-      - zb.xsyu.edu.cn
-      - xsyu.edu.cn
-    detail_url: ""
-    official_url: ""
-    source_origin: "zhangshanggaokao"
-    verification_status: "pending"
+- name: 西北大学
+  region: 陕西
+  tags:
+  - 陕西
+  admissions_url: https://zsb.nwu.edu.cn
+  info_url: https://xxgk.nwu.edu.cn/
+  careers_url: https://job.nwu.edu.cn/
+  recommendation_url: https://xxgk.nwu.edu.cn/
+  budgets_url: https://cw.nwu.edu.cn/
+  allow_domains:
+  - zsb.nwu.edu.cn
+  - xxgk.nwu.edu.cn
+  - cw.nwu.edu.cn
+  - job.nwu.edu.cn
+  - nwu.edu.cn
+- name: 西安理工大学
+  region: 陕西
+  tags:
+  - 陕西
+  admissions_url: https://zhaosheng.xaut.edu.cn/
+  info_url: https://xxgk.xaut.edu.cn/
+  careers_url: https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm
+  recommendation_url: https://xxgk.xaut.edu.cn/
+  budgets_url: https://xxgk.xaut.edu.cn/
+  allow_domains:
+  - zhaosheng.xaut.edu.cn
+  - xxgk.xaut.edu.cn
+  - xaut.edu.cn
+- name: 西安邮电大学
+  region: 陕西
+  tags:
+  - 陕西
+  admissions_url: https://zhaosheng.xupt.edu.cn/
+  info_url: https://xxgk.xupt.edu.cn/
+  careers_url: https://job.xupt.edu.cn/
+  recommendation_url: https://jwc.xupt.edu.cn/
+  budgets_url: https://xxgk.xupt.edu.cn/
+  allow_domains:
+  - zhaosheng.xupt.edu.cn
+  - xxgk.xupt.edu.cn
+  - job.xupt.edu.cn
+  - jwc.xupt.edu.cn
+  - xupt.edu.cn
+- name: 陕西师范大学
+  region: 陕西
+  tags:
+  - 陕西
+  - 师范
+  admissions_url: https://zsb.snnu.edu.cn
+  info_url: https://xxgk.snnu.edu.cn/
+  careers_url: https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm
+  recommendation_url: https://xxgk.snnu.edu.cn/
+  budgets_url: https://xxgk.snnu.edu.cn/
+  allow_domains:
+  - zsb.snnu.edu.cn
+  - xxgk.snnu.edu.cn
+  - snnu.edu.cn

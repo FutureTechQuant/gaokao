@@ -1,6 +1,26 @@
 {
-  "budget_metrics": {},
-  "major_changes": {},
-  "civil_service_ratio": {},
-  "industry_chain": {}
+  "budget_metrics": {
+    "count": 7,
+    "latest_titles": [
+      "财务预算信息",
+      "财务决算信息",
+      "财务收支决算",
+      "财务收支预算",
+      "财务、资产及收费信息",
+      "财务制度",
+      "财务管理制度"
+    ]
+  },
+  "major_changes": {
+    "added_count": 0,
+    "removed_count": 0
+  },
+  "civil_service_ratio": {
+    "status": "placeholder",
+    "message": "后续这里会接入职位表解析与专业匹配比例计算。"
+  },
+  "industry_chain": {
+    "count": 0,
+    "message": "后续这里会接入产业链节点、对应专业与岗位映射。"
+  }
 }

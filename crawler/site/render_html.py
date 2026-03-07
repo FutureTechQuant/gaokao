@@ -174,4 +174,771 @@ def trust_badge(trust_level: str) -> str:
         "medium": "trust-medium",
         "low": "trust-low",
     }.get(trust_level, "trust-unknown")
-    return f'<span class="trust-badge
+    return f'<span class="trust-badge {cls}">{safe_text(label)}</span>'
+
+
+def source_type_label(source_type: str) -> str:
+    return {
+        "official": "官方",
+        "platform": "平台",
+        "community": "社区",
+    }.get(source_type, source_type or "未知")
+
+
+def render_item(item: dict) -> str:
+    title = safe_text(item.get("title"))
+    url = safe_text(item.get("url"))
+    source = safe_text(item.get("source"))
+    date = safe_text(item.get("date") or "未知日期")
+    topic = safe_text(item.get("topic") or "综合信息")
+    snippet = safe_text(item.get("snippet"))
+    score = safe_text(item.get("score", 0))
+    item_type = "PDF" if item.get("is_pdf") else "网页"
+    platform = safe_text(item.get("platform", "website"))
+    source_type = safe_text(source_type_label(item.get("source_type", "unknown")))
+    trust = item.get("trust_level", "unknown")
+    tags = item.get("tags", [])
+    tag_text = "|".join(tags)
+    low_priority = "true" if is_low_priority_news(item) else "false"
+
+    return f"""
+    <article
+      class="item-card"
+      data-category="{safe_text(item.get('category', '未分类'))}"
+      data-topic="{topic}"
+      data-tags="{safe_text(tag_text)}"
+      data-score="{safe_text(item.get('score', 0))}"
+      data-low-priority="{low_priority}"
+      data-source-type="{safe_text(item.get('source_type', 'unknown'))}"
+      data-platform="{platform}"
+      data-trust-level="{safe_text(trust)}"
+      data-date="{date}"
+    >
+      <div class="item-header">
+        <a class="item-title" href="{url}" target="_blank" rel="noopener noreferrer">{title}</a>
+        <div class="item-badges">
+          <span class="meta-badge">{source_type}</span>
+          <span class="meta-badge">{platform}</span>
+          {trust_badge(trust)}
+        </div>
+      </div>
+      <div class="item-meta">
+        <span>日期：{date}</span>
+        <span>来源：{source}</span>
+        <span>专题：{topic}</span>
+        <span>类型：{item_type}</span>
+        <span>评分：{score}</span>
+      </div>
+      <div class="item-tags">{render_tags(tags)}</div>
+      <div class="item-snippet">{snippet or "暂无摘要"}</div>
+    </article>
+    """
+
+
+def render_category_section(category: str, items: list[dict]) -> str:
+    if not items:
+        return ""
+
+    groups = OrderedDict()
+    for key in SOURCE_TYPE_ORDER:
+        groups[key] = []
+    for item in items:
+        source_type = item.get("source_type", "unknown")
+        if source_type not in groups:
+            groups[source_type] = []
+        groups[source_type].append(item)
+
+    blocks = []
+    for source_type, rows in groups.items():
+        if not rows:
+            continue
+
+        high_items = [item for item in rows if not is_low_priority_news(item)]
+        low_items = [item for item in rows if is_low_priority_news(item)]
+
+        high_html = "".join(render_item(item) for item in high_items[:80])
+        low_html = "".join(render_item(item) for item in low_items[:80])
+
+        low_block = ""
+        if low_items:
+            low_block = f"""
+            <details class="low-priority-box">
+              <summary>展开低优先级内容（{len(low_items)} 条）</summary>
+              <div class="item-grid low-priority-grid">
+                {low_html}
+              </div>
+            </details>
+            """
+
+        blocks.append(
+            f"""
+            <div class="source-type-block" data-source-type-block="{safe_text(source_type)}">
+              <div class="sub-head">
+                <h3>{safe_text(source_type_label(source_type))}</h3>
+                <span class="section-count">{len(rows)} 条</span>
+              </div>
+              <div class="item-grid">
+                {high_html if high_html else '<div class="empty-box">暂无高优先级内容</div>'}
+              </div>
+              {low_block}
+            </div>
+            """
+        )
+
+    return f"""
+    <section class="category-section" data-category-section="{safe_text(category)}">
+      <div class="section-head">
+        <h2>{safe_text(category)}</h2>
+        <span class="section-count total-category-count">{len(items)} 条</span>
+      </div>
+      {''.join(blocks)}
+    </section>
+    """
+
+
+def render_errors(errors: list[dict]) -> str:
+    if not errors:
+        return ""
+
+    items = []
+    for err in errors[:20]:
+        items.append(
+            f"<li>{safe_text(err.get('source'))} | {safe_text(err.get('platform'))} | {safe_text(err.get('url'))} | {safe_text(err.get('error'))}</li>"
+        )
+
+    return f"""
+    <section class="category-section">
+      <div class="section-head">
+        <h2>抓取错误</h2>
+        <span class="section-count">{len(errors)} 条</span>
+      </div>
+      <ul class="error-list">
+        {''.join(items)}
+      </ul>
+    </section>
+    """
+
+
+def render_filter_bar(items: list[dict]) -> str:
+    tags = collect_all_tags(items)
+    tag_buttons = "".join(
+        f'<button type="button" class="toolbar-btn" data-tag-filter="{safe_text(tag)}">{safe_text(tag)}</button>'
+        for tag in tags[:40]
+    )
+
+    return f"""
+    <section class="toolbar-wrap">
+      <div class="toolbar">
+        <div class="toolbar-row">
+          <span class="toolbar-label">分类</span>
+          <button type="button" class="toolbar-btn active" data-category-filter="全部">全部</button>
+          {''.join(
+              f'<button type="button" class="toolbar-btn" data-category-filter="{safe_text(category)}">{safe_text(category)}</button>'
+              for category in CATEGORY_ORDER
+          )}
+        </div>
+        <div class="toolbar-row">
+          <span class="toolbar-label">来源</span>
+          <button type="button" class="toolbar-btn active" data-source-type-filter="全部">全部</button>
+          <button type="button" class="toolbar-btn" data-source-type-filter="official">官方</button>
+          <button type="button" class="toolbar-btn" data-source-type-filter="platform">平台</button>
+          <button type="button" class="toolbar-btn" data-source-type-filter="community">社区</button>
+        </div>
+        <div class="toolbar-row">
+          <span class="toolbar-label">排序</span>
+          <button type="button" class="toolbar-btn active" data-sort-mode="score">按评分</button>
+          <button type="button" class="toolbar-btn" data-sort-mode="date">按日期</button>
+          <button type="button" class="toolbar-btn" id="toggleLowPriority">隐藏低优先级</button>
+        </div>
+        <div class="toolbar-row toolbar-tags">
+          <span class="toolbar-label">标签</span>
+          <button type="button" class="toolbar-btn active" data-tag-filter="全部">全部</button>
+          {tag_buttons}
+        </div>
+      </div>
+    </section>
+    """
+
+
+def render_source_summary(source_summary: dict) -> str:
+    if not source_summary:
+        return """
+        <details class="analytics-box">
+          <summary>信源摘要</summary>
+          <pre>暂无信源摘要</pre>
+        </details>
+        """
+
+    return f"""
+    <details class="analytics-box">
+      <summary>信源摘要</summary>
+      <pre>{safe_text(json.dumps(source_summary, ensure_ascii=False, indent=2))}</pre>
+    </details>
+    """
+
+
+def render_site(latest_payload: dict, analytics: dict) -> None:
+    items = normalize_items(latest_payload.get("items", []))
+    errors = latest_payload.get("errors", [])
+    source_summary = latest_payload.get("source_summary", {})
+
+    grouped = group_by_category(items)
+    sections = []
+
+    for category, rows in grouped.items():
+        html = render_category_section(category, rows)
+        if html:
+            sections.append(html)
+
+    analytics_html = f"""
+    <details class="analytics-box">
+      <summary>分析摘要</summary>
+      <pre>{safe_text(json.dumps(analytics, ensure_ascii=False, indent=2))}</pre>
+    </details>
+    """
+
+    page = f"""<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>升学与专业决策信息聚合</title>
+  <style>
+    :root {{
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #1f2328;
+      --sub: #59636e;
+      --line: #e5e7eb;
+      --brand: #2563eb;
+      --tag: #eef2ff;
+      --chip: #f8fafc;
+      --shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+      --ok: #16a34a;
+      --warn: #ca8a04;
+      --low: #6b7280;
+    }}
+
+    * {{ box-sizing: border-box; }}
+
+    body {{
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC",
+        "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.6;
+    }}
+
+    .container {{
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }}
+
+    .hero {{
+      background: linear-gradient(135deg, #ffffff, #eef4ff);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }}
+
+    .hero h1 {{
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.2;
+    }}
+
+    .hero p {{
+      margin: 0;
+      color: var(--sub);
+    }}
+
+    .meta {{
+      margin-top: 12px;
+      color: var(--sub);
+      font-size: 14px;
+    }}
+
+    .stats {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }}
+
+    .stat-card {{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: var(--shadow);
+    }}
+
+    .stat-name {{
+      color: var(--sub);
+      font-size: 13px;
+      margin-bottom: 6px;
+    }}
+
+    .stat-value {{
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--brand);
+    }}
+
+    .toolbar-wrap {{
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      margin-bottom: 20px;
+    }}
+
+    .toolbar {{
+      background: rgba(255,255,255,0.96);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px;
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow);
+    }}
+
+    .toolbar-row {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }}
+
+    .toolbar-row + .toolbar-row {{
+      margin-top: 10px;
+    }}
+
+    .toolbar-label {{
+      color: var(--sub);
+      font-size: 13px;
+      min-width: 44px;
+    }}
+
+    .toolbar-btn {{
+      border: 1px solid var(--line);
+      background: var(--chip);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 7px 12px;
+      cursor: pointer;
+      font-size: 13px;
+    }}
+
+    .toolbar-btn.active {{
+      background: var(--brand);
+      border-color: var(--brand);
+      color: white;
+    }}
+
+    .analytics-box {{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }}
+
+    .analytics-box summary {{
+      cursor: pointer;
+      font-weight: 600;
+    }}
+
+    .analytics-box pre {{
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: var(--sub);
+      margin-top: 12px;
+      font-size: 13px;
+    }}
+
+    .category-section {{
+      margin-bottom: 24px;
+    }}
+
+    .section-head {{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }}
+
+    .section-head h2, .sub-head h3 {{
+      margin: 0;
+    }}
+
+    .sub-head {{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 12px 0 10px;
+    }}
+
+    .section-count {{
+      color: var(--sub);
+      font-size: 14px;
+    }}
+
+    .source-type-block {{
+      margin-bottom: 16px;
+    }}
+
+    .item-grid {{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }}
+
+    .item-card {{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: var(--shadow);
+    }}
+
+    .item-header {{
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }}
+
+    .item-title {{
+      color: var(--brand);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      flex: 1;
+    }}
+
+    .item-title:hover {{
+      text-decoration: underline;
+    }}
+
+    .item-badges {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: flex-end;
+    }}
+
+    .meta-badge, .trust-badge {{
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 12px;
+      white-space: nowrap;
+    }}
+
+    .meta-badge {{
+      background: #eef2ff;
+      color: #3730a3;
+    }}
+
+    .trust-high {{
+      background: #dcfce7;
+      color: #166534;
+    }}
+
+    .trust-medium {{
+      background: #fef3c7;
+      color: #92400e;
+    }}
+
+    .trust-low, .trust-unknown {{
+      background: #f3f4f6;
+      color: #4b5563;
+    }}
+
+    .item-meta {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      margin: 8px 0 10px;
+      color: var(--sub);
+      font-size: 13px;
+    }}
+
+    .item-tags {{
+      margin-bottom: 10px;
+    }}
+
+    .tag {{
+      display: inline-block;
+      background: var(--tag);
+      color: #3730a3;
+      border: 0;
+      border-radius: 999px;
+      padding: 4px 10px;
+      margin: 0 8px 8px 0;
+      font-size: 12px;
+      cursor: pointer;
+    }}
+
+    .tag.muted {{
+      background: #f3f4f6;
+      color: #6b7280;
+      cursor: default;
+    }}
+
+    .item-snippet {{
+      color: var(--text);
+      font-size: 14px;
+    }}
+
+    .low-priority-box {{
+      margin-top: 12px;
+      background: #fff;
+      border: 1px dashed var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+    }}
+
+    .low-priority-box summary {{
+      cursor: pointer;
+      color: var(--sub);
+      font-size: 14px;
+    }}
+
+    .low-priority-grid {{
+      margin-top: 12px;
+    }}
+
+    .error-list {{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 20px 16px 36px;
+      margin: 0;
+      box-shadow: var(--shadow);
+    }}
+
+    .empty-box {{
+      background: var(--card);
+      border: 1px dashed var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      color: var(--sub);
+    }}
+
+    .footer {{
+      margin-top: 32px;
+      color: var(--sub);
+      font-size: 13px;
+      text-align: center;
+    }}
+
+    .hidden {{
+      display: none !important;
+    }}
+
+    @media (max-width: 768px) {{
+      .hero h1 {{
+        font-size: 24px;
+      }}
+
+      .item-header {{
+        flex-direction: column;
+      }}
+
+      .item-badges {{
+        justify-content: flex-start;
+      }}
+    }}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>升学与专业决策信息聚合</h1>
+      <p>按分类、标签、信源类型与可信度浏览招生、就业、保研与预算相关信息。</p>
+      <div class="meta">
+        最近更新：{safe_text(latest_payload.get("updated_at", ""))}；
+        结果数：{safe_text(latest_payload.get("count", 0))}；
+        错误数：{safe_text(len(errors))}
+      </div>
+    </header>
+
+    <section class="stats">
+      {build_summary_cards(items, errors, source_summary)}
+    </section>
+
+    {render_filter_bar(items)}
+
+    {render_source_summary(source_summary)}
+
+    <details class="analytics-box">
+      <summary>分析摘要</summary>
+      <pre>{safe_text(json.dumps(analytics, ensure_ascii=False, indent=2))}</pre>
+    </details>
+
+    <main id="contentRoot">
+      {''.join(sections) if sections else '<p>暂无数据。</p>'}
+    </main>
+
+    {render_errors(errors)}
+
+    <div class="footer">
+      页面文件位于 docs/index.html
+    </div>
+  </div>
+
+  <script>
+    (function () {{
+      const state = {{
+        category: "全部",
+        tag: "全部",
+        sourceType: "全部",
+        sortMode: "score",
+        hideLowPriority: false,
+      }};
+
+      const root = document.getElementById("contentRoot");
+
+      function parseDate(value) {{
+        if (!value) return 0;
+        const t = Date.parse(value);
+        return isNaN(t) ? 0 : t;
+      }}
+
+      function itemVisible(card) {{
+        const categoryOk = state.category === "全部" || card.dataset.category === state.category;
+        const sourceTypeOk = state.sourceType === "全部" || card.dataset.sourceType === state.sourceType;
+        const tags = (card.dataset.tags || "").split("|").filter(Boolean);
+        const tagOk = state.tag === "全部" || tags.includes(state.tag);
+        const lowPriorityOk = !state.hideLowPriority || card.dataset.lowPriority !== "true";
+        return categoryOk && sourceTypeOk && tagOk && lowPriorityOk;
+      }}
+
+      function sortCards(cards) {{
+        return cards.sort((a, b) => {{
+          if (state.sortMode === "date") {{
+            return parseDate(b.dataset.date) - parseDate(a.dataset.date);
+          }}
+          const bs = Number(b.dataset.score || 0);
+          const as = Number(a.dataset.score || 0);
+          if (bs !== as) return bs - as;
+          return (b.dataset.date || "").localeCompare(a.dataset.date || "", "zh-CN");
+        }});
+      }}
+
+      function refresh() {{
+        const sections = Array.from(root.querySelectorAll("[data-category-section]"));
+
+        sections.forEach(section => {{
+          let categoryVisibleCount = 0;
+
+          const sourceTypeBlocks = Array.from(section.querySelectorAll("[data-source-type-block]"));
+          sourceTypeBlocks.forEach(block => {{
+            const cards = Array.from(block.querySelectorAll(".item-card"));
+            const sorted = sortCards(cards);
+
+            sorted.forEach(card => {{
+              const visible = itemVisible(card);
+              card.classList.toggle("hidden", !visible);
+              if (visible) categoryVisibleCount += 1;
+              const parentGrid = card.parentElement;
+              if (parentGrid) {{
+                parentGrid.appendChild(card);
+              }}
+            }});
+
+            const visibleCards = cards.filter(card => !card.classList.contains("hidden")).length;
+            block.classList.toggle("hidden", visibleCards === 0);
+
+            const countNode = block.querySelector(".section-count");
+            if (countNode) {{
+              countNode.textContent = visibleCards + " 条";
+            }}
+          }});
+
+          const totalNode = section.querySelector(".total-category-count");
+          if (totalNode) {{
+            totalNode.textContent = categoryVisibleCount + " 条";
+          }}
+
+          section.classList.toggle("hidden", categoryVisibleCount === 0);
+        }});
+
+        document.querySelectorAll("[data-category-filter]").forEach(btn => {{
+          btn.classList.toggle("active", btn.dataset.categoryFilter === state.category);
+        }});
+
+        document.querySelectorAll("[data-tag-filter]").forEach(btn => {{
+          btn.classList.toggle("active", btn.dataset.tagFilter === state.tag);
+        }});
+
+        document.querySelectorAll("[data-source-type-filter]").forEach(btn => {{
+          btn.classList.toggle("active", btn.dataset.sourceTypeFilter === state.sourceType);
+        }});
+
+        document.querySelectorAll("[data-sort-mode]").forEach(btn => {{
+          btn.classList.toggle("active", btn.dataset.sortMode === state.sortMode);
+        }});
+
+        const lowBtn = document.getElementById("toggleLowPriority");
+        if (lowBtn) {{
+          lowBtn.classList.toggle("active", state.hideLowPriority);
+        }}
+      }}
+
+      document.querySelectorAll("[data-category-filter]").forEach(btn => {{
+        btn.addEventListener("click", () => {{
+          state.category = btn.dataset.categoryFilter;
+          refresh();
+        }});
+      }});
+
+      document.querySelectorAll("[data-tag-filter]").forEach(btn => {{
+        btn.addEventListener("click", () => {{
+          state.tag = btn.dataset.tagFilter;
+          refresh();
+        }});
+      }});
+
+      document.querySelectorAll("[data-source-type-filter]").forEach(btn => {{
+        btn.addEventListener("click", () => {{
+          state.sourceType = btn.dataset.sourceTypeFilter;
+          refresh();
+        }});
+      }});
+
+      document.querySelectorAll(".filter-tag").forEach(btn => {{
+        btn.addEventListener("click", () => {{
+          state.tag = btn.dataset.tag;
+          refresh();
+        }});
+      }});
+
+      document.querySelectorAll("[data-sort-mode]").forEach(btn => {{
+        btn.addEventListener("click", () => {{
+          state.sortMode = btn.dataset.sortMode;
+          refresh();
+        }});
+      }});
+
+      const lowBtn = document.getElementById("toggleLowPriority");
+      if (lowBtn) {{
+        lowBtn.addEventListener("click", () => {{
+          state.hideLowPriority = !state.hideLowPriority;
+          refresh();
+        }});
+      }}
+
+      refresh();
+    }})();
+  </script>
+</body>
+</html>
+"""
+    DOCS_INDEX_HTML.write_text(page, encoding="utf-8")

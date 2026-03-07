@@ -14,7 +14,8 @@
       --brand: #2563eb;
       --brand-soft: #dbeafe;
       --tag: #eef2ff;
-      --ok: #0f766e;
+      --chip: #f8fafc;
+      --shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
     }
 
     * {
@@ -31,7 +32,7 @@
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1240px;
       margin: 0 auto;
       padding: 24px 16px 48px;
     }
@@ -42,6 +43,7 @@
       border-radius: 18px;
       padding: 24px;
       margin-bottom: 20px;
+      box-shadow: var(--shadow);
     }
 
     .hero h1 {
@@ -73,6 +75,7 @@
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 14px 16px;
+      box-shadow: var(--shadow);
     }
 
     .stat-name {
@@ -87,12 +90,62 @@
       color: var(--brand);
     }
 
+    .toolbar-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      margin-bottom: 20px;
+    }
+
+    .toolbar {
+      background: rgba(255,255,255,0.96);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px;
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow);
+    }
+
+    .toolbar-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .toolbar-row + .toolbar-row {
+      margin-top: 10px;
+    }
+
+    .toolbar-label {
+      color: var(--sub);
+      font-size: 13px;
+      min-width: 44px;
+    }
+
+    .toolbar-btn {
+      border: 1px solid var(--line);
+      background: var(--chip);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 7px 12px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .toolbar-btn.active {
+      background: var(--brand);
+      border-color: var(--brand);
+      color: white;
+    }
+
     .analytics-box {
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 14px 16px;
       margin-bottom: 20px;
+      box-shadow: var(--shadow);
     }
 
     .analytics-box summary {
@@ -105,6 +158,7 @@
       word-break: break-word;
       color: var(--sub);
       margin-top: 12px;
+      font-size: 13px;
     }
 
     .category-section {
@@ -140,6 +194,7 @@
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 14px 16px;
+      box-shadow: var(--shadow);
     }
 
     .item-title {
@@ -170,20 +225,41 @@
       display: inline-block;
       background: var(--tag);
       color: #3730a3;
+      border: 0;
       border-radius: 999px;
       padding: 4px 10px;
       margin: 0 8px 8px 0;
       font-size: 12px;
+      cursor: pointer;
     }
 
     .tag.muted {
       background: #f3f4f6;
       color: #6b7280;
+      cursor: default;
     }
 
     .item-snippet {
       color: var(--text);
       font-size: 14px;
+    }
+
+    .low-priority-box {
+      margin-top: 12px;
+      background: #fff;
+      border: 1px dashed var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+    }
+
+    .low-priority-box summary {
+      cursor: pointer;
+      color: var(--sub);
+      font-size: 14px;
+    }
+
+    .low-priority-grid {
+      margin-top: 12px;
     }
 
     .error-list {
@@ -192,6 +268,15 @@
       border-radius: 14px;
       padding: 16px 20px 16px 36px;
       margin: 0;
+      box-shadow: var(--shadow);
+    }
+
+    .empty-box {
+      background: var(--card);
+      border: 1px dashed var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      color: var(--sub);
     }
 
     .footer {
@@ -200,15 +285,25 @@
       font-size: 13px;
       text-align: center;
     }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 24px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header class="hero">
       <h1>升学与专业决策信息聚合</h1>
-      <p>按分类展示招生、就业、保研与预算相关信息，方便快速浏览与后续扩展。</p>
+      <p>按分类、标签和评分浏览招生、就业、保研与预算相关信息。</p>
       <div class="meta">
-        最近更新：2026-03-07T19:33:06+08:00；
+        最近更新：2026-03-07T19:38:24+08:00；
         条目数：86；
         错误数：
       </div>
@@ -224,6 +319,11 @@
             <div class="stat-card">
               <div class="stat-name">PDF条目</div>
               <div class="stat-value">2</div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-name">低优先级新闻</div>
+              <div class="stat-value">4</div>
             </div>
             
             <div class="stat-card">
@@ -264,51 +364,69 @@
     </section>
 
     
-    <details class="analytics-box">
-      <summary>分析摘要</summary>
-      <pre>{&#x27;budget_metrics&#x27;: {&#x27;count&#x27;: 0, &#x27;latest_titles&#x27;: []}, &#x27;major_changes&#x27;: {&#x27;added_count&#x27;: 0, &#x27;removed_count&#x27;: 0}, &#x27;civil_service_ratio&#x27;: {&#x27;status&#x27;: &#x27;placeholder&#x27;, &#x27;message&#x27;: &#x27;后续这里会接入职位表解析与专业匹配比例计算。&#x27;}, &#x27;industry_chain&#x27;: {&#x27;count&#x27;: 0, &#x27;message&#x27;: &#x27;后续这里会接入产业链节点、对应专业与岗位映射。&#x27;}}</pre>
-    </details>
+    <section class="toolbar-wrap">
+      <div class="toolbar">
+        <div class="toolbar-row">
+          <span class="toolbar-label">分类</span>
+          <button type="button" class="toolbar-btn active" data-category-filter="全部">全部</button>
+          <button type="button" class="toolbar-btn" data-category-filter="招生信息">招生信息</button><button type="button" class="toolbar-btn" data-category-filter="就业质量">就业质量</button><button type="button" class="toolbar-btn" data-category-filter="保研信息">保研信息</button><button type="button" class="toolbar-btn" data-category-filter="学校预算">学校预算</button><button type="button" class="toolbar-btn" data-category-filter="专业趋势">专业趋势</button><button type="button" class="toolbar-btn" data-category-filter="报考政策">报考政策</button><button type="button" class="toolbar-btn" data-category-filter="未分类">未分类</button>
+        </div>
+        <div class="toolbar-row">
+          <span class="toolbar-label">排序</span>
+          <button type="button" class="toolbar-btn active" data-sort-mode="score">按评分</button>
+          <button type="button" class="toolbar-btn" data-sort-mode="date">按日期</button>
+          <button type="button" class="toolbar-btn" id="toggleLowPriority">隐藏低优先级新闻</button>
+        </div>
+        <div class="toolbar-row toolbar-tags">
+          <span class="toolbar-label">标签</span>
+          <button type="button" class="toolbar-btn active" data-tag-filter="全部">全部</button>
+          <button type="button" class="toolbar-btn tag-btn" data-tag-filter="PDF">PDF</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="专业信息">专业信息</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="专业趋势">专业趋势</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="保研">保研</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="保研信息">保研信息</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="公务员">公务员</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="分数线">分数线</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="国企">国企</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="学校决算">学校决算</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="学校预算">学校预算</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="就业分析">就业分析</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="就业质量">就业质量</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="就业质量报告">就业质量报告</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="录取">录取</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="招生信息">招生信息</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="招生章程">招生章程</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="招生计划">招生计划</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="新增专业">新增专业</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="未分类">未分类</button><button type="button" class="toolbar-btn tag-btn" data-tag-filter="陕西">陕西</button>
+        </div>
+      </div>
+    </section>
     
 
     
-    <section class="category-section">
+    <details class="analytics-box">
+      <summary>分析摘要</summary>
+      <pre>{
+  &quot;budget_metrics&quot;: {
+    &quot;count&quot;: 0,
+    &quot;latest_titles&quot;: []
+  },
+  &quot;major_changes&quot;: {
+    &quot;added_count&quot;: 0,
+    &quot;removed_count&quot;: 0
+  },
+  &quot;civil_service_ratio&quot;: {
+    &quot;status&quot;: &quot;placeholder&quot;,
+    &quot;message&quot;: &quot;后续这里会接入职位表解析与专业匹配比例计算。&quot;
+  },
+  &quot;industry_chain&quot;: {
+    &quot;count&quot;: 0,
+    &quot;message&quot;: &quot;后续这里会接入产业链节点、对应专业与岗位映射。&quot;
+  }
+}</pre>
+    </details>
+    
+
+    <main id="contentRoot">
+      
+    <section class="category-section" data-category-section="招生信息">
       <div class="section-head">
         <h2>招生信息</h2>
         <span class="section-count">44 条</span>
       </div>
       <div class="item-grid">
         
-    <article class="item-card">
-      <div class="item-header">
-        <a class="item-title" href="http://www.snnu.edu.cn/info/1272/72994.htm" target="_blank" rel="noopener noreferrer">2025-07-19 我校2025年毛笔手写录取通知书暨“悦临书法经典”临摹打卡活动开笔</a>
-      </div>
-      <div class="item-meta">
-        <span>日期：2025-07-19</span>
-        <span>来源：陕西师范大学本科招生信息网</span>
-        <span>专题：本科招生</span>
-        <span>类型：网页</span>
-        <span>评分：15</span>
-      </div>
-      <div class="item-tags"><span class="tag">录取</span><span class="tag">招生信息</span><span class="tag">陕西</span></div>
-      <div class="item-snippet">2025-07-19 我校2025年毛笔手写录取通知书暨“悦临书法经典”临摹打卡活动开笔</div>
-    </article>
-    
-    <article class="item-card">
-      <div class="item-header">
-        <a class="item-title" href="http://news.snnu.edu.cn/info/1015/258584.htm" target="_blank" rel="noopener noreferrer">2025-03-12 《陕西日报》丨将青春誓言写在西部大地</a>
-      </div>
-      <div class="item-meta">
-        <span>日期：2025-03-12</span>
-        <span>来源：陕西师范大学本科招生信息网</span>
-        <span>专题：本科招生</span>
-        <span>类型：网页</span>
-        <span>评分：15</span>
-      </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
-      <div class="item-snippet">2025-03-12 《陕西日报》丨将青春誓言写在西部大地</div>
-    </article>
-    
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|招生计划|陕西"
+      data-score="42"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1049/2984.htm" target="_blank" rel="noopener noreferrer">西北大学2025年本科招生计划</a>
       </div>
@@ -319,11 +437,18 @@
         <span>类型：网页</span>
         <span>评分：42</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">招生计划</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">西北大学2025年本科招生计划</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|招生计划|陕西"
+      data-score="42"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1049/2688.htm" target="_blank" rel="noopener noreferrer">西北大学2024年本科招生计划</a>
       </div>
@@ -334,11 +459,18 @@
         <span>类型：网页</span>
         <span>评分：42</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">招生计划</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">西北大学2024年本科招生计划</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|招生计划|陕西"
+      data-score="42"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1049/2471.htm" target="_blank" rel="noopener noreferrer">西北大学2023年本科招生计划</a>
       </div>
@@ -349,11 +481,18 @@
         <span>类型：网页</span>
         <span>评分：42</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">招生计划</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">西北大学2023年本科招生计划</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|招生计划|陕西"
+      data-score="42"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1049/2203.htm" target="_blank" rel="noopener noreferrer">西北大学2022年本科招生计划</a>
       </div>
@@ -364,11 +503,18 @@
         <span>类型：网页</span>
         <span>评分：42</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">招生计划</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">西北大学2022年本科招生计划</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|招生计划|陕西"
+      data-score="42"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1049/1882.htm" target="_blank" rel="noopener noreferrer">西北大学2021年本科招生计划</a>
       </div>
@@ -379,11 +525,18 @@
         <span>类型：网页</span>
         <span>评分：42</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">招生计划</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">西北大学2021年本科招生计划</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|招生计划|陕西"
+      data-score="42"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1049/1677.htm" target="_blank" rel="noopener noreferrer">西北大学2020年本科招生计划</a>
       </div>
@@ -394,11 +547,18 @@
         <span>类型：网页</span>
         <span>评分：42</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">招生计划</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">西北大学2020年本科招生计划</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|招生章程|陕西"
+      data-score="39"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1235/4692.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2025年全日制普通本科招生章程</a>
       </div>
@@ -409,11 +569,18 @@
         <span>类型：网页</span>
         <span>评分：39</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">招生章程</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生章程">招生章程</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学2025年全日制普通本科招生章程</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|招生章程|陕西"
+      data-score="37"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1050/2971.htm" target="_blank" rel="noopener noreferrer">西北大学2025年本科招生章程</a>
       </div>
@@ -424,11 +591,18 @@
         <span>类型：网页</span>
         <span>评分：37</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">招生章程</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生章程">招生章程</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">西北大学2025年本科招生章程</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|招生章程|陕西"
+      data-score="37"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1050/2677.htm" target="_blank" rel="noopener noreferrer">西北大学2024年本科招生章程</a>
       </div>
@@ -439,11 +613,18 @@
         <span>类型：网页</span>
         <span>评分：37</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">招生章程</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生章程">招生章程</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">西北大学2024年本科招生章程</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|招生章程|陕西"
+      data-score="37"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1050/2451.htm" target="_blank" rel="noopener noreferrer">西北大学2023年全日制普通本科招生章程</a>
       </div>
@@ -454,11 +635,18 @@
         <span>类型：网页</span>
         <span>评分：37</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">招生章程</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生章程">招生章程</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">西北大学2023年全日制普通本科招生章程</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|招生章程|陕西"
+      data-score="37"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1050/2191.htm" target="_blank" rel="noopener noreferrer">西北大学2022年全日制普通本科招生章程</a>
       </div>
@@ -469,11 +657,18 @@
         <span>类型：网页</span>
         <span>评分：37</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">招生章程</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生章程">招生章程</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">西北大学2022年全日制普通本科招生章程</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|招生章程|陕西"
+      data-score="37"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1050/1880.htm" target="_blank" rel="noopener noreferrer">西北大学2021年全日制普通本科招生章程</a>
       </div>
@@ -484,11 +679,18 @@
         <span>类型：网页</span>
         <span>评分：37</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">招生章程</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生章程">招生章程</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">西北大学2021年全日制普通本科招生章程</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="分数线|招生信息|陕西"
+      data-score="30"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="http://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs" target="_blank" rel="noopener noreferrer">历年分数</a>
       </div>
@@ -499,11 +701,18 @@
         <span>类型：网页</span>
         <span>评分：30</span>
       </div>
-      <div class="item-tags"><span class="tag">分数线</span><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="分数线">分数线</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">历年分数</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|招生计划|陕西"
+      data-score="29"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="http://zsdata.snnu.edu.cn/zscx/lqxx/#/" target="_blank" rel="noopener noreferrer">招生计划</a>
       </div>
@@ -514,11 +723,18 @@
         <span>类型：网页</span>
         <span>评分：29</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">招生计划</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">招生计划</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|招生计划|陕西"
+      data-score="29"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/zszn/zsjh.htm" target="_blank" rel="noopener noreferrer">招生计划</a>
       </div>
@@ -529,11 +745,18 @@
         <span>类型：网页</span>
         <span>评分：29</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">招生计划</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">招生计划</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="录取|招生信息|陕西"
+      data-score="27"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zhaosheng.xupt.edu.cn/info/1056/1084.htm" target="_blank" rel="noopener noreferrer">录取查询 Admission Inquiry</a>
       </div>
@@ -544,11 +767,18 @@
         <span>类型：网页</span>
         <span>评分：27</span>
       </div>
-      <div class="item-tags"><span class="tag">录取</span><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="录取">录取</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">录取查询 Admission Inquiry</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="录取|招生信息|陕西"
+      data-score="27"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="http://zsdata.snnu.edu.cn/zscx/lqxx/#/lqcx" target="_blank" rel="noopener noreferrer">录取查询</a>
       </div>
@@ -559,11 +789,18 @@
         <span>类型：网页</span>
         <span>评分：27</span>
       </div>
-      <div class="item-tags"><span class="tag">录取</span><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="录取">录取</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">录取查询</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="录取|招生信息|陕西"
+      data-score="27"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="http://xdzsb.nwu.edu.cn/search_gklq.asp" target="_blank" rel="noopener noreferrer">录取查询</a>
       </div>
@@ -574,11 +811,18 @@
         <span>类型：网页</span>
         <span>评分：27</span>
       </div>
-      <div class="item-tags"><span class="tag">录取</span><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="录取">录取</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">录取查询</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|招生章程|陕西"
+      data-score="25"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/zszn/zszc1.htm" target="_blank" rel="noopener noreferrer">招生章程</a>
       </div>
@@ -589,11 +833,40 @@
         <span>类型：网页</span>
         <span>评分：25</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">招生章程</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生章程">招生章程</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">招生章程</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="15"
+      data-low-priority="false"
+    >
+      <div class="item-header">
+        <a class="item-title" href="http://news.snnu.edu.cn/info/1015/258584.htm" target="_blank" rel="noopener noreferrer">2025-03-12 《陕西日报》丨将青春誓言写在西部大地</a>
+      </div>
+      <div class="item-meta">
+        <span>日期：2025-03-12</span>
+        <span>来源：陕西师范大学本科招生信息网</span>
+        <span>专题：本科招生</span>
+        <span>类型：网页</span>
+        <span>评分：15</span>
+      </div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
+      <div class="item-snippet">2025-03-12 《陕西日报》丨将青春誓言写在西部大地</div>
+    </article>
+    
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="15"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1337/4982.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2026年保送录取优秀运动员招生简章</a>
       </div>
@@ -604,11 +877,18 @@
         <span>类型：网页</span>
         <span>评分：15</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学2026年保送录取优秀运动员招生简章</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="15"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1192/4632.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2025年依据台湾地区大学入学考试学科能力测试成绩招收台湾高中毕业生拟录取名单公示</a>
       </div>
@@ -619,11 +899,18 @@
         <span>类型：网页</span>
         <span>评分：15</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学2025年依据台湾地区大学入学考试学科能力测试成绩招收台湾高中毕业生拟录取名单公示</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="13"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="http://www.snnu.edu.cn/index.htm" target="_blank" rel="noopener noreferrer">陕西师范大学首页</a>
       </div>
@@ -634,11 +921,18 @@
         <span>类型：网页</span>
         <span>评分：13</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学首页</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="13"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1216/3431.htm" target="_blank" rel="noopener noreferrer">陕西师范大学招生宣传片 03 2023-04</a>
       </div>
@@ -649,11 +943,18 @@
         <span>类型：网页</span>
         <span>评分：13</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学招生宣传片 03 2023-04</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="13"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1338/5012.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2026年高水平运动队招生简章</a>
       </div>
@@ -664,11 +965,18 @@
         <span>类型：网页</span>
         <span>评分：13</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学2026年高水平运动队招生简章</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="13"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1192/5042.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2026年高水平运动队招生报名资格审核通过名单</a>
       </div>
@@ -679,11 +987,18 @@
         <span>类型：网页</span>
         <span>评分：13</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学2026年高水平运动队招生报名资格审核通过名单</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="13"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1337/5022.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2026年运动训练专业招生简章</a>
       </div>
@@ -694,11 +1009,18 @@
         <span>类型：网页</span>
         <span>评分：13</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学2026年运动训练专业招生简章</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="13"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1339/4962.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2026年依据台湾地区大学入学考试学科能力测试成绩招收台湾高中毕业生招生简章</a>
       </div>
@@ -709,11 +1031,18 @@
         <span>类型：网页</span>
         <span>评分：13</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学2026年依据台湾地区大学入学考试学科能力测试成绩招收台湾高中毕业生招生简章</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="13"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1235/4822.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2025级本研衔接公费师范生履约任教范围</a>
       </div>
@@ -724,11 +1053,18 @@
         <span>类型：网页</span>
         <span>评分：13</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学2025级本研衔接公费师范生履约任教范围</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="13"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1192/4782.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2025年第二学士学位报名材料初审合格名单公示</a>
       </div>
@@ -739,11 +1075,18 @@
         <span>类型：网页</span>
         <span>评分：13</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学2025年第二学士学位报名材料初审合格名单公示</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="13"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1043/3006.htm" target="_blank" rel="noopener noreferrer">西北大学2025年分省分批次录取进度表</a>
       </div>
@@ -754,11 +1097,18 @@
         <span>类型：网页</span>
         <span>评分：13</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">西北大学2025年分省分批次录取进度表</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="13"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1216/3681.htm" target="_blank" rel="noopener noreferrer">《光明日报》：“红烛苗圃”的故事——陕西师范大学助力... 15 2024-03</a>
       </div>
@@ -769,11 +1119,18 @@
         <span>类型：网页</span>
         <span>评分：13</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">《光明日报》：“红烛苗圃”的故事——陕西师范大学助力... 15 2024-03</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="13"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1046/2991.htm" target="_blank" rel="noopener noreferrer">[名单公示] 西北大学2025年第二学士学位录取名单</a>
       </div>
@@ -784,11 +1141,18 @@
         <span>类型：网页</span>
         <span>评分：13</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">[名单公示] 西北大学2025年第二学士学位录取名单</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="13"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.nwu.edu.cn/info/1046/2729.htm" target="_blank" rel="noopener noreferrer">[名单公示] 西北大学2024年第二学士学位录取名单</a>
       </div>
@@ -799,11 +1163,18 @@
         <span>类型：网页</span>
         <span>评分：13</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">[名单公示] 西北大学2024年第二学士学位录取名单</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="13"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1192/4862.htm" target="_blank" rel="noopener noreferrer">2025年艺术类专业录取最低分（陆续更新中）</a>
       </div>
@@ -814,11 +1185,18 @@
         <span>类型：网页</span>
         <span>评分：13</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">2025年艺术类专业录取最低分（陆续更新中）</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="13"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1192/4912.htm" target="_blank" rel="noopener noreferrer">2025年普通类、体育类专业录取最低分</a>
       </div>
@@ -829,11 +1207,18 @@
         <span>类型：网页</span>
         <span>评分：13</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">2025年普通类、体育类专业录取最低分</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="11"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zhaosheng.xupt.edu.cn/lqcx.htm" target="_blank" rel="noopener noreferrer">计划分数</a>
       </div>
@@ -844,11 +1229,18 @@
         <span>类型：网页</span>
         <span>评分：11</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">计划分数</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="11"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/sy/xyzhuan_ye.htm" target="_blank" rel="noopener noreferrer">学院专业</a>
       </div>
@@ -859,11 +1251,18 @@
         <span>类型：网页</span>
         <span>评分：11</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">学院专业</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="11"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zhaosheng.xupt.edu.cn/xyzy.htm" target="_blank" rel="noopener noreferrer">学院专业</a>
       </div>
@@ -874,11 +1273,18 @@
         <span>类型：网页</span>
         <span>评分：11</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">学院专业</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="11"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx.htm" target="_blank" rel="noopener noreferrer">分省分专业查询</a>
       </div>
@@ -889,11 +1295,18 @@
         <span>类型：网页</span>
         <span>评分：11</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">分省分专业查询</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="11"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://www.snnu.edu.cn/info/1015/37152.htm" target="_blank" rel="noopener noreferrer">关于做好2023级本科生专业分流工作的通知</a>
       </div>
@@ -904,11 +1317,18 @@
         <span>类型：网页</span>
         <span>评分：11</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">关于做好2023级本科生专业分流工作的通知</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="招生信息|陕西"
+      data-score="11"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/sy/zsxx/zyflzc1.htm" target="_blank" rel="noopener noreferrer">专业分流政策</a>
       </div>
@@ -919,11 +1339,18 @@
         <span>类型：网页</span>
         <span>评分：11</span>
       </div>
-      <div class="item-tags"><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">专业分流政策</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="专业信息|招生信息|陕西"
+      data-score="11"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://zsb.snnu.edu.cn/info/1340/5052.htm" target="_blank" rel="noopener noreferrer">2025级预科学生结业转本科专业及计划</a>
       </div>
@@ -934,21 +1361,58 @@
         <span>类型：网页</span>
         <span>评分：11</span>
       </div>
-      <div class="item-tags"><span class="tag">专业信息</span><span class="tag">招生信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="专业信息">专业信息</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">2025级预科学生结业转本科专业及计划</div>
     </article>
     
       </div>
+      
+        <details class="low-priority-box">
+          <summary>展开低优先级新闻（1 条）</summary>
+          <div class="item-grid low-priority-grid">
+            
+    <article
+      class="item-card"
+      data-category="招生信息"
+      data-topic="本科招生"
+      data-tags="录取|招生信息|陕西"
+      data-score="15"
+      data-low-priority="true"
+    >
+      <div class="item-header">
+        <a class="item-title" href="http://www.snnu.edu.cn/info/1272/72994.htm" target="_blank" rel="noopener noreferrer">2025-07-19 我校2025年毛笔手写录取通知书暨“悦临书法经典”临摹打卡活动开笔</a>
+      </div>
+      <div class="item-meta">
+        <span>日期：2025-07-19</span>
+        <span>来源：陕西师范大学本科招生信息网</span>
+        <span>专题：本科招生</span>
+        <span>类型：网页</span>
+        <span>评分：15</span>
+      </div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="录取">录取</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
+      <div class="item-snippet">2025-07-19 我校2025年毛笔手写录取通知书暨“悦临书法经典”临摹打卡活动开笔</div>
+    </article>
+    
+          </div>
+        </details>
+        
     </section>
     
-    <section class="category-section">
+    <section class="category-section" data-category-section="就业质量">
       <div class="section-head">
         <h2>就业质量</h2>
         <span class="section-count">21 条</span>
       </div>
       <div class="item-grid">
         
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="75"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm" target="_blank" rel="noopener noreferrer">高校毕业生就业质量年度报告</a>
       </div>
@@ -959,11 +1423,18 @@
         <span>类型：网页</span>
         <span>评分：75</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">高校毕业生就业质量年度报告</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="75"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm" target="_blank" rel="noopener noreferrer">高校毕业生就业质量年度报告</a>
       </div>
@@ -974,11 +1445,18 @@
         <span>类型：网页</span>
         <span>评分：75</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">高校毕业生就业质量年度报告</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="75"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/1751/2541.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2021年毕业生就业质量年度报告</a>
       </div>
@@ -989,11 +1467,18 @@
         <span>类型：网页</span>
         <span>评分：75</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学2021年毕业生就业质量年度报告</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="75"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/1751/2531.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2020年毕业生就业质量年度报告</a>
       </div>
@@ -1004,11 +1489,18 @@
         <span>类型：网页</span>
         <span>评分：75</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学2020年毕业生就业质量年度报告</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="75"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/1751/2521.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2019年毕业生就业质量年度报告发布说明</a>
       </div>
@@ -1019,11 +1511,18 @@
         <span>类型：网页</span>
         <span>评分：75</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学2019年毕业生就业质量年度报告发布说明</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="75"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/1751/2481.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2015年 毕业生就业质量年度报告</a>
       </div>
@@ -1034,11 +1533,18 @@
         <span>类型：网页</span>
         <span>评分：75</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学2015年 毕业生就业质量年度报告</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="75"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/1751/2461.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2013年毕业生就业质量年度报告</a>
       </div>
@@ -1049,11 +1555,18 @@
         <span>类型：网页</span>
         <span>评分：75</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学2013年毕业生就业质量年度报告</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="75"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/info/1054/1473.htm" target="_blank" rel="noopener noreferrer">西安理工大学2023届毕业生就业质量年度报告</a>
       </div>
@@ -1064,11 +1577,18 @@
         <span>类型：网页</span>
         <span>评分：75</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">西安理工大学2023届毕业生就业质量年度报告</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="75"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/info/1054/1495.htm" target="_blank" rel="noopener noreferrer">西安理工大学2022年毕业生就业质量年度报告</a>
       </div>
@@ -1079,11 +1599,18 @@
         <span>类型：网页</span>
         <span>评分：75</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">西安理工大学2022年毕业生就业质量年度报告</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="75"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/info/1054/1494.htm" target="_blank" rel="noopener noreferrer">西安理工大学2021年毕业生就业质量年度报告</a>
       </div>
@@ -1094,11 +1621,18 @@
         <span>类型：网页</span>
         <span>评分：75</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">西安理工大学2021年毕业生就业质量年度报告</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="75"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/info/1054/1493.htm" target="_blank" rel="noopener noreferrer">西安理工大学2020年毕业生就业质量年度报告</a>
       </div>
@@ -1109,11 +1643,18 @@
         <span>类型：网页</span>
         <span>评分：75</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">西安理工大学2020年毕业生就业质量年度报告</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="75"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/info/1054/1284.htm" target="_blank" rel="noopener noreferrer">西安理工大学2019年毕业生就业质量年度报告</a>
       </div>
@@ -1124,11 +1665,18 @@
         <span>类型：网页</span>
         <span>评分：75</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">西安理工大学2019年毕业生就业质量年度报告</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="75"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/info/1054/1285.htm" target="_blank" rel="noopener noreferrer">西安理工大学2018年毕业生就业质量年度报告</a>
       </div>
@@ -1139,11 +1687,18 @@
         <span>类型：网页</span>
         <span>评分：75</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">西安理工大学2018年毕业生就业质量年度报告</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="75"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/info/1054/1287.htm" target="_blank" rel="noopener noreferrer">2017年西安理工大学毕业生就业质量年度报告</a>
       </div>
@@ -1154,11 +1709,18 @@
         <span>类型：网页</span>
         <span>评分：75</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">2017年西安理工大学毕业生就业质量年度报告</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="47"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/1751/2471.htm" target="_blank" rel="noopener noreferrer">陕西师范大学就业质量年度报告</a>
       </div>
@@ -1169,11 +1731,18 @@
         <span>类型：网页</span>
         <span>评分：47</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学就业质量年度报告</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="43"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/1751/2511.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2018年毕业生就业质量报告</a>
       </div>
@@ -1184,11 +1753,18 @@
         <span>类型：网页</span>
         <span>评分：43</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学2018年毕业生就业质量报告</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="43"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/1751/2501.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2017年毕业生就业质量报告</a>
       </div>
@@ -1199,11 +1775,18 @@
         <span>类型：网页</span>
         <span>评分：43</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学2017年毕业生就业质量报告</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="43"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/1751/2491.htm" target="_blank" rel="noopener noreferrer">陕西师范大学2016年毕业生就业质量报告</a>
       </div>
@@ -1214,11 +1797,18 @@
         <span>类型：网页</span>
         <span>评分：43</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学2016年毕业生就业质量报告</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业分析|就业质量|就业质量报告|陕西"
+      data-score="29"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/gksx/jxzlxx/bysdgm_jg_jyl_jylx.htm" target="_blank" rel="noopener noreferrer">毕业生的规模、结构、就业率、就业流向</a>
       </div>
@@ -1229,11 +1819,18 @@
         <span>类型：网页</span>
         <span>评分：29</span>
       </div>
-      <div class="item-tags"><span class="tag">就业分析</span><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业分析">就业分析</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">毕业生的规模、结构、就业率、就业流向</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="27"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/info/1054/1283.htm" target="_blank" rel="noopener noreferrer">2016年西安理工大学就业质量报告</a>
       </div>
@@ -1244,11 +1841,18 @@
         <span>类型：网页</span>
         <span>评分：27</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">2016年西安理工大学就业质量报告</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="就业质量"
+      data-topic="就业质量报告"
+      data-tags="就业质量|就业质量报告|陕西"
+      data-score="22"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/gksx/jxzlxx/cjbysjydzccshzdfw.htm" target="_blank" rel="noopener noreferrer">促进毕业生就业的政策措施和指导服务</a>
       </div>
@@ -1259,21 +1863,29 @@
         <span>类型：网页</span>
         <span>评分：22</span>
       </div>
-      <div class="item-tags"><span class="tag">就业质量</span><span class="tag">就业质量报告</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">促进毕业生就业的政策措施和指导服务</div>
     </article>
     
       </div>
+      
     </section>
     
-    <section class="category-section">
+    <section class="category-section" data-category-section="保研信息">
       <div class="section-head">
         <h2>保研信息</h2>
         <span class="section-count">1 条</span>
       </div>
       <div class="item-grid">
         
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="保研信息"
+      data-topic="保研推免"
+      data-tags="保研|保研信息|陕西"
+      data-score="38"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/info/2411/4291.htm" target="_blank" rel="noopener noreferrer">陕西师范大学信息公开实施办法</a>
       </div>
@@ -1284,21 +1896,29 @@
         <span>类型：网页</span>
         <span>评分：38</span>
       </div>
-      <div class="item-tags"><span class="tag">保研</span><span class="tag">保研信息</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="保研">保研</button><button class="tag filter-tag" type="button" data-tag="保研信息">保研信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">陕西师范大学信息公开实施办法</div>
     </article>
     
       </div>
+      
     </section>
     
-    <section class="category-section">
+    <section class="category-section" data-category-section="学校预算">
       <div class="section-head">
         <h2>学校预算</h2>
         <span class="section-count">7 条</span>
       </div>
       <div class="item-grid">
         
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="学校预算"
+      data-topic="高校预算"
+      data-tags="学校决算|学校预算|陕西"
+      data-score="27"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/cwzcjsfxx/cwszjs.htm" target="_blank" rel="noopener noreferrer">财务收支决算</a>
       </div>
@@ -1309,11 +1929,18 @@
         <span>类型：网页</span>
         <span>评分：27</span>
       </div>
-      <div class="item-tags"><span class="tag">学校决算</span><span class="tag">学校预算</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校决算">学校决算</button><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">财务收支决算</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="学校预算"
+      data-topic="高校预算"
+      data-tags="学校决算|学校预算|陕西"
+      data-score="27"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/gksx/cw_zcjsfxx/cwjsxx.htm" target="_blank" rel="noopener noreferrer">财务决算信息</a>
       </div>
@@ -1324,11 +1951,18 @@
         <span>类型：网页</span>
         <span>评分：27</span>
       </div>
-      <div class="item-tags"><span class="tag">学校决算</span><span class="tag">学校预算</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校决算">学校决算</button><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">财务决算信息</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="学校预算"
+      data-topic="高校预算"
+      data-tags="学校预算|陕西"
+      data-score="20"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/gksx/cw_zcjsfxx/cwysxx.htm" target="_blank" rel="noopener noreferrer">财务预算信息</a>
       </div>
@@ -1339,11 +1973,18 @@
         <span>类型：网页</span>
         <span>评分：20</span>
       </div>
-      <div class="item-tags"><span class="tag">学校预算</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">财务预算信息</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="学校预算"
+      data-topic="高校预算"
+      data-tags="学校预算|陕西"
+      data-score="20"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/cwzcjsfxx/cwszys.htm" target="_blank" rel="noopener noreferrer">财务收支预算</a>
       </div>
@@ -1354,11 +1995,18 @@
         <span>类型：网页</span>
         <span>评分：20</span>
       </div>
-      <div class="item-tags"><span class="tag">学校预算</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">财务收支预算</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="学校预算"
+      data-topic="高校预算"
+      data-tags="学校预算|陕西"
+      data-score="15"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.xaut.edu.cn/cwzcjsfxx/cwglzd.htm" target="_blank" rel="noopener noreferrer">财务管理制度</a>
       </div>
@@ -1369,11 +2017,18 @@
         <span>类型：网页</span>
         <span>评分：15</span>
       </div>
-      <div class="item-tags"><span class="tag">学校预算</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">财务管理制度</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="学校预算"
+      data-topic="高校预算"
+      data-tags="学校预算|陕西"
+      data-score="15"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/gksx/cw_zcjsfxx/cwzd.htm" target="_blank" rel="noopener noreferrer">财务制度</a>
       </div>
@@ -1384,11 +2039,18 @@
         <span>类型：网页</span>
         <span>评分：15</span>
       </div>
-      <div class="item-tags"><span class="tag">学校预算</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">财务制度</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="学校预算"
+      data-topic="高校预算"
+      data-tags="学校预算|陕西"
+      data-score="15"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://xxgk.snnu.edu.cn/gksx/cw_zcjsfxx.htm" target="_blank" rel="noopener noreferrer">财务、资产及收费信息</a>
       </div>
@@ -1399,21 +2061,29 @@
         <span>类型：网页</span>
         <span>评分：15</span>
       </div>
-      <div class="item-tags"><span class="tag">学校预算</span><span class="tag">陕西</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
       <div class="item-snippet">财务、资产及收费信息</div>
     </article>
     
       </div>
+      
     </section>
     
-    <section class="category-section">
+    <section class="category-section" data-category-section="专业趋势">
       <div class="section-head">
         <h2>专业趋势</h2>
         <span class="section-count">3 条</span>
       </div>
       <div class="item-grid">
         
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="专业趋势"
+      data-topic="专业调整"
+      data-tags="PDF|专业信息|专业趋势|新增专业"
+      data-score="6"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/W020250422312780758186.pdf" target="_blank" rel="noopener noreferrer">2024年度普通高等学校本科专业备案和审批结果</a>
       </div>
@@ -1424,11 +2094,18 @@
         <span>类型：PDF</span>
         <span>评分：6</span>
       </div>
-      <div class="item-tags"><span class="tag">PDF</span><span class="tag">专业信息</span><span class="tag">专业趋势</span><span class="tag">新增专业</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="PDF">PDF</button><button class="tag filter-tag" type="button" data-tag="专业信息">专业信息</button><button class="tag filter-tag" type="button" data-tag="专业趋势">专业趋势</button><button class="tag filter-tag" type="button" data-tag="新增专业">新增专业</button></div>
       <div class="item-snippet">2024年度普通高等学校本科专业备案和审批结果</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="专业趋势"
+      data-topic="专业调整"
+      data-tags="专业信息|专业趋势|公务员|新增专业"
+      data-score=""
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="http://www.moe.gov.cn/jyb_xwfb/s271/202504/t20250422_1188246.html" target="_blank" rel="noopener noreferrer">教育部高等教育司负责人就2024年度普通高等学校本科专业备案和审批结果及《普通高等学校本科专业目录（2025年）》答记者问</a>
       </div>
@@ -1439,11 +2116,18 @@
         <span>类型：网页</span>
         <span>评分：</span>
       </div>
-      <div class="item-tags"><span class="tag">专业信息</span><span class="tag">专业趋势</span><span class="tag">公务员</span><span class="tag">新增专业</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="专业信息">专业信息</button><button class="tag filter-tag" type="button" data-tag="专业趋势">专业趋势</button><button class="tag filter-tag" type="button" data-tag="公务员">公务员</button><button class="tag filter-tag" type="button" data-tag="新增专业">新增专业</button></div>
       <div class="item-snippet">教育部高等教育司负责人就2024年度普通高等学校本科专业备案和审批结果及《普通高等学校本科专业目录（2025年）》答记者问</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="专业趋势"
+      data-topic="专业调整"
+      data-tags="专业信息|专业趋势|公务员|新增专业"
+      data-score=""
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202504/t20250422_1188245.html" target="_blank" rel="noopener noreferrer">教育部公布2024年度本科专业备案和审批结果并更新发布本科专业目录</a>
       </div>
@@ -1454,21 +2138,29 @@
         <span>类型：网页</span>
         <span>评分：</span>
       </div>
-      <div class="item-tags"><span class="tag">专业信息</span><span class="tag">专业趋势</span><span class="tag">公务员</span><span class="tag">新增专业</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="专业信息">专业信息</button><button class="tag filter-tag" type="button" data-tag="专业趋势">专业趋势</button><button class="tag filter-tag" type="button" data-tag="公务员">公务员</button><button class="tag filter-tag" type="button" data-tag="新增专业">新增专业</button></div>
       <div class="item-snippet">教育部公布2024年度本科专业备案和审批结果并更新发布本科专业目录</div>
     </article>
     
       </div>
+      
     </section>
     
-    <section class="category-section">
+    <section class="category-section" data-category-section="未分类">
       <div class="section-head">
         <h2>未分类</h2>
         <span class="section-count">10 条</span>
       </div>
       <div class="item-grid">
         
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="未分类"
+      data-topic="专业调整"
+      data-tags="PDF|专业信息|公务员|未分类"
+      data-score="6"
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/W020250422312780837078.pdf" target="_blank" rel="noopener noreferrer">普通高等学校本科专业目录（2025年）</a>
       </div>
@@ -1479,11 +2171,18 @@
         <span>类型：PDF</span>
         <span>评分：6</span>
       </div>
-      <div class="item-tags"><span class="tag">PDF</span><span class="tag">专业信息</span><span class="tag">公务员</span><span class="tag">未分类</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="PDF">PDF</button><button class="tag filter-tag" type="button" data-tag="专业信息">专业信息</button><button class="tag filter-tag" type="button" data-tag="公务员">公务员</button><button class="tag filter-tag" type="button" data-tag="未分类">未分类</button></div>
       <div class="item-snippet">普通高等学校本科专业目录（2025年）</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="未分类"
+      data-topic="国企要求"
+      data-tags="国企|未分类"
+      data-score=""
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://www.gzw.sh.gov.cn/shgzw_zxzx_qxgz/20260304/312fe08b01464e6594aa182a5369f314.html" target="_blank" rel="noopener noreferrer">• 马力全开！青浦区国资国企奋力冲刺首季“开门红”</a>
       </div>
@@ -1494,11 +2193,18 @@
         <span>类型：网页</span>
         <span>评分：</span>
       </div>
-      <div class="item-tags"><span class="tag">国企</span><span class="tag">未分类</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="国企">国企</button><button class="tag filter-tag" type="button" data-tag="未分类">未分类</button></div>
       <div class="item-snippet">• 马力全开！青浦区国资国企奋力冲刺首季“开门红”</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="未分类"
+      data-topic="国企要求"
+      data-tags="国企|未分类"
+      data-score=""
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://www.gzw.sh.gov.cn/shgzw_zxzx_qxgz/20260302/2cedfe32377c49c3aa9b24ed4be489a8.html" target="_blank" rel="noopener noreferrer">• 静安区国资国企改革发展暨党建工作会议召开</a>
       </div>
@@ -1509,26 +2215,18 @@
         <span>类型：网页</span>
         <span>评分：</span>
       </div>
-      <div class="item-tags"><span class="tag">国企</span><span class="tag">未分类</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="国企">国企</button><button class="tag filter-tag" type="button" data-tag="未分类">未分类</button></div>
       <div class="item-snippet">• 静安区国资国企改革发展暨党建工作会议召开</div>
     </article>
     
-    <article class="item-card">
-      <div class="item-header">
-        <a class="item-title" href="https://www.gzw.sh.gov.cn/shgzw_wsbs_zfkfy/20250825/8fcba7c47f5f4205ae03c91b6ce939f5.html" target="_blank" rel="noopener noreferrer">• 零距离，新体验！2025“上海国企开放日”集中开放活动全景回顾来啦～</a>
-      </div>
-      <div class="item-meta">
-        <span>日期：未知日期</span>
-        <span>来源：国企招聘专题</span>
-        <span>专题：国企要求</span>
-        <span>类型：网页</span>
-        <span>评分：</span>
-      </div>
-      <div class="item-tags"><span class="tag">国企</span><span class="tag">未分类</span></div>
-      <div class="item-snippet">• 零距离，新体验！2025“上海国企开放日”集中开放活动全景回顾来啦～</div>
-    </article>
-    
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="未分类"
+      data-topic="国企要求"
+      data-tags="国企|未分类"
+      data-score=""
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://www.gzw.sh.gov.cn/shgzw_gqdj_qtgz/20251031/bfc7d249acaf45519f9799e2c9829736.html" target="_blank" rel="noopener noreferrer">• 深化校企合作，服务青年成长，市国资青联、华东理工大学育人发展联盟启动暨专场招聘会举行</a>
       </div>
@@ -1539,11 +2237,18 @@
         <span>类型：网页</span>
         <span>评分：</span>
       </div>
-      <div class="item-tags"><span class="tag">国企</span><span class="tag">未分类</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="国企">国企</button><button class="tag filter-tag" type="button" data-tag="未分类">未分类</button></div>
       <div class="item-snippet">• 深化校企合作，服务青年成长，市国资青联、华东理工大学育人发展联盟启动暨专场招聘会举行</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="未分类"
+      data-topic="国企要求"
+      data-tags="国企|未分类"
+      data-score=""
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://www.gzw.sh.gov.cn/shgzw_zxzx_qxgz/20260227/734de1604a654d83b537f83ed33c5d7f.html" target="_blank" rel="noopener noreferrer">• 浦东国资国企马力全开跑好开局第一棒</a>
       </div>
@@ -1554,11 +2259,18 @@
         <span>类型：网页</span>
         <span>评分：</span>
       </div>
-      <div class="item-tags"><span class="tag">国企</span><span class="tag">未分类</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="国企">国企</button><button class="tag filter-tag" type="button" data-tag="未分类">未分类</button></div>
       <div class="item-snippet">• 浦东国资国企马力全开跑好开局第一棒</div>
     </article>
     
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="未分类"
+      data-topic="国企要求"
+      data-tags="国企|未分类"
+      data-score=""
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://www.gzw.sh.gov.cn/shgzw_zxzx_qxgz/20260304/b44ba11a2bef4869ac67f82704a5603d.html" target="_blank" rel="noopener noreferrer">• 实干启新篇，长宁区国资国企跑好开局“第一棒”</a>
       </div>
@@ -1569,41 +2281,18 @@
         <span>类型：网页</span>
         <span>评分：</span>
       </div>
-      <div class="item-tags"><span class="tag">国企</span><span class="tag">未分类</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="国企">国企</button><button class="tag filter-tag" type="button" data-tag="未分类">未分类</button></div>
       <div class="item-snippet">• 实干启新篇，长宁区国资国企跑好开局“第一棒”</div>
     </article>
     
-    <article class="item-card">
-      <div class="item-header">
-        <a class="item-title" href="https://www.gzw.sh.gov.cn/shgzw_gqdj_qtgz/20250527/96159a74e7f740fea078675b0d0af9aa.html" target="_blank" rel="noopener noreferrer">• “青春挺膺勇担当 国企改革建新功”上海市国资委系统纪念五四运动106周年主题团日活动举行</a>
-      </div>
-      <div class="item-meta">
-        <span>日期：未知日期</span>
-        <span>来源：国企招聘专题</span>
-        <span>专题：国企要求</span>
-        <span>类型：网页</span>
-        <span>评分：</span>
-      </div>
-      <div class="item-tags"><span class="tag">国企</span><span class="tag">未分类</span></div>
-      <div class="item-snippet">• “青春挺膺勇担当 国企改革建新功”上海市国资委系统纪念五四运动106周年主题团日活动举行</div>
-    </article>
-    
-    <article class="item-card">
-      <div class="item-header">
-        <a class="item-title" href="https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20250714/8a4981422b5c43e486f31e1b4e13f88c.html" target="_blank" rel="noopener noreferrer">• gogogo，2025“上海国企开放日”出发喽～70+场活动承包您的整个夏天！</a>
-      </div>
-      <div class="item-meta">
-        <span>日期：未知日期</span>
-        <span>来源：国企招聘专题</span>
-        <span>专题：国企要求</span>
-        <span>类型：网页</span>
-        <span>评分：</span>
-      </div>
-      <div class="item-tags"><span class="tag">国企</span><span class="tag">未分类</span></div>
-      <div class="item-snippet">• gogogo，2025“上海国企开放日”出发喽～70+场活动承包您的整个夏天！</div>
-    </article>
-    
-    <article class="item-card">
+    <article
+      class="item-card"
+      data-category="未分类"
+      data-topic="国企要求"
+      data-tags="国企|未分类"
+      data-score=""
+      data-low-priority="false"
+    >
       <div class="item-header">
         <a class="item-title" href="https://www.gzw.sh.gov.cn/shgzw_gqdj_zzyd/20260126/e48363e20f404dde9a81da0717f555ae.html" target="_blank" rel="noopener noreferrer">• 2026年上海市国资国企改革发展暨党建工作会议召开</a>
       </div>
@@ -1614,13 +2303,88 @@
         <span>类型：网页</span>
         <span>评分：</span>
       </div>
-      <div class="item-tags"><span class="tag">国企</span><span class="tag">未分类</span></div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="国企">国企</button><button class="tag filter-tag" type="button" data-tag="未分类">未分类</button></div>
       <div class="item-snippet">• 2026年上海市国资国企改革发展暨党建工作会议召开</div>
     </article>
     
       </div>
+      
+        <details class="low-priority-box">
+          <summary>展开低优先级新闻（3 条）</summary>
+          <div class="item-grid low-priority-grid">
+            
+    <article
+      class="item-card"
+      data-category="未分类"
+      data-topic="国企要求"
+      data-tags="国企|未分类"
+      data-score=""
+      data-low-priority="true"
+    >
+      <div class="item-header">
+        <a class="item-title" href="https://www.gzw.sh.gov.cn/shgzw_wsbs_zfkfy/20250825/8fcba7c47f5f4205ae03c91b6ce939f5.html" target="_blank" rel="noopener noreferrer">• 零距离，新体验！2025“上海国企开放日”集中开放活动全景回顾来啦～</a>
+      </div>
+      <div class="item-meta">
+        <span>日期：未知日期</span>
+        <span>来源：国企招聘专题</span>
+        <span>专题：国企要求</span>
+        <span>类型：网页</span>
+        <span>评分：</span>
+      </div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="国企">国企</button><button class="tag filter-tag" type="button" data-tag="未分类">未分类</button></div>
+      <div class="item-snippet">• 零距离，新体验！2025“上海国企开放日”集中开放活动全景回顾来啦～</div>
+    </article>
+    
+    <article
+      class="item-card"
+      data-category="未分类"
+      data-topic="国企要求"
+      data-tags="国企|未分类"
+      data-score=""
+      data-low-priority="true"
+    >
+      <div class="item-header">
+        <a class="item-title" href="https://www.gzw.sh.gov.cn/shgzw_gqdj_qtgz/20250527/96159a74e7f740fea078675b0d0af9aa.html" target="_blank" rel="noopener noreferrer">• “青春挺膺勇担当 国企改革建新功”上海市国资委系统纪念五四运动106周年主题团日活动举行</a>
+      </div>
+      <div class="item-meta">
+        <span>日期：未知日期</span>
+        <span>来源：国企招聘专题</span>
+        <span>专题：国企要求</span>
+        <span>类型：网页</span>
+        <span>评分：</span>
+      </div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="国企">国企</button><button class="tag filter-tag" type="button" data-tag="未分类">未分类</button></div>
+      <div class="item-snippet">• “青春挺膺勇担当 国企改革建新功”上海市国资委系统纪念五四运动106周年主题团日活动举行</div>
+    </article>
+    
+    <article
+      class="item-card"
+      data-category="未分类"
+      data-topic="国企要求"
+      data-tags="国企|未分类"
+      data-score=""
+      data-low-priority="true"
+    >
+      <div class="item-header">
+        <a class="item-title" href="https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20250714/8a4981422b5c43e486f31e1b4e13f88c.html" target="_blank" rel="noopener noreferrer">• gogogo，2025“上海国企开放日”出发喽～70+场活动承包您的整个夏天！</a>
+      </div>
+      <div class="item-meta">
+        <span>日期：未知日期</span>
+        <span>来源：国企招聘专题</span>
+        <span>专题：国企要求</span>
+        <span>类型：网页</span>
+        <span>评分：</span>
+      </div>
+      <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="国企">国企</button><button class="tag filter-tag" type="button" data-tag="未分类">未分类</button></div>
+      <div class="item-snippet">• gogogo，2025“上海国企开放日”出发喽～70+场活动承包您的整个夏天！</div>
+    </article>
+    
+          </div>
+        </details>
+        
     </section>
     
+    </main>
 
     
 
@@ -1628,5 +2392,132 @@
       页面文件位于 docs/index.html
     </div>
   </div>
+
+  <script>
+    (function () {
+      const state = {
+        category: "全部",
+        tag: "全部",
+        sortMode: "score",
+        hideLowPriority: false,
+      };
+
+      const root = document.getElementById("contentRoot");
+
+      function parseDate(value) {
+        if (!value) return 0;
+        const t = Date.parse(value.replace(/年|月/g, "-").replace(/日/g, ""));
+        return isNaN(t) ? 0 : t;
+      }
+
+      function applySort(section) {
+        const grid = section.querySelector(".item-grid");
+        if (!grid) return;
+
+        const cards = Array.from(grid.querySelectorAll(".item-card"));
+        cards.sort((a, b) => {
+          if (state.sortMode === "date") {
+            const ad = parseDate(a.querySelector(".item-meta span")?.textContent || "");
+            const bd = parseDate(b.querySelector(".item-meta span")?.textContent || "");
+            return bd - ad;
+          }
+          const as = Number(a.dataset.score || 0);
+          const bs = Number(b.dataset.score || 0);
+          if (bs !== as) return bs - as;
+          const at = a.querySelector(".item-title")?.textContent || "";
+          const bt = b.querySelector(".item-title")?.textContent || "";
+          return bt.localeCompare(at, "zh-CN");
+        });
+        cards.forEach(card => grid.appendChild(card));
+      }
+
+      function itemVisible(card) {
+        const categoryOk = state.category === "全部" || card.dataset.category === state.category;
+        const tags = (card.dataset.tags || "").split("|").filter(Boolean);
+        const tagOk = state.tag === "全部" || tags.includes(state.tag);
+        const lowPriorityOk = !state.hideLowPriority || card.dataset.lowPriority !== "true";
+        return categoryOk && tagOk && lowPriorityOk;
+      }
+
+      function refresh() {
+        const sections = Array.from(root.querySelectorAll("[data-category-section]"));
+
+        sections.forEach(section => {
+          const cards = Array.from(section.querySelectorAll(".item-card"));
+          let visibleCount = 0;
+
+          cards.forEach(card => {
+            const visible = itemVisible(card);
+            card.classList.toggle("hidden", !visible);
+            if (visible) visibleCount += 1;
+          });
+
+          applySort(section);
+
+          const countNode = section.querySelector(".section-count");
+          if (countNode) {
+            countNode.textContent = visibleCount + " 条";
+          }
+
+          section.classList.toggle("hidden", visibleCount === 0);
+        });
+
+        document.querySelectorAll("[data-category-filter]").forEach(btn => {
+          btn.classList.toggle("active", btn.dataset.categoryFilter === state.category);
+        });
+
+        document.querySelectorAll("[data-tag-filter]").forEach(btn => {
+          btn.classList.toggle("active", btn.dataset.tagFilter === state.tag);
+        });
+
+        document.querySelectorAll("[data-sort-mode]").forEach(btn => {
+          btn.classList.toggle("active", btn.dataset.sortMode === state.sortMode);
+        });
+
+        const lowBtn = document.getElementById("toggleLowPriority");
+        if (lowBtn) {
+          lowBtn.classList.toggle("active", state.hideLowPriority);
+        }
+      }
+
+      document.querySelectorAll("[data-category-filter]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          state.category = btn.dataset.categoryFilter;
+          refresh();
+        });
+      });
+
+      document.querySelectorAll("[data-tag-filter]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          state.tag = btn.dataset.tagFilter;
+          refresh();
+        });
+      });
+
+      document.querySelectorAll(".filter-tag").forEach(btn => {
+        btn.addEventListener("click", () => {
+          state.tag = btn.dataset.tag;
+          refresh();
+        });
+      });
+
+      document.querySelectorAll("[data-sort-mode]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          state.sortMode = btn.dataset.sortMode;
+          refresh();
+        });
+      });
+
+      const lowBtn = document.getElementById("toggleLowPriority");
+      if (lowBtn) {
+        lowBtn.addEventListener("click", () => {
+          state.hideLowPriority = !state.hideLowPriority;
+          refresh();
+        });
+      }
+
+      refresh();
+    })();
+  </script>
 </body>
 </html>

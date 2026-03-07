@@ -1,5 +1,5 @@
 sources:
-  - name: 自定义-某学校招生页
+  - name: 自定义-学校招生网
     enabled: false
     source_type: official
     platform: website
@@ -10,21 +10,49 @@ sources:
     allow_domains:
       - example.edu.cn
     must_include:
-      - 招生
+      - 招生章程
+      - 招生计划
       - 录取
+      - 分数线
     exclude_keywords:
       - 研究生
+      - 博士
+      - 硕士
     tags:
       - 自定义
+      - 招生
 
-  - name: 自定义-小红书搜索词
+  - name: 自定义-学校就业网
+    enabled: false
+    source_type: official
+    platform: website
+    topic: careers
+    mode: crawl
+    trust_level: high
+    entry: https://job.example.edu.cn/
+    allow_domains:
+      - job.example.edu.cn
+      - example.edu.cn
+    must_include:
+      - 就业质量年度报告
+      - 毕业生就业
+      - 就业去向
+      - 升学
+    exclude_keywords:
+      - 采购
+    tags:
+      - 自定义
+      - 就业
+
+  - name: 自定义-平台搜索词
     enabled: false
     source_type: platform
     platform: xiaohongshu
     topic: recommendation
     mode: search
     trust_level: medium
-    entry: 某大学 保研 夏令营
+    entry: 某大学 保研 夏令营 推免
     tags:
       - 自定义
-      - 小红书
+      - 平台
+      - 保研

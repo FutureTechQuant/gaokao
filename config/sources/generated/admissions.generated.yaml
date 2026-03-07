@@ -1,16 +1,18 @@
 sources:
-- name: 陕西师范大学本科招生
+- name: 西北大学本科招生
   enabled: true
   source_type: official
   platform: website
   topic: admissions
   mode: crawl
   trust_level: high
-  entry: https://zsb.snnu.edu.cn
+  entry: https://zsb.nwu.edu.cn
   allow_domains:
-  - zsb.snnu.edu.cn
-  - xxgk.snnu.edu.cn
-  - snnu.edu.cn
+  - zsb.nwu.edu.cn
+  - xxgk.nwu.edu.cn
+  - cw.nwu.edu.cn
+  - job.nwu.edu.cn
+  - nwu.edu.cn
   must_include: &id001
   - 本科招生
   - 招生章程
@@ -26,26 +28,6 @@ sources:
   - 硕士
   - 继续教育
   - 留学生
-  tags:
-  - 陕西
-  - 师范
-  - 招生
-- name: 西北大学本科招生
-  enabled: true
-  source_type: official
-  platform: website
-  topic: admissions
-  mode: crawl
-  trust_level: high
-  entry: https://zsb.nwu.edu.cn
-  allow_domains:
-  - zsb.nwu.edu.cn
-  - xxgk.nwu.edu.cn
-  - cw.nwu.edu.cn
-  - job.nwu.edu.cn
-  - nwu.edu.cn
-  must_include: *id001
-  exclude_keywords: *id002
   tags:
   - 陕西
   - 招生
@@ -84,4 +66,22 @@ sources:
   exclude_keywords: *id002
   tags:
   - 陕西
+  - 招生
+- name: 陕西师范大学本科招生
+  enabled: true
+  source_type: official
+  platform: website
+  topic: admissions
+  mode: crawl
+  trust_level: high
+  entry: https://zsb.snnu.edu.cn
+  allow_domains:
+  - zsb.snnu.edu.cn
+  - xxgk.snnu.edu.cn
+  - snnu.edu.cn
+  must_include: *id001
+  exclude_keywords: *id002
+  tags:
+  - 陕西
+  - 师范
   - 招生

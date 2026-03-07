@@ -1,33 +1,4 @@
 sources:
-- name: 陕西师范大学就业质量
-  enabled: true
-  source_type: official
-  platform: website
-  topic: careers
-  mode: crawl
-  trust_level: high
-  entry: https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm
-  allow_domains:
-  - zsb.snnu.edu.cn
-  - xxgk.snnu.edu.cn
-  - snnu.edu.cn
-  must_include: &id001
-  - 就业质量年度报告
-  - 毕业生就业质量
-  - 就业质量
-  - 就业去向
-  - 行业分布
-  - 升学
-  - 深造
-  exclude_keywords: &id002
-  - 采购
-  - 研究生招生
-  - 招标
-  tags:
-  - 陕西
-  - 师范
-  - 就业
-  - 就业质量报告
 - name: 西北大学就业质量
   enabled: true
   source_type: official
@@ -42,8 +13,18 @@ sources:
   - cw.nwu.edu.cn
   - job.nwu.edu.cn
   - nwu.edu.cn
-  must_include: *id001
-  exclude_keywords: *id002
+  must_include: &id001
+  - 就业质量年度报告
+  - 毕业生就业质量
+  - 就业质量
+  - 就业去向
+  - 行业分布
+  - 升学
+  - 深造
+  exclude_keywords: &id002
+  - 采购
+  - 研究生招生
+  - 招标
   tags:
   - 陕西
   - 就业
@@ -84,5 +65,24 @@ sources:
   exclude_keywords: *id002
   tags:
   - 陕西
+  - 就业
+  - 就业质量报告
+- name: 陕西师范大学就业质量
+  enabled: true
+  source_type: official
+  platform: website
+  topic: careers
+  mode: crawl
+  trust_level: high
+  entry: https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm
+  allow_domains:
+  - zsb.snnu.edu.cn
+  - xxgk.snnu.edu.cn
+  - snnu.edu.cn
+  must_include: *id001
+  exclude_keywords: *id002
+  tags:
+  - 陕西
+  - 师范
   - 就业
   - 就业质量报告

@@ -1,32 +1,4 @@
 sources:
-- name: 陕西师范大学预算公开
-  enabled: true
-  source_type: official
-  platform: website
-  topic: budgets
-  mode: crawl
-  trust_level: high
-  entry: https://xxgk.snnu.edu.cn/
-  allow_domains:
-  - zsb.snnu.edu.cn
-  - xxgk.snnu.edu.cn
-  - snnu.edu.cn
-  must_include: &id001
-  - 单位预算
-  - 部门预算
-  - 预算
-  - 决算
-  - 财务
-  - 经费
-  exclude_keywords: &id002
-  - 采购
-  - 招标
-  - 中标
-  - 成交公告
-  tags:
-  - 陕西
-  - 师范
-  - 预算
 - name: 西北大学预算公开
   enabled: true
   source_type: official
@@ -41,8 +13,18 @@ sources:
   - cw.nwu.edu.cn
   - job.nwu.edu.cn
   - nwu.edu.cn
-  must_include: *id001
-  exclude_keywords: *id002
+  must_include: &id001
+  - 单位预算
+  - 部门预算
+  - 预算
+  - 决算
+  - 财务
+  - 经费
+  exclude_keywords: &id002
+  - 采购
+  - 招标
+  - 中标
+  - 成交公告
   tags:
   - 陕西
   - 预算
@@ -81,4 +63,22 @@ sources:
   exclude_keywords: *id002
   tags:
   - 陕西
+  - 预算
+- name: 陕西师范大学预算公开
+  enabled: true
+  source_type: official
+  platform: website
+  topic: budgets
+  mode: crawl
+  trust_level: high
+  entry: https://xxgk.snnu.edu.cn/
+  allow_domains:
+  - zsb.snnu.edu.cn
+  - xxgk.snnu.edu.cn
+  - snnu.edu.cn
+  must_include: *id001
+  exclude_keywords: *id002
+  tags:
+  - 陕西
+  - 师范
   - 预算

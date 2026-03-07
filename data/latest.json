@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-07T21:03:21+08:00",
+  "updated_at": "2026-03-07T21:43:53+08:00",
   "count": 110,
   "errors": [
     {
@@ -24,7 +24,7 @@
       "source": "西安邮电大学保研推免",
       "url": "https://jwc.xupt.edu.cn/",
       "platform": "website",
-      "error": "HTTPSConnectionPool(host='jwc.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='jwc.xupt.edu.cn', port=443) at 0x7fa9b672aad0>, 'Connection to jwc.xupt.edu.cn timed out. (connect timeout=25)'))"
+      "error": "HTTPSConnectionPool(host='jwc.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='jwc.xupt.edu.cn', port=443) at 0x7f404431a990>, 'Connection to jwc.xupt.edu.cn timed out. (connect timeout=25)'))"
     },
     {
       "source": "阳光高考-首页",
@@ -140,7 +140,7 @@
         "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -165,7 +165,7 @@
         "平台内容",
         "考研"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "保研信息"
     },
     {
@@ -191,7 +191,7 @@
         "经验帖",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "保研信息"
     },
     {
@@ -217,7 +217,7 @@
         "经验帖",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "保研信息"
     },
     {
@@ -246,7 +246,7 @@
         "平台内容",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "就业质量"
     },
     {
@@ -272,7 +272,7 @@
         "平台内容",
         "志愿"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "保研信息"
     },
     {
@@ -299,7 +299,7 @@
         "平台内容",
         "选调生"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "就业质量"
     },
     {
@@ -322,7 +322,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "学校预算"
     },
     {
@@ -347,7 +347,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -370,7 +370,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "学校预算"
     },
     {
@@ -393,8 +393,200 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "学校预算"
+    },
+    {
+      "id": "076110642d3c7f581285481c53ae62af368d33d0",
+      "title": "高校毕业生就业质量年度报告",
+      "url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
+      "source": "西安理工大学就业质量",
+      "source_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
+      "topic": "就业质量报告",
+      "date": "",
+      "snippet": "高校毕业生就业质量年度报告",
+      "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
+      "is_pdf": false,
+      "score": 81,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "就业",
+        "就业质量",
+        "就业质量报告",
+        "陕西"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "就业质量"
+    },
+    {
+      "id": "5048f29984ad09d4a9ac95f6d09916bdc8016ac3",
+      "title": "西安理工大学2023届毕业生就业质量年度报告",
+      "url": "https://xxgk.xaut.edu.cn/info/1054/1473.htm",
+      "source": "西安理工大学就业质量",
+      "source_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
+      "topic": "就业质量报告",
+      "date": "",
+      "snippet": "西安理工大学2023届毕业生就业质量年度报告",
+      "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
+      "is_pdf": false,
+      "score": 81,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "就业",
+        "就业质量",
+        "就业质量报告",
+        "陕西"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "就业质量"
+    },
+    {
+      "id": "848590be73660a4cd421bb254cce67de6bdb6a21",
+      "title": "西安理工大学2022年毕业生就业质量年度报告",
+      "url": "https://xxgk.xaut.edu.cn/info/1054/1495.htm",
+      "source": "西安理工大学就业质量",
+      "source_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
+      "topic": "就业质量报告",
+      "date": "",
+      "snippet": "西安理工大学2022年毕业生就业质量年度报告",
+      "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
+      "is_pdf": false,
+      "score": 81,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "就业",
+        "就业质量",
+        "就业质量报告",
+        "陕西"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "就业质量"
+    },
+    {
+      "id": "b085a9393b661329e07fdab68f0eaa554bb63e3e",
+      "title": "西安理工大学2021年毕业生就业质量年度报告",
+      "url": "https://xxgk.xaut.edu.cn/info/1054/1494.htm",
+      "source": "西安理工大学就业质量",
+      "source_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
+      "topic": "就业质量报告",
+      "date": "",
+      "snippet": "西安理工大学2021年毕业生就业质量年度报告",
+      "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
+      "is_pdf": false,
+      "score": 81,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "就业",
+        "就业质量",
+        "就业质量报告",
+        "陕西"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "就业质量"
+    },
+    {
+      "id": "0003b33d4361b948adad1a1dbade7f93f35002f1",
+      "title": "西安理工大学2020年毕业生就业质量年度报告",
+      "url": "https://xxgk.xaut.edu.cn/info/1054/1493.htm",
+      "source": "西安理工大学就业质量",
+      "source_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
+      "topic": "就业质量报告",
+      "date": "",
+      "snippet": "西安理工大学2020年毕业生就业质量年度报告",
+      "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
+      "is_pdf": false,
+      "score": 81,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "就业",
+        "就业质量",
+        "就业质量报告",
+        "陕西"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "就业质量"
+    },
+    {
+      "id": "627587bfa0d7455e1fd64d6e634cd577afc54a5f",
+      "title": "西安理工大学2019年毕业生就业质量年度报告",
+      "url": "https://xxgk.xaut.edu.cn/info/1054/1284.htm",
+      "source": "西安理工大学就业质量",
+      "source_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
+      "topic": "就业质量报告",
+      "date": "",
+      "snippet": "西安理工大学2019年毕业生就业质量年度报告",
+      "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
+      "is_pdf": false,
+      "score": 81,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "就业",
+        "就业质量",
+        "就业质量报告",
+        "陕西"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "就业质量"
+    },
+    {
+      "id": "c799ff2f05fb819336e62a6798d52a382c20ca6c",
+      "title": "西安理工大学2018年毕业生就业质量年度报告",
+      "url": "https://xxgk.xaut.edu.cn/info/1054/1285.htm",
+      "source": "西安理工大学就业质量",
+      "source_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
+      "topic": "就业质量报告",
+      "date": "",
+      "snippet": "西安理工大学2018年毕业生就业质量年度报告",
+      "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
+      "is_pdf": false,
+      "score": 81,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "就业",
+        "就业质量",
+        "就业质量报告",
+        "陕西"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "就业质量"
+    },
+    {
+      "id": "11b8cdeb18f09e2461fb614e3b60a7fd0d39bc90",
+      "title": "2017年西安理工大学毕业生就业质量年度报告",
+      "url": "https://xxgk.xaut.edu.cn/info/1054/1287.htm",
+      "source": "西安理工大学就业质量",
+      "source_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
+      "topic": "就业质量报告",
+      "date": "",
+      "snippet": "2017年西安理工大学毕业生就业质量年度报告",
+      "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
+      "is_pdf": false,
+      "score": 81,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "就业",
+        "就业质量",
+        "就业质量报告",
+        "陕西"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "就业质量"
     },
     {
       "id": "fd65809bdf00833762055711b5d1a13a5e42bb88",
@@ -418,7 +610,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "就业质量"
     },
     {
@@ -443,7 +635,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "就业质量"
     },
     {
@@ -468,7 +660,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "就业质量"
     },
     {
@@ -493,7 +685,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "就业质量"
     },
     {
@@ -518,7 +710,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "就业质量"
     },
     {
@@ -543,199 +735,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "就业质量"
-    },
-    {
-      "id": "076110642d3c7f581285481c53ae62af368d33d0",
-      "title": "高校毕业生就业质量年度报告",
-      "url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "source": "西安理工大学就业质量",
-      "source_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "topic": "就业质量报告",
-      "date": "",
-      "snippet": "高校毕业生就业质量年度报告",
-      "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "is_pdf": false,
-      "score": 81,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "就业",
-        "就业质量",
-        "就业质量报告",
-        "陕西"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "就业质量"
-    },
-    {
-      "id": "5048f29984ad09d4a9ac95f6d09916bdc8016ac3",
-      "title": "西安理工大学2023届毕业生就业质量年度报告",
-      "url": "https://xxgk.xaut.edu.cn/info/1054/1473.htm",
-      "source": "西安理工大学就业质量",
-      "source_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "topic": "就业质量报告",
-      "date": "",
-      "snippet": "西安理工大学2023届毕业生就业质量年度报告",
-      "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "is_pdf": false,
-      "score": 81,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "就业",
-        "就业质量",
-        "就业质量报告",
-        "陕西"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "就业质量"
-    },
-    {
-      "id": "848590be73660a4cd421bb254cce67de6bdb6a21",
-      "title": "西安理工大学2022年毕业生就业质量年度报告",
-      "url": "https://xxgk.xaut.edu.cn/info/1054/1495.htm",
-      "source": "西安理工大学就业质量",
-      "source_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "topic": "就业质量报告",
-      "date": "",
-      "snippet": "西安理工大学2022年毕业生就业质量年度报告",
-      "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "is_pdf": false,
-      "score": 81,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "就业",
-        "就业质量",
-        "就业质量报告",
-        "陕西"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "就业质量"
-    },
-    {
-      "id": "b085a9393b661329e07fdab68f0eaa554bb63e3e",
-      "title": "西安理工大学2021年毕业生就业质量年度报告",
-      "url": "https://xxgk.xaut.edu.cn/info/1054/1494.htm",
-      "source": "西安理工大学就业质量",
-      "source_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "topic": "就业质量报告",
-      "date": "",
-      "snippet": "西安理工大学2021年毕业生就业质量年度报告",
-      "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "is_pdf": false,
-      "score": 81,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "就业",
-        "就业质量",
-        "就业质量报告",
-        "陕西"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "就业质量"
-    },
-    {
-      "id": "0003b33d4361b948adad1a1dbade7f93f35002f1",
-      "title": "西安理工大学2020年毕业生就业质量年度报告",
-      "url": "https://xxgk.xaut.edu.cn/info/1054/1493.htm",
-      "source": "西安理工大学就业质量",
-      "source_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "topic": "就业质量报告",
-      "date": "",
-      "snippet": "西安理工大学2020年毕业生就业质量年度报告",
-      "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "is_pdf": false,
-      "score": 81,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "就业",
-        "就业质量",
-        "就业质量报告",
-        "陕西"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "就业质量"
-    },
-    {
-      "id": "627587bfa0d7455e1fd64d6e634cd577afc54a5f",
-      "title": "西安理工大学2019年毕业生就业质量年度报告",
-      "url": "https://xxgk.xaut.edu.cn/info/1054/1284.htm",
-      "source": "西安理工大学就业质量",
-      "source_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "topic": "就业质量报告",
-      "date": "",
-      "snippet": "西安理工大学2019年毕业生就业质量年度报告",
-      "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "is_pdf": false,
-      "score": 81,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "就业",
-        "就业质量",
-        "就业质量报告",
-        "陕西"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "就业质量"
-    },
-    {
-      "id": "c799ff2f05fb819336e62a6798d52a382c20ca6c",
-      "title": "西安理工大学2018年毕业生就业质量年度报告",
-      "url": "https://xxgk.xaut.edu.cn/info/1054/1285.htm",
-      "source": "西安理工大学就业质量",
-      "source_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "topic": "就业质量报告",
-      "date": "",
-      "snippet": "西安理工大学2018年毕业生就业质量年度报告",
-      "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "is_pdf": false,
-      "score": 81,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "就业",
-        "就业质量",
-        "就业质量报告",
-        "陕西"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "就业质量"
-    },
-    {
-      "id": "11b8cdeb18f09e2461fb614e3b60a7fd0d39bc90",
-      "title": "2017年西安理工大学毕业生就业质量年度报告",
-      "url": "https://xxgk.xaut.edu.cn/info/1054/1287.htm",
-      "source": "西安理工大学就业质量",
-      "source_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "topic": "就业质量报告",
-      "date": "",
-      "snippet": "2017年西安理工大学毕业生就业质量年度报告",
-      "page_url": "https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm",
-      "is_pdf": false,
-      "score": 81,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "就业",
-        "就业质量",
-        "就业质量报告",
-        "陕西"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "就业质量"
     },
     {
@@ -760,7 +760,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "就业质量"
     },
     {
@@ -785,7 +785,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "就业质量"
     },
     {
@@ -810,7 +810,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "就业质量"
     },
     {
@@ -835,7 +835,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "就业质量"
     },
     {
@@ -859,7 +859,7 @@
         "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -883,7 +883,7 @@
         "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -907,7 +907,7 @@
         "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -931,7 +931,7 @@
         "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -955,7 +955,7 @@
         "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -979,7 +979,7 @@
         "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -1004,7 +1004,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -1028,7 +1028,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "保研信息"
     },
     {
@@ -1052,7 +1052,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -1076,7 +1076,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -1100,7 +1100,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -1124,7 +1124,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -1148,7 +1148,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -1172,7 +1172,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -1196,7 +1196,31 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "301c76d4e5feb6d488c9ed7fd7f85d4bcac17c77",
+      "title": "财务收支决算",
+      "url": "https://xxgk.xaut.edu.cn/cwzcjsfxx/cwszjs.htm",
+      "source": "西安理工大学预算公开",
+      "source_url": "https://xxgk.xaut.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务收支决算",
+      "page_url": "https://xxgk.xaut.edu.cn/",
+      "is_pdf": false,
+      "score": 42,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校决算",
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "学校预算"
     },
     {
@@ -1221,31 +1245,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "301c76d4e5feb6d488c9ed7fd7f85d4bcac17c77",
-      "title": "财务收支决算",
-      "url": "https://xxgk.xaut.edu.cn/cwzcjsfxx/cwszjs.htm",
-      "source": "西安理工大学预算公开",
-      "source_url": "https://xxgk.xaut.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务收支决算",
-      "page_url": "https://xxgk.xaut.edu.cn/",
-      "is_pdf": false,
-      "score": 42,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校决算",
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "学校预算"
     },
     {
@@ -1270,7 +1270,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -1294,7 +1294,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -1318,7 +1318,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "学校预算"
     },
     {
@@ -1342,8 +1342,32 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "学校预算"
+    },
+    {
+      "id": "e17f18710d0b213ba0fec6d642cad2a74dc29336",
+      "title": "历年分数",
+      "url": "http://zsdata.xupt.edu.cn/zsdata/lqxx/#/lnfs",
+      "source": "西安邮电大学本科招生",
+      "source_url": "https://zhaosheng.xupt.edu.cn/",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "历年分数",
+      "page_url": "https://zhaosheng.xupt.edu.cn/",
+      "is_pdf": false,
+      "score": 36,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "分数线",
+        "招生",
+        "招生信息",
+        "陕西"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "招生信息"
     },
     {
       "id": "fd30385dbc9955495b2271dbb0bf701968da61a3",
@@ -1367,31 +1391,79 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
-      "id": "e17f18710d0b213ba0fec6d642cad2a74dc29336",
-      "title": "历年分数",
-      "url": "http://zsdata.xupt.edu.cn/zsdata/lqxx/#/lnfs",
-      "source": "西安邮电大学本科招生",
-      "source_url": "https://zhaosheng.xupt.edu.cn/",
+      "id": "543e3162eae0e5b6f8334d9a554472c1925d4943",
+      "title": "招生计划",
+      "url": "https://zsb.nwu.edu.cn/zszn/zsjh.htm",
+      "source": "西北大学本科招生",
+      "source_url": "https://zsb.nwu.edu.cn",
       "topic": "本科招生",
       "date": "",
-      "snippet": "历年分数",
-      "page_url": "https://zhaosheng.xupt.edu.cn/",
+      "snippet": "招生计划",
+      "page_url": "https://zsb.nwu.edu.cn",
       "is_pdf": false,
-      "score": 36,
+      "score": 35,
       "source_type": "official",
       "platform": "website",
       "trust_level": "high",
       "tags": [
-        "分数线",
         "招生",
         "招生信息",
+        "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "招生信息"
+    },
+    {
+      "id": "7d80444f2bb31e4e4228579c40d870e91837ecb2",
+      "title": "全国招生计划查询",
+      "url": "https://zhaosheng.xaut.edu.cn/xinxichaxun/zsjhcx/",
+      "source": "西安理工大学本科招生",
+      "source_url": "https://zhaosheng.xaut.edu.cn/",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "全国招生计划查询",
+      "page_url": "https://zhaosheng.xaut.edu.cn/",
+      "is_pdf": false,
+      "score": 35,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "招生",
+        "招生信息",
+        "招生计划",
+        "陕西"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "招生信息"
+    },
+    {
+      "id": "3954cd6ae60435e3e2f78eaec229fbb711b9262f",
+      "title": "招生计划",
+      "url": "http://zsdata.xupt.edu.cn/zsdata/lqxx/#/",
+      "source": "西安邮电大学本科招生",
+      "source_url": "https://zhaosheng.xupt.edu.cn/",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "招生计划",
+      "page_url": "https://zhaosheng.xupt.edu.cn/",
+      "is_pdf": false,
+      "score": 35,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "招生",
+        "招生信息",
+        "招生计划",
+        "陕西"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -1416,80 +1488,31 @@
         "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
-      "id": "543e3162eae0e5b6f8334d9a554472c1925d4943",
-      "title": "招生计划",
-      "url": "https://zsb.nwu.edu.cn/zszn/zsjh.htm",
-      "source": "西北大学本科招生",
-      "source_url": "https://zsb.nwu.edu.cn",
-      "topic": "本科招生",
+      "id": "b525f6bb012b4d52e62d4414d2f6a064be55a9ad",
+      "title": "财务收支预算",
+      "url": "https://xxgk.xaut.edu.cn/cwzcjsfxx/cwszys.htm",
+      "source": "西安理工大学预算公开",
+      "source_url": "https://xxgk.xaut.edu.cn/",
+      "topic": "高校预算",
       "date": "",
-      "snippet": "招生计划",
-      "page_url": "https://zsb.nwu.edu.cn",
+      "snippet": "财务收支预算",
+      "page_url": "https://xxgk.xaut.edu.cn/",
       "is_pdf": false,
       "score": 35,
       "source_type": "official",
       "platform": "website",
       "trust_level": "high",
       "tags": [
-        "招生",
-        "招生信息",
-        "招生计划",
-        "陕西"
+        "学校预算",
+        "陕西",
+        "预算"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "招生信息"
-    },
-    {
-      "id": "7d80444f2bb31e4e4228579c40d870e91837ecb2",
-      "title": "全国招生计划查询",
-      "url": "https://zhaosheng.xaut.edu.cn/xinxichaxun/zsjhcx/",
-      "source": "西安理工大学本科招生",
-      "source_url": "https://zhaosheng.xaut.edu.cn/",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "全国招生计划查询",
-      "page_url": "https://zhaosheng.xaut.edu.cn/",
-      "is_pdf": false,
-      "score": 35,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "招生",
-        "招生信息",
-        "招生计划",
-        "陕西"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "招生信息"
-    },
-    {
-      "id": "3954cd6ae60435e3e2f78eaec229fbb711b9262f",
-      "title": "招生计划",
-      "url": "http://zsdata.xupt.edu.cn/zsdata/lqxx/#/",
-      "source": "西安邮电大学本科招生",
-      "source_url": "https://zhaosheng.xupt.edu.cn/",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "招生计划",
-      "page_url": "https://zhaosheng.xupt.edu.cn/",
-      "is_pdf": false,
-      "score": 35,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "招生",
-        "招生信息",
-        "招生计划",
-        "陕西"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "招生信息"
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
     },
     {
       "id": "1b388c03c6d0c23dbc09f918b163f7ae8149f511",
@@ -1512,56 +1535,8 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "学校预算"
-    },
-    {
-      "id": "b525f6bb012b4d52e62d4414d2f6a064be55a9ad",
-      "title": "财务收支预算",
-      "url": "https://xxgk.xaut.edu.cn/cwzcjsfxx/cwszys.htm",
-      "source": "西安理工大学预算公开",
-      "source_url": "https://xxgk.xaut.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务收支预算",
-      "page_url": "https://xxgk.xaut.edu.cn/",
-      "is_pdf": false,
-      "score": 35,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "533db1f54ac49c17ed28cdc2a71d2cd7413fc5e2",
-      "title": "录取查询",
-      "url": "http://zsdata.snnu.edu.cn/zscx/lqxx/#/lqcx",
-      "source": "陕西师范大学本科招生",
-      "source_url": "https://zsb.snnu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "录取查询",
-      "page_url": "https://zsb.snnu.edu.cn",
-      "is_pdf": false,
-      "score": 33,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "师范",
-        "录取",
-        "招生",
-        "招生信息",
-        "陕西"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "招生信息"
     },
     {
       "id": "69c9a6abc20bfa09bb9ce96b4ce830e1e1a62832",
@@ -1584,7 +1559,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -1608,7 +1583,32 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "招生信息"
+    },
+    {
+      "id": "533db1f54ac49c17ed28cdc2a71d2cd7413fc5e2",
+      "title": "录取查询",
+      "url": "http://zsdata.snnu.edu.cn/zscx/lqxx/#/lqcx",
+      "source": "陕西师范大学本科招生",
+      "source_url": "https://zsb.snnu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "录取查询",
+      "page_url": "https://zsb.snnu.edu.cn",
+      "is_pdf": false,
+      "score": 33,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "师范",
+        "录取",
+        "招生",
+        "招生信息",
+        "陕西"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -1631,7 +1631,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "学校预算"
     },
     {
@@ -1655,7 +1655,7 @@
         "就业质量报告",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "就业质量"
     },
     {
@@ -1679,7 +1679,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -1703,7 +1703,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -1726,7 +1726,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "学校预算"
     },
     {
@@ -1749,7 +1749,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "学校预算"
     },
     {
@@ -1772,7 +1772,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "学校预算"
     },
     {
@@ -1795,7 +1795,513 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "f5e6146ffee2481909f8f7e9c39487b0c5b103d4",
+      "title": "财务信息",
+      "url": "https://cw.nwu.edu.cn/fwzn/cwxx.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务信息",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "77edaf288df5030fde05cdd23147896900c17d54",
+      "title": "财务报销",
+      "url": "https://cw.nwu.edu.cn/fwzn/cwbx.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务报销",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "f9c918e7316a5c0617cae68fcbca0f6b571679fc",
+      "title": "财务系统使用指南",
+      "url": "https://cw.nwu.edu.cn/fwzn/cwxtsyzn.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务系统使用指南",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "07488582e9842580487f1937f73a735a6c50a794",
+      "title": "财务信息",
+      "url": "https://cw.nwu.edu.cn/xxgk/cwxx.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务信息",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "9e02c94be2378c69ceb774d02c687cd457691aaf",
+      "title": "财务系统",
+      "url": "https://cwmh.nwu.edu.cn/login",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务系统",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "7309f507f757744caf20d93c46ea385496b905be",
+      "title": "财资部对外提供财务资料审批表",
+      "url": "https://service.nwu.edu.cn/v2/matter/m_start?id=381",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财资部对外提供财务资料审批表",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "92c3c5be3eb2628b11b653174a6e11f03b2b8420",
+      "title": "财务处召开新学期财务工作推进会",
+      "url": "https://cw.nwu.edu.cn/info/1036/2942.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务处召开新学期财务工作推进会",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "400397dc41188f3b050afe3b5e1059ef63796f22",
+      "title": "财务处党支部召开党员大会",
+      "url": "https://cw.nwu.edu.cn/info/1038/2911.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务处党支部召开党员大会",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "0c647bc723110eb8b0770e1ba83155edc012f753",
+      "title": "财务资产部党支部召开《党政机关厉行节约反对浪费条例》专题学习会",
+      "url": "https://cw.nwu.edu.cn/info/1038/2841.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务资产部党支部召开《党政机关厉行节约反对浪费条例》专题学习会",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "9cfd341739239fbb5568c71ddd9a25629dda05d4",
+      "title": "财务资产部党支部召开2024年度组织生活会",
+      "url": "https://cw.nwu.edu.cn/info/1038/2842.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务资产部党支部召开2024年度组织生活会",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "50619422e9b9154ec24defa7703c087f1fdfbf63",
+      "title": "财务资产部党支部召开专题学习会议",
+      "url": "https://cw.nwu.edu.cn/info/1038/2771.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务资产部党支部召开专题学习会议",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "6ef79f100048adff4bfd982315503fc0f2e88a4a",
+      "title": "财务资产部党支部党纪学习教育安排部署会",
+      "url": "https://cw.nwu.edu.cn/info/1038/2661.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务资产部党支部党纪学习教育安排部署会",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "6942c60b4dfbc4bc89ffb658093e21ee704bba51",
+      "title": "财务资产部党支部召开专题学习会",
+      "url": "https://cw.nwu.edu.cn/info/1038/2655.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务资产部党支部召开专题学习会",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "7a79e89edc85557b57546e7c15ed08e32c2c86a6",
+      "title": "财务资产部党支部召开集中学习会议",
+      "url": "https://cw.nwu.edu.cn/info/1038/2582.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务资产部党支部召开集中学习会议",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "971bb22f523ff9fd834a880791bc3e639738cdec",
+      "title": "财务资产部党支部召开学习贯彻习近平新时代中国特色社会主义思想主题教育专题组织生活会",
+      "url": "https://cw.nwu.edu.cn/info/1038/2133.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务资产部党支部召开学习贯彻习近平新时代中国特色社会主义思想主题教育专题组织生活会",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "969f4f2fa5105bfdca9817f790e60e83a7233458",
+      "title": "财务资产部党支部召开2022年度组织生活会",
+      "url": "https://cw.nwu.edu.cn/info/1038/2104.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务资产部党支部召开2022年度组织生活会",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "c4c7e98f80cba72642e12331f556236fc67b7555",
+      "title": "机关财务资产部党支部 经济管理学院党委联合召开党的二十大精神专题学习会",
+      "url": "https://cw.nwu.edu.cn/info/1038/2098.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "机关财务资产部党支部 经济管理学院党委联合召开党的二十大精神专题学习会",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "960fa68c0a47f217dc271920c881474f66d2f4c2",
+      "title": "财务资产部党支部召开党的二十大精神学习会",
+      "url": "https://cw.nwu.edu.cn/info/1038/2097.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务资产部党支部召开党的二十大精神学习会",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "c3c2a2318631d950613949a42006890c6edf6a1a",
+      "title": "苟昭赟教授为财务资产部党支部讲专题党课",
+      "url": "https://cw.nwu.edu.cn/info/1038/2105.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "苟昭赟教授为财务资产部党支部讲专题党课",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "f9b51d39f25883e730475b112bccf44604b83c8d",
+      "title": "经济管理学院党委 财务资产部党支部召开理论学习中心组扩大会议",
+      "url": "https://cw.nwu.edu.cn/info/1038/2106.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "经济管理学院党委 财务资产部党支部召开理论学习中心组扩大会议",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "6bba5cc0dcfa59d50bb90505de3025275f0b94c4",
+      "title": "财务信息服务中心",
+      "url": "https://cw.nwu.edu.cn/bmjj/gzzz/cwxxfwzx.htm",
+      "source": "西北大学预算公开",
+      "source_url": "https://cw.nwu.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务信息服务中心",
+      "page_url": "https://cw.nwu.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "学校预算"
+    },
+    {
+      "id": "5c09e1256abb1dbe5a79f450137cfa90d411130f",
+      "title": "财务管理制度",
+      "url": "https://xxgk.xaut.edu.cn/cwzcjsfxx/cwglzd.htm",
+      "source": "西安理工大学预算公开",
+      "source_url": "https://xxgk.xaut.edu.cn/",
+      "topic": "高校预算",
+      "date": "",
+      "snippet": "财务管理制度",
+      "page_url": "https://xxgk.xaut.edu.cn/",
+      "is_pdf": false,
+      "score": 30,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "学校预算",
+        "陕西",
+        "预算"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "学校预算"
     },
     {
@@ -1819,7 +2325,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "学校预算"
     },
     {
@@ -1843,513 +2349,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "f5e6146ffee2481909f8f7e9c39487b0c5b103d4",
-      "title": "财务信息",
-      "url": "https://cw.nwu.edu.cn/fwzn/cwxx.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务信息",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "77edaf288df5030fde05cdd23147896900c17d54",
-      "title": "财务报销",
-      "url": "https://cw.nwu.edu.cn/fwzn/cwbx.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务报销",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "f9c918e7316a5c0617cae68fcbca0f6b571679fc",
-      "title": "财务系统使用指南",
-      "url": "https://cw.nwu.edu.cn/fwzn/cwxtsyzn.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务系统使用指南",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "07488582e9842580487f1937f73a735a6c50a794",
-      "title": "财务信息",
-      "url": "https://cw.nwu.edu.cn/xxgk/cwxx.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务信息",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "9e02c94be2378c69ceb774d02c687cd457691aaf",
-      "title": "财务系统",
-      "url": "https://cwmh.nwu.edu.cn/login",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务系统",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "7309f507f757744caf20d93c46ea385496b905be",
-      "title": "财资部对外提供财务资料审批表",
-      "url": "https://service.nwu.edu.cn/v2/matter/m_start?id=381",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财资部对外提供财务资料审批表",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "92c3c5be3eb2628b11b653174a6e11f03b2b8420",
-      "title": "财务处召开新学期财务工作推进会",
-      "url": "https://cw.nwu.edu.cn/info/1036/2942.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务处召开新学期财务工作推进会",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "400397dc41188f3b050afe3b5e1059ef63796f22",
-      "title": "财务处党支部召开党员大会",
-      "url": "https://cw.nwu.edu.cn/info/1038/2911.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务处党支部召开党员大会",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "0c647bc723110eb8b0770e1ba83155edc012f753",
-      "title": "财务资产部党支部召开《党政机关厉行节约反对浪费条例》专题学习会",
-      "url": "https://cw.nwu.edu.cn/info/1038/2841.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务资产部党支部召开《党政机关厉行节约反对浪费条例》专题学习会",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "9cfd341739239fbb5568c71ddd9a25629dda05d4",
-      "title": "财务资产部党支部召开2024年度组织生活会",
-      "url": "https://cw.nwu.edu.cn/info/1038/2842.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务资产部党支部召开2024年度组织生活会",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "50619422e9b9154ec24defa7703c087f1fdfbf63",
-      "title": "财务资产部党支部召开专题学习会议",
-      "url": "https://cw.nwu.edu.cn/info/1038/2771.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务资产部党支部召开专题学习会议",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "6ef79f100048adff4bfd982315503fc0f2e88a4a",
-      "title": "财务资产部党支部党纪学习教育安排部署会",
-      "url": "https://cw.nwu.edu.cn/info/1038/2661.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务资产部党支部党纪学习教育安排部署会",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "6942c60b4dfbc4bc89ffb658093e21ee704bba51",
-      "title": "财务资产部党支部召开专题学习会",
-      "url": "https://cw.nwu.edu.cn/info/1038/2655.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务资产部党支部召开专题学习会",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "7a79e89edc85557b57546e7c15ed08e32c2c86a6",
-      "title": "财务资产部党支部召开集中学习会议",
-      "url": "https://cw.nwu.edu.cn/info/1038/2582.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务资产部党支部召开集中学习会议",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "971bb22f523ff9fd834a880791bc3e639738cdec",
-      "title": "财务资产部党支部召开学习贯彻习近平新时代中国特色社会主义思想主题教育专题组织生活会",
-      "url": "https://cw.nwu.edu.cn/info/1038/2133.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务资产部党支部召开学习贯彻习近平新时代中国特色社会主义思想主题教育专题组织生活会",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "969f4f2fa5105bfdca9817f790e60e83a7233458",
-      "title": "财务资产部党支部召开2022年度组织生活会",
-      "url": "https://cw.nwu.edu.cn/info/1038/2104.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务资产部党支部召开2022年度组织生活会",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "c4c7e98f80cba72642e12331f556236fc67b7555",
-      "title": "机关财务资产部党支部 经济管理学院党委联合召开党的二十大精神专题学习会",
-      "url": "https://cw.nwu.edu.cn/info/1038/2098.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "机关财务资产部党支部 经济管理学院党委联合召开党的二十大精神专题学习会",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "960fa68c0a47f217dc271920c881474f66d2f4c2",
-      "title": "财务资产部党支部召开党的二十大精神学习会",
-      "url": "https://cw.nwu.edu.cn/info/1038/2097.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务资产部党支部召开党的二十大精神学习会",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "c3c2a2318631d950613949a42006890c6edf6a1a",
-      "title": "苟昭赟教授为财务资产部党支部讲专题党课",
-      "url": "https://cw.nwu.edu.cn/info/1038/2105.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "苟昭赟教授为财务资产部党支部讲专题党课",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "f9b51d39f25883e730475b112bccf44604b83c8d",
-      "title": "经济管理学院党委 财务资产部党支部召开理论学习中心组扩大会议",
-      "url": "https://cw.nwu.edu.cn/info/1038/2106.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "经济管理学院党委 财务资产部党支部召开理论学习中心组扩大会议",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "6bba5cc0dcfa59d50bb90505de3025275f0b94c4",
-      "title": "财务信息服务中心",
-      "url": "https://cw.nwu.edu.cn/bmjj/gzzz/cwxxfwzx.htm",
-      "source": "西北大学预算公开",
-      "source_url": "https://cw.nwu.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务信息服务中心",
-      "page_url": "https://cw.nwu.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "学校预算"
-    },
-    {
-      "id": "5c09e1256abb1dbe5a79f450137cfa90d411130f",
-      "title": "财务管理制度",
-      "url": "https://xxgk.xaut.edu.cn/cwzcjsfxx/cwglzd.htm",
-      "source": "西安理工大学预算公开",
-      "source_url": "https://xxgk.xaut.edu.cn/",
-      "topic": "高校预算",
-      "date": "",
-      "snippet": "财务管理制度",
-      "page_url": "https://xxgk.xaut.edu.cn/",
-      "is_pdf": false,
-      "score": 30,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "学校预算",
-        "陕西",
-        "预算"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "学校预算"
     },
     {
@@ -2373,7 +2373,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -2396,7 +2396,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "学校预算"
     },
     {
@@ -2420,7 +2420,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -2444,7 +2444,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -2468,7 +2468,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -2491,7 +2491,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -2515,7 +2515,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -2539,7 +2539,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -2562,7 +2562,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -2585,7 +2585,122 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "招生信息"
+    },
+    {
+      "id": "a5622f61be94f2da3e3ec03adcb6d1aa96cc651f",
+      "title": "西北大学2025年分省分批次录取进度表",
+      "url": "https://zsb.nwu.edu.cn/info/1043/3006.htm",
+      "source": "西北大学本科招生",
+      "source_url": "https://zsb.nwu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "西北大学2025年分省分批次录取进度表",
+      "page_url": "https://zsb.nwu.edu.cn",
+      "is_pdf": false,
+      "score": 19,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "招生",
+        "招生信息",
+        "陕西"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "招生信息"
+    },
+    {
+      "id": "3f1f06381c7204f2fd8f3e66d1a16eecbb3638f0",
+      "title": "[名单公示] 西北大学2025年第二学士学位录取名单",
+      "url": "https://zsb.nwu.edu.cn/info/1046/2991.htm",
+      "source": "西北大学本科招生",
+      "source_url": "https://zsb.nwu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "[名单公示] 西北大学2025年第二学士学位录取名单",
+      "page_url": "https://zsb.nwu.edu.cn",
+      "is_pdf": false,
+      "score": 19,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "招生",
+        "招生信息",
+        "陕西"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "招生信息"
+    },
+    {
+      "id": "7e50711cb7ab94c5d4bb2afcbca68242cd911916",
+      "title": "[名单公示] 西北大学2024年第二学士学位录取名单",
+      "url": "https://zsb.nwu.edu.cn/info/1046/2729.htm",
+      "source": "西北大学本科招生",
+      "source_url": "https://zsb.nwu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "[名单公示] 西北大学2024年第二学士学位录取名单",
+      "page_url": "https://zsb.nwu.edu.cn",
+      "is_pdf": false,
+      "score": 19,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "招生",
+        "招生信息",
+        "陕西"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "招生信息"
+    },
+    {
+      "id": "c0742810c59f80c9c5c0c4d9a5e9eca18dbadd48",
+      "title": "西安理工大学2025年第二学士学位拟录取考生名单公示",
+      "url": "https://zhaosheng.xaut.edu.cn/zhaoshengkuaixun/1026.html",
+      "source": "西安理工大学本科招生",
+      "source_url": "https://zhaosheng.xaut.edu.cn/",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "西安理工大学2025年第二学士学位拟录取考生名单公示",
+      "page_url": "https://zhaosheng.xaut.edu.cn/",
+      "is_pdf": false,
+      "score": 19,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "招生",
+        "招生信息",
+        "陕西"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
+      "category": "招生信息"
+    },
+    {
+      "id": "1e3a6b52b09b0f4665079397eb53d6a8458be344",
+      "title": "高考录取情况查询",
+      "url": "http://zsgl.xaut.edu.cn/admin/#/lqjgcx",
+      "source": "西安理工大学本科招生",
+      "source_url": "https://zhaosheng.xaut.edu.cn/",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "高考录取情况查询",
+      "page_url": "https://zhaosheng.xaut.edu.cn/",
+      "is_pdf": false,
+      "score": 19,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "招生",
+        "招生信息",
+        "陕西"
+      ],
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -2609,7 +2724,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     },
     {
@@ -2633,122 +2748,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "招生信息"
-    },
-    {
-      "id": "a5622f61be94f2da3e3ec03adcb6d1aa96cc651f",
-      "title": "西北大学2025年分省分批次录取进度表",
-      "url": "https://zsb.nwu.edu.cn/info/1043/3006.htm",
-      "source": "西北大学本科招生",
-      "source_url": "https://zsb.nwu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "西北大学2025年分省分批次录取进度表",
-      "page_url": "https://zsb.nwu.edu.cn",
-      "is_pdf": false,
-      "score": 19,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "招生",
-        "招生信息",
-        "陕西"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "招生信息"
-    },
-    {
-      "id": "3f1f06381c7204f2fd8f3e66d1a16eecbb3638f0",
-      "title": "[名单公示] 西北大学2025年第二学士学位录取名单",
-      "url": "https://zsb.nwu.edu.cn/info/1046/2991.htm",
-      "source": "西北大学本科招生",
-      "source_url": "https://zsb.nwu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "[名单公示] 西北大学2025年第二学士学位录取名单",
-      "page_url": "https://zsb.nwu.edu.cn",
-      "is_pdf": false,
-      "score": 19,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "招生",
-        "招生信息",
-        "陕西"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "招生信息"
-    },
-    {
-      "id": "7e50711cb7ab94c5d4bb2afcbca68242cd911916",
-      "title": "[名单公示] 西北大学2024年第二学士学位录取名单",
-      "url": "https://zsb.nwu.edu.cn/info/1046/2729.htm",
-      "source": "西北大学本科招生",
-      "source_url": "https://zsb.nwu.edu.cn",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "[名单公示] 西北大学2024年第二学士学位录取名单",
-      "page_url": "https://zsb.nwu.edu.cn",
-      "is_pdf": false,
-      "score": 19,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "招生",
-        "招生信息",
-        "陕西"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "招生信息"
-    },
-    {
-      "id": "c0742810c59f80c9c5c0c4d9a5e9eca18dbadd48",
-      "title": "西安理工大学2025年第二学士学位拟录取考生名单公示",
-      "url": "https://zhaosheng.xaut.edu.cn/zhaoshengkuaixun/1026.html",
-      "source": "西安理工大学本科招生",
-      "source_url": "https://zhaosheng.xaut.edu.cn/",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "西安理工大学2025年第二学士学位拟录取考生名单公示",
-      "page_url": "https://zhaosheng.xaut.edu.cn/",
-      "is_pdf": false,
-      "score": 19,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "招生",
-        "招生信息",
-        "陕西"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
-      "category": "招生信息"
-    },
-    {
-      "id": "1e3a6b52b09b0f4665079397eb53d6a8458be344",
-      "title": "高考录取情况查询",
-      "url": "http://zsgl.xaut.edu.cn/admin/#/lqjgcx",
-      "source": "西安理工大学本科招生",
-      "source_url": "https://zhaosheng.xaut.edu.cn/",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "高考录取情况查询",
-      "page_url": "https://zhaosheng.xaut.edu.cn/",
-      "is_pdf": false,
-      "score": 19,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "招生",
-        "招生信息",
-        "陕西"
-      ],
-      "fetched_at": "2026-03-07T21:03:21+08:00",
+      "fetched_at": "2026-03-07T21:43:53+08:00",
       "category": "招生信息"
     }
   ]

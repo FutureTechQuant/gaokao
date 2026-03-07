@@ -27,7 +27,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -37,10 +37,6 @@ jobs:
       - name: Build schools seed automatically
         run: |
           python scripts/build_schools_seed.py
-
-      - name: Generate source templates
-        run: |
-          python scripts/generate_source_templates.py
 
       - name: Generate source templates
         run: |
@@ -64,6 +60,7 @@ jobs:
         with:
           name: collect-output
           path: |
+            config/schools_seed.generated.yaml
             config/sources/generated/
             data/
             docs/
@@ -77,7 +74,3 @@ jobs:
           git add config/schools_seed.generated.yaml config/sources/generated/ data/ docs/ README.md
           git diff --cached --quiet || git commit -m "chore: update collected data"
           git push
-          git push
-
-
-

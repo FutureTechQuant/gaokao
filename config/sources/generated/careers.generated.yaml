@@ -1,0 +1,88 @@
+sources:
+- name: 陕西师范大学就业质量
+  enabled: true
+  source_type: official
+  platform: website
+  topic: careers
+  mode: crawl
+  trust_level: high
+  entry: https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm
+  allow_domains:
+  - zsb.snnu.edu.cn
+  - xxgk.snnu.edu.cn
+  - snnu.edu.cn
+  must_include: &id001
+  - 就业质量年度报告
+  - 毕业生就业质量
+  - 就业质量
+  - 就业去向
+  - 行业分布
+  - 升学
+  - 深造
+  exclude_keywords: &id002
+  - 采购
+  - 研究生招生
+  - 招标
+  tags:
+  - 陕西
+  - 师范
+  - 就业
+  - 就业质量报告
+- name: 西北大学就业质量
+  enabled: true
+  source_type: official
+  platform: website
+  topic: careers
+  mode: crawl
+  trust_level: high
+  entry: https://job.nwu.edu.cn/
+  allow_domains:
+  - zsb.nwu.edu.cn
+  - xxgk.nwu.edu.cn
+  - cw.nwu.edu.cn
+  - job.nwu.edu.cn
+  - nwu.edu.cn
+  must_include: *id001
+  exclude_keywords: *id002
+  tags:
+  - 陕西
+  - 就业
+  - 就业质量报告
+- name: 西安理工大学就业质量
+  enabled: true
+  source_type: official
+  platform: website
+  topic: careers
+  mode: crawl
+  trust_level: high
+  entry: https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm
+  allow_domains:
+  - zhaosheng.xaut.edu.cn
+  - xxgk.xaut.edu.cn
+  - xaut.edu.cn
+  must_include: *id001
+  exclude_keywords: *id002
+  tags:
+  - 陕西
+  - 就业
+  - 就业质量报告
+- name: 西安邮电大学就业质量
+  enabled: true
+  source_type: official
+  platform: website
+  topic: careers
+  mode: crawl
+  trust_level: high
+  entry: https://job.xupt.edu.cn/
+  allow_domains:
+  - zhaosheng.xupt.edu.cn
+  - xxgk.xupt.edu.cn
+  - job.xupt.edu.cn
+  - jwc.xupt.edu.cn
+  - xupt.edu.cn
+  must_include: *id001
+  exclude_keywords: *id002
+  tags:
+  - 陕西
+  - 就业
+  - 就业质量报告

@@ -1,0 +1,87 @@
+sources:
+- name: 陕西师范大学本科招生
+  enabled: true
+  source_type: official
+  platform: website
+  topic: admissions
+  mode: crawl
+  trust_level: high
+  entry: https://zsb.snnu.edu.cn
+  allow_domains:
+  - zsb.snnu.edu.cn
+  - xxgk.snnu.edu.cn
+  - snnu.edu.cn
+  must_include: &id001
+  - 本科招生
+  - 招生章程
+  - 招生计划
+  - 录取
+  - 录取查询
+  - 历年分数
+  - 分数线
+  - 位次
+  exclude_keywords: &id002
+  - 研究生
+  - 博士
+  - 硕士
+  - 继续教育
+  - 留学生
+  tags:
+  - 陕西
+  - 师范
+  - 招生
+- name: 西北大学本科招生
+  enabled: true
+  source_type: official
+  platform: website
+  topic: admissions
+  mode: crawl
+  trust_level: high
+  entry: https://zsb.nwu.edu.cn
+  allow_domains:
+  - zsb.nwu.edu.cn
+  - xxgk.nwu.edu.cn
+  - cw.nwu.edu.cn
+  - job.nwu.edu.cn
+  - nwu.edu.cn
+  must_include: *id001
+  exclude_keywords: *id002
+  tags:
+  - 陕西
+  - 招生
+- name: 西安理工大学本科招生
+  enabled: true
+  source_type: official
+  platform: website
+  topic: admissions
+  mode: crawl
+  trust_level: high
+  entry: https://zhaosheng.xaut.edu.cn/
+  allow_domains:
+  - zhaosheng.xaut.edu.cn
+  - xxgk.xaut.edu.cn
+  - xaut.edu.cn
+  must_include: *id001
+  exclude_keywords: *id002
+  tags:
+  - 陕西
+  - 招生
+- name: 西安邮电大学本科招生
+  enabled: true
+  source_type: official
+  platform: website
+  topic: admissions
+  mode: crawl
+  trust_level: high
+  entry: https://zhaosheng.xupt.edu.cn/
+  allow_domains:
+  - zhaosheng.xupt.edu.cn
+  - xxgk.xupt.edu.cn
+  - job.xupt.edu.cn
+  - jwc.xupt.edu.cn
+  - xupt.edu.cn
+  must_include: *id001
+  exclude_keywords: *id002
+  tags:
+  - 陕西
+  - 招生

@@ -13,5 +13,34 @@
   "by_type": {
     "official": 7,
     "platform": 3
+  },
+  "by_trust_level": {
+    "high": 7,
+    "medium": 3
+  },
+  "results_total": 60,
+  "results_by_platform": {
+    "website": 57,
+    "xiaohongshu": 3
+  },
+  "results_by_topic": {
+    "本科招生": 27,
+    "就业质量报告": 20,
+    "高校预算": 12,
+    "保研推免": 1
+  },
+  "results_by_source_type": {
+    "official": 57,
+    "platform": 3
+  },
+  "results_by_trust_level": {
+    "high": 57,
+    "medium": 3
+  },
+  "results_by_category": {
+    "招生信息": 27,
+    "就业质量": 20,
+    "学校预算": 12,
+    "保研信息": 1
   }
 }

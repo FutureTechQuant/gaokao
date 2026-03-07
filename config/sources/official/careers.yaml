@@ -1,0 +1,49 @@
+sources:
+  - name: 陕西师范大学就业质量报告
+    enabled: true
+    source_type: official
+    platform: website
+    topic: careers
+    mode: crawl
+    trust_level: high
+    entry: https://xxgk.snnu.edu.cn/gksx/jxzlxx/gxbysjyzlndbg.htm
+    allow_domains:
+      - xxgk.snnu.edu.cn
+      - snnu.edu.cn
+    must_include:
+      - 就业质量年度报告
+      - 毕业生就业质量
+      - 就业质量
+      - 就业去向
+      - 行业分布
+      - 升学
+    exclude_keywords:
+      - 采购
+      - 研究生招生
+    tags:
+      - 陕西
+      - 就业
+
+  - name: 西安理工大学就业质量报告
+    enabled: true
+    source_type: official
+    platform: website
+    topic: careers
+    mode: crawl
+    trust_level: high
+    entry: https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm
+    allow_domains:
+      - xxgk.xaut.edu.cn
+      - xaut.edu.cn
+    must_include:
+      - 就业质量年度报告
+      - 毕业生就业质量
+      - 就业率
+      - 行业分布
+      - 地区流向
+    exclude_keywords:
+      - 采购
+      - 研究生
+    tags:
+      - 陕西
+      - 就业

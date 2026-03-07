@@ -1,0 +1,46 @@
+sources:
+  - name: 知乎-陕西高校就业讨论
+    enabled: false
+    source_type: platform
+    platform: zhihu
+    topic: careers
+    mode: search
+    trust_level: medium
+    entry: 陕西 高校 就业 去向 师范 知乎
+    tags:
+      - 知乎
+      - 就业
+      - 讨论
+
+  - name: 知乎-保研经验
+    enabled: false
+    source_type: platform
+    platform: zhihu
+    topic: recommendation
+    mode: search
+    trust_level: medium
+    entry: 保研 推免 夏令营 经验 知乎
+    tags:
+      - 知乎
+      - 保研
+      - 经验帖
+
+  - name: 知乎-知乎校招线索
+    enabled: false
+    source_type: platform
+    platform: website
+    topic: careers
+    mode: crawl
+    trust_level: medium
+    entry: https://www.nowcoder.com/enterprise/963
+    allow_domains:
+      - nowcoder.com
+    must_include:
+      - 知乎
+      - 校招
+      - 招聘岗位
+    exclude_keywords: []
+    tags:
+      - 知乎
+      - 校招
+      - 牛客

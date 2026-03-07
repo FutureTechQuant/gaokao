@@ -12,12 +12,10 @@
       --sub: #59636e;
       --line: #e5e7eb;
       --brand: #2563eb;
+      --brand-2: #1d4ed8;
       --tag: #eef2ff;
       --chip: #f8fafc;
       --shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
-      --ok: #16a34a;
-      --warn: #ca8a04;
-      --low: #6b7280;
     }
 
     * { box-sizing: border-box; }
@@ -42,7 +40,7 @@
       border: 1px solid var(--line);
       border-radius: 18px;
       padding: 24px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       box-shadow: var(--shadow);
     }
 
@@ -61,6 +59,39 @@
       margin-top: 12px;
       color: var(--sub);
       font-size: 14px;
+    }
+
+    .tabbar-wrap {
+      margin-bottom: 14px;
+    }
+
+    .tabbar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      background: rgba(255,255,255,0.96);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .top-tab {
+      border: 1px solid var(--line);
+      background: var(--chip);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 9px 14px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      min-height: 42px;
+    }
+
+    .top-tab.active {
+      background: var(--brand);
+      border-color: var(--brand);
+      color: #fff;
     }
 
     .stats {
@@ -90,11 +121,94 @@
       color: var(--brand);
     }
 
+    .summary-panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .summary-top-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .summary-groups {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+    }
+
+    .summary-group {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+      background: #fcfdff;
+    }
+
+    .summary-group-title {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .mini-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+    }
+
+    .mini-stat-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+    }
+
+    .mini-stat-card.clickable-card {
+      cursor: pointer;
+    }
+
+    .mini-stat-card.clickable-card:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow);
+      border-color: #c7d2fe;
+    }
+
+    .mini-stat-card.active {
+      border-color: var(--brand);
+      background: #eff6ff;
+    }
+
+    .mini-stat-name {
+      font-size: 12px;
+      color: var(--sub);
+      margin-bottom: 4px;
+      word-break: break-word;
+    }
+
+    .mini-stat-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--brand);
+    }
+
+    .summary-empty {
+      color: var(--sub);
+      font-size: 13px;
+    }
+
     .toolbar-wrap {
       position: sticky;
       top: 0;
       z-index: 20;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .toolbar {
@@ -137,6 +251,68 @@
       background: var(--brand);
       border-color: var(--brand);
       color: white;
+    }
+
+    .danger-btn {
+      color: #b91c1c;
+    }
+
+    .small-btn {
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+
+    .active-filters-panel {
+      display: none;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .active-filters-panel.show {
+      display: block;
+    }
+
+    .active-filters-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .active-filters-title {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .active-filter-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .active-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eef2ff;
+      color: #3730a3;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+
+    .chip-x {
+      border: 0;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font-size: 12px;
+      padding: 0;
     }
 
     .analytics-box {
@@ -355,6 +531,10 @@
       .item-badges {
         justify-content: flex-start;
       }
+
+      .summary-groups {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -364,11 +544,22 @@
       <h1>升学与专业决策信息聚合</h1>
       <p>按分类、标签、信源类型与可信度浏览招生、就业、保研与预算相关信息。</p>
       <div class="meta">
-        最近更新：2026-03-07T20:31:04+08:00；
+        最近更新：2026-03-07T20:43:10+08:00；
         结果数：60；
         错误数：
       </div>
     </header>
+
+    
+    <section class="tabbar-wrap">
+      <div class="tabbar" role="tablist" aria-label="信源类型切换">
+        <button type="button" class="top-tab active" role="tab" aria-selected="true" data-source-type-filter="全部">全部</button>
+        <button type="button" class="top-tab" role="tab" aria-selected="false" data-source-type-filter="official">官方</button>
+        <button type="button" class="top-tab" role="tab" aria-selected="false" data-source-type-filter="platform">平台</button>
+        <button type="button" class="top-tab" role="tab" aria-selected="false" data-source-type-filter="community">社区</button>
+      </div>
+    </section>
+    
 
     <section class="stats">
       
@@ -390,6 +581,11 @@
             <div class="stat-card">
               <div class="stat-name">平台结果</div>
               <div class="stat-value">3</div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-name">社区结果</div>
+              <div class="stat-value"></div>
             </div>
             
             <div class="stat-card">
@@ -425,6 +621,213 @@
     </section>
 
     
+    <section class="summary-panel">
+      <div class="section-head">
+        <h2>信源摘要</h2>
+        <span class="section-count">点击卡片可联动过滤</span>
+      </div>
+      
+    <div class="summary-top-grid">
+      <div class="stat-card">
+        <div class="stat-name">信源总数</div>
+        <div class="stat-value">10</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-name">结果总数</div>
+        <div class="stat-value">60</div>
+      </div>
+    </div>
+    
+      <div class="summary-groups">
+        
+    <div class="summary-group">
+      <div class="summary-group-title">信源-按类型</div>
+      <div class="mini-stat-grid">
+        
+            <div class="mini-stat-card clickable-card" data-action-key="sourceType" data-action-value="official" role="button" tabindex="0">
+              <div class="mini-stat-name">official</div>
+              <div class="mini-stat-value">7</div>
+            </div>
+            
+            <div class="mini-stat-card clickable-card" data-action-key="sourceType" data-action-value="platform" role="button" tabindex="0">
+              <div class="mini-stat-name">platform</div>
+              <div class="mini-stat-value">3</div>
+            </div>
+            
+      </div>
+    </div>
+    
+    <div class="summary-group">
+      <div class="summary-group-title">信源-按平台</div>
+      <div class="mini-stat-grid">
+        
+            <div class="mini-stat-card clickable-card" data-action-key="platform" data-action-value="website" role="button" tabindex="0">
+              <div class="mini-stat-name">website</div>
+              <div class="mini-stat-value">7</div>
+            </div>
+            
+            <div class="mini-stat-card clickable-card" data-action-key="platform" data-action-value="xiaohongshu" role="button" tabindex="0">
+              <div class="mini-stat-name">xiaohongshu</div>
+              <div class="mini-stat-value">3</div>
+            </div>
+            
+      </div>
+    </div>
+    
+    <div class="summary-group">
+      <div class="summary-group-title">信源-按专题</div>
+      <div class="mini-stat-grid">
+        
+            <div class="mini-stat-card clickable-card" data-action-key="topic" data-action-value="admissions" role="button" tabindex="0">
+              <div class="mini-stat-name">admissions</div>
+              <div class="mini-stat-value">3</div>
+            </div>
+            
+            <div class="mini-stat-card clickable-card" data-action-key="topic" data-action-value="careers" role="button" tabindex="0">
+              <div class="mini-stat-name">careers</div>
+              <div class="mini-stat-value">3</div>
+            </div>
+            
+            <div class="mini-stat-card clickable-card" data-action-key="topic" data-action-value="budgets" role="button" tabindex="0">
+              <div class="mini-stat-name">budgets</div>
+              <div class="mini-stat-value">2</div>
+            </div>
+            
+            <div class="mini-stat-card clickable-card" data-action-key="topic" data-action-value="recommendation" role="button" tabindex="0">
+              <div class="mini-stat-name">recommendation</div>
+              <div class="mini-stat-value">2</div>
+            </div>
+            
+      </div>
+    </div>
+    
+    <div class="summary-group">
+      <div class="summary-group-title">信源-按可信度</div>
+      <div class="mini-stat-grid">
+        
+            <div class="mini-stat-card clickable-card" data-action-key="trustLevel" data-action-value="high" role="button" tabindex="0">
+              <div class="mini-stat-name">high</div>
+              <div class="mini-stat-value">7</div>
+            </div>
+            
+            <div class="mini-stat-card clickable-card" data-action-key="trustLevel" data-action-value="medium" role="button" tabindex="0">
+              <div class="mini-stat-name">medium</div>
+              <div class="mini-stat-value">3</div>
+            </div>
+            
+      </div>
+    </div>
+    
+    <div class="summary-group">
+      <div class="summary-group-title">结果-按类型</div>
+      <div class="mini-stat-grid">
+        
+            <div class="mini-stat-card clickable-card" data-action-key="sourceType" data-action-value="official" role="button" tabindex="0">
+              <div class="mini-stat-name">official</div>
+              <div class="mini-stat-value">57</div>
+            </div>
+            
+            <div class="mini-stat-card clickable-card" data-action-key="sourceType" data-action-value="platform" role="button" tabindex="0">
+              <div class="mini-stat-name">platform</div>
+              <div class="mini-stat-value">3</div>
+            </div>
+            
+      </div>
+    </div>
+    
+    <div class="summary-group">
+      <div class="summary-group-title">结果-按平台</div>
+      <div class="mini-stat-grid">
+        
+            <div class="mini-stat-card clickable-card" data-action-key="platform" data-action-value="website" role="button" tabindex="0">
+              <div class="mini-stat-name">website</div>
+              <div class="mini-stat-value">57</div>
+            </div>
+            
+            <div class="mini-stat-card clickable-card" data-action-key="platform" data-action-value="xiaohongshu" role="button" tabindex="0">
+              <div class="mini-stat-name">xiaohongshu</div>
+              <div class="mini-stat-value">3</div>
+            </div>
+            
+      </div>
+    </div>
+    
+    <div class="summary-group">
+      <div class="summary-group-title">结果-按专题</div>
+      <div class="mini-stat-grid">
+        
+            <div class="mini-stat-card clickable-card" data-action-key="topic" data-action-value="本科招生" role="button" tabindex="0">
+              <div class="mini-stat-name">本科招生</div>
+              <div class="mini-stat-value">27</div>
+            </div>
+            
+            <div class="mini-stat-card clickable-card" data-action-key="topic" data-action-value="就业质量报告" role="button" tabindex="0">
+              <div class="mini-stat-name">就业质量报告</div>
+              <div class="mini-stat-value">20</div>
+            </div>
+            
+            <div class="mini-stat-card clickable-card" data-action-key="topic" data-action-value="高校预算" role="button" tabindex="0">
+              <div class="mini-stat-name">高校预算</div>
+              <div class="mini-stat-value">12</div>
+            </div>
+            
+            <div class="mini-stat-card clickable-card" data-action-key="topic" data-action-value="保研推免" role="button" tabindex="0">
+              <div class="mini-stat-name">保研推免</div>
+              <div class="mini-stat-value">1</div>
+            </div>
+            
+      </div>
+    </div>
+    
+    <div class="summary-group">
+      <div class="summary-group-title">结果-按可信度</div>
+      <div class="mini-stat-grid">
+        
+            <div class="mini-stat-card clickable-card" data-action-key="trustLevel" data-action-value="high" role="button" tabindex="0">
+              <div class="mini-stat-name">high</div>
+              <div class="mini-stat-value">57</div>
+            </div>
+            
+            <div class="mini-stat-card clickable-card" data-action-key="trustLevel" data-action-value="medium" role="button" tabindex="0">
+              <div class="mini-stat-name">medium</div>
+              <div class="mini-stat-value">3</div>
+            </div>
+            
+      </div>
+    </div>
+    
+    <div class="summary-group">
+      <div class="summary-group-title">结果-按分类</div>
+      <div class="mini-stat-grid">
+        
+            <div class="mini-stat-card clickable-card" data-action-key="category" data-action-value="招生信息" role="button" tabindex="0">
+              <div class="mini-stat-name">招生信息</div>
+              <div class="mini-stat-value">27</div>
+            </div>
+            
+            <div class="mini-stat-card clickable-card" data-action-key="category" data-action-value="就业质量" role="button" tabindex="0">
+              <div class="mini-stat-name">就业质量</div>
+              <div class="mini-stat-value">20</div>
+            </div>
+            
+            <div class="mini-stat-card clickable-card" data-action-key="category" data-action-value="学校预算" role="button" tabindex="0">
+              <div class="mini-stat-name">学校预算</div>
+              <div class="mini-stat-value">12</div>
+            </div>
+            
+            <div class="mini-stat-card clickable-card" data-action-key="category" data-action-value="保研信息" role="button" tabindex="0">
+              <div class="mini-stat-name">保研信息</div>
+              <div class="mini-stat-value">1</div>
+            </div>
+            
+      </div>
+    </div>
+    
+      </div>
+    </section>
+    
+
+    
     <section class="toolbar-wrap">
       <div class="toolbar">
         <div class="toolbar-row">
@@ -433,17 +836,11 @@
           <button type="button" class="toolbar-btn" data-category-filter="招生信息">招生信息</button><button type="button" class="toolbar-btn" data-category-filter="就业质量">就业质量</button><button type="button" class="toolbar-btn" data-category-filter="保研信息">保研信息</button><button type="button" class="toolbar-btn" data-category-filter="学校预算">学校预算</button><button type="button" class="toolbar-btn" data-category-filter="专业趋势">专业趋势</button><button type="button" class="toolbar-btn" data-category-filter="报考政策">报考政策</button><button type="button" class="toolbar-btn" data-category-filter="未分类">未分类</button>
         </div>
         <div class="toolbar-row">
-          <span class="toolbar-label">来源</span>
-          <button type="button" class="toolbar-btn active" data-source-type-filter="全部">全部</button>
-          <button type="button" class="toolbar-btn" data-source-type-filter="official">官方</button>
-          <button type="button" class="toolbar-btn" data-source-type-filter="platform">平台</button>
-          <button type="button" class="toolbar-btn" data-source-type-filter="community">社区</button>
-        </div>
-        <div class="toolbar-row">
           <span class="toolbar-label">排序</span>
           <button type="button" class="toolbar-btn active" data-sort-mode="score">按评分</button>
           <button type="button" class="toolbar-btn" data-sort-mode="date">按日期</button>
           <button type="button" class="toolbar-btn" id="toggleLowPriority">隐藏低优先级</button>
+          <button type="button" class="toolbar-btn danger-btn" id="clearAllFilters">清空联动筛选</button>
         </div>
         <div class="toolbar-row toolbar-tags">
           <span class="toolbar-label">标签</span>
@@ -455,55 +852,13 @@
     
 
     
-    <details class="analytics-box">
-      <summary>信源摘要</summary>
-      <pre>{
-  &quot;total_sources&quot;: 10,
-  &quot;by_platform&quot;: {
-    &quot;website&quot;: 7,
-    &quot;xiaohongshu&quot;: 3
-  },
-  &quot;by_topic&quot;: {
-    &quot;admissions&quot;: 3,
-    &quot;careers&quot;: 3,
-    &quot;budgets&quot;: 2,
-    &quot;recommendation&quot;: 2
-  },
-  &quot;by_type&quot;: {
-    &quot;official&quot;: 7,
-    &quot;platform&quot;: 3
-  },
-  &quot;by_trust_level&quot;: {
-    &quot;high&quot;: 7,
-    &quot;medium&quot;: 3
-  },
-  &quot;results_total&quot;: 60,
-  &quot;results_by_platform&quot;: {
-    &quot;website&quot;: 57,
-    &quot;xiaohongshu&quot;: 3
-  },
-  &quot;results_by_topic&quot;: {
-    &quot;本科招生&quot;: 27,
-    &quot;就业质量报告&quot;: 20,
-    &quot;高校预算&quot;: 12,
-    &quot;保研推免&quot;: 1
-  },
-  &quot;results_by_source_type&quot;: {
-    &quot;official&quot;: 57,
-    &quot;platform&quot;: 3
-  },
-  &quot;results_by_trust_level&quot;: {
-    &quot;high&quot;: 57,
-    &quot;medium&quot;: 3
-  },
-  &quot;results_by_category&quot;: {
-    &quot;招生信息&quot;: 27,
-    &quot;就业质量&quot;: 20,
-    &quot;学校预算&quot;: 12,
-    &quot;保研信息&quot;: 1
-  }
-}</pre>
-    </details>
+    <section class="active-filters-panel" id="activeFiltersPanel">
+      <div class="active-filters-head">
+        <div class="active-filters-title">当前联动筛选</div>
+        <button type="button" class="toolbar-btn danger-btn small-btn" id="clearAllFiltersInline">清空</button>
+      </div>
+      <div class="active-filter-chips" id="activeFilterChips"></div>
+    </section>
     
 
     <details class="analytics-box">
@@ -579,6 +934,7 @@
         <span>来源：西北大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：48</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -610,6 +966,7 @@
         <span>来源：西北大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：48</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -641,6 +998,7 @@
         <span>来源：西北大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：48</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -672,6 +1030,7 @@
         <span>来源：西北大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：48</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -703,6 +1062,7 @@
         <span>来源：西北大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：48</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -734,6 +1094,7 @@
         <span>来源：西北大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：48</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -765,6 +1126,7 @@
         <span>来源：陕西师范大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：45</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生章程">招生章程</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -796,6 +1158,7 @@
         <span>来源：西北大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：43</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生章程">招生章程</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -827,6 +1190,7 @@
         <span>来源：西北大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：43</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生章程">招生章程</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -858,6 +1222,7 @@
         <span>来源：西北大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：43</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生章程">招生章程</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -889,6 +1254,7 @@
         <span>来源：西北大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：43</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生章程">招生章程</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -920,6 +1286,7 @@
         <span>来源：西北大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：43</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生章程">招生章程</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -951,6 +1318,7 @@
         <span>来源：陕西师范大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：36</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="分数线">分数线</button><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -982,6 +1350,7 @@
         <span>来源：陕西师范大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：35</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1013,6 +1382,7 @@
         <span>来源：西北大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：35</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1044,6 +1414,7 @@
         <span>来源：陕西师范大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：33</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="录取">录取</button><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1075,6 +1446,7 @@
         <span>来源：西北大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：33</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="录取">录取</button><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1106,6 +1478,7 @@
         <span>来源：西北大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：31</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生章程">招生章程</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1137,6 +1510,7 @@
         <span>来源：陕西师范大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：21</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1168,6 +1542,7 @@
         <span>来源：陕西师范大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：21</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1199,6 +1574,7 @@
         <span>来源：西北大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：19</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1230,6 +1606,7 @@
         <span>来源：西北大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：19</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1261,6 +1638,7 @@
         <span>来源：西北大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：19</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1292,6 +1670,7 @@
         <span>来源：陕西师范大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：19</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1323,6 +1702,7 @@
         <span>来源：陕西师范大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：19</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1360,6 +1740,7 @@
         <span>来源：陕西师范大学本科招生信息网</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：21</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="录取">录取</button><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1403,6 +1784,7 @@
         <span>来源：小红书-招生分数</span>
         <span>专题：本科招生</span>
         <span>类型：网页</span>
+        <span>可信度：中可信</span>
         <span>评分：53</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="分数线">分数线</button><button class="tag filter-tag" type="button" data-tag="小红书">小红书</button><button class="tag filter-tag" type="button" data-tag="平台内容">平台内容</button><button class="tag filter-tag" type="button" data-tag="招生">招生</button><button class="tag filter-tag" type="button" data-tag="招生信息">招生信息</button><button class="tag filter-tag" type="button" data-tag="招生计划">招生计划</button><button class="tag filter-tag" type="button" data-tag="经验帖">经验帖</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1453,6 +1835,7 @@
         <span>来源：陕西师范大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：81</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1484,6 +1867,7 @@
         <span>来源：西安理工大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：81</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1515,6 +1899,7 @@
         <span>来源：陕西师范大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：81</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1546,6 +1931,7 @@
         <span>来源：陕西师范大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：81</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1577,6 +1963,7 @@
         <span>来源：陕西师范大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：81</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1608,6 +1995,7 @@
         <span>来源：陕西师范大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：81</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1639,6 +2027,7 @@
         <span>来源：陕西师范大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：81</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1670,6 +2059,7 @@
         <span>来源：西安理工大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：81</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1701,6 +2091,7 @@
         <span>来源：西安理工大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：81</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1732,6 +2123,7 @@
         <span>来源：西安理工大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：81</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1763,6 +2155,7 @@
         <span>来源：西安理工大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：81</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1794,6 +2187,7 @@
         <span>来源：西安理工大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：81</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1825,6 +2219,7 @@
         <span>来源：西安理工大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：81</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1856,6 +2251,7 @@
         <span>来源：西安理工大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：81</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1887,6 +2283,7 @@
         <span>来源：陕西师范大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：53</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1918,6 +2315,7 @@
         <span>来源：陕西师范大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：49</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1949,6 +2347,7 @@
         <span>来源：陕西师范大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：49</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -1980,6 +2379,7 @@
         <span>来源：陕西师范大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：49</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -2011,6 +2411,7 @@
         <span>来源：西安理工大学就业质量报告</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：33</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -2053,6 +2454,7 @@
         <span>来源：小红书-就业去向</span>
         <span>专题：就业质量报告</span>
         <span>类型：网页</span>
+        <span>可信度：中可信</span>
         <span>评分：35</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="小红书">小红书</button><button class="tag filter-tag" type="button" data-tag="就业">就业</button><button class="tag filter-tag" type="button" data-tag="就业分析">就业分析</button><button class="tag filter-tag" type="button" data-tag="就业质量">就业质量</button><button class="tag filter-tag" type="button" data-tag="就业质量报告">就业质量报告</button><button class="tag filter-tag" type="button" data-tag="平台内容">平台内容</button><button class="tag filter-tag" type="button" data-tag="经验帖">经验帖</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -2103,6 +2505,7 @@
         <span>来源：小红书-保研经验</span>
         <span>专题：保研推免</span>
         <span>类型：网页</span>
+        <span>可信度：中可信</span>
         <span>评分：43</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="保研">保研</button><button class="tag filter-tag" type="button" data-tag="保研信息">保研信息</button><button class="tag filter-tag" type="button" data-tag="小红书">小红书</button><button class="tag filter-tag" type="button" data-tag="平台内容">平台内容</button><button class="tag filter-tag" type="button" data-tag="经验帖">经验帖</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button></div>
@@ -2153,6 +2556,7 @@
         <span>来源：西北大学预算公开</span>
         <span>专题：高校预算</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：43</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校决算">学校决算</button><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button><button class="tag filter-tag" type="button" data-tag="预算">预算</button></div>
@@ -2184,6 +2588,7 @@
         <span>来源：陕西师范大学预算公开</span>
         <span>专题：高校预算</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：42</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校决算">学校决算</button><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button><button class="tag filter-tag" type="button" data-tag="预算">预算</button></div>
@@ -2215,6 +2620,7 @@
         <span>来源：西北大学预算公开</span>
         <span>专题：高校预算</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：38</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校决算">学校决算</button><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button><button class="tag filter-tag" type="button" data-tag="预算">预算</button></div>
@@ -2246,6 +2652,7 @@
         <span>来源：西北大学预算公开</span>
         <span>专题：高校预算</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：38</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校决算">学校决算</button><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button><button class="tag filter-tag" type="button" data-tag="预算">预算</button></div>
@@ -2277,6 +2684,7 @@
         <span>来源：陕西师范大学预算公开</span>
         <span>专题：高校预算</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：35</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button><button class="tag filter-tag" type="button" data-tag="预算">预算</button></div>
@@ -2308,6 +2716,7 @@
         <span>来源：西北大学预算公开</span>
         <span>专题：高校预算</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：31</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button><button class="tag filter-tag" type="button" data-tag="预算">预算</button></div>
@@ -2339,6 +2748,7 @@
         <span>来源：西北大学预算公开</span>
         <span>专题：高校预算</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：31</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button><button class="tag filter-tag" type="button" data-tag="预算">预算</button></div>
@@ -2370,6 +2780,7 @@
         <span>来源：西北大学预算公开</span>
         <span>专题：高校预算</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：31</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button><button class="tag filter-tag" type="button" data-tag="预算">预算</button></div>
@@ -2401,6 +2812,7 @@
         <span>来源：西北大学预算公开</span>
         <span>专题：高校预算</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：31</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button><button class="tag filter-tag" type="button" data-tag="预算">预算</button></div>
@@ -2432,6 +2844,7 @@
         <span>来源：西北大学预算公开</span>
         <span>专题：高校预算</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：31</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button><button class="tag filter-tag" type="button" data-tag="预算">预算</button></div>
@@ -2463,6 +2876,7 @@
         <span>来源：陕西师范大学预算公开</span>
         <span>专题：高校预算</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：30</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button><button class="tag filter-tag" type="button" data-tag="预算">预算</button></div>
@@ -2494,6 +2908,7 @@
         <span>来源：陕西师范大学预算公开</span>
         <span>专题：高校预算</span>
         <span>类型：网页</span>
+        <span>可信度：高可信</span>
         <span>评分：30</span>
       </div>
       <div class="item-tags"><button class="tag filter-tag" type="button" data-tag="学校预算">学校预算</button><button class="tag filter-tag" type="button" data-tag="陕西">陕西</button><button class="tag filter-tag" type="button" data-tag="预算">预算</button></div>
@@ -2521,11 +2936,16 @@
         category: "全部",
         tag: "全部",
         sourceType: "全部",
+        platform: "全部",
+        trustLevel: "全部",
+        topic: "全部",
         sortMode: "score",
         hideLowPriority: false,
       };
 
       const root = document.getElementById("contentRoot");
+      const activeFiltersPanel = document.getElementById("activeFiltersPanel");
+      const activeFilterChips = document.getElementById("activeFilterChips");
 
       function parseDate(value) {
         if (!value) return 0;
@@ -2536,10 +2956,13 @@
       function itemVisible(card) {
         const categoryOk = state.category === "全部" || card.dataset.category === state.category;
         const sourceTypeOk = state.sourceType === "全部" || card.dataset.sourceType === state.sourceType;
+        const platformOk = state.platform === "全部" || card.dataset.platform === state.platform;
+        const trustOk = state.trustLevel === "全部" || card.dataset.trustLevel === state.trustLevel;
+        const topicOk = state.topic === "全部" || card.dataset.topic === state.topic;
         const tags = (card.dataset.tags || "").split("|").filter(Boolean);
         const tagOk = state.tag === "全部" || tags.includes(state.tag);
         const lowPriorityOk = !state.hideLowPriority || card.dataset.lowPriority !== "true";
-        return categoryOk && sourceTypeOk && tagOk && lowPriorityOk;
+        return categoryOk && sourceTypeOk && platformOk && trustOk && topicOk && tagOk && lowPriorityOk;
       }
 
       function sortCards(cards) {
@@ -2554,6 +2977,102 @@
         });
       }
 
+      function syncTopTabs() {
+        document.querySelectorAll(".top-tab").forEach(btn => {
+          const active = btn.dataset.sourceTypeFilter === state.sourceType;
+          btn.classList.toggle("active", active);
+          btn.setAttribute("aria-selected", active ? "true" : "false");
+        });
+      }
+
+      function syncToolbarButtons() {
+        document.querySelectorAll("[data-category-filter]").forEach(btn => {
+          btn.classList.toggle("active", btn.dataset.categoryFilter === state.category);
+        });
+
+        document.querySelectorAll("[data-tag-filter]").forEach(btn => {
+          btn.classList.toggle("active", btn.dataset.tagFilter === state.tag);
+        });
+
+        document.querySelectorAll("[data-sort-mode]").forEach(btn => {
+          btn.classList.toggle("active", btn.dataset.sortMode === state.sortMode);
+        });
+
+        const lowBtn = document.getElementById("toggleLowPriority");
+        if (lowBtn) {
+          lowBtn.classList.toggle("active", state.hideLowPriority);
+        }
+      }
+
+      function syncSummaryCards() {
+        document.querySelectorAll(".mini-stat-card[data-action-key]").forEach(card => {
+          const key = card.dataset.actionKey;
+          const value = card.dataset.actionValue;
+          const active = state[key] === value;
+          card.classList.toggle("active", active);
+        });
+      }
+
+      function renderActiveFilterChips() {
+        const labels = {
+          category: "分类",
+          tag: "标签",
+          sourceType: "来源",
+          platform: "平台",
+          trustLevel: "可信度",
+          topic: "专题",
+        };
+
+        const valueLabels = {
+          sourceType: {
+            "official": "官方",
+            "platform": "平台",
+            "community": "社区",
+            "unknown": "未知",
+            "全部": "全部"
+          },
+          trustLevel: {
+            "high": "高可信",
+            "medium": "中可信",
+            "low": "低可信",
+            "unknown": "未知",
+            "全部": "全部"
+          }
+        };
+
+        const rows = [];
+        ["sourceType", "category", "platform", "trustLevel", "topic", "tag"].forEach(key => {
+          if (state[key] && state[key] !== "全部") {
+            const label = labels[key] || key;
+            const pretty = (valueLabels[key] && valueLabels[key][state[key]]) || state[key];
+            rows.push(
+              '<span class="active-chip">' +
+              label + '：' + pretty +
+              ' <button type="button" class="chip-x" data-clear-key="' + key + '">×</button>' +
+              '</span>'
+            );
+          }
+        });
+
+        activeFilterChips.innerHTML = rows.join("");
+        activeFiltersPanel.classList.toggle("show", rows.length > 0);
+
+        document.querySelectorAll("[data-clear-key]").forEach(btn => {
+          btn.addEventListener("click", () => {
+            state[btn.dataset.clearKey] = "全部";
+            refresh();
+          });
+        });
+      }
+
+      function sortAllVisibleGrids() {
+        document.querySelectorAll(".item-grid").forEach(grid => {
+          const cards = Array.from(grid.querySelectorAll(":scope > .item-card"));
+          const sorted = sortCards(cards);
+          sorted.forEach(card => grid.appendChild(card));
+        });
+      }
+
       function refresh() {
         const sections = Array.from(root.querySelectorAll("[data-category-section]"));
 
@@ -2563,16 +3082,11 @@
           const sourceTypeBlocks = Array.from(section.querySelectorAll("[data-source-type-block]"));
           sourceTypeBlocks.forEach(block => {
             const cards = Array.from(block.querySelectorAll(".item-card"));
-            const sorted = sortCards(cards);
 
-            sorted.forEach(card => {
+            cards.forEach(card => {
               const visible = itemVisible(card);
               card.classList.toggle("hidden", !visible);
               if (visible) categoryVisibleCount += 1;
-              const parentGrid = card.parentElement;
-              if (parentGrid) {
-                parentGrid.appendChild(card);
-              }
             });
 
             const visibleCards = cards.filter(card => !card.classList.contains("hidden")).length;
@@ -2592,27 +3106,19 @@
           section.classList.toggle("hidden", categoryVisibleCount === 0);
         });
 
-        document.querySelectorAll("[data-category-filter]").forEach(btn => {
-          btn.classList.toggle("active", btn.dataset.categoryFilter === state.category);
-        });
-
-        document.querySelectorAll("[data-tag-filter]").forEach(btn => {
-          btn.classList.toggle("active", btn.dataset.tagFilter === state.tag);
-        });
-
-        document.querySelectorAll("[data-source-type-filter]").forEach(btn => {
-          btn.classList.toggle("active", btn.dataset.sourceTypeFilter === state.sourceType);
-        });
-
-        document.querySelectorAll("[data-sort-mode]").forEach(btn => {
-          btn.classList.toggle("active", btn.dataset.sortMode === state.sortMode);
-        });
-
-        const lowBtn = document.getElementById("toggleLowPriority");
-        if (lowBtn) {
-          lowBtn.classList.toggle("active", state.hideLowPriority);
-        }
+        sortAllVisibleGrids();
+        syncTopTabs();
+        syncToolbarButtons();
+        syncSummaryCards();
+        renderActiveFilterChips();
       }
+
+      document.querySelectorAll(".top-tab").forEach(btn => {
+        btn.addEventListener("click", () => {
+          state.sourceType = btn.dataset.sourceTypeFilter;
+          refresh();
+        });
+      });
 
       document.querySelectorAll("[data-category-filter]").forEach(btn => {
         btn.addEventListener("click", () => {
@@ -2624,13 +3130,6 @@
       document.querySelectorAll("[data-tag-filter]").forEach(btn => {
         btn.addEventListener("click", () => {
           state.tag = btn.dataset.tagFilter;
-          refresh();
-        });
-      });
-
-      document.querySelectorAll("[data-source-type-filter]").forEach(btn => {
-        btn.addEventListener("click", () => {
-          state.sourceType = btn.dataset.sourceTypeFilter;
           refresh();
         });
       });
@@ -2649,12 +3148,51 @@
         });
       });
 
+      document.querySelectorAll(".mini-stat-card[data-action-key]").forEach(card => {
+        const applyCardAction = () => {
+          const key = card.dataset.actionKey;
+          const value = card.dataset.actionValue;
+          state[key] = state[key] === value ? "全部" : value;
+          refresh();
+        };
+
+        card.addEventListener("click", applyCardAction);
+        card.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            applyCardAction();
+          }
+        });
+      });
+
       const lowBtn = document.getElementById("toggleLowPriority");
       if (lowBtn) {
         lowBtn.addEventListener("click", () => {
           state.hideLowPriority = !state.hideLowPriority;
           refresh();
         });
+      }
+
+      function clearAllFilters() {
+        state.category = "全部";
+        state.tag = "全部";
+        state.sourceType = "全部";
+        state.platform = "全部";
+        state.trustLevel = "全部";
+        state.topic = "全部";
+        state.sortMode = "score";
+        state.hideLowPriority = false;
+        refresh();
+      }
+
+      const clearBtn = document.getElementById("clearAllFilters");
+      if (clearBtn) {
+        clearBtn.addEventListener("click", clearAllFilters);
+      }
+
+      const clearBtnInline = document.getElementById("clearAllFiltersInline");
+      if (clearBtnInline) {
+        clearBtnInline.addEventListener("click", clearAllFilters);
       }
 
       refresh();

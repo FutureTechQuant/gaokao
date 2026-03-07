@@ -1,0 +1,39 @@
+sources:
+  - name: 小红书-保研经验
+    enabled: true
+    source_type: platform
+    platform: xiaohongshu
+    topic: recommendation
+    mode: search
+    trust_level: medium
+    entry: 保研 夏令营 推免 陕西师范大学
+    tags:
+      - 小红书
+      - 保研
+      - 经验帖
+
+  - name: 小红书-就业去向
+    enabled: true
+    source_type: platform
+    platform: xiaohongshu
+    topic: careers
+    mode: search
+    trust_level: medium
+    entry: 就业 去向 陕西师范大学 西北大学
+    tags:
+      - 小红书
+      - 就业
+      - 经验帖
+
+  - name: 小红书-招生分数
+    enabled: true
+    source_type: platform
+    platform: xiaohongshu
+    topic: admissions
+    mode: search
+    trust_level: medium
+    entry: 陕西师范大学 录取分数 位次 招生计划
+    tags:
+      - 小红书
+      - 招生
+      - 经验帖

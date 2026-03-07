@@ -1,340 +1,85 @@
-from __future__ import annotations
+schools:
+  - name: 西安交通大学
+    region: 陕西
+    tags:
+      - 陕西
+    admissions_url: "https://zswxxcx.xjtu.edu.cn/public/zsdata/wzgl/"
+    info_url: ""
+    careers_url: ""
+    recommendation_url: ""
+    budgets_url: ""
+    allow_domains:
+      - zswxxcx.xjtu.edu.cn
+      - xjtu.edu.cn
+    detail_url: ""
+    official_url: "http://www.xjtu.edu.cn"
+    source_origin: "zhangshanggaokao"
+    verification_status: "pending"
 
-import re
-import time
-from pathlib import Path
-from urllib.parse import urljoin, urlparse
+  - name: 长安大学
+    region: 陕西
+    tags:
+      - 陕西
+    admissions_url: "https://zsb.chd.edu.cn"
+    info_url: ""
+    careers_url: ""
+    recommendation_url: ""
+    budgets_url: ""
+    allow_domains:
+      - zsb.chd.edu.cn
+      - chd.edu.cn
+    detail_url: ""
+    official_url: "https://www.chd.edu.cn"
+    source_origin: "zhangshanggaokao"
+    verification_status: "pending"
 
-import requests
-import yaml
-from bs4 import BeautifulSoup
+  - name: 西北农林科技大学
+    region: 陕西
+    tags:
+      - 陕西
+    admissions_url: "https://zhshw.nwafu.edu.cn/jbdsclm/zlcd/index.htm"
+    info_url: ""
+    careers_url: ""
+    recommendation_url: ""
+    budgets_url: ""
+    allow_domains:
+      - zhshw.nwafu.edu.cn
+      - nwafu.edu.cn
+    detail_url: ""
+    official_url: ""
+    source_origin: "zhangshanggaokao"
+    verification_status: "pending"
 
+  - name: 西安科技大学
+    region: 陕西
+    tags:
+      - 陕西
+    admissions_url: "https://zs.xust.edu.cn"
+    info_url: ""
+    careers_url: ""
+    recommendation_url: ""
+    budgets_url: ""
+    allow_domains:
+      - zs.xust.edu.cn
+      - xust.edu.cn
+    detail_url: ""
+    official_url: ""
+    source_origin: "zhangshanggaokao"
+    verification_status: "pending"
 
-ROOT = Path(__file__).resolve().parents[1]
-CONFIG_DIR = ROOT / "config"
-AUTO_SEED_FILE = CONFIG_DIR / "schools_seed.generated.yaml"
-MANUAL_SEED_FILE = CONFIG_DIR / "schools_seed.yaml"
-
-BASE_URL = "https://gaokao.eol.cn"
-LIST_URLS = [
-    "https://gaokao.eol.cn/daxue/mingdan/",
-    "https://gaokao.eol.cn/daxue/mingdan/index_1.shtml",
-]
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; gaokao-bot/1.0; +https://github.com/)",
-    "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
-    "Referer": BASE_URL,
-}
-
-PROVINCES = [
-    "北京", "天津", "河北", "山西", "内蒙古", "辽宁", "吉林", "黑龙江",
-    "上海", "江苏", "浙江", "安徽", "福建", "江西", "山东", "河南",
-    "湖北", "湖南", "广东", "广西", "海南", "重庆", "四川", "贵州",
-    "云南", "西藏", "陕西", "甘肃", "青海", "宁夏", "新疆",
-]
-
-BAD_HOST_KEYWORDS = [
-    "gaokao.eol.cn",
-    "eol.cn",
-    "weibo.com",
-    "weixin.qq.com",
-    "mp.weixin.qq.com",
-    "zhihu.com",
-    "bilibili.com",
-    "xiaohongshu.com",
-]
-
-ADMISSIONS_HINTS = ["招生", "本科招生", "招生网", "招生信息网", "录取", "zsb", "zhaosheng"]
-CAREERS_HINTS = ["就业", "就业网", "job", "career", "jiuye", "就业质量"]
-BUDGETS_HINTS = ["预算", "决算", "财务", "cw", "cwc"]
-INFO_HINTS = ["信息公开", "xxgk"]
-RECOMMEND_HINTS = ["推免", "保研", "推荐免试", "夏令营", "jwc", "教务"]
-
-
-def get(url: str, **kwargs) -> requests.Response:
-    resp = requests.get(url, headers=HEADERS, timeout=20, **kwargs)
-    resp.raise_for_status()
-    return resp
-
-
-def normalize_text(text: str) -> str:
-    return re.sub(r"\s+", " ", (text or "")).strip()
-
-
-def host_of(url: str) -> str:
-    try:
-        return urlparse(url).netloc.lower()
-    except Exception:
-        return ""
-
-
-def domain_candidates(urls: list[str]) -> list[str]:
-    seen = set()
-    result = []
-    for url in urls:
-        host = host_of(url)
-        if not host:
-            continue
-        if host not in seen:
-            seen.add(host)
-            result.append(host)
-    return result
-
-
-def looks_like_school_name(text: str) -> bool:
-    text = normalize_text(text)
-    if len(text) < 2 or len(text) > 40:
-        return False
-    keywords = ["大学", "学院", "职业技术", "高等专科", "警察学院", "医学院", "师范"]
-    return any(k in text for k in keywords)
-
-
-def detect_region(text: str) -> str:
-    text = normalize_text(text)
-    for p in PROVINCES:
-        if p in text:
-            return p
-    return ""
-
-
-def pick_best_link(links: list[dict], hints: list[str]) -> str:
-    scored = []
-    for row in links:
-        text = str(row.get("text", "")).lower()
-        href = str(row.get("href", "")).lower()
-        score = 0
-        for hint in hints:
-            h = hint.lower()
-            if h in text:
-                score += 3
-            if h in href:
-                score += 2
-        if score > 0:
-            scored.append((score, row["href"]))
-    scored.sort(key=lambda x: (-x[0], x[1]))
-    return scored[0][1] if scored else ""
-
-
-def usable_external_link(url: str) -> bool:
-    host = host_of(url)
-    if not host:
-        return False
-    return not any(x in host for x in BAD_HOST_KEYWORDS)
-
-
-def extract_external_links(soup: BeautifulSoup, base_url: str) -> list[dict]:
-    rows = []
-    seen = set()
-    for a in soup.find_all("a", href=True):
-        href = urljoin(base_url, a.get("href", "").strip())
-        text = normalize_text(a.get_text(" ", strip=True))
-        if not href.startswith("http"):
-            continue
-        if href in seen:
-            continue
-        seen.add(href)
-        rows.append({"href": href, "text": text})
-    return rows
-
-
-def parse_school_cards_from_list(html: str, base_url: str) -> tuple[list[dict], list[str]]:
-    soup = BeautifulSoup(html, "html.parser")
-    cards = []
-    next_pages = []
-    seen_names = set()
-
-    for a in soup.find_all("a", href=True):
-        text = normalize_text(a.get_text(" ", strip=True))
-        href = urljoin(base_url, a["href"])
-
-        if looks_like_school_name(text):
-            if "/daxue/" in href or "/school/" in href or "/index.shtml" in href:
-                if text not in seen_names:
-                    seen_names.add(text)
-                    block_text = normalize_text(a.parent.get_text(" ", strip=True)) if a.parent else text
-                    region = detect_region(block_text)
-                    cards.append({
-                        "name": text,
-                        "detail_url": href,
-                        "region": region,
-                    })
-
-        if "gaokao.eol.cn/daxue/mingdan/" in href and href not in next_pages:
-            next_pages.append(href)
-
-    return cards, sorted(set(next_pages))
-
-
-def parse_school_detail(detail_url: str, fallback_name: str = "", fallback_region: str = "") -> dict:
-    try:
-        resp = get(detail_url)
-    except Exception:
-        return {
-            "name": fallback_name,
-            "region": fallback_region,
-            "tags": [fallback_region] if fallback_region else [],
-            "admissions_url": "",
-            "info_url": "",
-            "careers_url": "",
-            "recommendation_url": "",
-            "budgets_url": "",
-            "allow_domains": [],
-            "detail_url": detail_url,
-            "official_url": "",
-            "source_origin": "zhangshanggaokao",
-            "verification_status": "pending",
-        }
-
-    soup = BeautifulSoup(resp.text, "html.parser")
-    page_text = normalize_text(soup.get_text(" ", strip=True))
-    title = normalize_text(soup.title.get_text(" ", strip=True)) if soup.title else ""
-
-    name = fallback_name
-    if not looks_like_school_name(name):
-        for candidate in [title, page_text[:200]]:
-            m = re.search(r"([\u4e00-\u9fa5]{2,30}(大学|学院|职业技术学院|高等专科学校))", candidate)
-            if m:
-                name = m.group(1)
-                break
-
-    region = detect_region(page_text) or fallback_region
-
-    links = extract_external_links(soup, detail_url)
-    external_links = [x for x in links if usable_external_link(x["href"])]
-
-    official_url = external_links[0]["href"] if external_links else ""
-    admissions_url = pick_best_link(external_links, ADMISSIONS_HINTS)
-    careers_url = pick_best_link(external_links, CAREERS_HINTS)
-    budgets_url = pick_best_link(external_links, BUDGETS_HINTS)
-    info_url = pick_best_link(external_links, INFO_HINTS)
-    recommendation_url = pick_best_link(external_links, RECOMMEND_HINTS)
-
-    fallback = official_url or admissions_url or info_url or careers_url or budgets_url or recommendation_url
-    if not admissions_url:
-        admissions_url = fallback
-    if not careers_url:
-        careers_url = info_url or fallback
-    if not budgets_url:
-        budgets_url = info_url or fallback
-    if not recommendation_url:
-        recommendation_url = info_url or fallback
-    if not info_url:
-        info_url = fallback
-
-    allow_domains = domain_candidates([
-        official_url,
-        admissions_url,
-        careers_url,
-        budgets_url,
-        recommendation_url,
-        info_url,
-    ])
-
-    tags = [region] if region else []
-
-    return {
-        "name": name,
-        "region": region,
-        "tags": tags,
-        "admissions_url": admissions_url or "",
-        "info_url": info_url or "",
-        "careers_url": careers_url or "",
-        "recommendation_url": recommendation_url or "",
-        "budgets_url": budgets_url or "",
-        "allow_domains": allow_domains,
-        "detail_url": detail_url,
-        "official_url": official_url or "",
-        "source_origin": "zhangshanggaokao",
-        "verification_status": "pending",
-    }
-
-
-def crawl_eol_schools(max_pages: int = 120, sleep_sec: float = 0.3) -> list[dict]:
-    to_visit = list(LIST_URLS)
-    visited = set()
-    discovered = {}
-
-    while to_visit and len(visited) < max_pages:
-        url = to_visit.pop(0)
-        if url in visited:
-            continue
-        visited.add(url)
-
-        try:
-            resp = get(url)
-        except Exception:
-            continue
-
-        cards, next_pages = parse_school_cards_from_list(resp.text, url)
-
-        for card in cards:
-            key = card["name"]
-            if key not in discovered:
-                discovered[key] = card
-
-        for nxt in next_pages:
-            if nxt not in visited and nxt not in to_visit:
-                to_visit.append(nxt)
-
-        time.sleep(sleep_sec)
-
-    rows = []
-    for name, card in sorted(discovered.items(), key=lambda x: str(x[0])):
-        detail = parse_school_detail(
-            card["detail_url"],
-            fallback_name=card["name"],
-            fallback_region=card.get("region", ""),
-        )
-        if not detail.get("name"):
-            detail["name"] = card["name"]
-        if not detail.get("region"):
-            detail["region"] = card.get("region", "")
-        if not detail.get("tags"):
-            detail["tags"] = [detail["region"]] if detail.get("region") else []
-        rows.append(detail)
-
-    return rows
-
-
-def load_manual_seed() -> dict[str, dict]:
-    if not MANUAL_SEED_FILE.exists():
-        return {}
-    payload = yaml.safe_load(MANUAL_SEED_FILE.read_text(encoding="utf-8")) or {}
-    schools = payload.get("schools", [])
-    result = {}
-    for row in schools:
-        if not isinstance(row, dict):
-            continue
-        name = normalize_text(row.get("name", ""))
-        if name:
-            result[name] = row
-    return result
-
-
-def merge_schools(auto_rows: list[dict], manual_rows: dict[str, dict]) -> list[dict]:
-    merged = []
-
-    for row in auto_rows:
-        name = row.get("name", "")
-        manual = manual_rows.get(name, {})
-        out = dict(row)
-        for key, value in manual.items():
-            if key == "name":
-                continue
-            if value not in (None, "", [], {}):
-                out[key] = value
-        merged.append(out)
-
-    existing_names = {row["name"] for row in merged if row.get("name")}
-    for name, row in manual_rows.items():
-        if name not in existing_names:
-            merged.append(row)
-
-    merged.sort(key=lambda x: str(x.get("name", "")))
-    return merged
-
-
-def main():
-    auto_rows = crawl_eol_schools()
-    manual_rows = load_manual_seed()
-    me
+  - name: 西安石油大学
+    region: 陕西
+    tags:
+      - 陕西
+    admissions_url: "https://zb.xsyu.edu.cn"
+    info_url: ""
+    careers_url: ""
+    recommendation_url: ""
+    budgets_url: ""
+    allow_domains:
+      - zb.xsyu.edu.cn
+      - xsyu.edu.cn
+    detail_url: ""
+    official_url: ""
+    source_origin: "zhangshanggaokao"
+    verification_status: "pending"

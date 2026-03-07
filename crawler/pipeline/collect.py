@@ -30,7 +30,88 @@ EXTRACTOR_MAP = {
     "budgets": extract_budget_items,
 }
 
-MAX_SECOND_HOP_PER_SOURCE = 8
+MAX_SECOND_HOP_PER_SOURCE = 10
+MAX_DETAIL_SECOND_HOP_PER_SOURCE = 3
+
+LIST_PATH_HINTS = [
+    "index",
+    "list",
+    "lists",
+    "more",
+    "archive",
+    "archives",
+    "category",
+    "column",
+    "栏目",
+    "分类",
+    "列表",
+    "信息公开",
+    "通知公告",
+    "招生",
+    "就业",
+    "推免",
+    "保研",
+    "预算",
+    "决算",
+    "专业",
+    "本科",
+    "页",
+    "page",
+]
+
+LIST_QUERY_HINTS = [
+    "page=",
+    "p=",
+    "category",
+    "type=",
+    "list",
+]
+
+DETAIL_PATH_HINTS = [
+    "/info/",
+    "/article/",
+    "/content/",
+    "/detail/",
+    "/details/",
+    "/show/",
+    "/view/",
+    "/news/",
+]
+
+DETAIL_TITLE_HINTS = [
+    "活动",
+    "开幕",
+    "开笔",
+    "报道",
+    "纪实",
+    "新闻",
+    "仪式",
+    "典礼",
+    "论坛",
+    "讲座",
+    "采访",
+    "交流会",
+]
+
+STRONG_TOPIC_HINTS = [
+    "招生章程",
+    "招生计划",
+    "录取查询",
+    "历年分数",
+    "分数线",
+    "位次",
+    "就业质量年度报告",
+    "毕业生就业质量",
+    "就业质量",
+    "推免",
+    "保研",
+    "推荐免试",
+    "夏令营",
+    "单位预算",
+    "部门预算",
+    "预算",
+    "决算",
+]
 
 
 def choose_extractor(topic: str):
@@ -40,6 +121,20 @@ def choose_extractor(topic: str):
 def get_host(url: str) -> str:
     try:
         return urlparse(url).netloc.lower()
+    except Exception:
+        return ""
+
+
+def get_path(url: str) -> str:
+    try:
+        return urlparse(url).path.lower()
+    except Exception:
+        return ""
+
+
+def get_query(url: str) -> str:
+    try:
+        return urlparse(url).query.lower()
     except Exception:
         return ""
 
@@ -54,6 +149,46 @@ def is_same_or_allowed_domain(url: str, allow_domains: list[str]) -> bool:
         domain = domain.lower()
         if host == domain or host.endswith("." + domain):
             return True
+    return False
+
+
+def looks_like_list_page(url: str, title: str) -> bool:
+    path = get_path(url)
+    query = get_query(url)
+    title = (title or "").lower()
+
+    if any(hint in query for hint in LIST_QUERY_HINTS):
+        return True
+
+    if any(hint in path for hint in LIST_PATH_HINTS):
+        return True
+
+    if any(hint in title for hint in [
+        "列表", "目录", "更多", "通知公告", "信息公开",
+        "招生", "就业", "推免", "保研", "预算", "决算"
+    ]):
+        return True
+
+    segments = [seg for seg in path.split("/") if seg]
+    if len(segments) <= 2 and not path.endswith((".htm", ".html", ".shtml")):
+        return True
+
+    return False
+
+
+def looks_like_detail_page(url: str, title: str) -> bool:
+    path = get_path(url)
+    title = title or ""
+
+    if any(hint in path for hint in DETAIL_PATH_HINTS):
+        return True
+
+    if path.endswith((".htm", ".html", ".shtml")) and any(ch.isdigit() for ch in path):
+        return True
+
+    if any(hint in title for hint in DETAIL_TITLE_HINTS):
+        return True
+
     return False
 
 
@@ -74,20 +209,45 @@ def should_follow_item(item: dict, source: dict) -> bool:
         " ".join(item.get("tags", [])),
     ])
 
-    strong_keywords = [
-        "招生章程", "招生计划", "录取查询", "历年分数", "分数线", "位次",
-        "就业质量年度报告", "就业质量", "毕业生就业质量",
-        "推免", "保研", "推荐免试", "夏令营",
-        "单位预算", "部门预算", "预算", "决算"
-    ]
-
     score = int(item.get("score", 0))
-    if score >= 10:
-        return True
-    if any(k in text for k in strong_keywords):
+
+    if looks_like_list_page(url, item.get("title", "")):
         return True
 
-    return False
+    if score >= 12:
+        return True
+
+    if any(k in text for k in STRONG_TOPIC_HINTS):
+        return True
+
+    if looks_like_detail_page(url, item.get("title", "")) and score < 16:
+        return False
+
+    return score >= 8
+
+
+def follow_priority(item: dict) -> tuple:
+    url = item.get("url", "")
+    title = item.get("title", "")
+    base_score = int(item.get("score", 0))
+
+    bonus = 0
+    if looks_like_list_page(url, title):
+        bonus += 20
+    if looks_like_detail_page(url, title):
+        bonus -= 12
+    if "信息公开" in title or "通知公告" in title:
+        bonus += 8
+    if any(k in title for k in ["招生", "就业", "推免", "保研", "预算", "决算"]):
+        bonus += 6
+    if url.lower().endswith((".htm", ".html")) and any(k in url.lower() for k in ["/info/", "/news/"]):
+        bonus -= 6
+
+    return (
+        bonus + base_score,
+        item.get("date", ""),
+        title,
+    )
 
 
 def enrich_item(item: dict, fetched_at: str) -> dict:
@@ -112,6 +272,7 @@ def collect_one_source(source: dict, fetched_at: str) -> tuple[list[dict], list[
     try:
         root_html = request_page(source["url"])
         first_items = extract_for_source(source, root_html)
+
         for item in first_items:
             enrich_item(item, fetched_at)
             if validate_item(item):
@@ -127,19 +288,29 @@ def collect_one_source(source: dict, fetched_at: str) -> tuple[list[dict], list[
 
         follow_candidates = sorted(
             follow_candidates,
-            key=lambda x: (int(x.get("score", 0)), x.get("date", ""), x.get("title", "")),
+            key=follow_priority,
             reverse=True,
         )
 
-        picked_urls = []
+        list_urls = []
+        detail_urls = []
+
         for item in follow_candidates:
             url = item.get("url", "")
             if not url or url in visited:
                 continue
-            picked_urls.append(url)
-            visited.add(url)
-            if len(picked_urls) >= MAX_SECOND_HOP_PER_SOURCE:
+
+            if looks_like_list_page(url, item.get("title", "")):
+                list_urls.append(url)
+                visited.add(url)
+            elif len(detail_urls) < MAX_DETAIL_SECOND_HOP_PER_SOURCE:
+                detail_urls.append(url)
+                visited.add(url)
+
+            if len(list_urls) + len(detail_urls) >= MAX_SECOND_HOP_PER_SOURCE:
                 break
+
+        picked_urls = list_urls + detail_urls
 
         for url in picked_urls:
             try:

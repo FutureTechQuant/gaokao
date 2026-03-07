@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import time
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
@@ -14,9 +15,16 @@ CONFIG_DIR = ROOT / "config"
 AUTO_SEED_FILE = CONFIG_DIR / "schools_seed.generated.yaml"
 MANUAL_SEED_FILE = CONFIG_DIR / "schools_seed.yaml"
 
-CHSI_LIST_URL = "https://gaokao.chsi.com.cn/sch/"
+BASE_URL = "https://gaokao.eol.cn"
+LIST_URLS = [
+    "https://gaokao.eol.cn/daxue/mingdan/",
+    "https://gaokao.eol.cn/daxue/mingdan/index_1.shtml",
+]
+
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; gaokao-bot/1.0; +https://github.com/)"
+    "User-Agent": "Mozilla/5.0 (compatible; gaokao-bot/1.0; +https://github.com/)",
+    "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+    "Referer": BASE_URL,
 }
 
 PROVINCES = [
@@ -27,8 +35,8 @@ PROVINCES = [
 ]
 
 BAD_HOST_KEYWORDS = [
-    "chsi.com.cn",
-    "gaokao.chsi.com.cn",
+    "gaokao.eol.cn",
+    "eol.cn",
     "weibo.com",
     "weixin.qq.com",
     "mp.weixin.qq.com",
@@ -43,9 +51,12 @@ BUDGETS_HINTS = ["预算", "决算", "财务", "cw", "cwc"]
 INFO_HINTS = ["信息公开", "xxgk"]
 RECOMMEND_HINTS = ["推免", "保研", "推荐免试", "夏令营", "jwc", "教务"]
 
+SESSION = requests.Session()
+SESSION.headers.update(HEADERS)
+
 
 def get(url: str, **kwargs) -> requests.Response:
-    resp = requests.get(url, headers=HEADERS, timeout=20, **kwargs)
+    resp = SESSION.get(url, timeout=20, **kwargs)
     resp.raise_for_status()
     return resp
 
@@ -93,8 +104,8 @@ def detect_region(text: str) -> str:
 def pick_best_link(links: list[dict], hints: list[str]) -> str:
     scored = []
     for row in links:
-        text = row["text"].lower()
-        href = row["href"].lower()
+        text = str(row.get("text", "")).lower()
+        href = str(row.get("href", "")).lower()
         score = 0
         for hint in hints:
             h = hint.lower()
@@ -104,7 +115,7 @@ def pick_best_link(links: list[dict], hints: list[str]) -> str:
                 score += 2
         if score > 0:
             scored.append((score, row["href"]))
-    scored.sort(reverse=True)
+    scored.sort(key=lambda x: (-x[0], x[1]))
     return scored[0][1] if scored else ""
 
 
@@ -118,7 +129,6 @@ def usable_external_link(url: str) -> bool:
 def extract_external_links(soup: BeautifulSoup, base_url: str) -> list[dict]:
     rows = []
     seen = set()
-
     for a in soup.find_all("a", href=True):
         href = urljoin(base_url, a.get("href", "").strip())
         text = normalize_text(a.get_text(" ", strip=True))
@@ -140,44 +150,59 @@ def parse_school_cards_from_list(html: str, base_url: str) -> tuple[list[dict], 
     for a in soup.find_all("a", href=True):
         text = normalize_text(a.get_text(" ", strip=True))
         href = urljoin(base_url, a["href"])
-        if looks_like_school_name(text) and "gaokao.chsi.com.cn" in href:
-            if text not in seen_names:
-                seen_names.add(text)
-                block_text = normalize_text(a.parent.get_text(" ", strip=True)) if a.parent else text
-                region = detect_region(block_text)
-                cards.append({
-                    "name": text,
-                    "detail_url": href,
-                    "region": region,
-                })
 
-        if "gaokao.chsi.com.cn" in href and "/sch/" in href:
-            if any(token in href for token in ["page=", "start=", "sch/search", "/sch/?"]):
+        if looks_like_school_name(text):
+            if "/daxue/" in href or "/school/" in href or "/index.shtml" in href:
+                if text not in seen_names:
+                    seen_names.add(text)
+                    block_text = normalize_text(a.parent.get_text(" ", strip=True)) if a.parent else text
+                    region = detect_region(block_text)
+                    cards.append({
+                        "name": text,
+                        "detail_url": href,
+                        "region": region,
+                    })
+
+        if "gaokao.eol.cn/daxue/mingdan/" in href:
+            if href not in next_pages:
                 next_pages.append(href)
 
     return cards, sorted(set(next_pages))
 
 
-def parse_school_detail(detail_url: str) -> dict:
+def parse_school_detail(detail_url: str, fallback_name: str = "", fallback_region: str = "") -> dict:
     try:
         resp = get(detail_url)
     except Exception:
-        return {}
+        return {
+            "name": fallback_name,
+            "region": fallback_region,
+            "tags": [fallback_region] if fallback_region else [],
+            "admissions_url": "",
+            "info_url": "",
+            "careers_url": "",
+            "recommendation_url": "",
+            "budgets_url": "",
+            "allow_domains": [],
+            "detail_url": detail_url,
+            "official_url": "",
+            "source_origin": "zhangshanggaokao",
+            "verification_status": "pending",
+        }
 
     soup = BeautifulSoup(resp.text, "html.parser")
     page_text = normalize_text(soup.get_text(" ", strip=True))
     title = normalize_text(soup.title.get_text(" ", strip=True)) if soup.title else ""
 
-    h1 = soup.find(["h1", "h2"])
-    name = normalize_text(h1.get_text(" ", strip=True)) if h1 else ""
+    name = fallback_name
     if not looks_like_school_name(name):
-        for candidate in [title, page_text[:120]]:
+        for candidate in [title, page_text[:200]]:
             m = re.search(r"([\u4e00-\u9fa5]{2,30}(大学|学院|职业技术学院|高等专科学校))", candidate)
             if m:
                 name = m.group(1)
                 break
 
-    region = detect_region(page_text)
+    region = detect_region(page_text) or fallback_region
 
     links = extract_external_links(soup, detail_url)
     external_links = [x for x in links if usable_external_link(x["href"])]
@@ -190,7 +215,6 @@ def parse_school_detail(detail_url: str) -> dict:
     recommendation_url = pick_best_link(external_links, RECOMMEND_HINTS)
 
     fallback = official_url or admissions_url or info_url or careers_url or budgets_url or recommendation_url
-
     if not admissions_url:
         admissions_url = fallback
     if not careers_url:
@@ -225,11 +249,13 @@ def parse_school_detail(detail_url: str) -> dict:
         "allow_domains": allow_domains,
         "detail_url": detail_url,
         "official_url": official_url or "",
+        "source_origin": "zhangshanggaokao",
+        "verification_status": "pending",
     }
 
 
-def crawl_chsi_schools(max_pages: int = 180) -> list[dict]:
-    to_visit = [CHSI_LIST_URL]
+def crawl_eol_schools(max_pages: int = 120, sleep_sec: float = 0.3) -> list[dict]:
+    to_visit = list(LIST_URLS)
     visited = set()
     discovered = {}
 
@@ -255,23 +281,15 @@ def crawl_chsi_schools(max_pages: int = 180) -> list[dict]:
             if nxt not in visited and nxt not in to_visit:
                 to_visit.append(nxt)
 
+        time.sleep(sleep_sec)
+
     rows = []
-    for name, card in sorted(discovered.items(), key=lambda x: x[0]):
-        detail = parse_school_detail(card["detail_url"])
-        if not detail:
-            detail = {
-                "name": card["name"],
-                "region": card.get("region", ""),
-                "tags": [card["region"]] if card.get("region") else [],
-                "admissions_url": "",
-                "info_url": "",
-                "careers_url": "",
-                "recommendation_url": "",
-                "budgets_url": "",
-                "allow_domains": [],
-                "detail_url": card["detail_url"],
-                "official_url": "",
-            }
+    for name, card in sorted(discovered.items(), key=lambda x: str(x[0])):
+        detail = parse_school_detail(
+            card["detail_url"],
+            fallback_name=card["name"],
+            fallback_region=card.get("region", ""),
+        )
         if not detail.get("name"):
             detail["name"] = card["name"]
         if not detail.get("region"):
@@ -317,12 +335,12 @@ def merge_schools(auto_rows: list[dict], manual_rows: dict[str, dict]) -> list[d
         if name not in existing_names:
             merged.append(row)
 
-    merged.sort(key=lambda x: x.get("name", ""))
+    merged.sort(key=lambda x: str(x.get("name", "")))
     return merged
 
 
 def main():
-    auto_rows = crawl_chsi_schools()
+    auto_rows = crawl_eol_schools()
     manual_rows = load_manual_seed()
     merged = merge_schools(auto_rows, manual_rows)
 

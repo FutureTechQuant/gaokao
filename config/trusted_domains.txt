@@ -1,0 +1,9 @@
+moe.gov.cn
+edu.cn
+gov.cn
+snnu.edu.cn
+nwu.edu.cn
+xaut.edu.cn
+xupt.edu.cn
+gzw.sh.gov.cn
+beijing.gov.cn

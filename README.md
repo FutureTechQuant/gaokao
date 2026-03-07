@@ -1,92 +1,141 @@
 # 高考信息自动汇总
 
-- 最近更新：2026-03-07T11:44:31+08:00
+- 最近更新：2026-03-07T14:59:23+08:00
 
-- 本次抓取条目：70
+- 本次抓取条目：349
 
-- 错误数：2
+- 错误数：1
 
 
 ## 最新信息
 
-- [高考热点](https://www.sneac.com/kszx/ptgk/gkrd.htm) | 陕西招生考试信息网 | 未知日期
-- [高水平运动队](https://zsb.snnu.edu.cn/sy/zsxx/zsjz/gspydd.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [马克思主义学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/mkszyxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [食品工程与营养科学学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/spgcyyykxxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [音乐舞蹈类](https://zsb.snnu.edu.cn/sy/zsxx/zsjz/yl_wdlzy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [音乐学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/ylxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [陕西师范大学2026年高水平运动队招生简章](https://zsb.snnu.edu.cn/info/1338/5012.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [陕西师范大学2026年运动训练专业招生简章](https://zsb.snnu.edu.cn/info/1337/5022.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [陕西师范大学2026年保送录取优秀运动员招生简章](https://zsb.snnu.edu.cn/info/1337/4982.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [陕西师范大学2026年依据台湾地区大学入学考试学科能力测试成绩招收台湾高中毕业生招生简章](https://zsb.snnu.edu.cn/info/1339/4962.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [陕西师范大学2025级本研衔接公费师范生履约任教范围](https://zsb.snnu.edu.cn/info/1235/4822.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [陕西师范大学2025年全日制普通本科招生章程](https://zsb.snnu.edu.cn/info/1235/4692.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [通知公告](https://zsb.snnu.edu.cn/sy/zsxx/zsgg.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [运动训练](https://zsb.snnu.edu.cn/sy/zsxx/zsjz/ydxlzy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [计划分数 Enrollment Plan](https://zhaosheng.xupt.edu.cn/lqcx.htm) | 西安邮电大学本科招生信息网 | 未知日期
-- [联系我们](https://zsb.snnu.edu.cn/sy/lxwm/lxzb.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [联系我们](https://zhaosheng.xupt.edu.cn/lnfs.htm) | 西安邮电大学本科招生信息网 | 未知日期
-- [考试提醒](https://www.sneac.com/kszx/ptgk/kstx.htm) | 陕西招生考试信息网 | 未知日期
-- [考试提醒](https://www.sneac.com/kszx/crgk/kstx.htm) | 陕西招生考试信息网 | 未知日期
-- [美术学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/msxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [生命科学学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/smkxxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [物理学与信息技术学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/wlxyxxjsxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [港澳台招生](https://zsb.snnu.edu.cn/sy/zsxx/zsjz/gatzs.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [民族教育学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/mzjyxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [校园风景](http://www.snnu.edu.cn/xxgk/xyfj/zaxq.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [材料科学与工程学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/clkxygcxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [新闻与传播学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/xwycbxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [数学与统计学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/sxytjxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [教育学部](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/jyxb.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [政策解读](https://www.sneac.com/kszx/ptgk/zcjd.htm) | 陕西招生考试信息网 | 未知日期
-- [政策文件](https://www.sneac.com/kszx/ptgk/zcwj.htm) | 陕西招生考试信息网 | 未知日期
-- [政策文件](https://www.sneac.com/kszx/crgk/zcwj.htm) | 陕西招生考试信息网 | 未知日期
-- [播音编导类](https://zsb.snnu.edu.cn/sy/zsxx/zsjz/by_bdlzy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [招生简章](https://zsb.snnu.edu.cn/sy/zsxx/zsjz/gxzx1.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [招生政策](https://zsb.snnu.edu.cn/sy/zsxx/zszheng_ce.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [招生指南](https://zhaosheng.xupt.edu.cn/zszn.htm) | 西安邮电大学本科招生信息网 | 未知日期
-- [招生信息](http://zsdata.snnu.edu.cn/zscx/lqxx/#/) | 陕西师范大学本科招生信息网 | 未知日期
-- [招生信息](https://zhaosheng.xupt.edu.cn/zsxx.htm) | 西安邮电大学本科招生信息网 | 未知日期
-- [心理学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/xlxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [录取查询 Admission Inquiry](https://zhaosheng.xupt.edu.cn/info/1056/1084.htm) | 西安邮电大学本科招生信息网 | 未知日期
-- [录取查询](http://zsdata.snnu.edu.cn/zscx/lqxx/#/lqcx) | 陕西师范大学本科招生信息网 | 未知日期
-- [师大全景](http://www.snnu.edu.cn/xxgk/xxdt.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [就业创业](http://job.snnu.edu.cn/) | 陕西师范大学本科招生信息网 | 未知日期
-- [少数民族预科](https://zsb.snnu.edu.cn/sy/zsxx/zsjz/ssmzyk.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [学院专业](https://zsb.snnu.edu.cn/sy/xyzhuan_ye.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [学院专业](https://zhaosheng.xupt.edu.cn/xyzy.htm) | 西安邮电大学本科招生信息网 | 未知日期
-- [学科建设](http://xkfgc.snnu.edu.cn/) | 陕西师范大学本科招生信息网 | 未知日期
-- [学校概况](https://zsb.snnu.edu.cn/sy/xxgk/xxjj.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [学校概况](https://zhaosheng.xupt.edu.cn/xxgk.htm) | 西安邮电大学本科招生信息网 | 未知日期
-- [奖助学金](http://zzzx.snnu.edu.cn) | 陕西师范大学本科招生信息网 | 未知日期
-- [外国语学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/wgyxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [地理科学与旅游学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/dlkxylyxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [国际商学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/gjsxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [国际交流](http://ipo.snnu.edu.cn) | 陕西师范大学本科招生信息网 | 未知日期
-- [国家安全学院（政法与公共管理学院）](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/gjaqxy_zfyggglxy_.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [哲学学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/zxxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [咨询方式 Consulting](https://zhaosheng.xupt.edu.cn/info/1053/2855.htm) | 西安邮电大学本科招生信息网 | 未知日期
-- [历年计划 The Fraction](https://zhaosheng.xupt.edu.cn/lnzsjh.htm) | 西安邮电大学本科招生信息网 | 未知日期
-- [历年数据](https://www.sneac.com/kszx/ptgk/lnsj.htm) | 陕西招生考试信息网 | 未知日期
-- [历年分数](http://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs) | 陕西师范大学本科招生信息网 | 未知日期
-- [历史文化学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/lswhxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [化学化工学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/hxhgxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [关于做好2023级本科生专业分流工作的通知](https://www.snnu.edu.cn/info/1015/37152.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [入学须知](https://zsb.snnu.edu.cn/sy/zsxx/rxxz1.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [体育学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/tyxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [人工智能与计算机学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/rgznyjsjxy.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [专业分流政策](https://zsb.snnu.edu.cn/sy/zsxx/zyflzc1.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [下载专区](https://zsb.snnu.edu.cn/sy/zsxx/xzzq.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [2025级预科学生结业转本科专业及计划](https://zsb.snnu.edu.cn/info/1340/5052.htm) | 陕西师范大学本科招生信息网 | 未知日期
-- [2025年体育类特殊类型招生专题（转发）](https://zsb.snnu.edu.cn/info/1235/4492.htm) | 陕西师范大学本科招生信息网 | 未知日期
+- [2026年03月06日 我校开展“学海扬帆 知行致远”2026年寒假学生出国（境）交流学习活动 2026年寒假，我校开展“学海扬帆 知行致远”寒假学生出国（境）交流学习活动，围绕人工智能、语言文化、专业提升及实习实训，组织二十余个项目，选派学生赴英国、意大利、韩国、新加坡及香港地区学习。 查看详情 >>](https://www.snnu.edu.cn/info/1232/95544.htm) | 陕西师范大学本科招生信息网 | 2026-03-06 | 网页
+- [更多>>](http://ipo.snnu.edu.cn/xwkx.htm) | 陕西师范大学本科招生信息网 | 2026-03-06 | 网页
+- [2026年01月21日 我校获批2025年“了解中国”优秀课程和中外青少年社会实践活动基地 查看详情 >>](http://news.snnu.edu.cn/info/1014/274614.htm) | 陕西师范大学本科招生信息网 | 2026-01-21 | 网页
+- [生源信息](http://job.snnu.edu.cn/detail/student_source_info) | 陕西师范大学-就业质量年度报告 | 2025-11-10 | 网页
+- [关于印发《陕西师范大学面向应届毕业生设立科研助理岗位实施办法》的通知](https://xxgk.snnu.edu.cn/info/1801/4061.htm) | 陕西师范大学-就业质量年度报告 | 2025-11-10 | 网页
+- [关于印发《陕西师范大学毕业生就业管理办法》的通知](https://xxgk.snnu.edu.cn/info/1801/4071.htm) | 陕西师范大学-就业质量年度报告 | 2025-11-10 | 网页
+- [陕西师范大学招生宣传片 03 2023-04](https://zsb.snnu.edu.cn/info/1216/3431.htm) | 陕西师范大学本科招生信息网 | 2025-07-19 | 网页
+- [《光明日报》：“红烛苗圃”的故事——陕西师范大学助力... 15 2024-03](https://zsb.snnu.edu.cn/info/1216/3681.htm) | 陕西师范大学本科招生信息网 | 2025-07-19 | 网页
+- [2025-07-19 我校2025年毛笔手写录取通知书暨“悦临书法经典”临摹打卡活动开笔](http://www.snnu.edu.cn/info/1272/72994.htm) | 陕西师范大学本科招生信息网 | 2025-07-19 | 网页
+- [2025-05-06 启微光，向未来！六所部属师范大学“优师计划”师范生共同唱响《启微光》](http://news.snnu.edu.cn/info/1031/261084.htm) | 陕西师范大学本科招生信息网 | 2025-05-06 | 网页
+- [教育部高等教育司负责人就2024年度普通高等学校本科专业备案和审批结果及《普通高等学校本科专业目录（2025年）》答记者问](http://www.moe.gov.cn/jyb_xwfb/s271/202504/t20250422_1188246.html) | 教育部-2024年度本科专业备案和审批结果 | 2025-04-22 | 网页
+- [教育部关于公布2024年度普通高等学校本科专业备案和审批结果及《普通高等学校本科专业目录（2025年）》的通知](http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/t20250422_1188239.html) | 教育部-2024年度本科专业备案和审批结果 | 2025-04-22 | 网页
+- [教育部公布2024年度本科专业备案和审批结果并更新发布本科专业目录](http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202504/t20250422_1188245.html) | 教育部-2024年度本科专业备案和审批结果 | 2025-04-22 | 网页
+- [普通高等学校本科专业目录（2025年）](http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/W020250422312780837078.pdf) | 教育部-2024年度本科专业备案和审批结果 | 2025-04-01 | PDF
+- [2024年度普通高等学校本科专业备案和审批结果](http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/W020250422312780758186.pdf) | 教育部-2024年度本科专业备案和审批结果 | 2025-04-01 | PDF
+- [2025-03-12 《陕西日报》丨将青春誓言写在西部大地](http://news.snnu.edu.cn/info/1015/258584.htm) | 陕西师范大学本科招生信息网 | 2025-03-12 | 网页
+- [怀念旧版](https://oldxxgk.xaut.edu.cn/) | 西安理工大学-就业质量年度报告 | 2024-11-04 | 网页
+- [西安理工大学2023届毕业生就业质量年度报告](https://xxgk.xaut.edu.cn/info/1054/1473.htm) | 西安理工大学-就业质量年度报告 | 2024-11-04 | 网页
+- [教育部高等教育司负责人就《关于公布2023年度普通高等学校本科专业备案和审批结果的通知》答记者问](http://www.moe.gov.cn/jyb_xwfb/s271/202403/t20240319_1121112.html) | 教育部-2023年度本科专业备案和审批结果 | 2024-03-19 | 网页
+- [教育部关于公布2023年度普通高等学校本科专业备案和审批结果的通知](http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202403/t20240319_1121111.html) | 教育部-2023年度本科专业备案和审批结果 | 2024-03-19 | 网页
+- [登录](https://zwfw.moe.gov.cn/portal/trs/login?appId=trs&redirectUrl=http://www.moe.gov.cn/hd/login/cas&state=) | 教育部-2023年度本科专业备案和审批结果 | 2024-03-19 | 网页
+- [新闻](http://www.moe.gov.cn/jyb_xwfb/) | 教育部-2023年度本科专业备案和审批结果 | 2024-03-19 | 网页
+- [搜索](https://so.moe.gov.cn/) | 教育部-2023年度本科专业备案和审批结果 | 2024-03-19 | 网页
+- [Languages English Русский 日本語 Deutsch Français Español العربية 微言教育 无障碍浏览 登录 | 注](http://www.moe.gov.cn/) | 教育部-2023年度本科专业备案和审批结果 | 2024-03-19 | 网页
+- [教育部公布新一批普通高等学校本科专业备案和审批结果](http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202403/t20240319_1121113.html) | 教育部-2023年度本科专业备案和审批结果 | 2024-03-19 | 网页
+- [首页](http://www.moe.gov.cn) | 教育部-2023年度本科专业备案和审批结果 | 2024-02-05 | 网页
+- [普通高等学校本科专业目录（2024年）](http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202403/W020240319305498791768.pdf) | 教育部-2023年度本科专业备案和审批结果 | 2024-02-04 | PDF
+- [2023年度普通高等学校本科专业备案和审批结果](http://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202403/W020240319305498774149.pdf) | 教育部-2023年度本科专业备案和审批结果 | 2024-02-04 | PDF
+- [西安理工大学2022年毕业生就业质量年度报告](https://xxgk.xaut.edu.cn/info/1054/1495.htm) | 西安理工大学-就业质量年度报告 | 2023-11-21 | 网页
+- [招生指南](https://zsb.nwu.edu.cn/zszn.htm) | 西北大学本科生招生信息网 | 2023-06-18 | 网页
+- [西安邮电大学2023年第二学士学位报名初审合格名单公示](https://zhaosheng.xupt.edu.cn/info/1036/3223.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2023-06-08 | 网页
+- [西安邮电大学2023年高水平运动队测试合格名单](https://zhaosheng.xupt.edu.cn/info/1036/3086.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2023-05-26 | 网页
+- [2023年西安邮电大学第二学士学位招生简章](https://zhaosheng.xupt.edu.cn/info/1040/3084.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2023-05-24 | 网页
+- [西安邮电大学2023年高水平运动队网上报名初审合格名单公示](https://zhaosheng.xupt.edu.cn/info/1036/3081.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2023-03-06 | 网页
+- [陕西师范大学2021年毕业生就业质量年度报告](https://xxgk.snnu.edu.cn/info/1751/2541.htm) | 陕西师范大学-就业质量年度报告 | 2022-10-24 | 网页
+- [2021届毕业生就业基本情况](https://xxgk.snnu.edu.cn/info/2261/2351.htm) | 陕西师范大学-就业质量年度报告 | 2022-10-24 | 网页
+- [西安理工大学2021年毕业生就业质量年度报告](https://xxgk.xaut.edu.cn/info/1054/1494.htm) | 西安理工大学-就业质量年度报告 | 2022-10-18 | 网页
+- [关于做好2022年新生入学资格复查的通知](https://zhaosheng.xupt.edu.cn/info/1036/3045.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2022-09-26 | 网页
+- [西安邮电大学关于2022年秋季学期学生返校报到时间安排的通知](https://zhaosheng.xupt.edu.cn/info/1036/3025.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2022-09-07 | 网页
+- [西安邮电大学本科招生工作声明](https://zhaosheng.xupt.edu.cn/info/1036/3021.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2022-07-11 | 网页
+- [【直播预告】6月25日9:00-10:00，2022年陕西本科一批招生政策解读！](https://zhaosheng.xupt.edu.cn/info/1036/3019.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2022-06-24 | 网页
+- [西安邮电大学2022年第二学士学位拟录取名单公示](https://zhaosheng.xupt.edu.cn/info/1036/3017.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2022-06-20 | 网页
+- [2022年西安邮电大学高水平运动队专项测试补充通知](https://zhaosheng.xupt.edu.cn/info/1036/3014.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2022-06-13 | 网页
+- [2022年西安邮电大学第二学士学位招生简章](https://zhaosheng.xupt.edu.cn/info/1040/3004.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2022-06-13 | 网页
+- [填报志愿期间咨询方式一览](https://zhaosheng.xupt.edu.cn/info/1036/3013.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2022-06-10 | 网页
+- [【直播预告】6月10日-15日，与你“邮”约 院长访谈系列直播活动](https://zhaosheng.xupt.edu.cn/info/1036/3012.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2022-06-07 | 网页
+- [2022年西安邮电大学高水平运动队专项测试通知](https://zhaosheng.xupt.edu.cn/info/1036/3011.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2022-06-07 | 网页
+- [2022年西安邮电大学本科招生章程](https://zhaosheng.xupt.edu.cn/info/1040/3009.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2022-06-06 | 网页
+- [【直播预告】5月24日19:30邀您进入FM 101.8《教育百分百》解读西安邮电大学](https://zhaosheng.xupt.edu.cn/info/1036/3008.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2022-05-23 | 网页
+- [【直播预告】4月17日15:40带您进入2022年高考招生咨询会（西安邮电大学专场）](https://zhaosheng.xupt.edu.cn/info/1036/3003.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2022-04-14 | 网页
+- [【直播预告】4月15日早10:00晚8:00陕西新闻广播FM106.6等你来聆听](https://zhaosheng.xupt.edu.cn/info/1036/3002.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2022-04-14 | 网页
+- [西安邮电大学2022年高水平运动队网上报名初审合格名单公示及专项测试推迟通知](https://zhaosheng.xupt.edu.cn/info/1036/2956.htm) | 西安邮电大学本科招生信息网-陕西分数 | 2022-03-09 | 网页
+- [陕西师范大学2020年毕业生就业质量年度报告](https://xxgk.snnu.edu.cn/info/1751/2531.htm) | 陕西师范大学-就业质量年度报告 | 2021-10-15 | 网页
+- [2020届毕业生就业基本情况](https://xxgk.snnu.edu.cn/info/2261/2341.htm) | 陕西师范大学-就业质量年度报告 | 2021-10-15 | 网页
+- [西安理工大学2020年毕业生就业质量年度报告](https://xxgk.xaut.edu.cn/info/1054/1493.htm) | 西安理工大学-就业质量年度报告 | 2021-09-08 | 网页
+- [西安理工大学2019年毕业生就业质量年度报告](https://xxgk.xaut.edu.cn/info/1054/1284.htm) | 西安理工大学-就业质量年度报告 | 2020-03-06 | 网页
+- [高校毕业生就业质量年度报告](https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm) | 西安理工大学-就业质量年度报告 | 2020-03-06 | 网页
+- [陕西师范大学2019年毕业生就业质量年度报告发布说明](https://xxgk.snnu.edu.cn/info/1751/2521.htm) | 陕西师范大学-就业质量年度报告 | 2020-01-03 | 网页
+- [陕西师范大学2018年毕业生就业质量报告](https://xxgk.snnu.edu.cn/info/1751/2511.htm) | 陕西师范大学-就业质量年度报告 | 2019-03-11 | 网页
+- [陕西师范大学2017年毕业生就业质量报告](https://xxgk.snnu.edu.cn/info/1751/2501.htm) | 陕西师范大学-就业质量年度报告 | 2019-03-11 | 网页
+- [陕西师范大学2016年毕业生就业质量报告](https://xxgk.snnu.edu.cn/info/1751/2491.htm) | 陕西师范大学-就业质量年度报告 | 2019-03-11 | 网页
+- [2018届毕业生就业基本情况(规模、结构、就业率、就业流向等)](https://xxgk.snnu.edu.cn/info/2261/2331.htm) | 陕西师范大学-就业质量年度报告 | 2019-03-11 | 网页
+- [2017届毕业生就业基本情况(规模、结构、就业率、就业流向等)](https://xxgk.snnu.edu.cn/info/2261/2321.htm) | 陕西师范大学-就业质量年度报告 | 2019-03-11 | 网页
+- [西安理工大学2018年毕业生就业质量年度报告](https://xxgk.xaut.edu.cn/info/1054/1285.htm) | 西安理工大学-就业质量年度报告 | 2019-03-05 | 网页
+- [我校毕业生就业质量指数位列陕西省50所本科高校第7名](https://zpb.xupt.edu.cn/info/1051/1047.htm) | 西安邮电大学-就业质量相关 | 2018-07-26 | 网页
+- [我校六个专业圆满完成专业评估](https://zpb.xupt.edu.cn/info/1051/1057.htm) | 西安邮电大学-就业质量相关 | 2018-07-26 | 网页
+- [西安工程大学来访](https://zpb.xupt.edu.cn/info/1051/1041.htm) | 西安邮电大学-就业质量相关 | 2018-06-28 | 网页
+- [我校教师在陕西高校第四届青年教师教学竞赛中获佳绩](https://zpb.xupt.edu.cn/info/1051/1056.htm) | 西安邮电大学-就业质量相关 | 2018-06-28 | 网页
+- [网站首页 组织机构 规章制度 工作流程 评估认证 质量监控 质量年报 督导之窗 监控邮箱 通知公告 网站首页 新闻动态 下载中心 当前位置： 网站首页 | 新闻](https://zpb.xupt.edu.cn/index.htm) | 西安邮电大学-就业质量相关 | 2018-06-28 | 网页
+- [我校召开本学期教学督导组会议](https://zpb.xupt.edu.cn/info/1051/1048.htm) | 西安邮电大学-就业质量相关 | 2018-06-27 | 网页
+- [2017年西安理工大学毕业生就业质量年度报告](https://xxgk.xaut.edu.cn/info/1054/1287.htm) | 西安理工大学-就业质量年度报告 | 2018-05-09 | 网页
+- [2016届毕业生的规模、结构、就业率、就业流向](https://xxgk.snnu.edu.cn/info/2261/2311.htm) | 陕西师范大学-就业质量年度报告 | 2017-10-26 | 网页
+- [2016年西安理工大学就业质量报告](https://xxgk.xaut.edu.cn/info/1054/1283.htm) | 西安理工大学-就业质量年度报告 | 2017-06-21 | 网页
+- [陕西师范大学2015年 毕业生就业质量年度报告](https://xxgk.snnu.edu.cn/info/1751/2481.htm) | 陕西师范大学-就业质量年度报告 | 2016-05-12 | 网页
+- [2015届毕业生 规模、结构、就业率、就业流向](https://xxgk.snnu.edu.cn/info/2261/2301.htm) | 陕西师范大学-就业质量年度报告 | 2016-05-12 | 网页
+- [陕西师范大学就业质量年度报告](https://xxgk.snnu.edu.cn/info/1751/2471.htm) | 陕西师范大学-就业质量年度报告 | 2015-11-22 | 网页
+- [陕西师范大学2013年毕业生就业质量年度报告](https://xxgk.snnu.edu.cn/info/1751/2461.htm) | 陕西师范大学-就业质量年度报告 | 2014-11-15 | 网页
+- [2013届毕业生 规模、结构、就业率、就业流向](https://xxgk.snnu.edu.cn/info/2261/2281.htm) | 陕西师范大学-就业质量年度报告 | 2013-12-16 | 网页
+- [联系我们](https://zsw.snsy.edu.cn/lxwm/lxzhaoban.htm) | 陕西学前师范学院招生信息网 | 未知日期 | 网页
+- [招生动态](https://zsw.snsy.edu.cn/zxgg.htm) | 陕西学前师范学院招生信息网 | 未知日期 | 网页
+- [报考指南](https://zsw.snsy.edu.cn/bkzn.htm) | 陕西学前师范学院招生信息网 | 未知日期 | 网页
+- [学院专业](https://zsw.snsy.edu.cn/xyzy.htm) | 陕西学前师范学院招生信息网 | 未知日期 | 网页
+- [学校概况](https://zsw.snsy.edu.cn/xxdm/xxjs.htm) | 陕西学前师范学院招生信息网 | 未知日期 | 网页
+- [学校主页](http://www.snsy.edu.cn/index.htm) | 陕西学前师范学院招生信息网 | 未知日期 | 网页
+- [设为首页 | 加入收藏 首页 学校概况 学院专业 招生信息 计划分数 招生指南 联系我们 计划分数 分省分专业查询 咨询方式 Consulting 计划分数 E](https://zhaosheng.xupt.edu.cn/lnzsjh.htm) | 西安邮电大学本科招生信息网-陕西分数 | 未知日期 | 网页
+- [设为首页 | 加入收藏 首页 学校概况 学院专业 招生信息 计划分数 招生指南 联系我们 计划分数 分省分专业查询 咨询方式 Consulting 计划分数 E](https://zhaosheng.xupt.edu.cn/lqcx/fsfzycx/qh.htm) | 西安邮电大学本科招生信息网-陕西分数 | 未知日期 | 网页
+- [马克思主义学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/mkszyxy.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [食品工程与营养科学学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/spgcyyykxxy.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [音乐学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/ylxy.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [通知公告](https://zsb.snnu.edu.cn/sy/zsxx/zsgg.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [联系我们](https://zsb.snnu.edu.cn/sy/lxwm/lxzb.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [美术学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/msxy.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [生命科学学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/smkxxy.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [物理学与信息技术学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/wlxyxxjsxy.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [民族教育学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/mzjyxy.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [校园风景](http://www.snnu.edu.cn/xxgk/xyfj/zaxq.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [材料科学与工程学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/clkxygcxy.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [新闻与传播学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/xwycbxy.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [数学与统计学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/sxytjxy.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [教育学部](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/jyxb.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [招生简章](https://zsb.snnu.edu.cn/sy/zsxx/zsjz/gxzx1.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [招生政策](https://zsb.snnu.edu.cn/sy/zsxx/zszheng_ce.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [招生信息](http://zsdata.snnu.edu.cn/zscx/lqxx/#/) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [心理学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/xlxy.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [录取查询](http://zsdata.snnu.edu.cn/zscx/lqxx/#/lqcx) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [师大全景](http://www.snnu.edu.cn/xxgk/xxdt.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [就业创业](http://job.snnu.edu.cn/) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [学院专业](https://zsb.snnu.edu.cn/sy/xyzhuan_ye.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [学科建设](http://xkfgc.snnu.edu.cn/) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [学校概况](https://zsb.snnu.edu.cn/sy/xxgk/xxjj.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [奖助学金](http://zzzx.snnu.edu.cn) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [外国语学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/wgyxy.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [地理科学与旅游学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/dlkxylyxy.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [国际商学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/gjsxy.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [国际交流](http://ipo.snnu.edu.cn) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [国家安全学院（政法与公共管理学院）](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/gjaqxy_zfyggglxy_.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [哲学学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/zxxy.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [历年分数](http://zsdata.snnu.edu.cn/zscx/lqxx/#/lnfs) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [历史文化学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/lswhxy.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
+- [化学化工学院](https://zsb.snnu.edu.cn/sy/xyzhuan_ye/hxhgxy.htm) | 陕西师范大学本科招生信息网 | 未知日期 | 网页
 
 ## 抓取错误
 
-- 陕西省教育厅-高考政策 | https://jyt.shaanxi.gov.cn/gk/zc/gfxwj_20255/gfxwj_20254/202501/t20250123_3440299.html | HTTPSConnectionPool(host='jyt.shaanxi.gov.cn', port=443): Max retries exceeded with url: /gk/zc/gfxwj_20255/gfxwj_20254/202501/t20250123_3440299.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='jyt.shaanxi.gov.cn', port=443) at 0x7f30679e0990>, 'Connection to jyt.shaanxi.gov.cn timed out. (connect timeout=25)'))
-- 陕西省人民政府-高考新闻 | https://www.shaanxi.gov.cn/xw/sxyw/202506/t20250625_3535769.html | HTTPSConnectionPool(host='www.shaanxi.gov.cn', port=443): Max retries exceeded with url: /xw/sxyw/202506/t20250625_3535769.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.shaanxi.gov.cn', port=443) at 0x7f30679c9050>, 'Connection to www.shaanxi.gov.cn timed out. (connect timeout=25)'))
+- 陕西理工大学招生就业网 | https://zsjyw.snut.edu.cn/zsw/index.htm | HTTPSConnectionPool(host='zsjyw.snut.edu.cn', port=443): Max retries exceeded with url: /zsw/index.htm (Caused by ConnectTimeoutError(<HTTPSConnection(host='zsjyw.snut.edu.cn', port=443) at 0x7fd5f9919790>, 'Connection to zsjyw.snut.edu.cn timed out. (connect timeout=25)'))
 
 ## 说明
 
-- 数据由 GitHub Actions 定时抓取生成。
+- 本版本增强了专业趋势、招生信息、就业质量报告关键词识别。
 - 页面文件输出到 `docs/index.html`，可直接用于 GitHub Pages。
-- 结果文件为 `data/latest.json` 和 `data/history.json`。
+- 结构化数据输出到 `data/latest.json` 和 `data/history.json`。

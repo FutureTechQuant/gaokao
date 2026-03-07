@@ -1,0 +1,17 @@
+{
+  "total_sources": 10,
+  "by_platform": {
+    "website": 7,
+    "xiaohongshu": 3
+  },
+  "by_topic": {
+    "admissions": 3,
+    "careers": 3,
+    "budgets": 2,
+    "recommendation": 2
+  },
+  "by_type": {
+    "official": 7,
+    "platform": 3
+  }
+}

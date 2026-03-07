@@ -44,10 +44,33 @@ CN_TZ = timezone(timedelta(hours=8))
 FETCHED_AT = datetime.now(CN_TZ).isoformat(timespec="seconds")
 
 DEFAULT_MUST_INCLUDE = [
-    "高考", "普通高考", "志愿", "录取", "招生", "报名", "查分", "成绩查询", "分数线", "考试"
+    "高考", "普通高考", "本科招生", "招生", "录取", "录取查询", "招生计划",
+    "招生章程", "招生简章", "历年分数", "专业", "专业介绍", "专业备案", "专业审批",
+    "新增专业", "撤销专业", "就业质量年度报告", "就业质量", "毕业生就业",
+    "就业去向", "行业分布", "地区流向", "升学", "月收入", "薪酬", "就业率",
+    "位次", "分数线", "成绩查询"
 ]
+
 DEFAULT_EXCLUDE = [
-    "考研", "研究生", "博士", "硕士", "自考", "成考", "四六级", "留学", "教师资格"
+    "考研", "研究生", "博士", "硕士", "继续教育", "成人教育",
+    "自考", "成考", "四六级", "教师资格", "党务", "工会"
+]
+
+HIGH_VALUE_HINTS = [
+    "就业质量年度报告", "毕业生就业质量年度报告", "就业质量报告",
+    "本科专业备案", "本科专业审批", "专业备案和审批结果",
+    "招生章程", "招生计划", "历年分数", "录取分数", "录取查询",
+    "专业介绍", "专业目录", "新增专业", "撤销专业"
+]
+
+CAREER_HINTS = [
+    "就业", "就业率", "就业去向", "行业分布", "地区流向",
+    "升学", "深造", "签约", "单位性质", "月收入", "薪酬"
+]
+
+ADMISSION_HINTS = [
+    "高考", "本科招生", "招生", "录取", "录取查询",
+    "招生计划", "招生章程", "分数线", "位次", "专业"
 ]
 
 DATE_PATTERNS = [
@@ -66,7 +89,9 @@ def clean_text(text: str) -> str:
 
 def normalize_url(base_url: str, href: str) -> str:
     href = (href or "").strip()
-    if not href or href.startswith("#") or href.lower().startswith("javascript:"):
+    if not href:
+        return ""
+    if href.startswith("#") or href.lower().startswith("javascript:"):
         return ""
     return urljoin(base_url, href)
 
@@ -76,6 +101,18 @@ def get_domain(url: str) -> str:
         return urlparse(url).netloc.lower()
     except Exception:
         return ""
+
+
+def get_path(url: str) -> str:
+    try:
+        return urlparse(url).path.lower()
+    except Exception:
+        return ""
+
+
+def is_pdf(url: str) -> bool:
+    path = get_path(url)
+    return path.endswith(".pdf")
 
 
 def domain_allowed(url: str, allow_domains: list[str]) -> bool:
@@ -89,6 +126,11 @@ def domain_allowed(url: str, allow_domains: list[str]) -> bool:
 def contains_any(text: str, keywords: list[str]) -> bool:
     t = (text or "").lower()
     return any(k.lower() in t for k in keywords)
+
+
+def count_hits(text: str, keywords: list[str]) -> int:
+    t = (text or "").lower()
+    return sum(1 for k in keywords if k.lower() in t)
 
 
 def extract_date(text: str) -> str:
@@ -146,7 +188,6 @@ def build_header_sets() -> list[dict]:
 
 def request_page(url: str) -> str:
     last_error = None
-
     for headers in build_header_sets():
         for _ in range(3):
             try:
@@ -160,7 +201,6 @@ def request_page(url: str) -> str:
             except Exception as e:
                 last_error = e
                 time.sleep(2)
-
     raise last_error
 
 
@@ -177,56 +217,153 @@ def anchor_context(anchor) -> str:
     return clean_text(" | ".join([x for x in texts if x]))
 
 
-def collect_from_source(source: dict) -> list[dict]:
-    base_url = source["url"]
-    html = request_page(base_url)
-    soup = BeautifulSoup(html, "lxml")
-
+def score_link(title: str, context: str, url: str, source: dict) -> int:
+    text = clean_text(" ".join([title, context, url]))
     must_include = source.get("must_include") or DEFAULT_MUST_INCLUDE
     exclude_keywords = source.get("exclude_keywords") or DEFAULT_EXCLUDE
-    allow_domains = source.get("allow_domains") or []
-    source_name = source["name"]
 
-    collected = []
-    seen = set()
+    score = 0
+
+    if len(title) >= 4:
+        score += 1
+
+    score += count_hits(text, must_include) * 2
+    score += count_hits(text, HIGH_VALUE_HINTS) * 4
+    score += count_hits(text, CAREER_HINTS) * 3
+    score += count_hits(text, ADMISSION_HINTS) * 2
+    score -= count_hits(text, exclude_keywords) * 5
+
+    if is_pdf(url):
+        score += 4
+
+    path = get_path(url)
+    for hint in ["info", "article", "detail", "content", "notice", "news", "list", "pdf"]:
+        if hint in path:
+            score += 1
+
+    if extract_date(context) or extract_date(title) or extract_date(url):
+        score += 2
+
+    return score
+
+
+def extract_links_from_html(page_url: str, html: str) -> list[dict]:
+    soup = BeautifulSoup(html, "lxml")
+    links = []
 
     for a in soup.select("a[href]"):
         href = a.get("href", "").strip()
-        full_url = normalize_url(base_url, href)
-        if not full_url:
-            continue
-        if not domain_allowed(full_url, allow_domains):
+        full_url = normalize_url(page_url, href)
+        if not full_url.startswith("http"):
             continue
 
         title = clean_text(a.get_text(" ", strip=True))
         context = anchor_context(a)
-        haystack = clean_text(" ".join([title, context, href, full_url]))
+        if not title and not context:
+            continue
 
-        if not title or len(title) < 4:
+        links.append({
+            "title": title,
+            "context": context,
+            "url": full_url,
+            "page_url": page_url,
+        })
+
+    return links
+
+
+def candidate_to_item(source: dict, candidate: dict) -> dict:
+    title = candidate["title"] or candidate["context"][:80] or candidate["url"]
+    context = clean_text(candidate["context"])
+    return {
+        "id": sha1_text(source["name"] + "|" + candidate["url"] + "|" + title),
+        "source": source["name"],
+        "source_url": source["url"],
+        "title": title,
+        "url": candidate["url"],
+        "date": extract_date(context) or extract_date(title) or extract_date(candidate["url"]) or "",
+        "snippet": context[:240],
+        "fetched_at": FETCHED_AT,
+        "page_url": candidate["page_url"],
+        "is_pdf": is_pdf(candidate["url"]),
+        "score": candidate["score"],
+    }
+
+
+def extract_items_from_page(source: dict, page_url: str, html: str) -> tuple[list[dict], list[str]]:
+    allow_domains = source.get("allow_domains") or []
+    must_include = source.get("must_include") or DEFAULT_MUST_INCLUDE
+    exclude_keywords = source.get("exclude_keywords") or DEFAULT_EXCLUDE
+
+    items = []
+    follow_urls = []
+    seen_links = set()
+
+    for link in extract_links_from_html(page_url, html):
+        url = link["url"]
+        if url in seen_links:
             continue
-        if not contains_any(haystack, must_include):
+        seen_links.add(url)
+
+        if not domain_allowed(url, allow_domains):
             continue
+
+        title = link["title"]
+        context = link["context"]
+        haystack = clean_text(" ".join([title, context, url]))
+
         if contains_any(haystack, exclude_keywords):
             continue
 
-        uid = sha1_text(source_name + "|" + full_url + "|" + title)
-        if uid in seen:
+        score = score_link(title, context, url, source)
+        link["score"] = score
+
+        if (contains_any(haystack, must_include) or score >= 7) and len(title + context) >= 4:
+            items.append(candidate_to_item(source, link))
+
+        if score >= 9 and not is_pdf(url):
+            follow_urls.append(url)
+
+    follow_urls = sorted(set(follow_urls))[:8]
+    return items, follow_urls
+
+
+def collect_from_source(source: dict) -> list[dict]:
+    base_url = source["url"]
+    base_html = request_page(base_url)
+
+    collected = []
+    visited = set()
+
+    base_items, follow_urls = extract_items_from_page(source, base_url, base_html)
+    collected.extend(base_items)
+    visited.add(base_url)
+
+    for sub_url in follow_urls:
+        if sub_url in visited:
             continue
-        seen.add(uid)
+        visited.add(sub_url)
+        try:
+            sub_html = request_page(sub_url)
+            sub_items, _ = extract_items_from_page(source, sub_url, sub_html)
+            collected.extend(sub_items)
+            time.sleep(0.5)
+        except Exception:
+            continue
 
-        item = {
-            "id": uid,
-            "source": source_name,
-            "source_url": base_url,
-            "title": title,
-            "url": full_url,
-            "date": extract_date(context) or extract_date(title) or "",
-            "snippet": context[:240],
-            "fetched_at": FETCHED_AT,
-        }
-        collected.append(item)
+    dedup = {}
+    for item in collected:
+        key = item["url"]
+        old = dedup.get(key)
+        if not old:
+            dedup[key] = item
+            continue
+        old_score = int(old.get("score", 0)) + len(old.get("snippet", ""))
+        new_score = int(item.get("score", 0)) + len(item.get("snippet", ""))
+        if new_score > old_score:
+            dedup[key] = item
 
-    return collected
+    return list(dedup.values())
 
 
 def load_json(path: Path, default):
@@ -260,6 +397,9 @@ def merge_history(items: list[dict]) -> dict:
             old["source_url"] = item["source_url"]
             old["date"] = item["date"] or old.get("date", "")
             old["snippet"] = item["snippet"]
+            old["score"] = item.get("score", old.get("score", 0))
+            old["is_pdf"] = item.get("is_pdf", old.get("is_pdf", False))
+            old["page_url"] = item.get("page_url", old.get("page_url", ""))
         else:
             index[key] = {
                 **item,
@@ -270,7 +410,11 @@ def merge_history(items: list[dict]) -> dict:
 
     merged = list(index.values())
     merged.sort(
-        key=lambda x: ((x.get("date") or ""), (x.get("last_seen_at") or "")),
+        key=lambda x: (
+            x.get("date") or "",
+            int(x.get("score", 0)),
+            x.get("last_seen_at") or ""
+        ),
         reverse=True
     )
     return {
@@ -282,13 +426,18 @@ def merge_history(items: list[dict]) -> dict:
 def sort_items(items: list[dict]) -> list[dict]:
     return sorted(
         items,
-        key=lambda x: (x.get("date") or "", x.get("title") or ""),
+        key=lambda x: (
+            x.get("date") or "",
+            int(x.get("score", 0)),
+            x.get("source") or "",
+            x.get("title") or ""
+        ),
         reverse=True
     )
 
 
 def render_readme(items: list[dict], errors: list[dict]) -> str:
-    top = items[:100]
+    top = items[:120]
     lines = []
     lines.append("# 高考信息自动汇总\n")
     lines.append(f"- 最近更新：{FETCHED_AT}\n")
@@ -298,23 +447,26 @@ def render_readme(items: list[dict], errors: list[dict]) -> str:
     lines.append("## 最新信息\n")
 
     if not top:
-        lines.append("暂无数据，请检查 `crawler/sources.py` 中的页面地址、网络可达性或关键词配置。\n")
+        lines.append("暂无数据，请检查 `crawler/sources.py` 的来源网址、网络可达性或关键词配置。\n")
     else:
         for item in top:
             date_str = item["date"] or "未知日期"
-            lines.append(f"- [{item['title']}]({item['url']}) | {item['source']} | {date_str}")
+            tag = "PDF" if item.get("is_pdf") else "网页"
+            lines.append(
+                f"- [{item['title']}]({item['url']}) | {item['source']} | {date_str} | {tag}"
+            )
 
     if errors:
         lines.append("")
         lines.append("## 抓取错误\n")
-        for e in errors[:20]:
+        for e in errors[:30]:
             lines.append(f"- {e['source']} | {e['url']} | {e['error']}")
 
     lines.append("")
     lines.append("## 说明\n")
-    lines.append("- 数据由 GitHub Actions 定时抓取生成。")
+    lines.append("- 本版本增强了专业趋势、招生信息、就业质量报告关键词识别。")
     lines.append("- 页面文件输出到 `docs/index.html`，可直接用于 GitHub Pages。")
-    lines.append("- 结果文件为 `data/latest.json` 和 `data/history.json`。")
+    lines.append("- 结构化数据输出到 `data/latest.json` 和 `data/history.json`。")
     lines.append("")
     return "\n".join(lines)
 
@@ -327,6 +479,9 @@ def render_html(items: list[dict], errors: list[dict]) -> str:
         source = html_lib.escape(item["source"])
         date_str = html_lib.escape(item["date"] or "")
         snippet = html_lib.escape(item["snippet"] or "")
+        item_type = "PDF" if item.get("is_pdf") else "网页"
+        score = int(item.get("score", 0))
+
         rows.append(
             f"""
             <tr>
@@ -336,6 +491,8 @@ def render_html(items: list[dict], errors: list[dict]) -> str:
                 <div class="snippet">{snippet}</div>
               </td>
               <td>{source}</td>
+              <td>{item_type}</td>
+              <td>{score}</td>
             </tr>
             """
         )
@@ -361,7 +518,7 @@ def render_html(items: list[dict], errors: list[dict]) -> str:
     body {{
       font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif;
       margin: 24px auto;
-      max-width: 1100px;
+      max-width: 1180px;
       padding: 0 16px;
       line-height: 1.6;
       color: #222;
@@ -382,6 +539,8 @@ def render_html(items: list[dict], errors: list[dict]) -> str:
     }}
     th:nth-child(1), td:nth-child(1) {{ width: 120px; }}
     th:nth-child(3), td:nth-child(3) {{ width: 180px; }}
+    th:nth-child(4), td:nth-child(4) {{ width: 80px; }}
+    th:nth-child(5), td:nth-child(5) {{ width: 70px; }}
     a {{ color: #0b57d0; text-decoration: none; }}
     a:hover {{ text-decoration: underline; }}
     .snippet {{ color: #666; font-size: 13px; margin-top: 4px; }}
@@ -396,10 +555,12 @@ def render_html(items: list[dict], errors: list[dict]) -> str:
         <th>日期</th>
         <th>标题</th>
         <th>来源</th>
+        <th>类型</th>
+        <th>评分</th>
       </tr>
     </thead>
     <tbody>
-      {''.join(rows) if rows else '<tr><td colspan="3">暂无数据，请检查来源配置或网络可达性。</td></tr>'}
+      {''.join(rows) if rows else '<tr><td colspan="5">暂无数据，请检查来源配置或网络可达性。</td></tr>'}
     </tbody>
   </table>
   {error_html}
@@ -431,8 +592,8 @@ def main():
             dedup[key] = item
             continue
 
-        old_score = len(old.get("snippet", "")) + (5 if old.get("date") else 0)
-        new_score = len(item.get("snippet", "")) + (5 if item.get("date") else 0)
+        old_score = int(old.get("score", 0)) + len(old.get("snippet", "")) + (5 if old.get("date") else 0)
+        new_score = int(item.get("score", 0)) + len(item.get("snippet", "")) + (5 if item.get("date") else 0)
         if new_score > old_score:
             dedup[key] = item
 

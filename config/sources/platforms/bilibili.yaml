@@ -1,0 +1,26 @@
+sources:
+  - name: B站-志愿填报经验
+    enabled: false
+    source_type: platform
+    platform: bilibili
+    topic: recommendation
+    mode: search
+    trust_level: medium
+    entry: 志愿填报 专业选择 陕西高校 B站
+    tags:
+      - B站
+      - 志愿
+      - 视频
+
+  - name: B站-保研经验分享
+    enabled: false
+    source_type: platform
+    platform: bilibili
+    topic: recommendation
+    mode: search
+    trust_level: medium
+    entry: 保研 推免 夏令营 经验 B站
+    tags:
+      - B站
+      - 保研
+      - 视频

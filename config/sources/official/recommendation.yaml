@@ -1,0 +1,25 @@
+sources:
+  - name: 陕西师范大学推免信息
+    enabled: true
+    source_type: official
+    platform: website
+    topic: recommendation
+    mode: crawl
+    trust_level: high
+    entry: https://xxgk.snnu.edu.cn/
+    allow_domains:
+      - xxgk.snnu.edu.cn
+      - snnu.edu.cn
+    must_include:
+      - 推免
+      - 保研
+      - 推荐免试
+      - 推免生
+      - 夏令营
+      - 遴选办法
+    exclude_keywords:
+      - 博士后
+      - 留学生
+    tags:
+      - 陕西
+      - 保研

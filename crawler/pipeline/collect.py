@@ -1,3 +1,4 @@
+from collections import Counter
 from datetime import datetime, timezone, timedelta
 
 from crawler.analytics.summaries import build_analytics
@@ -18,6 +19,14 @@ from crawler.site.render_json import write_public_json
 from crawler.storage.writer import write_json
 
 
+TRUST_BONUS_MAP = {
+    "high": 6,
+    "medium": 3,
+    "low": 0,
+    "unknown": 0,
+}
+
+
 def collect_from_source(source: dict) -> list[dict]:
     platform = source.get("platform", "website")
 
@@ -36,7 +45,7 @@ def enrich_item(item: dict, source: dict, fetched_at: str) -> dict:
     row["fetched_at"] = fetched_at
     row.setdefault("source", source.get("name", "unknown"))
     row.setdefault("source_url", source.get("entry", ""))
-    row.setdefault("page_url", row.get("source_url", ""))
+    row.setdefault("page_url", row.get("source_url", "") or row.get("url", ""))
     row.setdefault("topic", source.get("topic", "general"))
     row.setdefault("source_type", source.get("source_type", "official"))
     row.setdefault("platform", source.get("platform", "website"))
@@ -48,20 +57,14 @@ def enrich_item(item: dict, source: dict, fetched_at: str) -> dict:
     row.setdefault("score", 0)
 
     extra_tags = source.get("tags", []) or []
-    row["tags"] = sorted(set(row["tags"] + extra_tags))
+    row["tags"] = sorted(set((row.get("tags") or []) + extra_tags))
 
     row["category"] = assign_category(row)
     row["topic"] = assign_topic(row)
     row["tags"] = sorted(set(assign_tags(row) + row["tags"]))
 
-    trust_bonus_map = {
-        "high": 6,
-        "medium": 3,
-        "low": 0,
-    }
-    row["score"] = int(row.get("score", 0)) + assign_score(row) + trust_bonus_map.get(
-        row.get("trust_level", "medium"), 0
-    )
+    trust_bonus = TRUST_BONUS_MAP.get(row.get("trust_level", "unknown"), 0)
+    row["score"] = int(row.get("score", 0)) + assign_score(row) + trust_bonus
 
     return row
 
@@ -89,25 +92,47 @@ def collect_one_source(source: dict, fetched_at: str) -> tuple[list[dict], list[
     return items, errors
 
 
-def build_source_summary(sources: list[dict]) -> dict:
-    by_platform = {}
-    by_topic = {}
-    by_type = {}
+def _counter_to_sorted_dict(counter: Counter) -> dict:
+    return dict(sorted(counter.items(), key=lambda x: (-x[1], x[0])))
+
+
+def build_source_summary(sources: list[dict], items: list[dict]) -> dict:
+    source_platform = Counter()
+    source_topic = Counter()
+    source_type = Counter()
+    source_trust = Counter()
 
     for source in sources:
-        platform = source.get("platform", "unknown")
-        topic = source.get("topic", "general")
-        source_type = source.get("source_type", "unknown")
+        source_platform[source.get("platform", "unknown")] += 1
+        source_topic[source.get("topic", "general")] += 1
+        source_type[source.get("source_type", "unknown")] += 1
+        source_trust[source.get("trust_level", "unknown")] += 1
 
-        by_platform[platform] = by_platform.get(platform, 0) + 1
-        by_topic[topic] = by_topic.get(topic, 0) + 1
-        by_type[source_type] = by_type.get(source_type, 0) + 1
+    result_platform = Counter()
+    result_topic = Counter()
+    result_type = Counter()
+    result_trust = Counter()
+    result_category = Counter()
+
+    for item in items:
+        result_platform[item.get("platform", "unknown")] += 1
+        result_topic[item.get("topic", "general")] += 1
+        result_type[item.get("source_type", "unknown")] += 1
+        result_trust[item.get("trust_level", "unknown")] += 1
+        result_category[item.get("category", "未分类")] += 1
 
     return {
         "total_sources": len(sources),
-        "by_platform": by_platform,
-        "by_topic": by_topic,
-        "by_type": by_type,
+        "by_platform": _counter_to_sorted_dict(source_platform),
+        "by_topic": _counter_to_sorted_dict(source_topic),
+        "by_type": _counter_to_sorted_dict(source_type),
+        "by_trust_level": _counter_to_sorted_dict(source_trust),
+        "results_total": len(items),
+        "results_by_platform": _counter_to_sorted_dict(result_platform),
+        "results_by_topic": _counter_to_sorted_dict(result_topic),
+        "results_by_source_type": _counter_to_sorted_dict(result_type),
+        "results_by_trust_level": _counter_to_sorted_dict(result_trust),
+        "results_by_category": _counter_to_sorted_dict(result_category),
     }
 
 
@@ -126,7 +151,7 @@ def main():
     items = dedup_items(all_items)
     history = merge_history(items, fetched_at)
     analytics = build_analytics(items)
-    source_summary = build_source_summary(sources)
+    source_summary = build_source_summary(sources, items)
 
     latest_payload = {
         "updated_at": fetched_at,

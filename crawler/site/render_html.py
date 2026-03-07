@@ -22,6 +22,20 @@ SOURCE_TYPE_ORDER = [
     "unknown",
 ]
 
+SOURCE_TYPE_LABELS = {
+    "official": "官方",
+    "platform": "平台",
+    "community": "社区",
+    "unknown": "未知",
+    "全部": "全部",
+}
+
+TRUST_LABELS = {
+    "high": "高可信",
+    "medium": "中可信",
+    "low": "低可信",
+    "unknown": "未知",
+}
 
 LOW_PRIORITY_HINTS = [
     "活动",
@@ -76,9 +90,7 @@ def sort_items(items: list[dict]) -> list[dict]:
         items,
         key=lambda x: (
             int(x.get("score", 0)),
-            x.get("trust_level", ""),
             x.get("date", ""),
-            x.get("is_pdf", False),
             x.get("title", ""),
         ),
         reverse=True,
@@ -116,6 +128,7 @@ def build_summary_cards(items: list[dict], errors: list[dict], source_summary: d
     pdf_count = 0
     official_count = 0
     platform_count = 0
+    community_count = 0
 
     for item in items:
         category = item.get("category", "未分类")
@@ -126,12 +139,15 @@ def build_summary_cards(items: list[dict], errors: list[dict], source_summary: d
             official_count += 1
         if item.get("source_type") == "platform":
             platform_count += 1
+        if item.get("source_type") == "community":
+            community_count += 1
 
     cards = [
         ("结果总数", len(items)),
         ("PDF", pdf_count),
         ("官方结果", official_count),
         ("平台结果", platform_count),
+        ("社区结果", community_count),
         ("抓取错误", len(errors)),
         ("信源总数", source_summary.get("total_sources", 0)),
     ]
@@ -164,11 +180,7 @@ def render_tags(tags: list[str]) -> str:
 
 
 def trust_badge(trust_level: str) -> str:
-    label = {
-        "high": "高可信",
-        "medium": "中可信",
-        "low": "低可信",
-    }.get(trust_level, trust_level or "未知")
+    label = TRUST_LABELS.get(trust_level, trust_level or "未知")
     cls = {
         "high": "trust-high",
         "medium": "trust-medium",
@@ -178,11 +190,7 @@ def trust_badge(trust_level: str) -> str:
 
 
 def source_type_label(source_type: str) -> str:
-    return {
-        "official": "官方",
-        "platform": "平台",
-        "community": "社区",
-    }.get(source_type, source_type or "未知")
+    return SOURCE_TYPE_LABELS.get(source_type, source_type or "未知")
 
 
 def render_item(item: dict) -> str:
@@ -197,6 +205,7 @@ def render_item(item: dict) -> str:
     platform = safe_text(item.get("platform", "website"))
     source_type = safe_text(source_type_label(item.get("source_type", "unknown")))
     trust = item.get("trust_level", "unknown")
+    trust_label = TRUST_LABELS.get(trust, trust or "未知")
     tags = item.get("tags", [])
     tag_text = "|".join(tags)
     low_priority = "true" if is_low_priority_news(item) else "false"
@@ -227,6 +236,7 @@ def render_item(item: dict) -> str:
         <span>来源：{source}</span>
         <span>专题：{topic}</span>
         <span>类型：{item_type}</span>
+        <span>可信度：{safe_text(trust_label)}</span>
         <span>评分：{score}</span>
       </div>
       <div class="item-tags">{render_tags(tags)}</div>
@@ -256,8 +266,8 @@ def render_category_section(category: str, items: list[dict]) -> str:
         high_items = [item for item in rows if not is_low_priority_news(item)]
         low_items = [item for item in rows if is_low_priority_news(item)]
 
-        high_html = "".join(render_item(item) for item in high_items[:80])
-        low_html = "".join(render_item(item) for item in low_items[:80])
+        high_html = "".join(render_item(item) for item in high_items[:120])
+        low_html = "".join(render_item(item) for item in low_items[:120])
 
         low_block = ""
         if low_items:
@@ -319,6 +329,19 @@ def render_errors(errors: list[dict]) -> str:
     """
 
 
+def render_top_tabs() -> str:
+    return f"""
+    <section class="tabbar-wrap">
+      <div class="tabbar" role="tablist" aria-label="信源类型切换">
+        <button type="button" class="top-tab active" role="tab" aria-selected="true" data-source-type-filter="全部">{safe_text(SOURCE_TYPE_LABELS['全部'])}</button>
+        <button type="button" class="top-tab" role="tab" aria-selected="false" data-source-type-filter="official">{safe_text(SOURCE_TYPE_LABELS['official'])}</button>
+        <button type="button" class="top-tab" role="tab" aria-selected="false" data-source-type-filter="platform">{safe_text(SOURCE_TYPE_LABELS['platform'])}</button>
+        <button type="button" class="top-tab" role="tab" aria-selected="false" data-source-type-filter="community">{safe_text(SOURCE_TYPE_LABELS['community'])}</button>
+      </div>
+    </section>
+    """
+
+
 def render_filter_bar(items: list[dict]) -> str:
     tags = collect_all_tags(items)
     tag_buttons = "".join(
@@ -338,17 +361,11 @@ def render_filter_bar(items: list[dict]) -> str:
           )}
         </div>
         <div class="toolbar-row">
-          <span class="toolbar-label">来源</span>
-          <button type="button" class="toolbar-btn active" data-source-type-filter="全部">全部</button>
-          <button type="button" class="toolbar-btn" data-source-type-filter="official">官方</button>
-          <button type="button" class="toolbar-btn" data-source-type-filter="platform">平台</button>
-          <button type="button" class="toolbar-btn" data-source-type-filter="community">社区</button>
-        </div>
-        <div class="toolbar-row">
           <span class="toolbar-label">排序</span>
           <button type="button" class="toolbar-btn active" data-sort-mode="score">按评分</button>
           <button type="button" class="toolbar-btn" data-sort-mode="date">按日期</button>
           <button type="button" class="toolbar-btn" id="toggleLowPriority">隐藏低优先级</button>
+          <button type="button" class="toolbar-btn danger-btn" id="clearAllFilters">清空联动筛选</button>
         </div>
         <div class="toolbar-row toolbar-tags">
           <span class="toolbar-label">标签</span>
@@ -360,20 +377,105 @@ def render_filter_bar(items: list[dict]) -> str:
     """
 
 
+def render_active_filters_bar() -> str:
+    return """
+    <section class="active-filters-panel" id="activeFiltersPanel">
+      <div class="active-filters-head">
+        <div class="active-filters-title">当前联动筛选</div>
+        <button type="button" class="toolbar-btn danger-btn small-btn" id="clearAllFiltersInline">清空</button>
+      </div>
+      <div class="active-filter-chips" id="activeFilterChips"></div>
+    </section>
+    """
+
+
+def render_kv_cards(title: str, data: dict, action_key: str | None = None, empty_text: str = "暂无数据") -> str:
+    if not data:
+        return f"""
+        <div class="summary-group">
+          <div class="summary-group-title">{safe_text(title)}</div>
+          <div class="summary-empty">{safe_text(empty_text)}</div>
+        </div>
+        """
+
+    cards = []
+    for name, value in data.items():
+        action_attrs = ""
+        clickable_cls = " clickable-card" if action_key else ""
+        if action_key:
+            action_attrs = (
+                f' data-action-key="{safe_text(action_key)}"'
+                f' data-action-value="{safe_text(name)}"'
+                f' role="button" tabindex="0"'
+            )
+
+        cards.append(
+            f"""
+            <div class="mini-stat-card{clickable_cls}"{action_attrs}>
+              <div class="mini-stat-name">{safe_text(name)}</div>
+              <div class="mini-stat-value">{safe_text(value)}</div>
+            </div>
+            """
+        )
+
+    return f"""
+    <div class="summary-group">
+      <div class="summary-group-title">{safe_text(title)}</div>
+      <div class="mini-stat-grid">
+        {''.join(cards)}
+      </div>
+    </div>
+    """
+
+
 def render_source_summary(source_summary: dict) -> str:
     if not source_summary:
         return """
-        <details class="analytics-box">
-          <summary>信源摘要</summary>
-          <pre>暂无信源摘要</pre>
-        </details>
+        <section class="summary-panel">
+          <div class="section-head">
+            <h2>信源摘要</h2>
+            <span class="section-count">暂无数据</span>
+          </div>
+          <div class="empty-box">暂无信源摘要</div>
+        </section>
         """
 
+    top_cards = f"""
+    <div class="summary-top-grid">
+      <div class="stat-card">
+        <div class="stat-name">信源总数</div>
+        <div class="stat-value">{safe_text(source_summary.get('total_sources', 0))}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-name">结果总数</div>
+        <div class="stat-value">{safe_text(source_summary.get('results_total', 0))}</div>
+      </div>
+    </div>
+    """
+
+    groups = [
+        render_kv_cards("信源-按类型", source_summary.get("by_type", {}), "sourceType"),
+        render_kv_cards("信源-按平台", source_summary.get("by_platform", {}), "platform"),
+        render_kv_cards("信源-按专题", source_summary.get("by_topic", {}), "topic"),
+        render_kv_cards("信源-按可信度", source_summary.get("by_trust_level", {}), "trustLevel"),
+        render_kv_cards("结果-按类型", source_summary.get("results_by_source_type", {}), "sourceType"),
+        render_kv_cards("结果-按平台", source_summary.get("results_by_platform", {}), "platform"),
+        render_kv_cards("结果-按专题", source_summary.get("results_by_topic", {}), "topic"),
+        render_kv_cards("结果-按可信度", source_summary.get("results_by_trust_level", {}), "trustLevel"),
+        render_kv_cards("结果-按分类", source_summary.get("results_by_category", {}), "category"),
+    ]
+
     return f"""
-    <details class="analytics-box">
-      <summary>信源摘要</summary>
-      <pre>{safe_text(json.dumps(source_summary, ensure_ascii=False, indent=2))}</pre>
-    </details>
+    <section class="summary-panel">
+      <div class="section-head">
+        <h2>信源摘要</h2>
+        <span class="section-count">点击卡片可联动过滤</span>
+      </div>
+      {top_cards}
+      <div class="summary-groups">
+        {''.join(groups)}
+      </div>
+    </section>
     """
 
 
@@ -390,13 +492,6 @@ def render_site(latest_payload: dict, analytics: dict) -> None:
         if html:
             sections.append(html)
 
-    analytics_html = f"""
-    <details class="analytics-box">
-      <summary>分析摘要</summary>
-      <pre>{safe_text(json.dumps(analytics, ensure_ascii=False, indent=2))}</pre>
-    </details>
-    """
-
     page = f"""<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -411,12 +506,10 @@ def render_site(latest_payload: dict, analytics: dict) -> None:
       --sub: #59636e;
       --line: #e5e7eb;
       --brand: #2563eb;
+      --brand-2: #1d4ed8;
       --tag: #eef2ff;
       --chip: #f8fafc;
       --shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
-      --ok: #16a34a;
-      --warn: #ca8a04;
-      --low: #6b7280;
     }}
 
     * {{ box-sizing: border-box; }}
@@ -441,7 +534,7 @@ def render_site(latest_payload: dict, analytics: dict) -> None:
       border: 1px solid var(--line);
       border-radius: 18px;
       padding: 24px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       box-shadow: var(--shadow);
     }}
 
@@ -460,6 +553,39 @@ def render_site(latest_payload: dict, analytics: dict) -> None:
       margin-top: 12px;
       color: var(--sub);
       font-size: 14px;
+    }}
+
+    .tabbar-wrap {{
+      margin-bottom: 14px;
+    }}
+
+    .tabbar {{
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      background: rgba(255,255,255,0.96);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 10px;
+      box-shadow: var(--shadow);
+    }}
+
+    .top-tab {{
+      border: 1px solid var(--line);
+      background: var(--chip);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 9px 14px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      min-height: 42px;
+    }}
+
+    .top-tab.active {{
+      background: var(--brand);
+      border-color: var(--brand);
+      color: #fff;
     }}
 
     .stats {{
@@ -489,11 +615,94 @@ def render_site(latest_payload: dict, analytics: dict) -> None:
       color: var(--brand);
     }}
 
+    .summary-panel {{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }}
+
+    .summary-top-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }}
+
+    .summary-groups {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+    }}
+
+    .summary-group {{
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+      background: #fcfdff;
+    }}
+
+    .summary-group-title {{
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text);
+    }}
+
+    .mini-stat-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+    }}
+
+    .mini-stat-card {{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+    }}
+
+    .mini-stat-card.clickable-card {{
+      cursor: pointer;
+    }}
+
+    .mini-stat-card.clickable-card:hover {{
+      transform: translateY(-1px);
+      box-shadow: var(--shadow);
+      border-color: #c7d2fe;
+    }}
+
+    .mini-stat-card.active {{
+      border-color: var(--brand);
+      background: #eff6ff;
+    }}
+
+    .mini-stat-name {{
+      font-size: 12px;
+      color: var(--sub);
+      margin-bottom: 4px;
+      word-break: break-word;
+    }}
+
+    .mini-stat-value {{
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--brand);
+    }}
+
+    .summary-empty {{
+      color: var(--sub);
+      font-size: 13px;
+    }}
+
     .toolbar-wrap {{
       position: sticky;
       top: 0;
       z-index: 20;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }}
 
     .toolbar {{
@@ -536,6 +745,68 @@ def render_site(latest_payload: dict, analytics: dict) -> None:
       background: var(--brand);
       border-color: var(--brand);
       color: white;
+    }}
+
+    .danger-btn {{
+      color: #b91c1c;
+    }}
+
+    .small-btn {{
+      padding: 5px 10px;
+      font-size: 12px;
+    }}
+
+    .active-filters-panel {{
+      display: none;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+    }}
+
+    .active-filters-panel.show {{
+      display: block;
+    }}
+
+    .active-filters-head {{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }}
+
+    .active-filters-title {{
+      font-size: 14px;
+      font-weight: 700;
+    }}
+
+    .active-filter-chips {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }}
+
+    .active-chip {{
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eef2ff;
+      color: #3730a3;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+    }}
+
+    .chip-x {{
+      border: 0;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font-size: 12px;
+      padding: 0;
     }}
 
     .analytics-box {{
@@ -754,6 +1025,10 @@ def render_site(latest_payload: dict, analytics: dict) -> None:
       .item-badges {{
         justify-content: flex-start;
       }}
+
+      .summary-groups {{
+        grid-template-columns: 1fr;
+      }}
     }}
   </style>
 </head>
@@ -769,13 +1044,17 @@ def render_site(latest_payload: dict, analytics: dict) -> None:
       </div>
     </header>
 
+    {render_top_tabs()}
+
     <section class="stats">
       {build_summary_cards(items, errors, source_summary)}
     </section>
 
+    {render_source_summary(source_summary)}
+
     {render_filter_bar(items)}
 
-    {render_source_summary(source_summary)}
+    {render_active_filters_bar()}
 
     <details class="analytics-box">
       <summary>分析摘要</summary>
@@ -799,11 +1078,16 @@ def render_site(latest_payload: dict, analytics: dict) -> None:
         category: "全部",
         tag: "全部",
         sourceType: "全部",
+        platform: "全部",
+        trustLevel: "全部",
+        topic: "全部",
         sortMode: "score",
         hideLowPriority: false,
       }};
 
       const root = document.getElementById("contentRoot");
+      const activeFiltersPanel = document.getElementById("activeFiltersPanel");
+      const activeFilterChips = document.getElementById("activeFilterChips");
 
       function parseDate(value) {{
         if (!value) return 0;
@@ -814,10 +1098,13 @@ def render_site(latest_payload: dict, analytics: dict) -> None:
       function itemVisible(card) {{
         const categoryOk = state.category === "全部" || card.dataset.category === state.category;
         const sourceTypeOk = state.sourceType === "全部" || card.dataset.sourceType === state.sourceType;
+        const platformOk = state.platform === "全部" || card.dataset.platform === state.platform;
+        const trustOk = state.trustLevel === "全部" || card.dataset.trustLevel === state.trustLevel;
+        const topicOk = state.topic === "全部" || card.dataset.topic === state.topic;
         const tags = (card.dataset.tags || "").split("|").filter(Boolean);
         const tagOk = state.tag === "全部" || tags.includes(state.tag);
         const lowPriorityOk = !state.hideLowPriority || card.dataset.lowPriority !== "true";
-        return categoryOk && sourceTypeOk && tagOk && lowPriorityOk;
+        return categoryOk && sourceTypeOk && platformOk && trustOk && topicOk && tagOk && lowPriorityOk;
       }}
 
       function sortCards(cards) {{
@@ -832,6 +1119,102 @@ def render_site(latest_payload: dict, analytics: dict) -> None:
         }});
       }}
 
+      function syncTopTabs() {{
+        document.querySelectorAll(".top-tab").forEach(btn => {{
+          const active = btn.dataset.sourceTypeFilter === state.sourceType;
+          btn.classList.toggle("active", active);
+          btn.setAttribute("aria-selected", active ? "true" : "false");
+        }});
+      }}
+
+      function syncToolbarButtons() {{
+        document.querySelectorAll("[data-category-filter]").forEach(btn => {{
+          btn.classList.toggle("active", btn.dataset.categoryFilter === state.category);
+        }});
+
+        document.querySelectorAll("[data-tag-filter]").forEach(btn => {{
+          btn.classList.toggle("active", btn.dataset.tagFilter === state.tag);
+        }});
+
+        document.querySelectorAll("[data-sort-mode]").forEach(btn => {{
+          btn.classList.toggle("active", btn.dataset.sortMode === state.sortMode);
+        }});
+
+        const lowBtn = document.getElementById("toggleLowPriority");
+        if (lowBtn) {{
+          lowBtn.classList.toggle("active", state.hideLowPriority);
+        }}
+      }}
+
+      function syncSummaryCards() {{
+        document.querySelectorAll(".mini-stat-card[data-action-key]").forEach(card => {{
+          const key = card.dataset.actionKey;
+          const value = card.dataset.actionValue;
+          const active = state[key] === value;
+          card.classList.toggle("active", active);
+        }});
+      }}
+
+      function renderActiveFilterChips() {{
+        const labels = {{
+          category: "分类",
+          tag: "标签",
+          sourceType: "来源",
+          platform: "平台",
+          trustLevel: "可信度",
+          topic: "专题",
+        }};
+
+        const valueLabels = {{
+          sourceType: {{
+            "official": "官方",
+            "platform": "平台",
+            "community": "社区",
+            "unknown": "未知",
+            "全部": "全部"
+          }},
+          trustLevel: {{
+            "high": "高可信",
+            "medium": "中可信",
+            "low": "低可信",
+            "unknown": "未知",
+            "全部": "全部"
+          }}
+        }};
+
+        const rows = [];
+        ["sourceType", "category", "platform", "trustLevel", "topic", "tag"].forEach(key => {{
+          if (state[key] && state[key] !== "全部") {{
+            const label = labels[key] || key;
+            const pretty = (valueLabels[key] && valueLabels[key][state[key]]) || state[key];
+            rows.push(
+              '<span class="active-chip">' +
+              label + '：' + pretty +
+              ' <button type="button" class="chip-x" data-clear-key="' + key + '">×</button>' +
+              '</span>'
+            );
+          }}
+        }});
+
+        activeFilterChips.innerHTML = rows.join("");
+        activeFiltersPanel.classList.toggle("show", rows.length > 0);
+
+        document.querySelectorAll("[data-clear-key]").forEach(btn => {{
+          btn.addEventListener("click", () => {{
+            state[btn.dataset.clearKey] = "全部";
+            refresh();
+          }});
+        }});
+      }}
+
+      function sortAllVisibleGrids() {{
+        document.querySelectorAll(".item-grid").forEach(grid => {{
+          const cards = Array.from(grid.querySelectorAll(":scope > .item-card"));
+          const sorted = sortCards(cards);
+          sorted.forEach(card => grid.appendChild(card));
+        }});
+      }}
+
       function refresh() {{
         const sections = Array.from(root.querySelectorAll("[data-category-section]"));
 
@@ -841,16 +1224,11 @@ def render_site(latest_payload: dict, analytics: dict) -> None:
           const sourceTypeBlocks = Array.from(section.querySelectorAll("[data-source-type-block]"));
           sourceTypeBlocks.forEach(block => {{
             const cards = Array.from(block.querySelectorAll(".item-card"));
-            const sorted = sortCards(cards);
 
-            sorted.forEach(card => {{
+            cards.forEach(card => {{
               const visible = itemVisible(card);
               card.classList.toggle("hidden", !visible);
               if (visible) categoryVisibleCount += 1;
-              const parentGrid = card.parentElement;
-              if (parentGrid) {{
-                parentGrid.appendChild(card);
-              }}
             }});
 
             const visibleCards = cards.filter(card => !card.classList.contains("hidden")).length;
@@ -870,27 +1248,19 @@ def render_site(latest_payload: dict, analytics: dict) -> None:
           section.classList.toggle("hidden", categoryVisibleCount === 0);
         }});
 
-        document.querySelectorAll("[data-category-filter]").forEach(btn => {{
-          btn.classList.toggle("active", btn.dataset.categoryFilter === state.category);
-        }});
-
-        document.querySelectorAll("[data-tag-filter]").forEach(btn => {{
-          btn.classList.toggle("active", btn.dataset.tagFilter === state.tag);
-        }});
-
-        document.querySelectorAll("[data-source-type-filter]").forEach(btn => {{
-          btn.classList.toggle("active", btn.dataset.sourceTypeFilter === state.sourceType);
-        }});
-
-        document.querySelectorAll("[data-sort-mode]").forEach(btn => {{
-          btn.classList.toggle("active", btn.dataset.sortMode === state.sortMode);
-        }});
-
-        const lowBtn = document.getElementById("toggleLowPriority");
-        if (lowBtn) {{
-          lowBtn.classList.toggle("active", state.hideLowPriority);
-        }}
+        sortAllVisibleGrids();
+        syncTopTabs();
+        syncToolbarButtons();
+        syncSummaryCards();
+        renderActiveFilterChips();
       }}
+
+      document.querySelectorAll(".top-tab").forEach(btn => {{
+        btn.addEventListener("click", () => {{
+          state.sourceType = btn.dataset.sourceTypeFilter;
+          refresh();
+        }});
+      }});
 
       document.querySelectorAll("[data-category-filter]").forEach(btn => {{
         btn.addEventListener("click", () => {{
@@ -902,13 +1272,6 @@ def render_site(latest_payload: dict, analytics: dict) -> None:
       document.querySelectorAll("[data-tag-filter]").forEach(btn => {{
         btn.addEventListener("click", () => {{
           state.tag = btn.dataset.tagFilter;
-          refresh();
-        }});
-      }});
-
-      document.querySelectorAll("[data-source-type-filter]").forEach(btn => {{
-        btn.addEventListener("click", () => {{
-          state.sourceType = btn.dataset.sourceTypeFilter;
           refresh();
         }});
       }});
@@ -927,12 +1290,51 @@ def render_site(latest_payload: dict, analytics: dict) -> None:
         }});
       }});
 
+      document.querySelectorAll(".mini-stat-card[data-action-key]").forEach(card => {{
+        const applyCardAction = () => {{
+          const key = card.dataset.actionKey;
+          const value = card.dataset.actionValue;
+          state[key] = state[key] === value ? "全部" : value;
+          refresh();
+        }};
+
+        card.addEventListener("click", applyCardAction);
+        card.addEventListener("keydown", (event) => {{
+          if (event.key === "Enter" || event.key === " ") {{
+            event.preventDefault();
+            applyCardAction();
+          }}
+        }});
+      }});
+
       const lowBtn = document.getElementById("toggleLowPriority");
       if (lowBtn) {{
         lowBtn.addEventListener("click", () => {{
           state.hideLowPriority = !state.hideLowPriority;
           refresh();
         }});
+      }}
+
+      function clearAllFilters() {{
+        state.category = "全部";
+        state.tag = "全部";
+        state.sourceType = "全部";
+        state.platform = "全部";
+        state.trustLevel = "全部";
+        state.topic = "全部";
+        state.sortMode = "score";
+        state.hideLowPriority = false;
+        refresh();
+      }}
+
+      const clearBtn = document.getElementById("clearAllFilters");
+      if (clearBtn) {{
+        clearBtn.addEventListener("click", clearAllFilters);
+      }}
+
+      const clearBtnInline = document.getElementById("clearAllFiltersInline");
+      if (clearBtnInline) {{
+        clearBtnInline.addEventListener("click", clearAllFilters);
       }}
 
       refresh();

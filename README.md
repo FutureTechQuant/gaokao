@@ -4,7 +4,7 @@
 
 ## 运行概况
 
-- 最近更新：2026-03-28T12:29:19+08:00
+- 最近更新：2026-03-29T12:45:52+08:00
 - 条目数：166
 - 错误数：31
 
@@ -107,7 +107,7 @@
 - [陕西师范大学2019年毕业生就业质量年度报告发布说明](https://xxgk.snnu.edu.cn/info/1751/2521.htm) | 就业质量 | 陕西师范大学就业质量 | website/official | 未知日期 | score=81
 - [陕西师范大学2015年 毕业生就业质量年度报告](https://xxgk.snnu.edu.cn/info/1751/2481.htm) | 就业质量 | 陕西师范大学就业质量 | website/official | 未知日期 | score=81
 - [陕西师范大学2013年毕业生就业质量年度报告](https://xxgk.snnu.edu.cn/info/1751/2461.htm) | 就业质量 | 陕西师范大学就业质量 | website/official | 未知日期 | score=81
-- [小红书搜索：陕西 高校 录取分数 位次 招生计划](https://www.xiaohongshu.com/search_result?keyword=陕西 高校 录取分数 位次 招生计划) | 招生信息 | 小红书-陕西高校录取分数 | xiaohongshu/platform | 2026-03-28 | score=53
+- [小红书搜索：陕西 高校 录取分数 位次 招生计划](https://www.xiaohongshu.com/search_result?keyword=陕西 高校 录取分数 位次 招生计划) | 招生信息 | 小红书-陕西高校录取分数 | xiaohongshu/platform | 2026-03-29 | score=53
 - [陕西师范大学就业质量年度报告](https://xxgk.snnu.edu.cn/info/1751/2471.htm) | 就业质量 | 陕西师范大学就业质量 | website/official | 未知日期 | score=53
 - [西北大学2026年单位预算公开说明](https://cw.nwu.edu.cn/info/1024/2961.htm) | 学校预算 | 西北大学财务处 | website/official | 未知日期 | score=53
 - [陕西师范大学2018年毕业生就业质量报告](https://xxgk.snnu.edu.cn/info/1751/2511.htm) | 就业质量 | 陕西师范大学就业质量 | website/official | 未知日期 | score=49
@@ -120,29 +120,29 @@
 - [西北大学2021年本科招生计划](https://zsb.nwu.edu.cn/info/1049/1882.htm) | 招生信息 | 西北大学本科招生 | website/official | 未知日期 | score=48
 - [西北大学2020年本科招生计划](https://zsb.nwu.edu.cn/info/1049/1677.htm) | 招生信息 | 西北大学本科招生 | website/official | 未知日期 | score=48
 - [陕西师范大学2025年全日制普通本科招生章程](https://zsb.snnu.edu.cn/info/1235/4692.htm) | 招生信息 | 陕西师范大学本科招生 | website/official | 未知日期 | score=45
-- [小红书搜索：保研 考研 怎么选 夏令营 预推免](https://www.xiaohongshu.com/search_result?keyword=保研 考研 怎么选 夏令营 预推免) | 保研信息 | 小红书-考研保研冲突决策 | xiaohongshu/platform | 2026-03-28 | score=44
+- [小红书搜索：保研 考研 怎么选 夏令营 预推免](https://www.xiaohongshu.com/search_result?keyword=保研 考研 怎么选 夏令营 预推免) | 保研信息 | 小红书-考研保研冲突决策 | xiaohongshu/platform | 2026-03-29 | score=44
 
 ## 最近错误
 
-- 西安理工大学本科招生 | website | https://zhaosheng.xaut.edu.cn/ | HTTPSConnectionPool(host='zhaosheng.xaut.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='zhaosheng.xaut.edu.cn', port=443) at 0x7fb09e7f4550>, 'Connection to zhaosheng.xaut.edu.cn timed out. (connect timeout=25)'))
-- 西安理工大学预算公开 | website | https://xxgk.xaut.edu.cn/ | HTTPSConnectionPool(host='xxgk.xaut.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='xxgk.xaut.edu.cn', port=443) at 0x7fb09e5da990>, 'Connection to xxgk.xaut.edu.cn timed out. (connect timeout=25)'))
+- 西安理工大学本科招生 | website | https://zhaosheng.xaut.edu.cn/ | HTTPSConnectionPool(host='zhaosheng.xaut.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='zhaosheng.xaut.edu.cn', port=443) at 0x7f0dfd404610>, 'Connection to zhaosheng.xaut.edu.cn timed out. (connect timeout=25)'))
+- 西安理工大学预算公开 | website | https://xxgk.xaut.edu.cn/ | HTTPSConnectionPool(host='xxgk.xaut.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='xxgk.xaut.edu.cn', port=443) at 0x7f0dfd3e2a10>, 'Connection to xxgk.xaut.edu.cn timed out. (connect timeout=25)'))
 - 西安邮电大学预算公开 | website | https://xxgk.xupt.edu.cn/ | HTTPSConnectionPool(host='xxgk.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='xxgk.xupt.edu.cn', port=443): Failed to resolve 'xxgk.xupt.edu.cn' ([Errno -2] Name or service not known)"))
 - 西北大学就业质量 | website | https://job.nwu.edu.cn/ | HTTPSConnectionPool(host='job.nwu.edu.cn', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='job.nwu.edu.cn', port=443): Failed to resolve 'job.nwu.edu.cn' ([Errno -2] Name or service not known)"))
-- 西安理工大学就业质量 | website | https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm | HTTPSConnectionPool(host='xxgk.xaut.edu.cn', port=443): Max retries exceeded with url: /jxzlxx/gxbysjyzlndbg.htm (Caused by ConnectTimeoutError(<HTTPSConnection(host='xxgk.xaut.edu.cn', port=443) at 0x7fb09e5e9350>, 'Connection to xxgk.xaut.edu.cn timed out. (connect timeout=25)'))
+- 西安理工大学就业质量 | website | https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm | HTTPSConnectionPool(host='xxgk.xaut.edu.cn', port=443): Max retries exceeded with url: /jxzlxx/gxbysjyzlndbg.htm (Caused by ConnectTimeoutError(<HTTPSConnection(host='xxgk.xaut.edu.cn', port=443) at 0x7f0dfd5e7e50>, 'Connection to xxgk.xaut.edu.cn timed out. (connect timeout=25)'))
 - 西安邮电大学就业质量 | website | https://job.xupt.edu.cn/ | HTTPSConnectionPool(host='job.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='job.xupt.edu.cn', port=443): Failed to resolve 'job.xupt.edu.cn' ([Errno -2] Name or service not known)"))
 - 西北大学就业质量 | website | https://job.nwu.edu.cn/ | HTTPSConnectionPool(host='job.nwu.edu.cn', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='job.nwu.edu.cn', port=443): Failed to resolve 'job.nwu.edu.cn' ([Errno -2] Name or service not known)"))
-- 西安理工大学保研推免 | website | https://xxgk.xaut.edu.cn/ | HTTPSConnectionPool(host='xxgk.xaut.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='xxgk.xaut.edu.cn', port=443) at 0x7fb09e584310>, 'Connection to xxgk.xaut.edu.cn timed out. (connect timeout=25)'))
-- 西安理工大学信息公开 | website | https://xxgk.xaut.edu.cn/ | HTTPSConnectionPool(host='xxgk.xaut.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='xxgk.xaut.edu.cn', port=443) at 0x7fb09e53c450>, 'Connection to xxgk.xaut.edu.cn timed out. (connect timeout=25)'))
-- 西安理工大学就业质量 | website | https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm | HTTPSConnectionPool(host='xxgk.xaut.edu.cn', port=443): Max retries exceeded with url: /jxzlxx/gxbysjyzlndbg.htm (Caused by ConnectTimeoutError(<HTTPSConnection(host='xxgk.xaut.edu.cn', port=443) at 0x7fb09e587250>, 'Connection to xxgk.xaut.edu.cn timed out. (connect timeout=25)'))
-- 西安理工大学本科招生 | website | https://zhaosheng.xaut.edu.cn/ | HTTPSConnectionPool(host='zhaosheng.xaut.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='zhaosheng.xaut.edu.cn', port=443) at 0x7fb09e507dd0>, 'Connection to zhaosheng.xaut.edu.cn timed out. (connect timeout=25)'))
-- 西安理工大学预算公开 | website | https://xxgk.xaut.edu.cn/ | HTTPSConnectionPool(host='xxgk.xaut.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='xxgk.xaut.edu.cn', port=443) at 0x7fb09e526d50>, 'Connection to xxgk.xaut.edu.cn timed out. (connect timeout=25)'))
-- 西安邮电大学保研推免 | website | https://jwc.xupt.edu.cn/ | HTTPSConnectionPool(host='jwc.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='jwc.xupt.edu.cn', port=443) at 0x7fb09e602e10>, 'Connection to jwc.xupt.edu.cn timed out. (connect timeout=25)'))
+- 西安理工大学保研推免 | website | https://xxgk.xaut.edu.cn/ | HTTPSConnectionPool(host='xxgk.xaut.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='xxgk.xaut.edu.cn', port=443) at 0x7f0dfd397a10>, 'Connection to xxgk.xaut.edu.cn timed out. (connect timeout=25)'))
+- 西安理工大学信息公开 | website | https://xxgk.xaut.edu.cn/ | HTTPSConnectionPool(host='xxgk.xaut.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='xxgk.xaut.edu.cn', port=443) at 0x7f0dfd395750>, 'Connection to xxgk.xaut.edu.cn timed out. (connect timeout=25)'))
+- 西安理工大学就业质量 | website | https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm | HTTPSConnectionPool(host='xxgk.xaut.edu.cn', port=443): Max retries exceeded with url: /jxzlxx/gxbysjyzlndbg.htm (Caused by ConnectTimeoutError(<HTTPSConnection(host='xxgk.xaut.edu.cn', port=443) at 0x7f0dfd314b50>, 'Connection to xxgk.xaut.edu.cn timed out. (connect timeout=25)'))
+- 西安理工大学本科招生 | website | https://zhaosheng.xaut.edu.cn/ | HTTPSConnectionPool(host='zhaosheng.xaut.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='zhaosheng.xaut.edu.cn', port=443) at 0x7f0dfd41eed0>, 'Connection to zhaosheng.xaut.edu.cn timed out. (connect timeout=25)'))
+- 西安理工大学预算公开 | website | https://xxgk.xaut.edu.cn/ | HTTPSConnectionPool(host='xxgk.xaut.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='xxgk.xaut.edu.cn', port=443) at 0x7f0dfd396250>, 'Connection to xxgk.xaut.edu.cn timed out. (connect timeout=25)'))
+- 西安邮电大学保研推免 | website | https://jwc.xupt.edu.cn/ | HTTPSConnectionPool(host='jwc.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='jwc.xupt.edu.cn', port=443) at 0x7f0dfd3968d0>, 'Connection to jwc.xupt.edu.cn timed out. (connect timeout=25)'))
 - 西安邮电大学信息公开 | website | https://xxgk.xupt.edu.cn/ | HTTPSConnectionPool(host='xxgk.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='xxgk.xupt.edu.cn', port=443): Failed to resolve 'xxgk.xupt.edu.cn' ([Errno -2] Name or service not known)"))
 - 西安邮电大学就业质量 | website | https://job.xupt.edu.cn/ | HTTPSConnectionPool(host='job.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='job.xupt.edu.cn', port=443): Failed to resolve 'job.xupt.edu.cn' ([Errno -2] Name or service not known)"))
 - 西安邮电大学预算公开 | website | https://xxgk.xupt.edu.cn/ | HTTPSConnectionPool(host='xxgk.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='xxgk.xupt.edu.cn', port=443): Failed to resolve 'xxgk.xupt.edu.cn' ([Errno -2] Name or service not known)"))
-- 西安理工大学保研推免 | website | https://xxgk.xaut.edu.cn/ | HTTPSConnectionPool(host='xxgk.xaut.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='xxgk.xaut.edu.cn', port=443) at 0x7fb09e2c6350>, 'Connection to xxgk.xaut.edu.cn timed out. (connect timeout=25)'))
-- 西安邮电大学保研推免 | website | https://jwc.xupt.edu.cn/ | HTTPSConnectionPool(host='jwc.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='jwc.xupt.edu.cn', port=443) at 0x7fb09e2c7ed0>, 'Connection to jwc.xupt.edu.cn timed out. (connect timeout=25)'))
-- 西安理工大学就业质量报告 | website | https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm | HTTPSConnectionPool(host='xxgk.xaut.edu.cn', port=443): Max retries exceeded with url: /jxzlxx/gxbysjyzlndbg.htm (Caused by ConnectTimeoutError(<HTTPSConnection(host='xxgk.xaut.edu.cn', port=443) at 0x7fb09e044350>, 'Connection to xxgk.xaut.edu.cn timed out. (connect timeout=25)'))
+- 西安理工大学保研推免 | website | https://xxgk.xaut.edu.cn/ | HTTPSConnectionPool(host='xxgk.xaut.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='xxgk.xaut.edu.cn', port=443) at 0x7f0dfd0d6490>, 'Connection to xxgk.xaut.edu.cn timed out. (connect timeout=25)'))
+- 西安邮电大学保研推免 | website | https://jwc.xupt.edu.cn/ | HTTPSConnectionPool(host='jwc.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='jwc.xupt.edu.cn', port=443) at 0x7f0dfd0dc390>, 'Connection to jwc.xupt.edu.cn timed out. (connect timeout=25)'))
+- 西安理工大学就业质量报告 | website | https://xxgk.xaut.edu.cn/jxzlxx/gxbysjyzlndbg.htm | HTTPSConnectionPool(host='xxgk.xaut.edu.cn', port=443): Max retries exceeded with url: /jxzlxx/gxbysjyzlndbg.htm (Caused by ConnectTimeoutError(<HTTPSConnection(host='xxgk.xaut.edu.cn', port=443) at 0x7f0dfce505d0>, 'Connection to xxgk.xaut.edu.cn timed out. (connect timeout=25)'))
 - 阳光高考-首页 | website | https://gaokao.chsi.com.cn/ | 412 Client Error: Precondition Failed for url: https://gaokao.chsi.com.cn/
 
 ## 当前分类

@@ -19,28 +19,28 @@
     "high": 45,
     "medium": 29
   },
-  "results_total": 195,
+  "results_total": 196,
   "results_by_platform": {
-    "website": 188,
+    "website": 189,
     "xiaohongshu": 7
   },
   "results_by_topic": {
-    "本科招生": 96,
+    "本科招生": 97,
     "高校预算": 43,
     "综合信息": 26,
     "就业质量报告": 25,
     "保研推免": 5
   },
   "results_by_source_type": {
-    "official": 188,
+    "official": 189,
     "platform": 7
   },
   "results_by_trust_level": {
     "high": 123,
-    "medium": 72
+    "medium": 73
   },
   "results_by_category": {
-    "招生信息": 96,
+    "招生信息": 97,
     "学校预算": 43,
     "未分类": 26,
     "就业质量": 25,

@@ -1,13 +1,7 @@
 {
-  "updated_at": "2026-06-06T14:03:20+08:00",
-  "count": 191,
+  "updated_at": "2026-06-07T14:43:04+08:00",
+  "count": 200,
   "errors": [
-    {
-      "source": "西安理工大学本科招生",
-      "url": "https://zhaosheng.xaut.edu.cn/",
-      "platform": "website",
-      "error": "HTTPSConnectionPool(host='zhaosheng.xaut.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='zhaosheng.xaut.edu.cn', port=443) at 0x7efe6f9d6450>, 'Connection to zhaosheng.xaut.edu.cn timed out. (connect timeout=25)'))"
-    },
     {
       "source": "西安邮电大学预算公开",
       "url": "https://xxgk.xupt.edu.cn/",
@@ -33,16 +27,10 @@
       "error": "HTTPSConnectionPool(host='job.nwu.edu.cn', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='job.nwu.edu.cn', port=443): Failed to resolve 'job.nwu.edu.cn' ([Errno -2] Name or service not known)\"))"
     },
     {
-      "source": "西安理工大学本科招生",
-      "url": "https://zhaosheng.xaut.edu.cn/",
-      "platform": "website",
-      "error": "HTTPSConnectionPool(host='zhaosheng.xaut.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='zhaosheng.xaut.edu.cn', port=443) at 0x7efe6f844690>, 'Connection to zhaosheng.xaut.edu.cn timed out. (connect timeout=25)'))"
-    },
-    {
       "source": "西安邮电大学保研推免",
       "url": "https://jwc.xupt.edu.cn/",
       "platform": "website",
-      "error": "HTTPSConnectionPool(host='jwc.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='jwc.xupt.edu.cn', port=443) at 0x7efe6f87e090>, 'Connection to jwc.xupt.edu.cn timed out. (connect timeout=25)'))"
+      "error": "HTTPSConnectionPool(host='jwc.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='jwc.xupt.edu.cn', port=443) at 0x7f9f11395610>, 'Connection to jwc.xupt.edu.cn timed out. (connect timeout=25)'))"
     },
     {
       "source": "西安邮电大学信息公开",
@@ -66,7 +54,7 @@
       "source": "西安邮电大学保研推免",
       "url": "https://jwc.xupt.edu.cn/",
       "platform": "website",
-      "error": "HTTPSConnectionPool(host='jwc.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='jwc.xupt.edu.cn', port=443) at 0x7efe6f466f90>, 'Connection to jwc.xupt.edu.cn timed out. (connect timeout=25)'))"
+      "error": "HTTPSConnectionPool(host='jwc.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='jwc.xupt.edu.cn', port=443) at 0x7f9f112c1290>, 'Connection to jwc.xupt.edu.cn timed out. (connect timeout=25)'))"
     },
     {
       "source": "阳光高考-首页",
@@ -150,28 +138,28 @@
       "high": 45,
       "medium": 29
     },
-    "results_total": 191,
+    "results_total": 200,
     "results_by_platform": {
-      "website": 184,
+      "website": 193,
       "xiaohongshu": 7
     },
     "results_by_topic": {
-      "本科招生": 93,
+      "本科招生": 102,
       "高校预算": 42,
       "综合信息": 26,
       "就业质量报告": 25,
       "保研推免": 5
     },
     "results_by_source_type": {
-      "official": 184,
+      "official": 193,
       "platform": 7
     },
     "results_by_trust_level": {
-      "high": 118,
-      "medium": 73
+      "high": 123,
+      "medium": 77
     },
     "results_by_category": {
-      "招生信息": 93,
+      "招生信息": 102,
       "学校预算": 42,
       "未分类": 26,
       "就业质量": 25,
@@ -186,7 +174,7 @@
       "source": "小红书-陕西高校录取分数",
       "source_url": "https://www.xiaohongshu.com/search_result?keyword=陕西 高校 录取分数 位次 招生计划",
       "topic": "本科招生",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "snippet": "平台搜索入口：陕西 高校 录取分数 位次 招生计划",
       "page_url": "https://www.xiaohongshu.com/search_result?keyword=陕西 高校 录取分数 位次 招生计划",
       "is_pdf": false,
@@ -203,7 +191,7 @@
         "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -213,7 +201,7 @@
       "source": "小红书-考研保研冲突决策",
       "source_url": "https://www.xiaohongshu.com/search_result?keyword=保研 考研 怎么选 夏令营 预推免",
       "topic": "保研推免",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "snippet": "平台搜索入口：保研 考研 怎么选 夏令营 预推免",
       "page_url": "https://www.xiaohongshu.com/search_result?keyword=保研 考研 怎么选 夏令营 预推免",
       "is_pdf": false,
@@ -228,7 +216,7 @@
         "平台内容",
         "考研"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "保研信息"
     },
     {
@@ -238,7 +226,7 @@
       "source": "小红书-陕西师大保研经验",
       "source_url": "https://www.xiaohongshu.com/search_result?keyword=陕西师范大学 保研 推免 夏令营",
       "topic": "保研推免",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "snippet": "平台搜索入口：陕西师范大学 保研 推免 夏令营",
       "page_url": "https://www.xiaohongshu.com/search_result?keyword=陕西师范大学 保研 推免 夏令营",
       "is_pdf": false,
@@ -254,7 +242,7 @@
         "经验帖",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "保研信息"
     },
     {
@@ -264,7 +252,7 @@
       "source": "小红书-西北大学保研经验",
       "source_url": "https://www.xiaohongshu.com/search_result?keyword=西北大学 保研 推免 夏令营",
       "topic": "保研推免",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "snippet": "平台搜索入口：西北大学 保研 推免 夏令营",
       "page_url": "https://www.xiaohongshu.com/search_result?keyword=西北大学 保研 推免 夏令营",
       "is_pdf": false,
@@ -280,7 +268,7 @@
         "经验帖",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "保研信息"
     },
     {
@@ -290,7 +278,7 @@
       "source": "小红书-陕西高校就业去向",
       "source_url": "https://www.xiaohongshu.com/search_result?keyword=陕西 高校 就业 去向 体制内 国企",
       "topic": "就业质量报告",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "snippet": "平台搜索入口：陕西 高校 就业 去向 体制内 国企",
       "page_url": "https://www.xiaohongshu.com/search_result?keyword=陕西 高校 就业 去向 体制内 国企",
       "is_pdf": false,
@@ -309,7 +297,7 @@
         "平台内容",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -319,7 +307,7 @@
       "source": "小红书-专业选择经验",
       "source_url": "https://www.xiaohongshu.com/search_result?keyword=专业选择 志愿填报 汉语言 计算机 师范",
       "topic": "保研推免",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "snippet": "平台搜索入口：专业选择 志愿填报 汉语言 计算机 师范",
       "page_url": "https://www.xiaohongshu.com/search_result?keyword=专业选择 志愿填报 汉语言 计算机 师范",
       "is_pdf": false,
@@ -335,7 +323,7 @@
         "平台内容",
         "志愿"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "保研信息"
     },
     {
@@ -345,7 +333,7 @@
       "source": "小红书-师范类就业体验",
       "source_url": "https://www.xiaohongshu.com/search_result?keyword=师范类 就业 编制 教师岗 选调生",
       "topic": "就业质量报告",
-      "date": "2026-06-06",
+      "date": "2026-06-07",
       "snippet": "平台搜索入口：师范类 就业 编制 教师岗 选调生",
       "page_url": "https://www.xiaohongshu.com/search_result?keyword=师范类 就业 编制 教师岗 选调生",
       "is_pdf": false,
@@ -362,7 +350,7 @@
         "平台内容",
         "选调生"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -385,7 +373,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -408,7 +396,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -433,7 +421,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -456,7 +444,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -479,7 +467,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -503,7 +491,7 @@
         "就业质量报告",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -527,7 +515,7 @@
         "就业质量报告",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -551,7 +539,7 @@
         "就业质量报告",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -575,7 +563,7 @@
         "就业质量报告",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -599,7 +587,7 @@
         "就业质量报告",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -623,7 +611,7 @@
         "就业质量报告",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -647,7 +635,7 @@
         "就业质量报告",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -671,7 +659,7 @@
         "就业质量报告",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -696,7 +684,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -721,7 +709,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -746,7 +734,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -771,7 +759,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -796,7 +784,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -821,7 +809,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -846,7 +834,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -869,7 +857,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -894,7 +882,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -919,7 +907,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -944,7 +932,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -969,7 +957,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -993,7 +981,7 @@
         "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1017,7 +1005,7 @@
         "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1041,7 +1029,7 @@
         "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1065,7 +1053,7 @@
         "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1089,7 +1077,7 @@
         "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1113,7 +1101,7 @@
         "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1138,7 +1126,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1163,7 +1151,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1187,7 +1175,7 @@
         "师范",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "保研信息"
     },
     {
@@ -1211,7 +1199,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1235,7 +1223,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1259,7 +1247,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1283,7 +1271,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1307,7 +1295,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1331,7 +1319,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1355,7 +1343,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1379,7 +1367,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -1404,7 +1392,7 @@
         "理工",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1429,7 +1417,7 @@
         "理工",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1454,7 +1442,7 @@
         "理工",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1479,7 +1467,7 @@
         "理工",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1504,7 +1492,7 @@
         "石油",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1529,7 +1517,7 @@
         "石油",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1553,7 +1541,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -1578,7 +1566,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -1603,7 +1591,31 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
+      "category": "招生信息"
+    },
+    {
+      "id": "5e7857b6bab769df047b6ae985ff9a835fece89f",
+      "title": "各专业录取分数查询",
+      "url": "https://zhaosheng.xaut.edu.cn/xinxichaxun/fenshengfenzhuanyefenshuchaxun/",
+      "source": "西安理工大学本科招生",
+      "source_url": "https://zhaosheng.xaut.edu.cn/",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "各专业录取分数查询",
+      "page_url": "https://zhaosheng.xaut.edu.cn/",
+      "is_pdf": false,
+      "score": 38,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "分数线",
+        "招生",
+        "招生信息",
+        "陕西"
+      ],
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1627,7 +1639,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -1651,7 +1663,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -1675,7 +1687,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1700,7 +1712,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1725,7 +1737,7 @@
         "理工",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1750,7 +1762,7 @@
         "石油",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1774,7 +1786,31 @@
         "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
+      "category": "招生信息"
+    },
+    {
+      "id": "7d80444f2bb31e4e4228579c40d870e91837ecb2",
+      "title": "全国招生计划查询",
+      "url": "https://zhaosheng.xaut.edu.cn/xinxichaxun/zsjhcx/",
+      "source": "西安理工大学本科招生",
+      "source_url": "https://zhaosheng.xaut.edu.cn/",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "全国招生计划查询",
+      "page_url": "https://zhaosheng.xaut.edu.cn/",
+      "is_pdf": false,
+      "score": 35,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "招生",
+        "招生信息",
+        "招生计划",
+        "陕西"
+      ],
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1798,7 +1834,7 @@
         "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1823,7 +1859,7 @@
         "招生计划",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1846,7 +1882,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -1870,7 +1906,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -1895,7 +1931,7 @@
         "理工",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1920,32 +1956,7 @@
         "石油",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
-      "category": "招生信息"
-    },
-    {
-      "id": "28a590a4c56e3514ada6b826ae86361ad5c9322c",
-      "title": "分批次、分科类招生计划",
-      "url": "https://zhaosheng.xaut.edu.cn/xinxichaxun/zsjhcx/",
-      "source": "西安理工大学本科招生信息公开",
-      "source_url": "https://xxgk.xaut.edu.cn/zsksxx/bkszs.htm",
-      "topic": "本科招生",
-      "date": "",
-      "snippet": "分批次、分科类招生计划",
-      "page_url": "https://xxgk.xaut.edu.cn/zsksxx/bkszs.htm",
-      "is_pdf": false,
-      "score": 35,
-      "source_type": "official",
-      "platform": "website",
-      "trust_level": "high",
-      "tags": [
-        "信息公开",
-        "招生",
-        "招生信息",
-        "招生计划",
-        "陕西"
-      ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1969,7 +1980,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -1993,7 +2004,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -2018,7 +2029,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -2041,7 +2052,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2065,7 +2076,7 @@
         "就业质量报告",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -2090,7 +2101,7 @@
         "理工",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -2115,7 +2126,7 @@
         "石油",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -2142,7 +2153,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -2166,7 +2177,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -2190,7 +2201,7 @@
         "招生章程",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -2213,7 +2224,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2236,7 +2247,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2259,7 +2270,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2282,7 +2293,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2305,7 +2316,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2328,7 +2339,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2351,7 +2362,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2374,7 +2385,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2397,7 +2408,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2420,7 +2431,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2443,7 +2454,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2466,7 +2477,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2489,7 +2500,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2512,7 +2523,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2535,7 +2546,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2558,7 +2569,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2581,7 +2592,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2604,7 +2615,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2627,7 +2638,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2650,7 +2661,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2673,7 +2684,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2696,7 +2707,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2719,7 +2730,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2742,7 +2753,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2765,7 +2776,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2789,7 +2800,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2813,8 +2824,32 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
+    },
+    {
+      "id": "b20ab980fc0d9c008d7f877dcc421ac3b5ef3269",
+      "title": "历年各省分数线查询",
+      "url": "https://zhaosheng.xaut.edu.cn/xinxichaxun/liniangeshengfenshuxianchaxun/",
+      "source": "西安理工大学本科招生",
+      "source_url": "https://zhaosheng.xaut.edu.cn/",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "历年各省分数线查询",
+      "page_url": "https://zhaosheng.xaut.edu.cn/",
+      "is_pdf": false,
+      "score": 28,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "分数线",
+        "招生",
+        "招生信息",
+        "陕西"
+      ],
+      "fetched_at": "2026-06-07T14:43:04+08:00",
+      "category": "招生信息"
     },
     {
       "id": "b45da7f5eb70158ce05d79c850b4dac3ce2b331e",
@@ -2838,7 +2873,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -2861,7 +2896,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2884,7 +2919,7 @@
         "陕西",
         "预算"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "学校预算"
     },
     {
@@ -2909,7 +2944,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -2935,7 +2970,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "就业质量"
     },
     {
@@ -2959,7 +2994,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -2983,7 +3018,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3007,7 +3042,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3030,7 +3065,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3054,7 +3089,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3078,7 +3113,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3102,7 +3137,30 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
+      "category": "招生信息"
+    },
+    {
+      "id": "a538459d16c966dcbcba96b9cbd2d41d22228bf7",
+      "title": "本科招生网",
+      "url": "https://zhaosheng.xaut.edu.cn/",
+      "source": "西安理工大学本科招生",
+      "source_url": "https://zhaosheng.xaut.edu.cn/",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "本科招生网",
+      "page_url": "https://zhaosheng.xaut.edu.cn/",
+      "is_pdf": false,
+      "score": 20,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "招生",
+        "招生信息",
+        "陕西"
+      ],
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3125,7 +3183,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3148,7 +3206,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3172,7 +3230,7 @@
         "理工",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3195,7 +3253,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3218,7 +3276,7 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3241,7 +3299,53 @@
         "招生信息",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
+      "category": "招生信息"
+    },
+    {
+      "id": "c0742810c59f80c9c5c0c4d9a5e9eca18dbadd48",
+      "title": "西安理工大学2025年第二学士学位拟录取考生名单公示",
+      "url": "https://zhaosheng.xaut.edu.cn/zhaoshengkuaixun/1026.html",
+      "source": "西安理工大学本科招生",
+      "source_url": "https://zhaosheng.xaut.edu.cn/",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "西安理工大学2025年第二学士学位拟录取考生名单公示",
+      "page_url": "https://zhaosheng.xaut.edu.cn/",
+      "is_pdf": false,
+      "score": 19,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "招生",
+        "招生信息",
+        "陕西"
+      ],
+      "fetched_at": "2026-06-07T14:43:04+08:00",
+      "category": "招生信息"
+    },
+    {
+      "id": "1e3a6b52b09b0f4665079397eb53d6a8458be344",
+      "title": "高考录取情况查询",
+      "url": "http://zsgl.xaut.edu.cn/admin/#/lqjgcx",
+      "source": "西安理工大学本科招生",
+      "source_url": "https://zhaosheng.xaut.edu.cn/",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "高考录取情况查询",
+      "page_url": "https://zhaosheng.xaut.edu.cn/",
+      "is_pdf": false,
+      "score": 19,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "high",
+      "tags": [
+        "招生",
+        "招生信息",
+        "陕西"
+      ],
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3265,7 +3369,7 @@
         "石油",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3291,7 +3395,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3316,7 +3420,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3341,7 +3445,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3366,7 +3470,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3391,7 +3495,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3416,7 +3520,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3441,7 +3545,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3466,7 +3570,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3490,7 +3594,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3514,7 +3618,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3538,7 +3642,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3562,7 +3666,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3586,7 +3690,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3610,7 +3714,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3634,7 +3738,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3658,7 +3762,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3682,7 +3786,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3706,7 +3810,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3730,7 +3834,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3754,7 +3858,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3778,7 +3882,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3802,7 +3906,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3826,7 +3930,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3850,7 +3954,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3874,7 +3978,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3898,7 +4002,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3922,7 +4026,31 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
+      "category": "招生信息"
+    },
+    {
+      "id": "3147d33fe30a2d6022ea2e41626b1f787cffc6b1",
+      "title": "西北大学2026年第二学士学位招生简章",
+      "url": "https://zsb.nwu.edu.cn/info/1056/3123.htm",
+      "source": "西北大学本科招生",
+      "source_url": "https://zsb.nwu.edu.cn",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "西北大学2026年第二学士学位招生简章",
+      "page_url": "https://zsb.nwu.edu.cn",
+      "is_pdf": false,
+      "score": 14,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "medium",
+      "tags": [
+        "待核验",
+        "招生信息",
+        "自动生成",
+        "陕西"
+      ],
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3946,7 +4074,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3970,7 +4098,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -3994,7 +4122,79 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
+      "category": "招生信息"
+    },
+    {
+      "id": "86cc74c98a99a8ae4c0ba5ff572c7f06d4ad7554",
+      "title": "招生简章",
+      "url": "https://zhaosheng.xaut.edu.cn/zhaoshengjianzhang",
+      "source": "西安理工大学本科招生",
+      "source_url": "https://zhaosheng.xaut.edu.cn/",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "招生简章",
+      "page_url": "https://zhaosheng.xaut.edu.cn/",
+      "is_pdf": false,
+      "score": 14,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "medium",
+      "tags": [
+        "待核验",
+        "招生信息",
+        "自动生成",
+        "陕西"
+      ],
+      "fetched_at": "2026-06-07T14:43:04+08:00",
+      "category": "招生信息"
+    },
+    {
+      "id": "0456d6cc51ffc6e097c40fa4263905dfdd8daa44",
+      "title": "特类招生",
+      "url": "https://zhaosheng.xaut.edu.cn/teleizhaosheng",
+      "source": "西安理工大学本科招生",
+      "source_url": "https://zhaosheng.xaut.edu.cn/",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "特类招生",
+      "page_url": "https://zhaosheng.xaut.edu.cn/",
+      "is_pdf": false,
+      "score": 14,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "medium",
+      "tags": [
+        "待核验",
+        "招生信息",
+        "自动生成",
+        "陕西"
+      ],
+      "fetched_at": "2026-06-07T14:43:04+08:00",
+      "category": "招生信息"
+    },
+    {
+      "id": "dec1da9a09076689940251f13fd58db56cd25ac8",
+      "title": "西安理工大学2026年第二学士学位招生简章",
+      "url": "https://zhaosheng.xaut.edu.cn/zhaoshengkuaixun/1030.html",
+      "source": "西安理工大学本科招生",
+      "source_url": "https://zhaosheng.xaut.edu.cn/",
+      "topic": "本科招生",
+      "date": "",
+      "snippet": "西安理工大学2026年第二学士学位招生简章",
+      "page_url": "https://zhaosheng.xaut.edu.cn/",
+      "is_pdf": false,
+      "score": 14,
+      "source_type": "official",
+      "platform": "website",
+      "trust_level": "medium",
+      "tags": [
+        "待核验",
+        "招生信息",
+        "自动生成",
+        "陕西"
+      ],
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -4018,7 +4218,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -4042,7 +4242,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -4066,7 +4266,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -4091,7 +4291,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -4116,7 +4316,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -4141,7 +4341,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -4166,7 +4366,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "category": "招生信息"
     },
     {
@@ -4189,7 +4389,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4213,7 +4413,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4237,7 +4437,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4261,7 +4461,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4285,7 +4485,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4309,7 +4509,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4333,7 +4533,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4357,7 +4557,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4381,7 +4581,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4405,7 +4605,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4429,7 +4629,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4453,7 +4653,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4477,7 +4677,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4501,7 +4701,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4525,7 +4725,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4550,7 +4750,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4575,7 +4775,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4600,7 +4800,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4625,7 +4825,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4650,7 +4850,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4675,7 +4875,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4700,7 +4900,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4725,7 +4925,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4750,7 +4950,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4775,7 +4975,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     },
@@ -4800,7 +5000,7 @@
         "自动生成",
         "陕西"
       ],
-      "fetched_at": "2026-06-06T14:03:20+08:00",
+      "fetched_at": "2026-06-07T14:43:04+08:00",
       "score": 8,
       "category": "未分类"
     }

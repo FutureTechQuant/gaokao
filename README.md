@@ -4,14 +4,14 @@
 
 ## 运行概况
 
-- 最近更新：2026-06-12T14:56:30+08:00
-- 条目数：201
+- 最近更新：2026-06-13T14:33:23+08:00
+- 条目数：200
 - 错误数：19
 
 ## 信源摘要
 
 - 信源总数：74
-- 结果总数：201
+- 结果总数：200
 - 按信源类型：
   - official：66
   - platform：8
@@ -28,16 +28,16 @@
   - high：45
   - medium：29
 - 按结果平台：
-  - website：194
+  - website：193
   - xiaohongshu：7
 - 按结果信源类型：
-  - official：194
+  - official：193
   - platform：7
 - 按结果可信度：
-  - high：124
+  - high：123
   - medium：77
 - 按结果分类：
-  - 招生信息：103
+  - 招生信息：102
   - 学校预算：42
   - 未分类：26
   - 就业质量：25
@@ -45,7 +45,7 @@
 
 ## 分类摘要
 
-- 招生信息：103
+- 招生信息：102
 - 就业质量：25
 - 保研信息：5
 - 学校预算：42
@@ -53,7 +53,7 @@
 
 ## 专题摘要
 
-- 本科招生：103
+- 本科招生：102
 - 高校预算：42
 - 综合信息：26
 - 就业质量报告：25
@@ -63,26 +63,26 @@
 
 ### 按平台
 
-- website：194
+- website：193
 - xiaohongshu：7
 
 ### 按信源类型
 
-- official：194
+- official：193
 - platform：7
 
 ### 按可信度
 
-- high：124
+- high：123
 - medium：77
 
 ## 标签摘要
 
-- 陕西：198
-- 招生信息：103
+- 陕西：197
+- 招生信息：102
 - 待核验：70
 - 自动生成：70
-- 招生：62
+- 招生：61
 - 师范：51
 - 学校预算：42
 - 预算：42
@@ -90,13 +90,13 @@
 - 就业质量：25
 - 就业质量报告：25
 - 就业：22
-- 招生章程：17
+- 分数线：14
+- 招生章程：14
 - 招生计划：13
-- 分数线：12
-- 理工：8
 - 小红书：7
 - 平台内容：7
 - 录取：7
+- 理工：7
 - 石油：6
 
 ## 高优先级内容
@@ -116,7 +116,7 @@
 - [西安理工大学2019年毕业生就业质量年度报告](https://xxgk.xaut.edu.cn/info/1054/1284.htm) | 就业质量 | 西安理工大学就业质量 | website/official | 未知日期 | score=81
 - [西安理工大学2018年毕业生就业质量年度报告](https://xxgk.xaut.edu.cn/info/1054/1285.htm) | 就业质量 | 西安理工大学就业质量 | website/official | 未知日期 | score=81
 - [2017年西安理工大学毕业生就业质量年度报告](https://xxgk.xaut.edu.cn/info/1054/1287.htm) | 就业质量 | 西安理工大学就业质量 | website/official | 未知日期 | score=81
-- [小红书搜索：陕西 高校 录取分数 位次 招生计划](https://www.xiaohongshu.com/search_result?keyword=陕西 高校 录取分数 位次 招生计划) | 招生信息 | 小红书-陕西高校录取分数 | xiaohongshu/platform | 2026-06-12 | score=53
+- [小红书搜索：陕西 高校 录取分数 位次 招生计划](https://www.xiaohongshu.com/search_result?keyword=陕西 高校 录取分数 位次 招生计划) | 招生信息 | 小红书-陕西高校录取分数 | xiaohongshu/platform | 2026-06-13 | score=53
 - [陕西师范大学就业质量年度报告](https://xxgk.snnu.edu.cn/info/1751/2471.htm) | 就业质量 | 陕西师范大学就业质量 | website/official | 未知日期 | score=53
 - [西北大学2026年单位预算公开说明](https://cw.nwu.edu.cn/info/1024/2961.htm) | 学校预算 | 西北大学财务处 | website/official | 未知日期 | score=53
 - [陕西师范大学2018年毕业生就业质量报告](https://xxgk.snnu.edu.cn/info/1751/2511.htm) | 就业质量 | 陕西师范大学就业质量 | website/official | 未知日期 | score=49
@@ -128,19 +128,19 @@
 - 西北大学就业质量 | website | https://job.nwu.edu.cn/ | HTTPSConnectionPool(host='job.nwu.edu.cn', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='job.nwu.edu.cn', port=443): Failed to resolve 'job.nwu.edu.cn' ([Errno -2] Name or service not known)"))
 - 西安邮电大学就业质量 | website | https://job.xupt.edu.cn/ | HTTPSConnectionPool(host='job.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='job.xupt.edu.cn', port=443): Failed to resolve 'job.xupt.edu.cn' ([Errno -2] Name or service not known)"))
 - 西北大学就业质量 | website | https://job.nwu.edu.cn/ | HTTPSConnectionPool(host='job.nwu.edu.cn', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='job.nwu.edu.cn', port=443): Failed to resolve 'job.nwu.edu.cn' ([Errno -2] Name or service not known)"))
-- 西安邮电大学保研推免 | website | https://jwc.xupt.edu.cn/ | HTTPSConnectionPool(host='jwc.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='jwc.xupt.edu.cn', port=443) at 0x7f6dbe389990>, 'Connection to jwc.xupt.edu.cn timed out. (connect timeout=25)'))
+- 西安邮电大学保研推免 | website | https://jwc.xupt.edu.cn/ | HTTPSConnectionPool(host='jwc.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='jwc.xupt.edu.cn', port=443) at 0x7fb03c782c50>, 'Connection to jwc.xupt.edu.cn timed out. (connect timeout=25)'))
 - 西安邮电大学信息公开 | website | https://xxgk.xupt.edu.cn/ | HTTPSConnectionPool(host='xxgk.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='xxgk.xupt.edu.cn', port=443): Failed to resolve 'xxgk.xupt.edu.cn' ([Errno -2] Name or service not known)"))
 - 西安邮电大学就业质量 | website | https://job.xupt.edu.cn/ | HTTPSConnectionPool(host='job.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='job.xupt.edu.cn', port=443): Failed to resolve 'job.xupt.edu.cn' ([Errno -2] Name or service not known)"))
 - 西安邮电大学预算公开 | website | https://xxgk.xupt.edu.cn/ | HTTPSConnectionPool(host='xxgk.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='xxgk.xupt.edu.cn', port=443): Failed to resolve 'xxgk.xupt.edu.cn' ([Errno -2] Name or service not known)"))
-- 西安邮电大学保研推免 | website | https://jwc.xupt.edu.cn/ | HTTPSConnectionPool(host='jwc.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='jwc.xupt.edu.cn', port=443) at 0x7f6dbdfee750>, 'Connection to jwc.xupt.edu.cn timed out. (connect timeout=25)'))
+- 西安邮电大学保研推免 | website | https://jwc.xupt.edu.cn/ | HTTPSConnectionPool(host='jwc.xupt.edu.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='jwc.xupt.edu.cn', port=443) at 0x7fb03c3ee910>, 'Connection to jwc.xupt.edu.cn timed out. (connect timeout=25)'))
 - 阳光高考-首页 | website | https://gaokao.chsi.com.cn/ | 412 Client Error: Precondition Failed for url: https://gaokao.chsi.com.cn/
 - 阳光高考-教育部招生政策 | website | https://gaokao.chsi.com.cn/gkxx/zc/moe | 412 Client Error: Precondition Failed for url: https://gaokao.chsi.com.cn/gkxx/zc/moe
 - 阳光高考-阳光志愿 | website | https://gaokao.chsi.com.cn/zyck/ | 412 Client Error: Precondition Failed for url: https://gaokao.chsi.com.cn/zyck/
 - 阳光高考-名单公示 | website | https://gaokao.chsi.com.cn/zsgs/mdgs.jsp | 412 Client Error: Precondition Failed for url: https://gaokao.chsi.com.cn/zsgs/mdgs.jsp
 - 阳光高考-高校专项计划报名系统 | website | https://gaokao.chsi.com.cn/gxzxbm/ | 412 Client Error: Precondition Failed for url: https://gaokao.chsi.com.cn/gxzxbm/
-- 长安大学本科招生网 | website | https://zsb.chd.edu.cn | HTTPSConnectionPool(host='zsb.chd.edu.cn', port=443): Read timed out. (read timeout=25)
+- 长安大学本科招生网 | website | https://zsb.chd.edu.cn | '<' not supported between instances of 'int' and 'str'
 - 西北农林科技大学招生网 | website | https://zhshw.nwafu.edu.cn/jbdsclm/zlcd/index.htm | '<' not supported between instances of 'int' and 'str'
-- 西安建筑科技大学本科招生 | website | https://www.xauat.edu.cn/zh-cn/html/06zhshjy/index.html | HTTPSConnectionPool(host='www.xauat.edu.cn', port=443): Max retries exceeded with url: /zh-cn/html/06zhshjy/index.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.xauat.edu.cn', port=443) at 0x7f6dbe0c8590>, 'Connection to www.xauat.edu.cn timed out. (connect timeout=25)'))
+- 西安建筑科技大学本科招生 | website | https://www.xauat.edu.cn/zh-cn/html/06zhshjy/index.html | 404 Client Error: Not Found for url: https://www.xauat.edu.cn/zh-cn/html/06zhshjy/index.html
 - 阳光高考-院校库 | website | https://gaokao.chsi.com.cn/ | 412 Client Error: Precondition Failed for url: https://gaokao.chsi.com.cn/
 - 阳光高考-录取结果入口 | website | https://gaokao.chsi.com.cn/ | 412 Client Error: Precondition Failed for url: https://gaokao.chsi.com.cn/
 
